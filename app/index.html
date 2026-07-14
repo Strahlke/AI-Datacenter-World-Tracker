@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Globaler Tracker grosser KI-Rechenzentren und AI-Factory-Programme" />
+    <title>AI Datacenter World Tracker</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Global infrastructure monitor</p>
+          <h1>AI Datacenter World Tracker</h1>
+        </div>
+        <div class="freshness">
+          <span class="health-dot" aria-hidden="true"></span>
+          <span id="snapshot-label">Daten werden geladen …</span>
+          <a href="./data/projects.json" target="_blank" rel="noopener noreferrer">Daten</a>
+          <a href="https://github.com/Strahlke/AI-Datacenter-World-Tracker" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </header>
+
+      <section class="summary-strip" aria-label="Gefilterte Projektkennzahlen">
+        <div class="metric"><span>Projekte</span><strong id="metric-total">—</strong></div>
+        <div class="metric"><span>In Betrieb</span><strong id="metric-live">—</strong></div>
+        <div class="metric"><span>Im Bau / teilweise live</span><strong id="metric-progress">—</strong></div>
+        <div class="metric"><span>Terminrisiko / gestoppt</span><strong id="metric-risk">—</strong></div>
+      </section>
+
+      <main class="workspace">
+        <aside class="catalog" aria-label="Projektfilter und Projektliste">
+          <div class="filters">
+            <label>
+              <span>Suche</span>
+              <input id="search-input" type="search" placeholder="Projekt, Land, Betreiber" autocomplete="off" />
+            </label>
+            <div class="filter-row">
+              <label>
+                <span>Status</span>
+                <select id="status-filter">
+                  <option value="all">Alle</option>
+                  <option value="planned">Geplant</option>
+                  <option value="under_construction">Im Bau / Deployment</option>
+                  <option value="partly_live">Teilweise live</option>
+                  <option value="operational">In Betrieb</option>
+                  <option value="paused">Pausiert / neu geplant</option>
+                  <option value="cancelled">Abgesagt</option>
+                </select>
+              </label>
+              <label>
+                <span>Region</span>
+                <select id="region-filter"><option value="all">Alle</option></select>
+              </label>
+            </div>
+          </div>
+          <div class="catalog-heading">
+            <strong id="catalog-count">0 Projekte</strong>
+            <span>Auswahl öffnet Details</span>
+          </div>
+          <div class="project-list" id="project-list"></div>
+        </aside>
+
+        <section class="map-panel" aria-label="Weltkarte der KI-Rechenzentrumsprojekte">
+          <svg id="world-map" role="img" aria-labelledby="map-title map-description">
+            <title id="map-title">Weltkarte grosser KI-Rechenzentrumsprojekte</title>
+            <desc id="map-description">Punkte zeigen verifizierte Standorte und Programme. Farbe und Legende kennzeichnen den aktuellen Lebenszyklusstatus.</desc>
+          </svg>
+          <div class="map-tooltip" id="map-tooltip" role="status"></div>
+          <div class="legend" id="legend" aria-label="Statuslegende"></div>
+        </section>
+
+        <aside class="detail-panel" id="detail-panel" aria-live="polite">
+          <div class="loading-state">Projekt auswählen …</div>
+        </aside>
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
