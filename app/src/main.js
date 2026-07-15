@@ -7,6 +7,7 @@ import "./style.css";
 
 const countries = feature(world, world.objects.features).features;
 const svgNamespace = "http://www.w3.org/2000/svg";
+const urlParams = new URLSearchParams(window.location.search);
 
 const copy = {
   de: {
@@ -18,6 +19,10 @@ const copy = {
     tabSupply: "Lieferkette",
     tabBarometer: "Hardware-Barometer",
     projects: "Projekte",
+    countries: "Länder",
+    trackedPower: "Dokumentierte Leistung",
+    siteInvestment: "Standort-Investment*",
+    umbrellaPrograms: "Dachprogramme*",
     operational: "In Betrieb",
     inProgress: "Im Bau / teilweise live",
     atRisk: "Terminrisiko / gestoppt",
@@ -62,8 +67,9 @@ const copy = {
     modelWeights: "Modellgewichte & Abdeckung",
     weightPercent: "Gewicht in Prozent",
     consumerReading: "Lesart für Endkunden",
-    retailBaskets: "Geplante Retail-Warenkörbe",
-    basketIntro: "Stabile SKU-Körbe statt einzelner Tagesangebote.",
+    retailBaskets: "Retail-Warenkörbe",
+    basketIntro: "Stabile Produktkohorten statt einzelner Tagesangebote.",
+    openRetailModel: "Retail-Modell öffnen",
     guardrails: "Qualitätsregeln",
     guardrailIntro: "Damit AI-Ausbau nicht fälschlich jeden Preissprung erklärt.",
     modelSources: "Startquellen des Modells",
@@ -80,6 +86,13 @@ const copy = {
     provisional: "Vorläufig",
     retailGradePending: "Retail-Grade ausstehend",
     componentScore: "Teilindex",
+    impact: "Impact-Skala",
+    impactCoverage: "Impact-Datenabdeckung",
+    impactUnknown: "nicht skalierbar",
+    retailReadiness: "Retail-Reife",
+    weeklyObservations: "Wochenbeobachtungen",
+    activeRetailers: "Aktive Händler",
+    sourceAccess: "Quellenzugang",
     all: "Alle",
     planned: "Geplant",
     underConstruction: "Im Bau / Deployment",
@@ -140,7 +153,9 @@ const copy = {
     methodologyB: "Belastbare Sekundärquelle; braucht bei kritischen Änderungen Gegenprüfung.",
     methodologyC: "Discovery-Signal; darf Status oder Zahlen nie allein ändern.",
     mapTitle: "Weltkarte grosser KI-Rechenzentrumsprojekte",
-    mapDescription: "Punkte zeigen verifizierte Standorte und Programme. Farbe kennzeichnet den Lebenszyklusstatus.",
+    mapDescription: "Punkte zeigen quellenbelegte Standorte und klar gekennzeichnete Programme. Farbe kennzeichnet den Lebenszyklusstatus, Groesse den dokumentierten Impact-Score.",
+    mapMethod: (scored, total) => `Punktgröße: Leistung 45 % · Standort-Investition 35 % · Beschleuniger 20 % · ${scored}/${total} Projekte skalierbar. *Programme und Standorte sind nicht additiv.`,
+    countryTooltip: (count, power, investment) => `${count} Projekte · ${power} dokumentierte Leistung · ${investment} Standort-Investment`,
     historyRange: (start, end, count) => `${count} Monate · ${start} bis ${end} · heutiger Revisionsstand`,
     historyChartDescription: (start, end, score) => `Rueckgerechneter CHPI von ${start} bis ${end}. Der letzte Wert betraegt ${score} von 100.`,
   },
@@ -153,6 +168,10 @@ const copy = {
     tabSupply: "Supply chain",
     tabBarometer: "Hardware barometer",
     projects: "Projects",
+    countries: "Countries",
+    trackedPower: "Documented power",
+    siteInvestment: "Site investment*",
+    umbrellaPrograms: "Umbrella programmes*",
     operational: "Operational",
     inProgress: "Building / partly live",
     atRisk: "Schedule risk / stopped",
@@ -197,8 +216,9 @@ const copy = {
     modelWeights: "Model weights & coverage",
     weightPercent: "Weight in percent",
     consumerReading: "Consumer interpretation",
-    retailBaskets: "Planned retail baskets",
-    basketIntro: "Stable SKU baskets instead of single-day deals.",
+    retailBaskets: "Retail baskets",
+    basketIntro: "Stable product cohorts instead of single-day deals.",
+    openRetailModel: "Open retail model",
     guardrails: "Quality guardrails",
     guardrailIntro: "So AI buildout is not made to explain every price spike.",
     modelSources: "Initial model sources",
@@ -215,6 +235,13 @@ const copy = {
     provisional: "Provisional",
     retailGradePending: "Retail grade pending",
     componentScore: "Sub-index",
+    impact: "Impact scale",
+    impactCoverage: "Impact data coverage",
+    impactUnknown: "not scalable",
+    retailReadiness: "Retail maturity",
+    weeklyObservations: "Weekly observations",
+    activeRetailers: "Active retailers",
+    sourceAccess: "Source access",
     all: "All",
     planned: "Planned",
     underConstruction: "Under construction / deployment",
@@ -275,7 +302,9 @@ const copy = {
     methodologyB: "Reliable secondary evidence; critical changes need a cross-check.",
     methodologyC: "Discovery signal; must never change status or figures on its own.",
     mapTitle: "World map of major AI data-center projects",
-    mapDescription: "Points show verified locations and programs. Color indicates the lifecycle status.",
+    mapDescription: "Points show sourced sites and clearly labelled programmes. Colour indicates lifecycle status; size indicates the documented impact score.",
+    mapMethod: (scored, total) => `Point size: power 45% · site investment 35% · accelerators 20% · ${scored}/${total} projects scalable. *Programmes and sites are not additive.`,
+    countryTooltip: (count, power, investment) => `${count} projects · ${power} documented power · ${investment} site investment`,
     historyRange: (start, end, count) => `${count} months · ${start} to ${end} · current revision state`,
     historyChartDescription: (start, end, score) => `Backcast CHPI from ${start} to ${end}. The latest value is ${score} out of 100.`,
   },
@@ -331,7 +360,9 @@ const state = {
   supplyStage: "all",
   barometer: null,
   hardwareHistory: null,
-  view: "map",
+  investmentPrograms: null,
+  retailBaskets: null,
+  view: ["map", "method", "supply", "barometer"].includes(urlParams.get("view")) ? urlParams.get("view") : "map",
   lang: getStoredLanguage(),
 };
 
@@ -348,9 +379,12 @@ const elements = {
   region: document.getElementById("region-filter"),
   snapshot: document.getElementById("snapshot-label"),
   total: document.getElementById("metric-total"),
+  countries: document.getElementById("metric-countries"),
+  power: document.getElementById("metric-power"),
+  investment: document.getElementById("metric-investment"),
+  programs: document.getElementById("metric-programs"),
   live: document.getElementById("metric-live"),
-  progress: document.getElementById("metric-progress"),
-  risk: document.getElementById("metric-risk"),
+  mapMethodNote: document.getElementById("map-method-note"),
   language: document.getElementById("language-select"),
   sourceRegistryMeta: document.getElementById("source-registry-meta"),
   sourceSearch: document.getElementById("source-search"),
@@ -386,6 +420,10 @@ const elements = {
   componentChart: document.getElementById("component-chart"),
   scoreScale: document.getElementById("score-scale"),
   basketGrid: document.getElementById("basket-grid"),
+  retailReadiness: document.getElementById("retail-readiness"),
+  maturityLadder: document.getElementById("maturity-ladder"),
+  retailSourceGrid: document.getElementById("retail-source-grid"),
+  retailNextAction: document.getElementById("retail-next-action"),
   guardrailGrid: document.getElementById("guardrail-grid"),
   modelSourceList: document.getElementById("model-source-list"),
   historyChart: document.getElementById("hardware-history-chart"),
@@ -402,6 +440,8 @@ const elements = {
 let zoomBehavior = null;
 let currentTransform = zoomIdentity;
 let mapViewport = null;
+let initialZoomApplied = false;
+const initialZoom = Math.min(8, Math.max(1, Number(urlParams.get("zoom")) || 1));
 
 function getStoredLanguage() {
   try {
@@ -475,6 +515,33 @@ function formatNumber(value, maximumFractionDigits = 1) {
     maximumFractionDigits,
     minimumFractionDigits: maximumFractionDigits,
   }).format(value);
+}
+
+function formatPower(mw) {
+  if (!Number.isFinite(mw) || mw <= 0) return "—";
+  return mw >= 1000 ? `${formatNumber(mw / 1000)} GW` : `${formatNumber(mw, 0)} MW`;
+}
+
+function formatUsdBn(value) {
+  if (!Number.isFinite(value) || value <= 0) return "—";
+  return state.lang === "de" ? `${formatNumber(value)} Mrd. USD` : `USD ${formatNumber(value)}bn`;
+}
+
+function programmeEnvelope(programs = []) {
+  const values = new Map();
+  for (const program of programs) {
+    const currency = program.commitment?.currency;
+    const value = program.commitment?.value_bn;
+    if (!currency || !Number.isFinite(value)) continue;
+    values.set(currency, (values.get(currency) || 0) + value);
+  }
+  return [...values.entries()].map(([currency, value]) => state.lang === "de" ? `${formatNumber(value, 0)} Mrd. ${currency}` : `${currency} ${formatNumber(value, 0)}bn`).join(" · ") || "—";
+}
+
+function programmeHeadline(programs = []) {
+  const usd = programs.find((program) => program.commitment?.currency === "USD");
+  if (!usd) return `${programs.length} ${state.lang === "de" ? "Programme" : "programmes"}`;
+  return state.lang === "de" ? `${formatNumber(usd.commitment.value_bn, 0)} Mrd. USD +` : `USD ${formatNumber(usd.commitment.value_bn, 0)}bn +`;
 }
 
 function formatPeriod(period) {
@@ -571,9 +638,15 @@ function updateSelectCopy() {
 function renderMetrics() {
   const projects = filteredProjects();
   elements.total.textContent = projects.length;
+  elements.countries.textContent = new Set(projects.map((project) => project.iso3)).size;
+  elements.power.textContent = formatPower(projects.reduce((sum, project) => sum + Number(project.impact?.power_mw || 0), 0));
+  const countableInvestment = projects
+    .filter((project) => project.impact?.investment_countable && !["paused", "cancelled"].includes(project.current_status))
+    .reduce((sum, project) => sum + Number(project.impact?.investment_usd_bn || 0), 0);
+  elements.investment.textContent = formatUsdBn(countableInvestment);
+  elements.programs.textContent = programmeHeadline(state.investmentPrograms?.programs || []);
+  elements.programs.title = programmeEnvelope(state.investmentPrograms?.programs || []);
   elements.live.textContent = projects.filter((project) => project.current_status === "operational").length;
-  elements.progress.textContent = projects.filter((project) => ["under_construction", "partly_live"].includes(project.current_status)).length;
-  elements.risk.textContent = projects.filter((project) => ["late_unverified", "cancelled", "cancelled_or_superseded"].includes(project.schedule)).length;
   elements.count.textContent = t("projectCount", projects.length);
 }
 
@@ -589,6 +662,12 @@ function renderLegend() {
     item.append(dot, document.createTextNode(`${statusLabel(status)} ${count}`));
     elements.legend.appendChild(item);
   }
+  const impact = document.createElement("span");
+  impact.className = "legend-impact";
+  impact.innerHTML = `<i class="impact-dot small"></i><i class="impact-dot medium"></i><i class="impact-dot large"></i>${escapeHtml(t("impact"))}`;
+  elements.legend.appendChild(impact);
+  const scored = state.projects.filter((project) => Number.isFinite(project.impact?.score)).length;
+  elements.mapMethodNote.textContent = t("mapMethod", scored, state.projects.length);
 }
 
 function renderBarChart(container, rows) {
@@ -729,6 +808,8 @@ function renderDetail() {
     <dl class="facts">
       <div><dt>${escapeHtml(t("plannedScope"))}</dt><dd>${escapeHtml(project.planned_capacity)}</dd></div>
       <div><dt>${escapeHtml(t("investment"))}</dt><dd>${escapeHtml(project.investment)}</dd></div>
+      <div><dt>${escapeHtml(t("impact"))}</dt><dd>${Number.isFinite(project.impact?.score) ? `${project.impact.score} / 100 · ${escapeHtml(project.impact.band)}` : escapeHtml(t("impactUnknown"))}</dd></div>
+      <div><dt>${escapeHtml(t("impactCoverage"))}</dt><dd>${percent(project.impact?.metric_coverage || 0)} · ${escapeHtml([project.impact?.power_mw ? formatPower(project.impact.power_mw) : null, project.impact?.investment_usd_bn ? formatUsdBn(project.impact.investment_usd_bn) : null, project.impact?.accelerator_count ? `${formatNumber(project.impact.accelerator_count, 0)} accelerators` : null].filter(Boolean).join(" · ") || "—")}</dd></div>
       <div><dt>${escapeHtml(t("target"))}</dt><dd>${escapeHtml(project.target_live)}</dd></div>
       <div><dt>${escapeHtml(t("realized"))}</dt><dd>${escapeHtml(project.actual_live)}</dd></div>
       <div><dt>${escapeHtml(t("schedule"))}</dt><dd>${escapeHtml(scheduleLabel(project.schedule))}</dd></div>
@@ -745,9 +826,9 @@ function renderDetail() {
     <p class="coordinate-note">${escapeHtml(t("markerPrecision"))}: ${escapeHtml(project.location_precision)}</p>`;
 }
 
-function showTooltip(project, point) {
+function positionTooltip(html, point) {
   const transformed = currentTransform.apply(point);
-  elements.tooltip.innerHTML = `<strong>${escapeHtml(project.name)}</strong><span>${escapeHtml(project.country)} · ${escapeHtml(statusLabel(project.current_status))}</span>`;
+  elements.tooltip.innerHTML = html;
   elements.tooltip.classList.add("visible");
   const rect = elements.mapPanel.getBoundingClientRect();
   const tip = elements.tooltip.getBoundingClientRect();
@@ -757,13 +838,43 @@ function showTooltip(project, point) {
   elements.tooltip.style.top = `${top}px`;
 }
 
+function showTooltip(project, point) {
+  const impact = Number.isFinite(project.impact?.score) ? `${t("impact")} ${project.impact.score}/100` : t("impactUnknown");
+  positionTooltip(`<strong>${escapeHtml(project.name)}</strong><span>${escapeHtml(project.country)} · ${escapeHtml(statusLabel(project.current_status))}</span><span>${escapeHtml(impact)}</span>`, point);
+}
+
+function countrySummary(projects, iso3) {
+  const matches = projects.filter((project) => project.iso3 === iso3);
+  const power = matches.reduce((sum, project) => sum + Number(project.impact?.power_mw || 0), 0);
+  const investment = matches
+    .filter((project) => project.impact?.investment_countable && !["paused", "cancelled"].includes(project.current_status))
+    .reduce((sum, project) => sum + Number(project.impact?.investment_usd_bn || 0), 0);
+  return { projects: matches, power, investment };
+}
+
+function impactRadius(project) {
+  const score = project.impact?.score;
+  if (!Number.isFinite(score)) return 4.5;
+  return 4.5 + 8.5 * ((score / 100) ** 0.75);
+}
+
 function updateMarkerScale(scale) {
   if (!mapViewport) return;
   mapViewport.querySelectorAll(".project-point").forEach((point) => {
     const base = Number(point.dataset.baseRadius || 7);
     point.setAttribute("r", String(base / scale));
   });
-  mapViewport.querySelectorAll(".point-halo").forEach((point) => point.setAttribute("r", String(13 / scale)));
+  mapViewport.querySelectorAll(".point-halo").forEach((point) => {
+    const base = Number(point.dataset.baseRadius || 13);
+    point.setAttribute("r", String(base / scale));
+  });
+  mapViewport.querySelectorAll(".country-label").forEach((label) => {
+    const visible = scale >= 1.75;
+    label.style.opacity = visible ? String(Math.min(0.92, 0.35 + (scale - 1.75) * 0.24)) : "0";
+    label.style.pointerEvents = visible ? "auto" : "none";
+    label.setAttribute("font-size", String(10.5 / scale));
+    label.setAttribute("stroke-width", String(2.4 / scale));
+  });
 }
 
 function renderMap() {
@@ -788,29 +899,64 @@ function renderMap() {
     svgElement("path", { class: "graticule", d: path(geoGraticule10()) }),
   );
 
-  const countriesLayer = svgElement("g", { "aria-hidden": "true" });
-  for (const country of countries) countriesLayer.appendChild(svgElement("path", { class: "country", d: path(country) }));
+  const countryIso = new Set(projects.map((project) => project.iso3));
+  const countriesLayer = svgElement("g", { "aria-label": state.lang === "de" ? "Laendergrenzen" : "Country boundaries" });
+  for (const country of countries) {
+    const iso3 = country.properties?.id;
+    const tracked = countryIso.has(iso3);
+    const countryPath = svgElement("path", { class: `country${tracked ? " tracked-country" : ""}`, d: path(country), tabindex: tracked ? "0" : "-1" });
+    if (tracked) {
+      const center = path.centroid(country);
+      const summary = countrySummary(projects, iso3);
+      const label = summary.projects[0]?.country || country.properties?.name || iso3;
+      const show = () => {
+        if (currentTransform.k < 1.5) return;
+        positionTooltip(`<strong>${escapeHtml(label)}</strong><span>${escapeHtml(t("countryTooltip", summary.projects.length, formatPower(summary.power), formatUsdBn(summary.investment)))}</span>`, center);
+      };
+      countryPath.addEventListener("mouseenter", show);
+      countryPath.addEventListener("focus", show);
+      countryPath.addEventListener("mouseleave", () => elements.tooltip.classList.remove("visible"));
+      countryPath.addEventListener("blur", () => elements.tooltip.classList.remove("visible"));
+    }
+    countriesLayer.appendChild(countryPath);
+  }
   mapViewport.appendChild(countriesLayer);
+
+  const countryLabels = svgElement("g", { class: "country-labels", "aria-hidden": "true" });
+  for (const country of countries.filter((item) => countryIso.has(item.properties?.id))) {
+    const iso3 = country.properties.id;
+    const summary = countrySummary(projects, iso3);
+    const center = path.centroid(country);
+    if (!Number.isFinite(center[0]) || !Number.isFinite(center[1])) continue;
+    const label = svgElement("text", { class: "country-label", x: center[0], y: center[1], "text-anchor": "middle", "paint-order": "stroke" });
+    const name = state.lang === "de" ? summary.projects[0]?.country : country.properties?.name;
+    label.textContent = `${name} · ${summary.projects.length}`;
+    countryLabels.appendChild(label);
+  }
+  mapViewport.appendChild(countryLabels);
 
   const pointsLayer = svgElement("g", { "aria-label": state.lang === "de" ? "Projektstandorte" : "Project locations" });
   for (const project of projects) {
     const point = projection([project.lon, project.lat]);
     if (!point) continue;
     const selected = project.id === state.selectedId;
+    const impactBaseRadius = impactRadius(project);
     if (selected) {
-      const halo = svgElement("circle", { class: "point-halo", cx: point[0], cy: point[1], r: 13 / currentTransform.k });
+      const haloRadius = impactBaseRadius + 5;
+      const halo = svgElement("circle", { class: "point-halo", cx: point[0], cy: point[1], r: haloRadius / currentTransform.k });
+      halo.dataset.baseRadius = String(haloRadius);
       pointsLayer.appendChild(halo);
     }
-    const baseRadius = selected ? 8.5 : 7;
+    const baseRadius = impactBaseRadius + (selected ? 1.5 : 0);
     const circle = svgElement("circle", {
-      class: `project-point${selected ? " selected" : ""}`,
+      class: `project-point${selected ? " selected" : ""}${Number.isFinite(project.impact?.score) ? "" : " impact-unknown"}`,
       cx: point[0],
       cy: point[1],
       r: baseRadius / currentTransform.k,
       fill: statusMeta[project.current_status].color,
       role: "button",
       tabindex: "0",
-      "aria-label": `${project.name}, ${project.country}, ${statusLabel(project.current_status)}`,
+      "aria-label": `${project.name}, ${project.country}, ${statusLabel(project.current_status)}, ${Number.isFinite(project.impact?.score) ? `${t("impact")} ${project.impact.score}` : t("impactUnknown")}`,
       "vector-effect": "non-scaling-stroke",
     });
     circle.dataset.baseRadius = String(baseRadius);
@@ -838,6 +984,10 @@ function renderMap() {
       updateMarkerScale(currentTransform.k);
       elements.tooltip.classList.remove("visible");
     });
+  if (!initialZoomApplied && initialZoom > 1) {
+    currentTransform = zoomIdentity.translate(width * (1 - initialZoom) / 2, height * (1 - initialZoom) / 2).scale(initialZoom);
+    initialZoomApplied = true;
+  }
   select(elements.map).call(zoomBehavior).on("dblclick.zoom", null);
   select(elements.map).call(zoomBehavior.transform, currentTransform);
 }
@@ -1059,13 +1209,47 @@ function renderBarometer() {
     elements.scoreScale.appendChild(item);
   }
 
+  const retail = state.retailBaskets;
+  elements.retailReadiness.replaceChildren();
+  if (retail) {
+    const observations = retail.observation_summary;
+    elements.retailReadiness.innerHTML = `
+      <div><span>${escapeHtml(t("retailReadiness"))}</span><strong>${escapeHtml(retail.current_level)} · ${escapeHtml(localized(retail, "current_level_label"))}</strong></div>
+      <div><span>${escapeHtml(t("weeklyObservations"))}</span><strong>${observations.weekly_observations}</strong></div>
+      <div><span>${escapeHtml(t("activeRetailers"))}</span><strong>${observations.active_retailers}</strong></div>
+      <div><span>${escapeHtml(t("dataCoverage"))}</span><strong>${observations.categories_with_minimum_coverage}/${observations.total_categories}</strong></div>`;
+
+    elements.maturityLadder.replaceChildren();
+    for (const level of retail.maturity_levels) {
+      const item = document.createElement("article");
+      const current = level.id === retail.current_level;
+      item.className = `maturity-step${level.met ? " met" : ""}${current ? " current" : ""}`;
+      item.innerHTML = `<span>${escapeHtml(level.id)}</span><div><strong>${escapeHtml(localized(level, "label"))}</strong><p>${escapeHtml(localized(level, "gate"))}</p></div>`;
+      elements.maturityLadder.appendChild(item);
+    }
+  }
+
   elements.basketGrid.replaceChildren();
-  for (const basket of model.retail_baskets) {
+  for (const basket of retail?.baskets || model.retail_baskets) {
     const item = document.createElement("article");
     item.className = "basket-card";
-    item.innerHTML = `<div><span>${escapeHtml(t("retailGradePending"))}</span><h4>${escapeHtml(basket.label)}</h4></div><p>${escapeHtml(basket.normalization)}</p><strong>${escapeHtml(t("basketTarget"))}: ${basket.target_skus}</strong>`;
+    const label = localized(basket, "label") || basket.label;
+    const normalization = localized(basket, "normalization") || basket.normalization;
+    const target = basket.target_slots || basket.target_skus;
+    const observed = basket.observed_skus ?? 0;
+    item.innerHTML = `<div><span>${escapeHtml(t("retailGradePending"))}</span><h4>${escapeHtml(label)}</h4></div><p>${escapeHtml(normalization)}</p>${basket.cohorts ? `<small>${escapeHtml(basket.cohorts.join(" · "))}</small>` : ""}<strong>${escapeHtml(t("basketTarget"))}: ${target} · ${escapeHtml(t("tracked"))}: ${observed}</strong>`;
     elements.basketGrid.appendChild(item);
   }
+
+  elements.retailSourceGrid.replaceChildren();
+  for (const source of retail?.source_options || []) {
+    const item = document.createElement("article");
+    item.className = "retail-source-card";
+    const sourceName = source.url ? `<a href="${safeUrl(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.name)} ↗</a>` : `<strong>${escapeHtml(source.name)}</strong>`;
+    item.innerHTML = `<div>${sourceName}<span>Grade ${escapeHtml(source.grade)}</span></div><p>${escapeHtml(source.geography)} · ${escapeHtml(source.access)}</p><small>${escapeHtml(localized(source, "caveat"))}</small><b>${escapeHtml(source.status.replaceAll("_", " "))}</b>`;
+    elements.retailSourceGrid.appendChild(item);
+  }
+  elements.retailNextAction.textContent = retail ? localized(retail, "next_action") : "";
 
   elements.guardrailGrid.replaceChildren();
   for (const guardrail of model.quality_guardrails) {
@@ -1198,12 +1382,14 @@ async function bootstrap() {
       fetch(`${import.meta.env.BASE_URL}data/supply-chain.json`, { cache: "no-cache" }),
       fetch(`${import.meta.env.BASE_URL}data/hardware-barometer.json`, { cache: "no-cache" }),
       fetch(`${import.meta.env.BASE_URL}data/hardware-history.json`, { cache: "no-cache" }),
+      fetch(`${import.meta.env.BASE_URL}data/investment-programs.json`, { cache: "no-cache" }),
+      fetch(`${import.meta.env.BASE_URL}data/retail-baskets.json`, { cache: "no-cache" }),
     ]);
-    const labels = ["projects", "source-registry", "supply-chain", "hardware-barometer", "hardware-history"];
+    const labels = ["projects", "source-registry", "supply-chain", "hardware-barometer", "hardware-history", "investment-programs", "retail-baskets"];
     responses.forEach((response, index) => {
       if (!response.ok) throw new Error(`${labels[index]} ${response.status}`);
     });
-    const [payload, sourcePayload, supplyPayload, barometerPayload, hardwareHistoryPayload] = await Promise.all(responses.map((response) => response.json()));
+    const [payload, sourcePayload, supplyPayload, barometerPayload, hardwareHistoryPayload, investmentProgramsPayload, retailBasketsPayload] = await Promise.all(responses.map((response) => response.json()));
     state.projects = payload.projects;
     state.snapshotDate = payload.snapshot_date;
     state.sources = sourcePayload.sources;
@@ -1212,9 +1398,12 @@ async function bootstrap() {
     state.supplyChain = supplyPayload;
     state.barometer = barometerPayload;
     state.hardwareHistory = hardwareHistoryPayload;
+    state.investmentPrograms = investmentProgramsPayload;
+    state.retailBaskets = retailBasketsPayload;
     elements.snapshot.textContent = t("snapshotMeta", payload.snapshot_date, state.projects.length);
     populateRegions();
     populateSupplyStages();
+    setView(state.view);
     renderAll();
   } catch (error) {
     elements.snapshot.textContent = t("dataUnavailable");
