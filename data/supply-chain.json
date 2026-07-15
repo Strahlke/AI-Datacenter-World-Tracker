@@ -1,0 +1,351 @@
+{
+  "snapshot_date": "2026-07-15",
+  "version": 1,
+  "scope": "Wesentliche Produzenten und Engpassstufen zwischen AI-Rechenzentrumsnachfrage und Consumer-Hardware. Die Liste ist kuratiert, nicht vollstaendig und enthaelt bewusst keine ungesicherten Marktanteile.",
+  "method": {
+    "unit": "Unternehmen pro Lieferkettenstufe",
+    "inclusion_rule": "Aufnahme, wenn das Unternehmen eine fuer AI-Rechenzentren relevante Kernkomponente, Fertigungsstufe oder physische Infrastruktur bereitstellt und eine offizielle Produkt- oder Investor-Relations-Quelle vorliegt.",
+    "consumer_exposure": {
+      "high": "Direkter Uebertragungskanal auf GPU-, CPU-, DRAM- oder SSD-Angebot und -Preise.",
+      "medium": "Indirekter Engpasskanal ueber Foundry, Packaging, Netzwerk oder Systemintegration.",
+      "low": "Wichtig fuer den Rechenzentrumsausbau, aber nur schwacher direkter Bezug zu Consumer-Komponentenpreisen."
+    },
+    "important_limit": "Unternehmensmeldungen belegen Rolle und Investitionsrichtung, aber nicht automatisch Knappheit, Marktanteil oder einen kausalen Consumer-Preiseffekt. Solche Aussagen benoetigen zusaetzliche Mengen- und Preisdaten."
+  },
+  "stages": [
+    {
+      "id": "accelerator_design",
+      "label_de": "AI-Beschleuniger & Custom Silicon",
+      "label_en": "AI accelerators & custom silicon",
+      "consumer_exposure": "high",
+      "why_it_matters_de": "Produktmix, Wafer- und Speicherkontingente fuer AI-Beschleuniger koennen die Verfuegbarkeit verwandter Consumer-GPUs beeinflussen.",
+      "why_it_matters_en": "Product mix and wafer or memory allocations for AI accelerators can affect availability of related consumer GPUs."
+    },
+    {
+      "id": "foundry",
+      "label_de": "Foundry & Spitzenknoten",
+      "label_en": "Foundry & leading-edge nodes",
+      "consumer_exposure": "high",
+      "why_it_matters_de": "Fuehrende Prozessknoten werden von AI-, Smartphone-, CPU- und GPU-Produkten gemeinsam genutzt.",
+      "why_it_matters_en": "Leading-edge process nodes are shared by AI, smartphone, CPU and GPU products."
+    },
+    {
+      "id": "memory",
+      "label_de": "HBM, DRAM & NAND",
+      "label_en": "HBM, DRAM & NAND",
+      "consumer_exposure": "high",
+      "why_it_matters_de": "Dies ist der direkteste Kanal zu Arbeitsspeicher- und SSD-Preisen; HBM und Serverprodukte konkurrieren teilweise um Prozesse, Wafer und Investitionsbudgets.",
+      "why_it_matters_en": "This is the most direct channel to RAM and SSD prices; HBM and server products partly compete for processes, wafers and investment budgets."
+    },
+    {
+      "id": "advanced_packaging",
+      "label_de": "Advanced Packaging",
+      "label_en": "Advanced packaging",
+      "consumer_exposure": "medium",
+      "why_it_matters_de": "2.5D/3D-Packaging und CoWoS-aehnliche Kapazitaet bestimmen, wie schnell AI-Chips ausgeliefert werden koennen.",
+      "why_it_matters_en": "2.5D/3D packaging and CoWoS-like capacity constrain how quickly AI chips can ship."
+    },
+    {
+      "id": "networking",
+      "label_de": "Netzwerk & Interconnect",
+      "label_en": "Networking & interconnect",
+      "consumer_exposure": "medium",
+      "why_it_matters_de": "Switches, NICs, Optik und Custom ASICs sind fuer grosse Cluster notwendig und koennen benachbarte Halbleiterkapazitaet binden.",
+      "why_it_matters_en": "Switches, NICs, optics and custom ASICs are required for large clusters and can consume adjacent semiconductor capacity."
+    },
+    {
+      "id": "server_odm",
+      "label_de": "Server-ODMs & Systembau",
+      "label_en": "Server ODMs & systems",
+      "consumer_exposure": "low",
+      "why_it_matters_de": "Rack- und Serverauslieferungen zeigen, ob Chipnachfrage tatsaechlich in physische Systeme uebergeht.",
+      "why_it_matters_en": "Rack and server shipments indicate whether chip demand is converting into physical systems."
+    },
+    {
+      "id": "power_cooling",
+      "label_de": "Strom, USV & Kuehlung",
+      "label_en": "Power, UPS & cooling",
+      "consumer_exposure": "low",
+      "why_it_matters_de": "Stromverteilung und Kuehlung begrenzen das Bautempo, sind aber kein direkter Consumer-Hardware-Preistreiber.",
+      "why_it_matters_en": "Power distribution and cooling constrain buildout speed but are not direct consumer hardware price drivers."
+    }
+  ],
+  "producers": [
+    {
+      "id": "nvidia",
+      "name": "NVIDIA",
+      "stage": "accelerator_design",
+      "hq_country": "United States",
+      "role_de": "AI-GPUs, CPU-GPU-Systeme, NVLink, Netzwerk und Referenzsysteme.",
+      "role_en": "AI GPUs, CPU-GPU systems, NVLink, networking and reference systems.",
+      "signals_to_track": ["Data-Center-Umsatz", "Produkt-Ramps", "Lieferzeiten", "Cloud- und ODM-Partnerschaften"],
+      "primary_source_url": "https://investor.nvidia.com/",
+      "evidence_grade": "A",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "amd",
+      "name": "AMD",
+      "stage": "accelerator_design",
+      "hq_country": "United States",
+      "role_de": "Instinct-Beschleuniger, EPYC-CPUs und ROCm-Plattform.",
+      "role_en": "Instinct accelerators, EPYC CPUs and the ROCm platform.",
+      "signals_to_track": ["Data-Center-Umsatz", "Instinct-Ramp", "Foundry- und HBM-Partner", "OEM-Verfuegbarkeit"],
+      "primary_source_url": "https://ir.amd.com/",
+      "evidence_grade": "A",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "broadcom-custom-silicon",
+      "name": "Broadcom",
+      "stage": "accelerator_design",
+      "hq_country": "United States",
+      "role_de": "Custom AI-Beschleuniger und Konnektivitaets-Silizium fuer Hyperscaler.",
+      "role_en": "Custom AI accelerators and connectivity silicon for hyperscalers.",
+      "signals_to_track": ["AI-Umsatz", "Custom-ASIC-Kunden", "Packaging-Bedarf", "Netzwerk-Nachfrage"],
+      "primary_source_url": "https://investors.broadcom.com/",
+      "evidence_grade": "A",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "intel-accelerators",
+      "name": "Intel",
+      "stage": "accelerator_design",
+      "hq_country": "United States",
+      "role_de": "Xeon-CPUs, AI-Beschleuniger und Plattformkomponenten.",
+      "role_en": "Xeon CPUs, AI accelerators and platform components.",
+      "signals_to_track": ["Data-Center-Umsatz", "Produkt-Roadmap", "Kapazitaetsauslastung", "OEM-Auslieferungen"],
+      "primary_source_url": "https://www.intc.com/",
+      "evidence_grade": "A",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "tsmc",
+      "name": "TSMC",
+      "stage": "foundry",
+      "hq_country": "Taiwan",
+      "role_de": "Fuehrende Logikfertigung und CoWoS-Packaging fuer viele AI-, CPU- und GPU-Produkte.",
+      "role_en": "Leading-edge logic manufacturing and CoWoS packaging for many AI, CPU and GPU products.",
+      "signals_to_track": ["HPC-Umsatzmix", "Capex", "N2/N3-Kapazitaet", "CoWoS-Kapazitaet"],
+      "primary_source_url": "https://investor.tsmc.com/english",
+      "evidence_grade": "A",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "samsung-foundry",
+      "name": "Samsung Foundry",
+      "stage": "foundry",
+      "hq_country": "South Korea",
+      "role_de": "Logikfertigung an fortgeschrittenen Prozessknoten.",
+      "role_en": "Logic manufacturing on advanced process nodes.",
+      "signals_to_track": ["Foundry-Capex", "Knoten-Ramps", "Auslastung", "Grosskunden"],
+      "primary_source_url": "https://semiconductor.samsung.com/foundry/",
+      "evidence_grade": "A",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "intel-foundry",
+      "name": "Intel Foundry",
+      "stage": "foundry",
+      "hq_country": "United States",
+      "role_de": "Foundry-Fertigung, Packaging und US/EU-Kapazitaetsausbau.",
+      "role_en": "Foundry manufacturing, packaging and US/EU capacity expansion.",
+      "signals_to_track": ["Foundry-Auftraege", "Capex", "Knoten-Ramps", "Packaging"],
+      "primary_source_url": "https://www.intel.com/content/www/us/en/foundry/overview.html",
+      "evidence_grade": "A",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "sk-hynix",
+      "name": "SK hynix",
+      "stage": "memory",
+      "hq_country": "South Korea",
+      "role_de": "HBM, DRAM, NAND und Enterprise-SSDs.",
+      "role_en": "HBM, DRAM, NAND and enterprise SSDs.",
+      "signals_to_track": ["HBM-Mix", "DRAM-ASP", "Wafer-Kapazitaet", "M15X/Yongin-Ramp"],
+      "primary_source_url": "https://news.skhynix.com/q1-2026-business-results/",
+      "evidence_grade": "A",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "samsung-memory",
+      "name": "Samsung Electronics",
+      "stage": "memory",
+      "hq_country": "South Korea",
+      "role_de": "HBM, DRAM, NAND und Client-/Enterprise-SSDs.",
+      "role_en": "HBM, DRAM, NAND and client or enterprise SSDs.",
+      "signals_to_track": ["Memory-Capex", "HBM-Qualifikation", "DRAM/NAND-Bitwachstum", "ASP"],
+      "primary_source_url": "https://www.samsung.com/global/ir/",
+      "evidence_grade": "A",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "micron",
+      "name": "Micron",
+      "stage": "memory",
+      "hq_country": "United States",
+      "role_de": "HBM, DRAM, NAND und Consumer-/Enterprise-Speicherprodukte.",
+      "role_en": "HBM, DRAM, NAND and consumer or enterprise memory products.",
+      "signals_to_track": ["HBM-Auslieferung", "DRAM/NAND-ASP", "Capex", "Client- und Data-Center-Mix"],
+      "primary_source_url": "https://investors.micron.com/",
+      "evidence_grade": "A",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "tsmc-packaging",
+      "name": "TSMC CoWoS",
+      "stage": "advanced_packaging",
+      "hq_country": "Taiwan",
+      "role_de": "2.5D-Packaging fuer AI-Beschleuniger und HBM.",
+      "role_en": "2.5D packaging for AI accelerators and HBM.",
+      "signals_to_track": ["CoWoS-Kapazitaet", "Capex", "Yield", "Substrat-Verfuegbarkeit"],
+      "primary_source_url": "https://3dfabric.tsmc.com/english/dedicatedFoundry/technology/cowos.htm",
+      "evidence_grade": "A",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "ase",
+      "name": "ASE Technology",
+      "stage": "advanced_packaging",
+      "hq_country": "Taiwan",
+      "role_de": "Outsourced Semiconductor Assembly and Test sowie Advanced Packaging.",
+      "role_en": "Outsourced semiconductor assembly and test plus advanced packaging.",
+      "signals_to_track": ["Advanced-Packaging-Umsatz", "Capex", "Auslastung", "AI-Auftraege"],
+      "primary_source_url": "https://www.aseglobal.com/investors/",
+      "evidence_grade": "A",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "amkor",
+      "name": "Amkor Technology",
+      "stage": "advanced_packaging",
+      "hq_country": "United States",
+      "role_de": "Halbleiter-Packaging und Test mit wachsendem Advanced-Packaging-Angebot.",
+      "role_en": "Semiconductor packaging and test with a growing advanced-packaging portfolio.",
+      "signals_to_track": ["Advanced-Packaging-Capex", "Werk-Ramps", "Auslastung", "Grosskunden"],
+      "primary_source_url": "https://ir.amkor.com/",
+      "evidence_grade": "A",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "broadcom-networking",
+      "name": "Broadcom",
+      "stage": "networking",
+      "hq_country": "United States",
+      "role_de": "Switching-, Routing-, NIC- und Optik-Silizium.",
+      "role_en": "Switching, routing, NIC and optics silicon.",
+      "signals_to_track": ["AI-Networking-Umsatz", "Switch-Generationen", "Optik", "Hyperscaler-Auftraege"],
+      "primary_source_url": "https://investors.broadcom.com/",
+      "evidence_grade": "A",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "marvell",
+      "name": "Marvell",
+      "stage": "networking",
+      "hq_country": "United States",
+      "role_de": "Data-Center-Netzwerk, Optik, DSPs und Custom Silicon.",
+      "role_en": "Data-center networking, optics, DSPs and custom silicon.",
+      "signals_to_track": ["Data-Center-Umsatz", "Optik-Ramp", "Custom-Silicon-Pipeline", "Lieferzeiten"],
+      "primary_source_url": "https://investor.marvell.com/",
+      "evidence_grade": "A",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "arista",
+      "name": "Arista Networks",
+      "stage": "networking",
+      "hq_country": "United States",
+      "role_de": "Ethernet-Switches und Netzwerksoftware fuer Cloud- und AI-Cluster.",
+      "role_en": "Ethernet switches and networking software for cloud and AI clusters.",
+      "signals_to_track": ["Cloud-Titan-Umsatz", "AI-Center-Piloten", "Backlog", "400G/800G-Mix"],
+      "primary_source_url": "https://investors.arista.com/",
+      "evidence_grade": "A",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "quanta",
+      "name": "Quanta Computer",
+      "stage": "server_odm",
+      "hq_country": "Taiwan",
+      "role_de": "Cloud- und AI-Server-ODM ueber QCT.",
+      "role_en": "Cloud and AI server ODM through QCT.",
+      "signals_to_track": ["Server-Umsatz", "Rack-Auslieferung", "Capex", "Komponentenbestand"],
+      "primary_source_url": "https://www.quantatw.com/Quanta/english/investment/financials.aspx",
+      "evidence_grade": "A",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "wiwynn",
+      "name": "Wiwynn",
+      "stage": "server_odm",
+      "hq_country": "Taiwan",
+      "role_de": "Cloud-Infrastruktur und rackskalige AI-Systeme.",
+      "role_en": "Cloud infrastructure and rack-scale AI systems.",
+      "signals_to_track": ["AI-Server-Umsatz", "Rack-Ramps", "Capex", "Kundenkonzentration"],
+      "primary_source_url": "https://www.wiwynn.com/investors/",
+      "evidence_grade": "A",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "inventec",
+      "name": "Inventec",
+      "stage": "server_odm",
+      "hq_country": "Taiwan",
+      "role_de": "Server- und Rechenzentrumssysteme fuer Cloud-Kunden.",
+      "role_en": "Server and data-center systems for cloud customers.",
+      "signals_to_track": ["Server-Umsatz", "AI-Systemmix", "Capex", "Auslieferungen"],
+      "primary_source_url": "https://www.inventec.com/en/investor",
+      "evidence_grade": "A",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "foxconn",
+      "name": "Hon Hai / Foxconn",
+      "stage": "server_odm",
+      "hq_country": "Taiwan",
+      "role_de": "AI-Server, Racks und Systemfertigung.",
+      "role_en": "AI servers, racks and systems manufacturing.",
+      "signals_to_track": ["Cloud-Networking-Umsatz", "AI-Server-Ramp", "Werksausbau", "Kundenprogramme"],
+      "primary_source_url": "https://www.honhai.com/en-us/investor-relations",
+      "evidence_grade": "A",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "vertiv",
+      "name": "Vertiv",
+      "stage": "power_cooling",
+      "hq_country": "United States",
+      "role_de": "Stromversorgung, Waermemanagement und modulare Rechenzentrumsinfrastruktur.",
+      "role_en": "Power, thermal management and modular data-center infrastructure.",
+      "signals_to_track": ["Organic orders", "Backlog", "Liquid-Cooling-Umsatz", "Lieferzeiten"],
+      "primary_source_url": "https://investors.vertiv.com/",
+      "evidence_grade": "A",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "schneider-electric",
+      "name": "Schneider Electric",
+      "stage": "power_cooling",
+      "hq_country": "France",
+      "role_de": "Energieverteilung, USV, Kuehlung und Rechenzentrumsmanagement.",
+      "role_en": "Power distribution, UPS, cooling and data-center management.",
+      "signals_to_track": ["Data-Center-Nachfrage", "Auftragseingang", "Liquid Cooling", "Kapazitaetsausbau"],
+      "primary_source_url": "https://www.se.com/ww/en/about-us/investor-relations/",
+      "evidence_grade": "A",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "eaton",
+      "name": "Eaton",
+      "stage": "power_cooling",
+      "hq_country": "Ireland",
+      "role_de": "Stromverteilung, USV und elektrische Infrastruktur fuer Rechenzentren.",
+      "role_en": "Power distribution, UPS and electrical infrastructure for data centers.",
+      "signals_to_track": ["Data-Center-Auftraege", "Backlog", "Kapazitaetserweiterung", "Lieferzeiten"],
+      "primary_source_url": "https://www.eaton.com/us/en-us/company/investor-relations.html",
+      "evidence_grade": "A",
+      "last_checked": "2026-07-15"
+    }
+  ]
+}

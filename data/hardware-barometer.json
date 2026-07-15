@@ -1,0 +1,212 @@
+{
+  "snapshot_date": "2026-07-15",
+  "version": 1,
+  "name_de": "Consumer Hardwarekosten-Druckindex",
+  "name_en": "Consumer Hardware Cost Pressure Index",
+  "short_name": "CHPI",
+  "status": "building",
+  "score": null,
+  "weighted_coverage": 0.1,
+  "confidence": "insufficient",
+  "summary_de": "Noch kein belastbarer Gesamtwert: Der Rechenzentrums-Nachfrageindikator ist vorhanden, standardisierte Retail-, Verfuegbarkeits- und Upstream-Zeitreihen werden erst aufgebaut.",
+  "summary_en": "No defensible headline score yet: the data-center demand signal exists, while standardized retail, availability and upstream time series are still being built.",
+  "purpose_de": "Misst den Preisdruck, den private Kaeufer bei GPUs, CPUs, Arbeitsspeicher und SSDs in den kommenden Wochen und Monaten erwarten koennen.",
+  "purpose_en": "Measures the price pressure private buyers may face for GPUs, CPUs, memory and SSDs over the coming weeks and months.",
+  "scale": {
+    "minimum": 0,
+    "maximum": 100,
+    "bands": [
+      { "min": 0, "max": 19, "label_de": "Entspannung", "label_en": "Easing" },
+      { "min": 20, "max": 39, "label_de": "Geringer Druck", "label_en": "Low pressure" },
+      { "min": 40, "max": 59, "label_de": "Neutral", "label_en": "Neutral" },
+      { "min": 60, "max": 79, "label_de": "Steigender Preisdruck", "label_en": "Rising price pressure" },
+      { "min": 80, "max": 100, "label_de": "Akuter Preisdruck", "label_en": "Acute price pressure" }
+    ]
+  },
+  "publication_gate": {
+    "minimum_weighted_coverage": 0.7,
+    "minimum_history_weeks": 12,
+    "minimum_skus_per_retail_category": 6,
+    "minimum_independent_retailers": 2,
+    "maximum_weekly_source_age_days": 10,
+    "rule_de": "Unter 70 Prozent gewichteter Datenabdeckung oder vor 12 Wochen Historie wird kein Gesamtwert veroeffentlicht. Jede Retail-Kategorie benoetigt mindestens sechs vergleichbare SKUs und zwei unabhaengige Haendler.",
+    "rule_en": "No headline score is published below 70 percent weighted coverage or before 12 weeks of history. Each retail category needs at least six comparable SKUs and two independent retailers."
+  },
+  "calculation": {
+    "frequency": "weekly",
+    "normalization_de": "Je Reihe: 13-Wochen-Aenderung und aktuelles Niveau werden robust auf eine rollierende 156-Wochen-Perzentilskala von 0 bis 100 abgebildet; Ausreisser werden am 5. und 95. Perzentil winsorisiert.",
+    "normalization_en": "For each series, the 13-week change and current level are mapped robustly to a rolling 156-week percentile scale from 0 to 100; outliers are winsorized at the 5th and 95th percentiles.",
+    "aggregation_de": "Gewichtetes Mittel der verfuegbaren Teilindizes. Fehlende Komponenten werden nicht stillschweigend umverteilt; Abdeckung und Konfidenz bleiben sichtbar.",
+    "aggregation_en": "Weighted mean of available sub-indices. Missing components are not silently reweighted; coverage and confidence remain visible.",
+    "revision_policy_de": "Historische Werte duerfen bei nachtraeglichen Korrekturen revidiert werden; jede Revision wird im Git-Verlauf dokumentiert.",
+    "revision_policy_en": "Historical values may be revised after source corrections; every revision is documented in Git history."
+  },
+  "components": [
+    {
+      "id": "retail_price",
+      "label_de": "Tatsaechliche Endkundenpreise",
+      "label_en": "Actual retail prices",
+      "weight": 0.45,
+      "coverage": 0,
+      "status": "source_gap",
+      "definition_de": "Medianer Strassenpreis vergleichbarer SKU-Koerbe, normiert auf Leistung oder Kapazitaet: GPU 20, DRAM 10, SSD 9 und CPU 6 Prozentpunkte des Gesamtindex.",
+      "definition_en": "Median street price of comparable SKU baskets normalized by performance or capacity: GPU 20, DRAM 10, SSD 9 and CPU 6 percentage points of the total index."
+    },
+    {
+      "id": "retail_availability",
+      "label_de": "Verfuegbarkeit & Lieferzeit",
+      "label_en": "Availability & lead time",
+      "weight": 0.15,
+      "coverage": 0,
+      "status": "source_gap",
+      "definition_de": "Anteil lieferbarer SKUs, Haendlerabdeckung, Lieferzeit und Aufpreis gegen Hersteller-UVP.",
+      "definition_en": "Share of in-stock SKUs, retailer coverage, lead time and premium over manufacturer MSRP."
+    },
+    {
+      "id": "upstream_prices",
+      "label_de": "Upstream-Speicher & Fertigung",
+      "label_en": "Upstream memory & manufacturing",
+      "weight": 0.2,
+      "coverage": 0,
+      "status": "source_design",
+      "definition_de": "DRAM-/NAND-Vertrags- und Spotpreisindikatoren sowie belegte Foundry- und Packaging-Knappheit.",
+      "definition_en": "DRAM and NAND contract or spot-price indicators plus evidenced foundry and packaging tightness."
+    },
+    {
+      "id": "ai_infrastructure_demand",
+      "label_de": "AI-Infrastrukturnachfrage",
+      "label_en": "AI infrastructure demand",
+      "weight": 0.1,
+      "coverage": 1,
+      "status": "tracked",
+      "definition_de": "Neue, im Bau befindliche und realisierte AI-Rechenzentrumsprojekte, gewichtet nach Evidenz, Projektphase und veroeffentlichter Kapazitaet. Dient nur als Fruehindikator, nicht als direkter Preisbeleg.",
+      "definition_en": "New, under-construction and realized AI data-center projects weighted by evidence, stage and disclosed capacity. This is a leading indicator, not direct price evidence."
+    },
+    {
+      "id": "macro_transmission",
+      "label_de": "Wechselkurs, Handel & Produktzyklus",
+      "label_en": "FX, trade & product cycle",
+      "weight": 0.1,
+      "coverage": 0,
+      "status": "source_design",
+      "definition_de": "EUR/USD, Zoelle und Steuern sowie Launch-/End-of-Life-Effekte, damit AI-Nachfrage nicht faelschlich jeden Preissprung erklaert.",
+      "definition_en": "EUR/USD, tariffs and taxes plus launch or end-of-life effects so AI demand is not made to explain every price move."
+    }
+  ],
+  "retail_baskets": [
+    {
+      "id": "gpu",
+      "label": "Consumer GPU",
+      "normalization": "EUR pro festem Benchmark-Punkt und VRAM-Klasse",
+      "target_skus": 12,
+      "series_status": "not_started"
+    },
+    {
+      "id": "dram",
+      "label": "DDR5 DRAM",
+      "normalization": "EUR pro GiB, getrennt nach Geschwindigkeit und Kit-Groesse",
+      "target_skus": 10,
+      "series_status": "not_started"
+    },
+    {
+      "id": "ssd",
+      "label": "NVMe SSD",
+      "normalization": "EUR pro TB, getrennt nach PCIe-Generation und NAND-Klasse",
+      "target_skus": 10,
+      "series_status": "not_started"
+    },
+    {
+      "id": "cpu",
+      "label": "Desktop CPU",
+      "normalization": "EUR pro festem Multi- und Single-Core-Benchmark-Punkt",
+      "target_skus": 8,
+      "series_status": "not_started"
+    }
+  ],
+  "quality_guardrails": [
+    {
+      "id": "product_cycle",
+      "label_de": "Produktzyklen separat markieren",
+      "label_en": "Flag product cycles separately",
+      "rule_de": "Launch- und EOL-Wochen werden markiert und nicht ohne Vergleichsmodell als Knappheit interpretiert.",
+      "rule_en": "Launch and end-of-life weeks are flagged and not interpreted as scarcity without a comparison model."
+    },
+    {
+      "id": "fx_tax",
+      "label_de": "Waehrung und Abgaben kontrollieren",
+      "label_en": "Control for FX and taxes",
+      "rule_de": "Europreise werden mit EUR/USD sowie dokumentierten Zoll- und Mehrwertsteueraenderungen kontrolliert.",
+      "rule_en": "Euro prices are controlled for EUR/USD and documented tariff or VAT changes."
+    },
+    {
+      "id": "performance_normalization",
+      "label_de": "Leistung statt Modellname vergleichen",
+      "label_en": "Compare performance, not model names",
+      "rule_de": "Generationen werden ueber Leistung, Kapazitaet und Ausstattung normalisiert; reine Durchschnittspreise sind unzulaessig.",
+      "rule_en": "Generations are normalized by performance, capacity and features; simple average prices are not allowed."
+    },
+    {
+      "id": "causality",
+      "label_de": "Korrelation nicht als Kausalitaet ausgeben",
+      "label_en": "Do not present correlation as causality",
+      "rule_de": "Der AI-Ausbau ist ein erklaerender Faktor. Aussagen zum Preiseffekt benoetigen zeitliche Vorlaeufe, Kontrollvariablen und robuste Sensitivitaetspruefungen.",
+      "rule_en": "AI buildout is one explanatory factor. Price-effect claims require temporal leads, controls and robust sensitivity checks."
+    }
+  ],
+  "sources": [
+    {
+      "id": "trendforce-memory-2q26",
+      "grade": "B",
+      "publisher": "TrendForce",
+      "title": "AI Server Demand to Drive Memory Contract Price Increases in 2Q26",
+      "url": "https://www.trendforce.com/presscenter/news/20260331-12995.html",
+      "use_for": "Upstream DRAM-, NAND-, Server- und HBM-Preisdruck",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "tsmc-q1-2026",
+      "grade": "A",
+      "publisher": "TSMC",
+      "title": "Q1 2026 earnings call transcript",
+      "url": "https://investor.tsmc.com/schinese/encrypt/files/encrypt_file/reports/2026-04/3cef85204275f94fd111485cfdf4adb3c0263c45/TSMC%201Q26%20Transcript.pdf",
+      "use_for": "Foundry- und CoWoS-Kapazitaet sowie AI-Nachfrage",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "micron-q3-2026",
+      "grade": "A",
+      "publisher": "Micron",
+      "title": "Third quarter fiscal 2026 results",
+      "url": "https://investors.micron.com/news-releases/news-release-details/micron-technology-inc-reports-record-results-third-quarter",
+      "use_for": "HBM-, DRAM-, NAND- und Data-Center-Speichersignale",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "sk-hynix-q1-2026",
+      "grade": "A",
+      "publisher": "SK hynix",
+      "title": "SK hynix Announces 1Q26 Financial Results",
+      "url": "https://news.skhynix.com/q1-2026-business-results/",
+      "use_for": "HBM-, Server-DRAM- und eSSD-Produktmix",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "bls-computer-cpi",
+      "grade": "A",
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "title": "How BLS measures price change for computers and peripherals",
+      "url": "https://www.bls.gov/cpi/factsheets/personal-computers.htm",
+      "use_for": "Qualitaetsbereinigter offizieller Kontrollindex fuer Computerpreise",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "eurostat-hicp",
+      "grade": "A",
+      "publisher": "Eurostat",
+      "title": "Harmonised Index of Consumer Prices information and methodology",
+      "url": "https://ec.europa.eu/eurostat/web/hicp/information-data",
+      "use_for": "Offizieller europaeischer Kontrollindex und Inflationskontext",
+      "last_checked": "2026-07-15"
+    }
+  ]
+}

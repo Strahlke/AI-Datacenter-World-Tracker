@@ -13,11 +13,15 @@ Interaktive Weltkarte grosser, oeffentlich dokumentierter KI-Rechenzentren und A
 - urspruengliches Ziel und nachweislich realisierter Stand
 - Terminlage, Planhistorie und Quellen je Projekt
 - Suche sowie Status- und Regionsfilter
-- ein filterbares Quellenregister mit Prioritaet, Suchrhythmus, Qualitaetsstufe und Verwendungszweck
+- Zoom und Verschieben der Weltkarte per Maus, Touch oder Kartensteuerung
+- eine Quellen- und Methodikansicht mit Abdeckung nach Queue, Pruefrhythmus und Evidenzstufe
+- eine Lieferkettenansicht fuer zentrale Produzenten von Beschleunigern, Foundry, HBM/DRAM/NAND, Packaging, Netzwerk, Servern sowie Strom/Kuehlung
+- einen transparenten Consumer Hardwarekosten-Druckindex (CHPI) mit sichtbarer Datenabdeckung und Publikationsschwelle
+- deutsche und englische Oberflaeche; redaktionelle Projekt- und Quellennotizen bleiben bis zum automatisierten Uebersetzungs-Build deutsch gekennzeichnet
 
 ## Daten und Methodik
 
-Der aktuelle Datenstand liegt in `data/projects.json`. Das verbindliche Rechercheverzeichnis liegt in `data/source-registry.json`; `docs/research-runbook.md` beschreibt die Reihenfolge und Mindestnachweise jedes Refreshs. Fruehere Staende bleiben ueber die Git-Historie nachvollziehbar.
+Der aktuelle Datenstand liegt in `data/projects.json`. Das verbindliche Rechercheverzeichnis liegt in `data/source-registry.json`; `data/supply-chain.json` fuehrt Produzenten und Uebertragungskanaele, `data/hardware-barometer.json` die KPI-Definition, Gewichte, Datenluecken und Publikationsregeln. `docs/research-runbook.md` beschreibt die Reihenfolge und Mindestnachweise jedes Refreshs. Fruehere Staende bleiben ueber die Git-Historie nachvollziehbar.
 
 Quellenrollen:
 
@@ -39,7 +43,15 @@ Statusregeln:
 7. Cloud-Regionen und Aggregatoren dienen nur der Discovery, solange kein projektspezifischer AI- und Standortbeleg vorliegt.
 8. Grade-C-Quellen duerfen keinen Statuswechsel allein ausloesen.
 
-Vor einem Update validiert `node scripts/validate-data.mjs` Projekte, Quellen, IDs, Pflichtfelder, URLs, Statuswerte und die Abdeckung aller Recherchekategorien.
+Barometerregeln:
+
+1. Kein Gesamtwert unter 70 Prozent gewichteter Datenabdeckung oder vor mindestens 12 Wochen Historie.
+2. Jede Retail-Kategorie braucht mindestens sechs vergleichbare SKUs und zwei unabhaengige Haendler.
+3. Preise werden nach Leistung oder Kapazitaet normalisiert; Produktwechsel, EUR/USD, Zoelle und Steuern werden separat kontrolliert.
+4. AI-Rechenzentrumsausbau ist ein Fruehindikator und darf nie allein einen behaupteten Consumer-Preiseffekt begruenden.
+5. Fehlende Komponenten werden nicht stillschweigend umgewichtet; Abdeckung und Konfidenz bleiben sichtbar.
+
+Vor einem Update validiert `node scripts/validate-data.mjs` Projekte, Quellen, Produzenten, Barometergewichte, IDs, Pflichtfelder, URLs, Statuswerte, Publikationsschwelle und die Abdeckung aller Recherchekategorien.
 
 Der Startbestand ist eine kuratierte, quellenbasierte Auswahl und keine vollstaendige Marktinventur.
 
@@ -53,6 +65,8 @@ Lokaler Build:
 mkdir -p app/public/data
 cp data/projects.json app/public/data/projects.json
 cp data/source-registry.json app/public/data/source-registry.json
+cp data/supply-chain.json app/public/data/supply-chain.json
+cp data/hardware-barometer.json app/public/data/hardware-barometer.json
 node scripts/validate-data.mjs
 cd app
 npm ci

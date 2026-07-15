@@ -3,157 +3,285 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Globaler Tracker grosser KI-Rechenzentren und AI-Factory-Programme" />
+    <meta name="description" content="Globaler Tracker grosser KI-Rechenzentren, ihrer Lieferkette und des Preisdrucks auf Consumer-Hardware" />
     <title>AI Datacenter World Tracker</title>
   </head>
   <body>
     <div id="app">
       <header class="topbar">
-        <div>
-          <p class="eyebrow">Global infrastructure monitor</p>
+        <div class="brand-block">
+          <p class="eyebrow" data-i18n="eyebrow">Global infrastructure monitor</p>
           <h1>AI Datacenter World Tracker</h1>
         </div>
         <div class="freshness">
           <span class="health-dot" aria-hidden="true"></span>
           <span id="snapshot-label">Daten werden geladen …</span>
-          <a href="./data/projects.json" target="_blank" rel="noopener noreferrer">Daten</a>
-          <button class="text-button" id="open-sources" type="button">Quellen</button>
+          <a href="./data/projects.json" target="_blank" rel="noopener noreferrer" data-i18n="dataLink">Daten</a>
           <a href="https://github.com/Strahlke/AI-Datacenter-World-Tracker" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <label class="language-control">
+            <span class="sr-only" data-i18n="language">Sprache</span>
+            <select id="language-select" aria-label="Sprache">
+              <option value="de">DE</option>
+              <option value="en">EN</option>
+            </select>
+          </label>
         </div>
       </header>
 
-      <section class="summary-strip" aria-label="Gefilterte Projektkennzahlen">
-        <div class="metric"><span>Projekte</span><strong id="metric-total">—</strong></div>
-        <div class="metric"><span>In Betrieb</span><strong id="metric-live">—</strong></div>
-        <div class="metric"><span>Im Bau / teilweise live</span><strong id="metric-progress">—</strong></div>
-        <div class="metric"><span>Terminrisiko / gestoppt</span><strong id="metric-risk">—</strong></div>
-      </section>
+      <nav class="dashboard-tabs" aria-label="Dashboard-Bereiche">
+        <button type="button" class="dashboard-tab active" data-view="map" aria-pressed="true" data-i18n="tabMap">Weltkarte</button>
+        <button type="button" class="dashboard-tab" data-view="method" aria-pressed="false"><span data-i18n="tabMethod">Quellen & Methodik</span> <span id="source-tab-count"></span></button>
+        <button type="button" class="dashboard-tab" data-view="supply" aria-pressed="false" data-i18n="tabSupply">Lieferkette</button>
+        <button type="button" class="dashboard-tab" data-view="barometer" aria-pressed="false" data-i18n="tabBarometer">Hardware-Barometer</button>
+      </nav>
 
-      <main class="workspace">
-        <aside class="catalog" aria-label="Projektfilter und Projektliste">
-          <div class="filters">
-            <label>
-              <span>Suche</span>
-              <input id="search-input" type="search" placeholder="Projekt, Land, Betreiber" autocomplete="off" />
-            </label>
-            <div class="filter-row">
-              <label>
-                <span>Status</span>
-                <select id="status-filter">
-                  <option value="all">Alle</option>
-                  <option value="planned">Geplant</option>
-                  <option value="under_construction">Im Bau / Deployment</option>
-                  <option value="partly_live">Teilweise live</option>
-                  <option value="operational">In Betrieb</option>
-                  <option value="paused">Pausiert / neu geplant</option>
-                  <option value="cancelled">Abgesagt</option>
-                </select>
-              </label>
-              <label>
-                <span>Region</span>
-                <select id="region-filter"><option value="all">Alle</option></select>
-              </label>
-            </div>
-          </div>
-          <div class="catalog-heading">
-            <strong id="catalog-count">0 Projekte</strong>
-            <span>Auswahl öffnet Details</span>
-          </div>
-          <div class="project-list" id="project-list"></div>
-        </aside>
-
-        <section class="map-panel" aria-label="Weltkarte der KI-Rechenzentrumsprojekte">
-          <svg id="world-map" role="img" aria-labelledby="map-title map-description">
-            <title id="map-title">Weltkarte grosser KI-Rechenzentrumsprojekte</title>
-            <desc id="map-description">Punkte zeigen verifizierte Standorte und Programme. Farbe und Legende kennzeichnen den aktuellen Lebenszyklusstatus.</desc>
-          </svg>
-          <div class="map-tooltip" id="map-tooltip" role="status"></div>
-          <div class="legend" id="legend" aria-label="Statuslegende"></div>
+      <div class="dashboard-view active" id="map-view" data-dashboard-view="map">
+        <section class="summary-strip" aria-label="Gefilterte Projektkennzahlen">
+          <div class="metric"><span data-i18n="projects">Projekte</span><strong id="metric-total">—</strong></div>
+          <div class="metric"><span data-i18n="operational">In Betrieb</span><strong id="metric-live">—</strong></div>
+          <div class="metric"><span data-i18n="inProgress">Im Bau / teilweise live</span><strong id="metric-progress">—</strong></div>
+          <div class="metric"><span data-i18n="atRisk">Terminrisiko / gestoppt</span><strong id="metric-risk">—</strong></div>
         </section>
 
-        <aside class="detail-panel" id="detail-panel" aria-live="polite">
-          <div class="loading-state">Projekt auswählen …</div>
-        </aside>
-      </main>
-
-      <dialog class="source-dialog" id="source-dialog" aria-labelledby="source-dialog-title">
-        <div class="source-dialog-shell">
-          <header class="source-dialog-header">
-            <div>
-              <p class="eyebrow">Research registry</p>
-              <h2 id="source-dialog-title">Quellen und Suchplan</h2>
-              <p id="source-registry-meta">Quellenregister wird geladen …</p>
+        <main class="workspace">
+          <aside class="catalog" aria-label="Projektfilter und Projektliste">
+            <div class="filters">
+              <label>
+                <span data-i18n="search">Suche</span>
+                <input id="search-input" type="search" placeholder="Projekt, Land, Betreiber" data-i18n-placeholder="projectSearch" autocomplete="off" />
+              </label>
+              <div class="filter-row">
+                <label>
+                  <span data-i18n="status">Status</span>
+                  <select id="status-filter">
+                    <option value="all">Alle</option>
+                    <option value="planned">Geplant</option>
+                    <option value="under_construction">Im Bau / Deployment</option>
+                    <option value="partly_live">Teilweise live</option>
+                    <option value="operational">In Betrieb</option>
+                    <option value="paused">Pausiert / neu geplant</option>
+                    <option value="cancelled">Abgesagt</option>
+                  </select>
+                </label>
+                <label>
+                  <span data-i18n="region">Region</span>
+                  <select id="region-filter"><option value="all">Alle</option></select>
+                </label>
+              </div>
             </div>
-            <button class="dialog-close" id="close-sources" type="button" aria-label="Quellenregister schliessen">Schliessen</button>
-          </header>
+            <div class="catalog-heading">
+              <strong id="catalog-count">0 Projekte</strong>
+              <span data-i18n="selectionOpens">Auswahl öffnet Details</span>
+            </div>
+            <div class="project-list" id="project-list"></div>
+          </aside>
 
-          <section class="source-summary" aria-label="Kennzahlen des Quellenregisters">
-            <div><span>Quellen</span><strong id="source-total">—</strong></div>
-            <div><span>Core</span><strong id="source-core">—</strong></div>
-            <div><span>Grade A</span><strong id="source-grade-a">—</strong></div>
-            <div><span>Dynamische Register</span><strong id="source-dynamic">—</strong></div>
+          <section class="map-panel" aria-label="Weltkarte der KI-Rechenzentrumsprojekte">
+            <svg id="world-map" role="img" aria-labelledby="map-title map-description"></svg>
+            <div class="map-tooltip" id="map-tooltip" role="status"></div>
+            <div class="map-controls" aria-label="Kartensteuerung">
+              <button id="zoom-in" type="button" aria-label="Hineinzoomen">+</button>
+              <button id="zoom-out" type="button" aria-label="Herauszoomen">−</button>
+              <button id="zoom-reset" type="button" data-i18n="reset">Reset</button>
+            </div>
+            <div class="map-hint" data-i18n="mapHint">Mausrad oder Pinch zum Zoomen · Ziehen zum Verschieben</div>
+            <div class="legend" id="legend" aria-label="Statuslegende"></div>
           </section>
 
-          <section class="source-method" aria-label="Quellenmethodik">
-            <p><strong>A</strong> Primaerbeleg</p>
-            <p><strong>B</strong> belastbare Sekundaerquelle</p>
-            <p><strong>C</strong> Discovery-Signal, nie allein statusaendernd</p>
-          </section>
+          <aside class="detail-panel" id="detail-panel" aria-live="polite">
+            <div class="loading-state">Projekt auswählen …</div>
+          </aside>
+        </main>
+      </div>
 
+      <section class="dashboard-view research-view" id="method-view" data-dashboard-view="method" hidden>
+        <header class="section-hero">
+          <div>
+            <p class="eyebrow" data-i18n="researchRegistry">Research registry</p>
+            <h2 data-i18n="methodTitle">Quellenabdeckung und Recherchemethodik</h2>
+            <p id="source-registry-meta">Quellenregister wird geladen …</p>
+          </div>
+          <a class="secondary-link" href="./data/source-registry.json" target="_blank" rel="noopener noreferrer" data-i18n="openJson">JSON öffnen</a>
+        </header>
+
+        <section class="analytics-strip" aria-label="Kennzahlen des Quellenregisters">
+          <div><span data-i18n="sources">Quellen</span><strong id="source-total">—</strong></div>
+          <div><span>Core</span><strong id="source-core">—</strong></div>
+          <div><span>Grade A</span><strong id="source-grade-a">—</strong></div>
+          <div><span data-i18n="dynamicRegisters">Dynamische Register</span><strong id="source-dynamic">—</strong></div>
+          <div><span data-i18n="signalTypes">Signaltypen</span><strong id="source-categories">—</strong></div>
+        </section>
+
+        <div class="methodology-grid">
+          <section class="analysis-card">
+            <div class="card-heading">
+              <h3 data-i18n="queueCoverage">Abdeckung nach Recherchequeue</h3>
+              <span data-i18n="sourceCountUnit">Anzahl Quellen</span>
+            </div>
+            <div class="bar-chart" id="source-queue-chart"></div>
+          </section>
+          <section class="analysis-card">
+            <div class="card-heading">
+              <h3 data-i18n="cadenceCoverage">Prüfrhythmus</h3>
+              <span data-i18n="sourceCountUnit">Anzahl Quellen</span>
+            </div>
+            <div class="bar-chart" id="source-cadence-chart"></div>
+          </section>
+          <section class="analysis-card evidence-card">
+            <div class="card-heading">
+              <h3 data-i18n="evidenceLadder">Evidenzleiter</h3>
+              <span data-i18n="statusRule">Statusregel</span>
+            </div>
+            <div class="evidence-ladder" id="evidence-ladder"></div>
+          </section>
+        </div>
+
+        <section class="source-explorer">
           <div class="source-filters">
             <label>
-              <span>Suche</span>
-              <input id="source-search" type="search" placeholder="Quelle, Signal, Region" autocomplete="off" />
+              <span data-i18n="search">Suche</span>
+              <input id="source-search" type="search" placeholder="Quelle, Signal, Region" data-i18n-placeholder="sourceSearch" autocomplete="off" />
             </label>
             <label>
               <span>Queue</span>
               <select id="source-queue">
                 <option value="all">Alle</option>
                 <option value="hard_reference">Harte Referenzdaten</option>
-                <option value="early_signal">Fruehindikatoren</option>
+                <option value="early_signal">Frühindikatoren</option>
                 <option value="cross_check">Validierung</option>
               </select>
             </label>
             <label>
-              <span>Rhythmus</span>
+              <span data-i18n="cadence">Rhythmus</span>
               <select id="source-cadence">
                 <option value="all">Alle</option>
-                <option value="daily">Taeglich</option>
-                <option value="weekly">Woechentlich</option>
+                <option value="daily">Täglich</option>
+                <option value="weekly">Wöchentlich</option>
                 <option value="monthly">Monatlich</option>
                 <option value="quarterly">Quartalsweise</option>
               </select>
             </label>
             <label>
-              <span>Prioritaet</span>
+              <span data-i18n="priority">Priorität</span>
               <select id="source-priority">
                 <option value="all">Alle</option>
                 <option value="core">Core</option>
-                <option value="supporting">Ergaenzend</option>
+                <option value="supporting">Ergänzend</option>
                 <option value="watchlist">Watchlist</option>
               </select>
             </label>
           </div>
-
           <div class="source-list-heading">
             <strong id="source-count">0 Quellen</strong>
-            <a href="./data/source-registry.json" target="_blank" rel="noopener noreferrer">JSON oeffnen</a>
+            <span data-i18n="filterHint">Filter wirken nur auf die Tabelle</span>
           </div>
           <div class="source-table-wrap">
             <table class="source-table">
               <thead>
                 <tr>
-                  <th scope="col">Quelle</th>
-                  <th scope="col">Rolle</th>
-                  <th scope="col">Rhythmus</th>
-                  <th scope="col">Nutzen und Grenzen</th>
+                  <th scope="col" data-i18n="source">Quelle</th>
+                  <th scope="col" data-i18n="role">Rolle</th>
+                  <th scope="col" data-i18n="cadence">Rhythmus</th>
+                  <th scope="col" data-i18n="useLimits">Nutzen und Grenzen</th>
                 </tr>
               </thead>
               <tbody id="source-list"></tbody>
             </table>
           </div>
+        </section>
+      </section>
+
+      <section class="dashboard-view supply-view" id="supply-view" data-dashboard-view="supply" hidden>
+        <header class="section-hero">
+          <div>
+            <p class="eyebrow" data-i18n="supplyEyebrow">AI supply-chain monitor</p>
+            <h2 data-i18n="supplyTitle">Produzenten und mögliche Consumer-Preiskanäle</h2>
+            <p data-i18n="supplyIntro">Kuratiert nach Lieferkettenstufe. Rollen sind belegt; Marktanteile und Preiseffekte werden erst mit separaten Mengen- und Preisdaten bewertet.</p>
+          </div>
+          <a class="secondary-link" href="./data/supply-chain.json" target="_blank" rel="noopener noreferrer" data-i18n="openJson">JSON öffnen</a>
+        </header>
+
+        <section class="analytics-strip supply-strip">
+          <div><span data-i18n="trackedProducers">Produzenten</span><strong id="producer-total">—</strong></div>
+          <div><span data-i18n="chainStages">Lieferkettenstufen</span><strong id="stage-total">—</strong></div>
+          <div><span data-i18n="highExposure">Direkter Consumer-Kanal</span><strong id="high-exposure-total">—</strong></div>
+          <div><span data-i18n="primaryEvidence">Primärquellen</span><strong id="producer-grade-a">—</strong></div>
+        </section>
+
+        <div class="supply-flow" id="supply-flow" aria-label="Lieferkette vom Chipdesign bis zum Rechenzentrum"></div>
+
+        <div class="supply-toolbar">
+          <label>
+            <span data-i18n="stage">Stufe</span>
+            <select id="supply-stage-filter"><option value="all">Alle</option></select>
+          </label>
+          <p data-i18n="supplyCaveat">Mehrfachnennungen sind beabsichtigt, wenn ein Unternehmen in mehreren Stufen aktiv ist.</p>
         </div>
-      </dialog>
+        <div class="stage-grid" id="stage-grid"></div>
+      </section>
+
+      <section class="dashboard-view barometer-view" id="barometer-view" data-dashboard-view="barometer" hidden>
+        <header class="section-hero">
+          <div>
+            <p class="eyebrow" data-i18n="barometerEyebrow">Consumer impact model</p>
+            <h2 id="barometer-name">Consumer Hardwarekosten-Druckindex</h2>
+            <p id="barometer-purpose"></p>
+          </div>
+          <a class="secondary-link" href="./data/hardware-barometer.json" target="_blank" rel="noopener noreferrer" data-i18n="openMethod">Methodik-JSON</a>
+        </header>
+
+        <section class="barometer-hero">
+          <div class="score-placeholder">
+            <span id="barometer-status">In Aufbau</span>
+            <strong id="barometer-score">—</strong>
+            <small data-i18n="scoreRange">von 100</small>
+          </div>
+          <div class="coverage-panel">
+            <div class="coverage-heading"><strong data-i18n="dataCoverage">Datenabdeckung</strong><span id="coverage-value">—</span></div>
+            <div class="coverage-track" aria-hidden="true"><span id="coverage-bar"></span></div>
+            <p id="barometer-summary"></p>
+            <p class="publication-rule" id="publication-rule"></p>
+          </div>
+        </section>
+
+        <div class="barometer-grid">
+          <section class="analysis-card weight-card">
+            <div class="card-heading">
+              <h3 data-i18n="modelWeights">Modellgewichte & Abdeckung</h3>
+              <span data-i18n="weightPercent">Gewicht in Prozent</span>
+            </div>
+            <div class="component-chart" id="component-chart"></div>
+          </section>
+          <section class="analysis-card scale-card">
+            <div class="card-heading">
+              <h3 data-i18n="consumerReading">Lesart für Endkunden</h3>
+              <span>0–100</span>
+            </div>
+            <div class="score-scale" id="score-scale"></div>
+          </section>
+        </div>
+
+        <section class="basket-section">
+          <div class="section-subheading">
+            <div><h3 data-i18n="retailBaskets">Geplante Retail-Warenkörbe</h3><p data-i18n="basketIntro">Stabile SKU-Körbe statt einzelner Tagesangebote.</p></div>
+          </div>
+          <div class="basket-grid" id="basket-grid"></div>
+        </section>
+
+        <section class="guardrail-section">
+          <div class="section-subheading">
+            <div><h3 data-i18n="guardrails">Qualitätsregeln</h3><p data-i18n="guardrailIntro">Damit AI-Ausbau nicht fälschlich jeden Preissprung erklärt.</p></div>
+          </div>
+          <div class="guardrail-grid" id="guardrail-grid"></div>
+        </section>
+
+        <section class="model-sources">
+          <div class="section-subheading">
+            <div><h3 data-i18n="modelSources">Startquellen des Modells</h3><p data-i18n="modelSourcesIntro">Primärquellen für Kapazität, Sekundärquellen für Preise, offizielle Statistik als Kontrollreihe.</p></div>
+          </div>
+          <div class="model-source-list" id="model-source-list"></div>
+        </section>
+      </section>
     </div>
     <script type="module" src="/src/main.js"></script>
   </body>
