@@ -5,12 +5,16 @@ const registryFile = new URL("../data/source-registry.json", import.meta.url);
 const supplyChainFile = new URL("../data/supply-chain.json", import.meta.url);
 const barometerFile = new URL("../data/hardware-barometer.json", import.meta.url);
 const historyFile = new URL("../data/hardware-history.json", import.meta.url);
+const investmentProgramsFile = new URL("../data/investment-programs.json", import.meta.url);
+const retailBasketsFile = new URL("../data/retail-baskets.json", import.meta.url);
 
 const projectsPayload = JSON.parse(await readFile(projectFile, "utf8"));
 const registryPayload = JSON.parse(await readFile(registryFile, "utf8"));
 const supplyChainPayload = JSON.parse(await readFile(supplyChainFile, "utf8"));
 const barometerPayload = JSON.parse(await readFile(barometerFile, "utf8"));
 const historyPayload = JSON.parse(await readFile(historyFile, "utf8"));
+const investmentProgramsPayload = JSON.parse(await readFile(investmentProgramsFile, "utf8"));
+const retailBasketsPayload = JSON.parse(await readFile(retailBasketsFile, "utf8"));
 
 const errors = [];
 const isoDate = /^\d{4}-\d{2}-\d{2}$/;
@@ -32,6 +36,10 @@ const allowedComponentStatus = new Set(["tracked", "source_gap", "source_design"
 const allowedSeriesEvidence = new Set(["direct", "direct_proxy", "industry_proxy"]);
 const allowedMonthlyObservationStatus = new Set(["direct_observation", "preliminary", "unavailable", "not_released"]);
 const allowedQuarterlyObservationStatus = new Set(["reported_actual", "forecast_midpoint", "mixed_actual_forecast"]);
+const allowedRecordTypes = new Set(["facility", "multi_site_cluster", "national_program", "ai_factory_compute_deployment"]);
+const allowedImpactBands = new Set(["unknown", "local", "regional", "strategic", "mega"]);
+const allowedInvestmentValueTypes = new Set([null, "exact", "approximate", "minimum", "ceiling"]);
+const allowedRetailLevels = new Set(["L0", "L1", "L2", "L3", "L4"]);
 
 function requireValue(condition, message) {
   if (!condition) errors.push(message);
@@ -69,11 +77,35 @@ for (const project of projectsPayload.projects || []) {
   requireValue(allowedRealizations.has(project.realization), `${prefix}: ungueltige realization`);
   requireValue(allowedSchedules.has(project.schedule), `${prefix}: ungueltiger schedule`);
   requireValue(allowedConfidence.has(project.confidence), `${prefix}: ungueltige confidence`);
+  requireValue(allowedRecordTypes.has(project.record_type), `${prefix}: ungueltiger record_type`);
   requireValue(Number.isFinite(project.lat) && project.lat >= -90 && project.lat <= 90, `${prefix}: lat ungueltig`);
   requireValue(Number.isFinite(project.lon) && project.lon >= -180 && project.lon <= 180, `${prefix}: lon ungueltig`);
   requireValue(isoDate.test(project.last_checked || ""), `${prefix}: last_checked muss YYYY-MM-DD sein`);
   requireValue(Array.isArray(project.history) && project.history.length > 0, `${prefix}: history fehlt`);
   requireValue(Array.isArray(project.sources) && project.sources.length > 0, `${prefix}: sources fehlt`);
+  const impact = project.impact;
+  requireValue(impact && typeof impact === "object", `${prefix}: impact fehlt`);
+  requireValue([impact?.power_mw, impact?.investment_usd_bn, impact?.accelerator_count].every((value) => value === null || (Number.isFinite(value) && value > 0)), `${prefix}: impact inputs muessen positive Zahlen oder null sein`);
+  requireValue(allowedInvestmentValueTypes.has(impact?.investment_value_type ?? null), `${prefix}: investment_value_type ungueltig`);
+  requireValue(typeof impact?.investment_countable === "boolean", `${prefix}: investment_countable fehlt`);
+  requireValue(impact?.method_version === "1.0", `${prefix}: impact method_version ungueltig`);
+  requireValue(allowedImpactBands.has(impact?.band), `${prefix}: impact band ungueltig`);
+  requireValue(Number.isFinite(impact?.metric_coverage) && impact.metric_coverage >= 0 && impact.metric_coverage <= 1, `${prefix}: impact metric_coverage ungueltig`);
+  const impactMetrics = [
+    ["power", impact?.power_mw, 0.45, 5000],
+    ["investment", impact?.investment_usd_bn, 0.35, 50],
+    ["accelerators", impact?.accelerator_count, 0.20, 1000000],
+  ].filter(([, value]) => Number.isFinite(value) && value > 0);
+  const impactWeight = impactMetrics.reduce((sum, item) => sum + item[2], 0);
+  const impactScore = impactMetrics.length ? Math.round(impactMetrics.reduce((sum, [id, value, weight, cap]) => {
+    const componentScore = Math.round(Math.min(100, 100 * Math.log1p(value) / Math.log1p(cap)) * 10) / 10;
+    requireValue(approximatelyEqual(impact?.component_scores?.[id], componentScore, 0.01), `${prefix}: impact component ${id} stimmt nicht`);
+    return sum + componentScore * weight;
+  }, 0) / impactWeight) : null;
+  requireValue(approximatelyEqual(impact?.metric_coverage, Math.round(impactWeight * 100) / 100, 0.001), `${prefix}: impact metric_coverage stimmt nicht`);
+  requireValue(impactScore === null ? impact?.score === null : impact?.score === impactScore, `${prefix}: impact score stimmt nicht`);
+  const expectedBand = impactScore === null ? "unknown" : impactScore >= 75 ? "mega" : impactScore >= 55 ? "strategic" : impactScore >= 35 ? "regional" : "local";
+  requireValue(impact?.band === expectedBand, `${prefix}: impact band stimmt nicht`);
   for (const source of project.sources || []) {
     requireValue(allowedGrades.has(source.grade), `${prefix}: Quellen-Grade ${source.grade} ungueltig`);
     requireValue(httpsUrl.test(source.url || ""), `${prefix}: Quellen-URL muss HTTPS sein`);
@@ -180,6 +212,47 @@ for (const source of barometerPayload.sources || []) {
   requireValue(httpsUrl.test(source.url || ""), `${prefix}: URL muss HTTPS sein`);
   requireValue(isoDate.test(source.last_checked || ""), `${prefix}: last_checked muss YYYY-MM-DD sein`);
 }
+
+requireValue(isoDate.test(investmentProgramsPayload.snapshot_date || ""), "investment-programs: snapshot_date muss YYYY-MM-DD sein");
+requireValue(Array.isArray(investmentProgramsPayload.programs) && investmentProgramsPayload.programs.length > 0, "investment-programs: programs fehlt");
+checkUnique(investmentProgramsPayload.programs || [], "investment-programs");
+const projectIds = new Set((projectsPayload.projects || []).map((project) => project.id));
+for (const program of investmentProgramsPayload.programs || []) {
+  const prefix = `investment-program ${program.id || "<ohne id>"}`;
+  requireValue(typeof program.name === "string" && program.name.length > 0, `${prefix}: name fehlt`);
+  requireValue(Number.isFinite(program.commitment?.value_bn) && program.commitment.value_bn > 0, `${prefix}: commitment value_bn ungueltig`);
+  requireValue(typeof program.commitment?.currency === "string" && program.commitment.currency.length === 3, `${prefix}: commitment currency ungueltig`);
+  requireValue(program.countable_with_sites === false, `${prefix}: Programme duerfen nicht mit Standorten addiert werden`);
+  requireValue(typeof program.double_count_group === "string" && program.double_count_group.length > 0, `${prefix}: double_count_group fehlt`);
+  requireValue(Array.isArray(program.includes_project_ids), `${prefix}: includes_project_ids fehlt`);
+  for (const id of program.includes_project_ids || []) requireValue(projectIds.has(id), `${prefix}: unbekanntes Projekt ${id}`);
+  requireValue(httpsUrl.test(program.source?.url || ""), `${prefix}: source URL muss HTTPS sein`);
+}
+
+requireValue(isoDate.test(retailBasketsPayload.snapshot_date || ""), "retail-baskets: snapshot_date muss YYYY-MM-DD sein");
+requireValue(allowedRetailLevels.has(retailBasketsPayload.current_level), "retail-baskets: current_level ungueltig");
+requireValue(Number.isFinite(retailBasketsPayload.retail_readiness) && retailBasketsPayload.retail_readiness >= 0 && retailBasketsPayload.retail_readiness <= 1, "retail-baskets: retail_readiness ungueltig");
+requireValue(Array.isArray(retailBasketsPayload.maturity_levels) && retailBasketsPayload.maturity_levels.length === 5, "retail-baskets: exakt fuenf Reifegrade erforderlich");
+checkUnique(retailBasketsPayload.maturity_levels || [], "retail maturity levels");
+requireValue((retailBasketsPayload.maturity_levels || []).some((level) => level.id === retailBasketsPayload.current_level && level.met === true), "retail-baskets: aktueller Reifegrad muss erfuellt sein");
+requireValue(Array.isArray(retailBasketsPayload.baskets) && retailBasketsPayload.baskets.length >= 4, "retail-baskets: mindestens vier Warenkoerbe erforderlich");
+checkUnique(retailBasketsPayload.baskets || [], "retail baskets");
+for (const basket of retailBasketsPayload.baskets || []) {
+  const prefix = `retail basket ${basket.id || "<ohne id>"}`;
+  requireValue(Number.isInteger(basket.target_slots) && basket.target_slots >= 6, `${prefix}: target_slots ungueltig`);
+  requireValue(Number.isInteger(basket.minimum_comparable_skus) && basket.minimum_comparable_skus >= 6, `${prefix}: minimum_comparable_skus ungueltig`);
+  requireValue(Array.isArray(basket.cohorts) && basket.cohorts.length > 0, `${prefix}: cohorts fehlt`);
+  requireValue(Number.isInteger(basket.observed_skus) && basket.observed_skus >= 0, `${prefix}: observed_skus ungueltig`);
+  requireValue(Number.isInteger(basket.active_retailers) && basket.active_retailers >= 0, `${prefix}: active_retailers ungueltig`);
+}
+requireValue(Array.isArray(retailBasketsPayload.source_options) && retailBasketsPayload.source_options.length >= 3, "retail-baskets: source_options fehlen");
+checkUnique(retailBasketsPayload.source_options || [], "retail source options");
+for (const option of retailBasketsPayload.source_options || []) {
+  requireValue(option.url === null || httpsUrl.test(option.url || ""), `retail source ${option.id}: URL muss HTTPS oder null sein`);
+}
+requireValue(Array.isArray(retailBasketsPayload.required_observation_fields) && retailBasketsPayload.required_observation_fields.length >= 10, "retail-baskets: Beobachtungsschema unvollstaendig");
+requireValue(barometerPayload.retail_model?.file === "retail-baskets.json", "barometer: retail_model file fehlt");
+requireValue(barometerPayload.retail_model?.current_level === retailBasketsPayload.current_level, "barometer: retail level stimmt nicht mit retail-baskets ueberein");
 
 requireValue(isoDate.test(historyPayload.snapshot_date || ""), "history: snapshot_date muss YYYY-MM-DD sein");
 requireValue(isoMonth.test(historyPayload.period_start || ""), "history: period_start muss YYYY-MM sein");
