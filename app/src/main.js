@@ -487,6 +487,7 @@ function applyStaticTranslations() {
   document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
     element.placeholder = t(element.dataset.i18nPlaceholder);
   });
+  elements.language.setAttribute("aria-label", t("language"));
   elements.zoomIn.setAttribute("aria-label", state.lang === "de" ? "Hineinzoomen" : "Zoom in");
   elements.zoomOut.setAttribute("aria-label", state.lang === "de" ? "Herauszoomen" : "Zoom out");
   elements.zoomReset.setAttribute("aria-label", state.lang === "de" ? "Karte zurücksetzen" : "Reset map");
