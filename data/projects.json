@@ -1,7 +1,179 @@
 {
-  "snapshot_date": "2026-07-14",
-  "scope": "Verifizierter Startbestand grosser, oeffentlich dokumentierter KI-Rechenzentren und AI-Factory-Programme. Nicht vollstaendig; Colocation-Standorte ohne klaren KI-Bezug sind ausgeschlossen.",
-  "method": "Status nur nach oeffentlich belegtem physischem Meilenstein. 'On track' erfordert ein publiziertes Zieldatum und einen aktuellen, vergleichbaren Fortschrittsnachweis.",
+  "snapshot_date": "2026-07-15",
+  "scope": "Globaler, quellenbelegter Bestand grosser AI-Rechenzentren, Campusprogramme und klar gekennzeichneter AI-Compute-Deployments. Keine Vollerhebung; Programme und einzelne Standorte werden nicht addiert.",
+  "method": {
+    "0": "S",
+    "1": "t",
+    "2": "a",
+    "3": "t",
+    "4": "u",
+    "5": "s",
+    "6": " ",
+    "7": "n",
+    "8": "u",
+    "9": "r",
+    "10": " ",
+    "11": "n",
+    "12": "a",
+    "13": "c",
+    "14": "h",
+    "15": " ",
+    "16": "o",
+    "17": "e",
+    "18": "f",
+    "19": "f",
+    "20": "e",
+    "21": "n",
+    "22": "t",
+    "23": "l",
+    "24": "i",
+    "25": "c",
+    "26": "h",
+    "27": " ",
+    "28": "b",
+    "29": "e",
+    "30": "l",
+    "31": "e",
+    "32": "g",
+    "33": "t",
+    "34": "e",
+    "35": "m",
+    "36": " ",
+    "37": "p",
+    "38": "h",
+    "39": "y",
+    "40": "s",
+    "41": "i",
+    "42": "s",
+    "43": "c",
+    "44": "h",
+    "45": "e",
+    "46": "m",
+    "47": " ",
+    "48": "M",
+    "49": "e",
+    "50": "i",
+    "51": "l",
+    "52": "e",
+    "53": "n",
+    "54": "s",
+    "55": "t",
+    "56": "e",
+    "57": "i",
+    "58": "n",
+    "59": ".",
+    "60": " ",
+    "61": "'",
+    "62": "O",
+    "63": "n",
+    "64": " ",
+    "65": "t",
+    "66": "r",
+    "67": "a",
+    "68": "c",
+    "69": "k",
+    "70": "'",
+    "71": " ",
+    "72": "e",
+    "73": "r",
+    "74": "f",
+    "75": "o",
+    "76": "r",
+    "77": "d",
+    "78": "e",
+    "79": "r",
+    "80": "t",
+    "81": " ",
+    "82": "e",
+    "83": "i",
+    "84": "n",
+    "85": " ",
+    "86": "p",
+    "87": "u",
+    "88": "b",
+    "89": "l",
+    "90": "i",
+    "91": "z",
+    "92": "i",
+    "93": "e",
+    "94": "r",
+    "95": "t",
+    "96": "e",
+    "97": "s",
+    "98": " ",
+    "99": "Z",
+    "100": "i",
+    "101": "e",
+    "102": "l",
+    "103": "d",
+    "104": "a",
+    "105": "t",
+    "106": "u",
+    "107": "m",
+    "108": " ",
+    "109": "u",
+    "110": "n",
+    "111": "d",
+    "112": " ",
+    "113": "e",
+    "114": "i",
+    "115": "n",
+    "116": "e",
+    "117": "n",
+    "118": " ",
+    "119": "a",
+    "120": "k",
+    "121": "t",
+    "122": "u",
+    "123": "e",
+    "124": "l",
+    "125": "l",
+    "126": "e",
+    "127": "n",
+    "128": ",",
+    "129": " ",
+    "130": "v",
+    "131": "e",
+    "132": "r",
+    "133": "g",
+    "134": "l",
+    "135": "e",
+    "136": "i",
+    "137": "c",
+    "138": "h",
+    "139": "b",
+    "140": "a",
+    "141": "r",
+    "142": "e",
+    "143": "n",
+    "144": " ",
+    "145": "F",
+    "146": "o",
+    "147": "r",
+    "148": "t",
+    "149": "s",
+    "150": "c",
+    "151": "h",
+    "152": "r",
+    "153": "i",
+    "154": "t",
+    "155": "t",
+    "156": "s",
+    "157": "n",
+    "158": "a",
+    "159": "c",
+    "160": "h",
+    "161": "w",
+    "162": "e",
+    "163": "i",
+    "164": "s",
+    "165": ".",
+    "impact_method_version": "1.0",
+    "impact_method_de": "Markerskalierung = verfuegbarkeitsgewichteter logarithmischer Score aus dokumentierter IT-/Campusleistung (45 %), projektbezogener Investition (35 %) und Beschleunigerzahl (20 %). Fehlende Kennzahlen werden nicht geschaetzt; Gewichte werden nur ueber verfuegbare Komponenten normiert.",
+    "impact_method_en": "Marker size is an availability-weighted logarithmic score using documented IT/campus power (45%), project-attributable investment (35%) and accelerator count (20%). Missing metrics are not estimated; weights are renormalized over available components only.",
+    "aggregation_guardrail_de": "Standortinvestitionen, Servicevertraege, Unternehmens-CapEx und Dachprogramme bleiben getrennte Ebenen. Dachprogramme werden nie mit ihren Standorten summiert.",
+    "aggregation_guardrail_en": "Site investment, service contracts, company capex and umbrella programmes remain separate layers. Umbrella programmes are never summed with their sites."
+  },
   "projects": [
     {
       "id": "aws-rainier-indiana",
@@ -27,14 +199,53 @@
       "latest_update": "AWS bezeichnet Rainier als operativen KI-Supercomputer; Anthropic trainiert und bedient Claude darauf.",
       "last_checked": "2026-07-14",
       "history": [
-        {"date": "2024", "status": "planned", "text": "Cluster mit mehreren hunderttausend Trainium2-Chips angekuendigt."},
-        {"date": "2025-11", "status": "operational", "text": "Nahezu 500.000 Trainium2-Chips aktiviert; Anthropic-Workloads laufen."},
-        {"date": "2026-07", "status": "operational", "text": "AWS-Kundenseite nennt nahezu eine Million Trainium2-Chips fuer Training und Serving."}
+        {
+          "date": "2024",
+          "status": "planned",
+          "text": "Cluster mit mehreren hunderttausend Trainium2-Chips angekuendigt."
+        },
+        {
+          "date": "2025-11",
+          "status": "operational",
+          "text": "Nahezu 500.000 Trainium2-Chips aktiviert; Anthropic-Workloads laufen."
+        },
+        {
+          "date": "2026-07",
+          "status": "operational",
+          "text": "AWS-Kundenseite nennt nahezu eine Million Trainium2-Chips fuer Training und Serving."
+        }
       ],
       "sources": [
-        {"date": "2026-07-14", "grade": "A", "publisher": "AWS", "title": "AWS Trainium customers", "url": "https://aws.amazon.com/ai/machine-learning/trainium/customers/"},
-        {"date": "2025-11-03", "grade": "A", "publisher": "AWS", "title": "Project Rainier online", "url": "https://aws.amazon.com/es/blogs/aws-spanish/aws-resumen-semanal-proyecto-rainier-en-linea-amazon-nova-amazon-bedrock-y-mas-3-de-noviembre-de-2025/"}
-      ]
+        {
+          "date": "2026-07-14",
+          "grade": "A",
+          "publisher": "AWS",
+          "title": "AWS Trainium customers",
+          "url": "https://aws.amazon.com/ai/machine-learning/trainium/customers/"
+        },
+        {
+          "date": "2025-11-03",
+          "grade": "A",
+          "publisher": "AWS",
+          "title": "Project Rainier online",
+          "url": "https://aws.amazon.com/es/blogs/aws-spanish/aws-resumen-semanal-proyecto-rainier-en-linea-amazon-nova-amazon-bedrock-y-mas-3-de-noviembre-de-2025/"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": 1000000,
+        "component_scores": {
+          "accelerators": 100
+        },
+        "score": 100,
+        "band": "mega",
+        "metric_coverage": 0.2,
+        "method_version": "1.0"
+      }
     },
     {
       "id": "microsoft-fairwater-wisconsin",
@@ -60,14 +271,53 @@
       "latest_update": "Microsoft bestaetigt die Inbetriebnahme der Anlagen von Fairwater 1 im April 2026.",
       "last_checked": "2026-07-14",
       "history": [
-        {"date": "2024", "status": "planned", "text": "AI-Datacenter-Campus in Mount Pleasant angekuendigt."},
-        {"date": "2025-09", "status": "under_construction", "text": "Fairwater als neue AI-Factory vorgestellt."},
-        {"date": "2026-04", "status": "operational", "text": "Anlagen in Fairwater 1 wurden in Betrieb genommen."}
+        {
+          "date": "2024",
+          "status": "planned",
+          "text": "AI-Datacenter-Campus in Mount Pleasant angekuendigt."
+        },
+        {
+          "date": "2025-09",
+          "status": "under_construction",
+          "text": "Fairwater als neue AI-Factory vorgestellt."
+        },
+        {
+          "date": "2026-04",
+          "status": "operational",
+          "text": "Anlagen in Fairwater 1 wurden in Betrieb genommen."
+        }
       ],
       "sources": [
-        {"date": "2026-06-18", "grade": "A", "publisher": "Microsoft", "title": "Update zum Rechenzentrum Mount Pleasant", "url": "https://local.microsoft.com/de/blog/testing-underway-to-understand-noise-at-our-mount-pleasant-datacenter/"},
-        {"date": "2025-09-18", "grade": "A", "publisher": "Microsoft", "title": "Inside the world's most powerful AI datacenter", "url": "https://blogs.microsoft.com/blog/2025/09/18/inside-the-worlds-most-powerful-ai-datacenter/"}
-      ]
+        {
+          "date": "2026-06-18",
+          "grade": "A",
+          "publisher": "Microsoft",
+          "title": "Update zum Rechenzentrum Mount Pleasant",
+          "url": "https://local.microsoft.com/de/blog/testing-underway-to-understand-noise-at-our-mount-pleasant-datacenter/"
+        },
+        {
+          "date": "2025-09-18",
+          "grade": "A",
+          "publisher": "Microsoft",
+          "title": "Inside the world's most powerful AI datacenter",
+          "url": "https://blogs.microsoft.com/blog/2025/09/18/inside-the-worlds-most-powerful-ai-datacenter/"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": 2000,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 89.2
+        },
+        "score": 89,
+        "band": "mega",
+        "metric_coverage": 0.45,
+        "method_version": "1.0"
+      }
     },
     {
       "id": "meta-hyperion-louisiana",
@@ -93,14 +343,54 @@
       "latest_update": "Bau laeuft; Meta erhoehte den oeffentlichen Ausbauplan auf 5 GW und mehr als 50 Mrd. USD.",
       "last_checked": "2026-07-14",
       "history": [
-        {"date": "2024-12", "status": "under_construction", "text": "Baubeginn fuer den Hyperion-Campus."},
-        {"date": "2025-10", "status": "under_construction", "text": "JV mit Blue Owl fuer rund 27 Mrd. USD Entwicklungskosten."},
-        {"date": "2026-07", "status": "under_construction", "text": "Ausbauziel auf 5 GW und >50 Mrd. USD erweitert."}
+        {
+          "date": "2024-12",
+          "status": "under_construction",
+          "text": "Baubeginn fuer den Hyperion-Campus."
+        },
+        {
+          "date": "2025-10",
+          "status": "under_construction",
+          "text": "JV mit Blue Owl fuer rund 27 Mrd. USD Entwicklungskosten."
+        },
+        {
+          "date": "2026-07",
+          "status": "under_construction",
+          "text": "Ausbauziel auf 5 GW und >50 Mrd. USD erweitert."
+        }
       ],
       "sources": [
-        {"date": "2026-07-13", "grade": "A", "publisher": "Meta", "title": "Meta expands Louisiana data center", "url": "https://about.fb.com/news/2026/07/teachers-local-businesses-win-as-meta-expands-louisiana-data-center/"},
-        {"date": "2025-10-21", "grade": "A", "publisher": "Meta", "title": "Meta and Blue Owl Hyperion joint venture", "url": "https://about.fb.com/news/2025/10/meta-blue-owl-capital-develop-hyperion-data-center/"}
-      ]
+        {
+          "date": "2026-07-13",
+          "grade": "A",
+          "publisher": "Meta",
+          "title": "Meta expands Louisiana data center",
+          "url": "https://about.fb.com/news/2026/07/teachers-local-businesses-win-as-meta-expands-louisiana-data-center/"
+        },
+        {
+          "date": "2025-10-21",
+          "grade": "A",
+          "publisher": "Meta",
+          "title": "Meta and Blue Owl Hyperion joint venture",
+          "url": "https://about.fb.com/news/2025/10/meta-blue-owl-capital-develop-hyperion-data-center/"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": 5000,
+        "investment_usd_bn": 50,
+        "investment_value_type": "minimum",
+        "investment_countable": true,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 100,
+          "investment": 100
+        },
+        "score": 100,
+        "band": "mega",
+        "metric_coverage": 0.8,
+        "method_version": "1.0"
+      }
     },
     {
       "id": "google-pine-island-minnesota",
@@ -126,11 +416,34 @@
       "latest_update": "Standort und Energiepartnerschaft angekuendigt; kein oeffentliches Go-live-Datum.",
       "last_checked": "2026-07-14",
       "history": [
-        {"date": "2026-02", "status": "planned", "text": "Pine Island als kuenftiger Google-Datacenter-Standort angekuendigt."}
+        {
+          "date": "2026-02",
+          "status": "planned",
+          "text": "Pine Island als kuenftiger Google-Datacenter-Standort angekuendigt."
+        }
       ],
       "sources": [
-        {"date": "2026-02-24", "grade": "A", "publisher": "Google", "title": "Google is coming to Minnesota", "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/data-center-pine-island/"}
-      ]
+        {
+          "date": "2026-02-24",
+          "grade": "A",
+          "publisher": "Google",
+          "title": "Google is coming to Minnesota",
+          "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/data-center-pine-island/"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      }
     },
     {
       "id": "openai-stargate-abilene",
@@ -156,14 +469,53 @@
       "latest_update": "Der Standort trainiert und bedient bereits KI-Systeme; weitere Ausbauphasen laufen.",
       "last_checked": "2026-07-14",
       "history": [
-        {"date": "2025-01", "status": "planned", "text": "Stargate-Programm angekuendigt."},
-        {"date": "2025-06", "status": "partly_live", "text": "Erste GB200-Racks und Trainings-/Inference-Workloads laufen."},
-        {"date": "2026-01", "status": "partly_live", "text": "OpenAI bestaetigt laufendes Training und Serving in Abilene."}
+        {
+          "date": "2025-01",
+          "status": "planned",
+          "text": "Stargate-Programm angekuendigt."
+        },
+        {
+          "date": "2025-06",
+          "status": "partly_live",
+          "text": "Erste GB200-Racks und Trainings-/Inference-Workloads laufen."
+        },
+        {
+          "date": "2026-01",
+          "status": "partly_live",
+          "text": "OpenAI bestaetigt laufendes Training und Serving in Abilene."
+        }
       ],
       "sources": [
-        {"date": "2026-01-20", "grade": "A", "publisher": "OpenAI", "title": "Stargate Community", "url": "https://openai.com/nl-NL/index/stargate-community/"},
-        {"date": "2025-07-22", "grade": "A", "publisher": "OpenAI", "title": "Stargate advances with Oracle", "url": "https://openai.com/index/stargate-advances-with-partnership-with-oracle/"}
-      ]
+        {
+          "date": "2026-01-20",
+          "grade": "A",
+          "publisher": "OpenAI",
+          "title": "Stargate Community",
+          "url": "https://openai.com/nl-NL/index/stargate-community/"
+        },
+        {
+          "date": "2025-07-22",
+          "grade": "A",
+          "publisher": "OpenAI",
+          "title": "Stargate advances with Oracle",
+          "url": "https://openai.com/index/stargate-advances-with-partnership-with-oracle/"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": 600,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 75.1
+        },
+        "score": 75,
+        "band": "mega",
+        "metric_coverage": 0.45,
+        "method_version": "1.0"
+      }
     },
     {
       "id": "telus-rimouski",
@@ -189,14 +541,51 @@
       "latest_update": "Operativ, Kundenbetrieb; laut TELUS im Mai 2026 voll ausgelastet.",
       "last_checked": "2026-07-14",
       "history": [
-        {"date": "2025-03", "status": "planned", "text": "Inbetriebnahme bis Sommer 2025 angekuendigt."},
-        {"date": "2025-09", "status": "operational", "text": "Standort offiziell eroeffnet und im Kundenbetrieb."},
-        {"date": "2026-05", "status": "operational", "text": "TELUS meldet den Standort als ausverkauft."}
+        {
+          "date": "2025-03",
+          "status": "planned",
+          "text": "Inbetriebnahme bis Sommer 2025 angekuendigt."
+        },
+        {
+          "date": "2025-09",
+          "status": "operational",
+          "text": "Standort offiziell eroeffnet und im Kundenbetrieb."
+        },
+        {
+          "date": "2026-05",
+          "status": "operational",
+          "text": "TELUS meldet den Standort als ausverkauft."
+        }
       ],
       "sources": [
-        {"date": "2025-09-24", "grade": "A", "publisher": "TELUS", "title": "TELUS opens Canada's first fully Sovereign AI Factory", "url": "https://www.telus.com/en/about/news-and-events/media-releases/telus-opens-canadas-first-fully-sovereign-ai-factory"},
-        {"date": "2026-05-11", "grade": "A", "publisher": "TELUS", "title": "TELUS and Government of Canada scale sovereign AI infrastructure", "url": "https://www.telus.com/en/about/news-and-events/media-releases/TELUS-and-Government-of-Canada-advance-work-to-scale-Canadas-sovereign-AI-infrastructure"}
-      ]
+        {
+          "date": "2025-09-24",
+          "grade": "A",
+          "publisher": "TELUS",
+          "title": "TELUS opens Canada's first fully Sovereign AI Factory",
+          "url": "https://www.telus.com/en/about/news-and-events/media-releases/telus-opens-canadas-first-fully-sovereign-ai-factory"
+        },
+        {
+          "date": "2026-05-11",
+          "grade": "A",
+          "publisher": "TELUS",
+          "title": "TELUS and Government of Canada scale sovereign AI infrastructure",
+          "url": "https://www.telus.com/en/about/news-and-events/media-releases/TELUS-and-Government-of-Canada-advance-work-to-scale-Canadas-sovereign-AI-infrastructure"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      }
     },
     {
       "id": "telus-bc-cluster",
@@ -222,11 +611,37 @@
       "latest_update": "Drei geplante Anlagen in British Columbia; Details der Zusammenarbeit sind noch in Arbeit.",
       "last_checked": "2026-07-14",
       "history": [
-        {"date": "2026-05", "status": "planned", "text": "Drei Standorte mit Zielgroesse 150 MW/60.000 GPUs bis 2032 angekuendigt."}
+        {
+          "date": "2026-05",
+          "status": "planned",
+          "text": "Drei Standorte mit Zielgroesse 150 MW/60.000 GPUs bis 2032 angekuendigt."
+        }
       ],
       "sources": [
-        {"date": "2026-05-11", "grade": "A", "publisher": "TELUS", "title": "TELUS and Government of Canada scale sovereign AI infrastructure", "url": "https://www.telus.com/en/about/news-and-events/media-releases/TELUS-and-Government-of-Canada-advance-work-to-scale-Canadas-sovereign-AI-infrastructure"}
-      ]
+        {
+          "date": "2026-05-11",
+          "grade": "A",
+          "publisher": "TELUS",
+          "title": "TELUS and Government of Canada scale sovereign AI infrastructure",
+          "url": "https://www.telus.com/en/about/news-and-events/media-releases/TELUS-and-Government-of-Canada-advance-work-to-scale-Canadas-sovereign-AI-infrastructure"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": 150,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": 60000,
+        "component_scores": {
+          "power": 58.9,
+          "accelerators": 79.6
+        },
+        "score": 65,
+        "band": "strategic",
+        "metric_coverage": 0.65,
+        "method_version": "1.0"
+      }
     },
     {
       "id": "google-canelones-uruguay",
@@ -252,13 +667,48 @@
       "latest_update": "Uruguays Praesidentschaft bestaetigte im April 2026 aktive Bauarbeiten vor Ort.",
       "last_checked": "2026-07-14",
       "history": [
-        {"date": "2024-08", "status": "under_construction", "text": "Baubeginn und 850-Mio.-USD-Investition angekuendigt."},
-        {"date": "2026-04", "status": "under_construction", "text": "Praesident Orsi besucht die aktive Baustelle."}
+        {
+          "date": "2024-08",
+          "status": "under_construction",
+          "text": "Baubeginn und 850-Mio.-USD-Investition angekuendigt."
+        },
+        {
+          "date": "2026-04",
+          "status": "under_construction",
+          "text": "Praesident Orsi besucht die aktive Baustelle."
+        }
       ],
       "sources": [
-        {"date": "2026-04-14", "grade": "A", "publisher": "Praesidentschaft Uruguay", "title": "Orsi besuchte die Baustelle des Google-Datacenters", "url": "https://www.gub.uy/presidencia/comunicacion/noticias/orsi-google-datacenter-uruguay-canelones"},
-        {"date": "2024-08-29", "grade": "A", "publisher": "Google", "title": "A new data center in Latin America", "url": "https://blog.google/company-news/inside-google/around-the-globe/google-latin-america/a-new-data-center-in-latin-america/"}
-      ]
+        {
+          "date": "2026-04-14",
+          "grade": "A",
+          "publisher": "Praesidentschaft Uruguay",
+          "title": "Orsi besuchte die Baustelle des Google-Datacenters",
+          "url": "https://www.gub.uy/presidencia/comunicacion/noticias/orsi-google-datacenter-uruguay-canelones"
+        },
+        {
+          "date": "2024-08-29",
+          "grade": "A",
+          "publisher": "Google",
+          "title": "A new data center in Latin America",
+          "url": "https://blog.google/company-news/inside-google/around-the-globe/google-latin-america/a-new-data-center-in-latin-america/"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": 0.85,
+        "investment_value_type": "exact",
+        "investment_countable": true,
+        "accelerator_count": null,
+        "component_scores": {
+          "investment": 15.6
+        },
+        "score": 16,
+        "band": "local",
+        "metric_coverage": 0.35,
+        "method_version": "1.0"
+      }
     },
     {
       "id": "google-cerrillos-original",
@@ -284,13 +734,46 @@
       "latest_update": "Google zog den urspruenglichen Genehmigungsweg zurueck; ein neuer luftgekuehlter Entwurf waere ein neues Projekt.",
       "last_checked": "2026-07-14",
       "history": [
-        {"date": "2020", "status": "planned", "text": "Zweiter Google-Standort in Santiago geplant."},
-        {"date": "2024-02", "status": "paused", "text": "Umweltgericht stoppte den urspruenglichen Genehmigungsweg."},
-        {"date": "2024-09", "status": "paused", "text": "Google verfolgt den urspruenglichen Antrag nicht weiter; moeglicher Neuentwurf offen."}
+        {
+          "date": "2020",
+          "status": "planned",
+          "text": "Zweiter Google-Standort in Santiago geplant."
+        },
+        {
+          "date": "2024-02",
+          "status": "paused",
+          "text": "Umweltgericht stoppte den urspruenglichen Genehmigungsweg."
+        },
+        {
+          "date": "2024-09",
+          "status": "paused",
+          "text": "Google verfolgt den urspruenglichen Antrag nicht weiter; moeglicher Neuentwurf offen."
+        }
       ],
       "sources": [
-        {"date": "2024-09-17", "grade": "B", "publisher": "Diario Financiero", "title": "Google pausa proyecto original en Cerrillos", "url": "https://www.df.cl/empresas/telecom-tecnologia/google-pausa-construccion-de-data-center-en-cerrillos-tras-cuatro-anos"}
-      ]
+        {
+          "date": "2024-09-17",
+          "grade": "B",
+          "publisher": "Diario Financiero",
+          "title": "Google pausa proyecto original en Cerrillos",
+          "url": "https://www.df.cl/empresas/telecom-tecnologia/google-pausa-construccion-de-data-center-en-cerrillos-tras-cuatro-anos"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": 0.2,
+        "investment_value_type": "approximate",
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "investment": 4.6
+        },
+        "score": 5,
+        "band": "local",
+        "metric_coverage": 0.35,
+        "method_version": "1.0"
+      }
     },
     {
       "id": "meta-zeewolde",
@@ -316,14 +799,53 @@
       "latest_update": "Meta zog sich im Juni 2022 endgueltig zurueck; das Projekt wurde nicht realisiert.",
       "last_checked": "2026-07-14",
       "history": [
-        {"date": "2021", "status": "planned", "text": "Hyperscale-Campus mit fuenf Hallen geplant."},
-        {"date": "2022-03", "status": "paused", "text": "Projekt nach politischem Widerstand pausiert."},
-        {"date": "2022-06", "status": "cancelled", "text": "Meta beendet das Projekt endgueltig."}
+        {
+          "date": "2021",
+          "status": "planned",
+          "text": "Hyperscale-Campus mit fuenf Hallen geplant."
+        },
+        {
+          "date": "2022-03",
+          "status": "paused",
+          "text": "Projekt nach politischem Widerstand pausiert."
+        },
+        {
+          "date": "2022-06",
+          "status": "cancelled",
+          "text": "Meta beendet das Projekt endgueltig."
+        }
       ],
       "sources": [
-        {"date": "2022-06-30", "grade": "B", "publisher": "NOS", "title": "Meta ziet definitief af van datacenter in Zeewolde", "url": "https://nos.nl/artikel/2434758-meta-ziet-definitief-af-van-datacenter-in-zeewolde"},
-        {"date": "2023-09-20", "grade": "A", "publisher": "Raad van State", "title": "Urteil zum bestemmingsplan Trekkersveld IV", "url": "https://www.raadvanstate.nl/%40139351/202201810-1-r1/"}
-      ]
+        {
+          "date": "2022-06-30",
+          "grade": "B",
+          "publisher": "NOS",
+          "title": "Meta ziet definitief af van datacenter in Zeewolde",
+          "url": "https://nos.nl/artikel/2434758-meta-ziet-definitief-af-van-datacenter-in-zeewolde"
+        },
+        {
+          "date": "2023-09-20",
+          "grade": "A",
+          "publisher": "Raad van State",
+          "title": "Urteil zum bestemmingsplan Trekkersveld IV",
+          "url": "https://www.raadvanstate.nl/%40139351/202201810-1-r1/"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": 200,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 62.3
+        },
+        "score": 62,
+        "band": "strategic",
+        "metric_coverage": 0.45,
+        "method_version": "1.0"
+      }
     },
     {
       "id": "nscale-kvandal-norway",
@@ -349,15 +871,61 @@
       "latest_update": "Bauphase laeuft; im Juli 2026 wurde eine lokale Betriebsgesellschaft gegruendet. Der Ankerkundenmix verlagerte sich zu Microsoft.",
       "last_checked": "2026-07-14",
       "history": [
-        {"date": "2025-07", "status": "planned", "text": "Als Stargate Norway mit OpenAI-Option und 230 MW gestartet."},
-        {"date": "2025-09", "status": "under_construction", "text": "Microsoft schliesst 6,2-Mrd.-USD-Vertrag; Lieferung ab 2026."},
-        {"date": "2026-07", "status": "under_construction", "text": "Nordscale Operations fuer den Standort gegruendet; Bauunterstuetzung seit 2025."}
+        {
+          "date": "2025-07",
+          "status": "planned",
+          "text": "Als Stargate Norway mit OpenAI-Option und 230 MW gestartet."
+        },
+        {
+          "date": "2025-09",
+          "status": "under_construction",
+          "text": "Microsoft schliesst 6,2-Mrd.-USD-Vertrag; Lieferung ab 2026."
+        },
+        {
+          "date": "2026-07",
+          "status": "under_construction",
+          "text": "Nordscale Operations fuer den Standort gegruendet; Bauunterstuetzung seit 2025."
+        }
       ],
       "sources": [
-        {"date": "2026-07-06", "grade": "A", "publisher": "Nscale", "title": "Nscale and Nordkraft establish Narvik operations company", "url": "https://www.nscale.com/press-releases/nordscale"},
-        {"date": "2026-Q1", "grade": "A", "publisher": "Aker", "title": "Aker first quarter 2026 shareholder letter", "url": "https://www.akerasa.com/investors/shareholder-letters/2026/first-quarter-2026"},
-        {"date": "2025-07-31", "grade": "A", "publisher": "OpenAI", "title": "Introducing Stargate Norway", "url": "https://openai.com/index/introducing-stargate-norway/"}
-      ]
+        {
+          "date": "2026-07-06",
+          "grade": "A",
+          "publisher": "Nscale",
+          "title": "Nscale and Nordkraft establish Narvik operations company",
+          "url": "https://www.nscale.com/press-releases/nordscale"
+        },
+        {
+          "date": "2026-Q1",
+          "grade": "A",
+          "publisher": "Aker",
+          "title": "Aker first quarter 2026 shareholder letter",
+          "url": "https://www.akerasa.com/investors/shareholder-letters/2026/first-quarter-2026"
+        },
+        {
+          "date": "2025-07-31",
+          "grade": "A",
+          "publisher": "OpenAI",
+          "title": "Introducing Stargate Norway",
+          "url": "https://openai.com/index/introducing-stargate-norway/"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": 230,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": 100000,
+        "component_scores": {
+          "power": 63.9,
+          "accelerators": 83.3
+        },
+        "score": 70,
+        "band": "strategic",
+        "metric_coverage": 0.65,
+        "method_version": "1.0"
+      }
     },
     {
       "id": "nscale-sines-portugal",
@@ -383,12 +951,42 @@
       "latest_update": "Erste Gebaeudephase mit 12.600+ GPUs; zweite 200-MW-Halle und 66.000+ Rubin-GPUs ab Ende 2027 vertraglich angekuendigt.",
       "last_checked": "2026-07-14",
       "history": [
-        {"date": "2025", "status": "under_construction", "text": "Erste Microsoft/Nscale-GPU-Phase in Sines vereinbart."},
-        {"date": "2026-05", "status": "partly_live", "text": "Erste 12.600+ Blackwell-Ultra-Phase genannt; zweite 200-MW-Halle beschlossen."}
+        {
+          "date": "2025",
+          "status": "under_construction",
+          "text": "Erste Microsoft/Nscale-GPU-Phase in Sines vereinbart."
+        },
+        {
+          "date": "2026-05",
+          "status": "partly_live",
+          "text": "Erste 12.600+ Blackwell-Ultra-Phase genannt; zweite 200-MW-Halle beschlossen."
+        }
       ],
       "sources": [
-        {"date": "2026-05-05", "grade": "A", "publisher": "Nscale", "title": "Nscale to deliver Rubin GPUs at SINES", "url": "https://www.nscale.com/press-releases/nscale-start-campus"}
-      ]
+        {
+          "date": "2026-05-05",
+          "grade": "A",
+          "publisher": "Nscale",
+          "title": "Nscale to deliver Rubin GPUs at SINES",
+          "url": "https://www.nscale.com/press-releases/nscale-start-campus"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": 1200,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": 66000,
+        "component_scores": {
+          "power": 83.3,
+          "accelerators": 80.3
+        },
+        "score": 82,
+        "band": "mega",
+        "metric_coverage": 0.65,
+        "method_version": "1.0"
+      }
     },
     {
       "id": "softbank-bosquel-france",
@@ -414,12 +1012,43 @@
       "latest_update": "Entwicklerauswahl und Joint Venture oeffentlich; noch kein physischer Baumeilenstein belegt.",
       "last_checked": "2026-07-14",
       "history": [
-        {"date": "2026-05", "status": "planned", "text": "SoftBank/Sesterce fuer 1-GW-AI-Campus ausgewaehlt."}
+        {
+          "date": "2026-05",
+          "status": "planned",
+          "text": "SoftBank/Sesterce fuer 1-GW-AI-Campus ausgewaehlt."
+        }
       ],
       "sources": [
-        {"date": "2026-05-31", "grade": "A", "publisher": "SoftBank Group", "title": "SoftBank and Sesterce to develop 1 GW AI data center in Bosquel", "url": "https://group.softbank/en/news/press/20260531"},
-        {"date": "2026-05-31", "grade": "A", "publisher": "SoftBank Group", "title": "SoftBank to build 5 GW in France", "url": "https://group.softbank/en/news/press/20260531_0"}
-      ]
+        {
+          "date": "2026-05-31",
+          "grade": "A",
+          "publisher": "SoftBank Group",
+          "title": "SoftBank and Sesterce to develop 1 GW AI data center in Bosquel",
+          "url": "https://group.softbank/en/news/press/20260531"
+        },
+        {
+          "date": "2026-05-31",
+          "grade": "A",
+          "publisher": "SoftBank Group",
+          "title": "SoftBank to build 5 GW in France",
+          "url": "https://group.softbank/en/news/press/20260531_0"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": 1000,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 81.1
+        },
+        "score": 81,
+        "band": "mega",
+        "metric_coverage": 0.45,
+        "method_version": "1.0"
+      }
     },
     {
       "id": "stargate-uae",
@@ -445,13 +1074,48 @@
       "latest_update": "G42 bezeichnet den 1-GW-Cluster als im Bau; Chipexportfreigaben markieren den Uebergang von Planung zu Deployment.",
       "last_checked": "2026-07-14",
       "history": [
-        {"date": "2025-05", "status": "planned", "text": "1-GW-Cluster mit 200-MW-Ziel fuer 2026 angekuendigt."},
-        {"date": "2026", "status": "under_construction", "text": "G42 meldet Projekt als im Bau und Chipexportfreigaben als Deployment-Meilenstein."}
+        {
+          "date": "2025-05",
+          "status": "planned",
+          "text": "1-GW-Cluster mit 200-MW-Ziel fuer 2026 angekuendigt."
+        },
+        {
+          "date": "2026",
+          "status": "under_construction",
+          "text": "G42 meldet Projekt als im Bau und Chipexportfreigaben als Deployment-Meilenstein."
+        }
       ],
       "sources": [
-        {"date": "2026", "grade": "A", "publisher": "G42", "title": "G42 receives U.S. approval for advanced AI chip exports", "url": "https://www.g42.ai/resources/news/g42-receives-us-approval-advanced-ai-chip-exports-enabling-full-scale-deployment-trusted-ai-infrastructure"},
-        {"date": "2025-05-22", "grade": "A", "publisher": "OpenAI", "title": "Introducing Stargate UAE", "url": "https://openai.com/index/introducing-stargate-uae/"}
-      ]
+        {
+          "date": "2026",
+          "grade": "A",
+          "publisher": "G42",
+          "title": "G42 receives U.S. approval for advanced AI chip exports",
+          "url": "https://www.g42.ai/resources/news/g42-receives-us-approval-advanced-ai-chip-exports-enabling-full-scale-deployment-trusted-ai-infrastructure"
+        },
+        {
+          "date": "2025-05-22",
+          "grade": "A",
+          "publisher": "OpenAI",
+          "title": "Introducing Stargate UAE",
+          "url": "https://openai.com/index/introducing-stargate-uae/"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": 1000,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 81.1
+        },
+        "score": 81,
+        "band": "mega",
+        "metric_coverage": 0.45,
+        "method_version": "1.0"
+      }
     },
     {
       "id": "humain-saudi-ai-factories",
@@ -477,11 +1141,36 @@
       "latest_update": "Erste Phase mit 18.000 GB300-Systemen angekuendigt; Standort- und Bautermintransparenz noch gering.",
       "last_checked": "2026-07-14",
       "history": [
-        {"date": "2025-05", "status": "planned", "text": "500-MW-Programm und erste 18.000-GPU-Phase angekuendigt."}
+        {
+          "date": "2025-05",
+          "status": "planned",
+          "text": "500-MW-Programm und erste 18.000-GPU-Phase angekuendigt."
+        }
       ],
       "sources": [
-        {"date": "2025-05-13", "grade": "A", "publisher": "NVIDIA", "title": "HUMAIN and NVIDIA announce AI factories", "url": "https://nvidianews.nvidia.com/news/humain-and-nvidia-announce-strategic-partnership-to-build-ai-factories-of-the-future-in-saudi-arabia"}
-      ]
+        {
+          "date": "2025-05-13",
+          "grade": "A",
+          "publisher": "NVIDIA",
+          "title": "HUMAIN and NVIDIA announce AI factories",
+          "url": "https://nvidianews.nvidia.com/news/humain-and-nvidia-announce-strategic-partnership-to-build-ai-factories-of-the-future-in-saudi-arabia"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": 500,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 73
+        },
+        "score": 73,
+        "band": "strategic",
+        "metric_coverage": 0.45,
+        "method_version": "1.0"
+      }
     },
     {
       "id": "google-vizag-india",
@@ -507,13 +1196,49 @@
       "latest_update": "Google brach im April 2026 den Boden und bezeichnet das Projekt als in der Bauphase.",
       "last_checked": "2026-07-14",
       "history": [
-        {"date": "2025-10", "status": "planned", "text": "15-Mrd.-USD-AI-Hub fuer 2026–2030 angekuendigt."},
-        {"date": "2026-04", "status": "under_construction", "text": "Offizieller Baubeginn."}
+        {
+          "date": "2025-10",
+          "status": "planned",
+          "text": "15-Mrd.-USD-AI-Hub fuer 2026–2030 angekuendigt."
+        },
+        {
+          "date": "2026-04",
+          "status": "under_construction",
+          "text": "Offizieller Baubeginn."
+        }
       ],
       "sources": [
-        {"date": "2026-04-28", "grade": "A", "publisher": "Google", "title": "Google AI Hub – construction phase", "url": "https://blog.google/intl/en-in/google-ai-hub-scaling-indias-ai-infrastructure-and-community-impact/"},
-        {"date": "2025-10-14", "grade": "A", "publisher": "Google", "title": "Our first AI Hub in India", "url": "https://blog.google/intl/en-in/company-news/our-first-ai-hub-in-india-powered-by-a-15-billion-investment/"}
-      ]
+        {
+          "date": "2026-04-28",
+          "grade": "A",
+          "publisher": "Google",
+          "title": "Google AI Hub – construction phase",
+          "url": "https://blog.google/intl/en-in/google-ai-hub-scaling-indias-ai-infrastructure-and-community-impact/"
+        },
+        {
+          "date": "2025-10-14",
+          "grade": "A",
+          "publisher": "Google",
+          "title": "Our first AI Hub in India",
+          "url": "https://blog.google/intl/en-in/company-news/our-first-ai-hub-in-india-powered-by-a-15-billion-investment/"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": 1000,
+        "investment_usd_bn": 15,
+        "investment_value_type": "exact",
+        "investment_countable": true,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 81.1,
+          "investment": 70.5
+        },
+        "score": 76,
+        "band": "mega",
+        "metric_coverage": 0.8,
+        "method_version": "1.0"
+      }
     },
     {
       "id": "ytl-johor-ai",
@@ -539,13 +1264,48 @@
       "latest_update": "YTL bestaetigte die Fertigstellung der NVIDIA-basierten AI-Facility und den operativen YTL AI Cloud Service.",
       "last_checked": "2026-07-14",
       "history": [
-        {"date": "2023-12", "status": "planned", "text": "Erste Phase fuer Mitte 2024 angekuendigt."},
-        {"date": "2025-10", "status": "operational", "text": "Fertigstellung und operativer AI-Cloud-Betrieb bestaetigt."}
+        {
+          "date": "2023-12",
+          "status": "planned",
+          "text": "Erste Phase fuer Mitte 2024 angekuendigt."
+        },
+        {
+          "date": "2025-10",
+          "status": "operational",
+          "text": "Fertigstellung und operativer AI-Cloud-Betrieb bestaetigt."
+        }
       ],
       "sources": [
-        {"date": "2025-10-31", "grade": "A", "publisher": "YTL Power", "title": "Malaysia accelerates sovereign AI ambition", "url": "https://www.ytlpowerinternational.com/press-releases/malaysia-accelerates-sovereign-ai-ambition-nvidia-and-ytl-brief-prime-minister-anwar-ibrahim-at-apec-summit/"},
-        {"date": "2023-12-08", "grade": "A", "publisher": "YTL Power", "title": "YTL to advance AI development with NVIDIA", "url": "https://www.ytlpowerinternational.com/press-releases/ytl-to-advance-ai-development-in-malaysia-in-collaboration-with-nvidia/"}
-      ]
+        {
+          "date": "2025-10-31",
+          "grade": "A",
+          "publisher": "YTL Power",
+          "title": "Malaysia accelerates sovereign AI ambition",
+          "url": "https://www.ytlpowerinternational.com/press-releases/malaysia-accelerates-sovereign-ai-ambition-nvidia-and-ytl-brief-prime-minister-anwar-ibrahim-at-apec-summit/"
+        },
+        {
+          "date": "2023-12-08",
+          "grade": "A",
+          "publisher": "YTL Power",
+          "title": "YTL to advance AI development with NVIDIA",
+          "url": "https://www.ytlpowerinternational.com/press-releases/ytl-to-advance-ai-development-in-malaysia-in-collaboration-with-nvidia/"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": 600,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 75.1
+        },
+        "score": 75,
+        "band": "mega",
+        "metric_coverage": 0.45,
+        "method_version": "1.0"
+      }
     },
     {
       "id": "softbank-tomakomai",
@@ -571,11 +1331,34 @@
       "latest_update": "SoftBank nennt die Eroeffnung im Geschaeftsjahr 2026; aktueller physischer Meilenstein nicht publiziert.",
       "last_checked": "2026-07-14",
       "history": [
-        {"date": "2025", "status": "planned", "text": "100 % erneuerbar versorgtes AI-Datacenter fuer FY2026 angekuendigt."}
+        {
+          "date": "2025",
+          "status": "planned",
+          "text": "100 % erneuerbar versorgtes AI-Datacenter fuer FY2026 angekuendigt."
+        }
       ],
       "sources": [
-        {"date": "2026-07-14", "grade": "A", "publisher": "SoftBank Group", "title": "Environmental initiatives – Hokkaido Tomakomai AI Data Center", "url": "https://group.softbank/en/sustainability/environment"}
-      ]
+        {
+          "date": "2026-07-14",
+          "grade": "A",
+          "publisher": "SoftBank Group",
+          "title": "Environmental initiatives – Hokkaido Tomakomai AI Data Center",
+          "url": "https://group.softbank/en/sustainability/environment"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      }
     },
     {
       "id": "visionbay-taiwan",
@@ -601,12 +1384,39 @@
       "latest_update": "Das publizierte Ziel 1. Halbjahr 2026 ist verstrichen; ein Primaernachweis der Inbetriebnahme wurde nicht gefunden.",
       "last_checked": "2026-07-14",
       "history": [
-        {"date": "2025-11", "status": "planned", "text": "GB300-NVL72-Cluster fuer 1. Halbjahr 2026 angekuendigt."},
-        {"date": "2026-07", "status": "planned", "text": "Kein belastbarer Go-live-Nachweis in der oeffentlichen Primaerquelle."}
+        {
+          "date": "2025-11",
+          "status": "planned",
+          "text": "GB300-NVL72-Cluster fuer 1. Halbjahr 2026 angekuendigt."
+        },
+        {
+          "date": "2026-07",
+          "status": "planned",
+          "text": "Kein belastbarer Go-live-Nachweis in der oeffentlichen Primaerquelle."
+        }
       ],
       "sources": [
-        {"date": "2025-11-21", "grade": "A", "publisher": "Foxconn", "title": "Visionbay.ai launches Taiwan sovereign AI supercomputing center", "url": "https://www.foxconn.com/en-us/press-center/press-releases/latest-news/1910"}
-      ]
+        {
+          "date": "2025-11-21",
+          "grade": "A",
+          "publisher": "Foxconn",
+          "title": "Visionbay.ai launches Taiwan sovereign AI supercomputing center",
+          "url": "https://www.foxconn.com/en-us/press-center/press-releases/latest-news/1910"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      }
     },
     {
       "id": "cassava-south-africa",
@@ -632,14 +1442,51 @@
       "latest_update": "Cassava beschreibt das Projekt im April 2026 weiter als 'deploying'. Damit ist das urspruengliche Juni-2025-Ziel nicht belastbar als erreicht belegt.",
       "last_checked": "2026-07-14",
       "history": [
-        {"date": "2025-03", "status": "planned", "text": "Deployment bis Juni 2025 angekuendigt."},
-        {"date": "2025-06", "status": "planned", "text": "Partnerschaft nennt weiter Ausbauplaene; kein formaler Go-live-Nachweis."},
-        {"date": "2026-04", "status": "under_construction", "text": "Cassava bezeichnet die AI Factory weiterhin als 'deploying'."}
+        {
+          "date": "2025-03",
+          "status": "planned",
+          "text": "Deployment bis Juni 2025 angekuendigt."
+        },
+        {
+          "date": "2025-06",
+          "status": "planned",
+          "text": "Partnerschaft nennt weiter Ausbauplaene; kein formaler Go-live-Nachweis."
+        },
+        {
+          "date": "2026-04",
+          "status": "under_construction",
+          "text": "Cassava bezeichnet die AI Factory weiterhin als 'deploying'."
+        }
       ],
       "sources": [
-        {"date": "2026-04", "grade": "A", "publisher": "Cassava Technologies", "title": "Cassava scales African AI infrastructure", "url": "https://www.cassavatechnologies.com/cassava-scales-african-ai-infrastructure-with-nvidia-powered-ai-factories-to-accelerate-sovereign-data-capabilities/"},
-        {"date": "2025-03-24", "grade": "A", "publisher": "Cassava AI", "title": "Cassava to upgrade data centres with NVIDIA", "url": "https://www.cassava.ai/2025/03/24/cassava-to-upgrade-its-data-centres/"}
-      ]
+        {
+          "date": "2026-04",
+          "grade": "A",
+          "publisher": "Cassava Technologies",
+          "title": "Cassava scales African AI infrastructure",
+          "url": "https://www.cassavatechnologies.com/cassava-scales-african-ai-infrastructure-with-nvidia-powered-ai-factories-to-accelerate-sovereign-data-capabilities/"
+        },
+        {
+          "date": "2025-03-24",
+          "grade": "A",
+          "publisher": "Cassava AI",
+          "title": "Cassava to upgrade data centres with NVIDIA",
+          "url": "https://www.cassava.ai/2025/03/24/cassava-to-upgrade-its-data-centres/"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      }
     },
     {
       "id": "microsoft-australia-program",
@@ -665,12 +1512,2153 @@
       "latest_update": "Programm angekuendigt; keine standortgenaue oeffentliche Zuordnung der Investitionssumme.",
       "last_checked": "2026-07-14",
       "history": [
-        {"date": "2023", "status": "under_construction", "text": "5-Mrd.-AUD-Programm fuer 20 auf 29 Standorte angekuendigt."},
-        {"date": "2026-04", "status": "planned", "text": "Neues 25-Mrd.-AUD-Programm bis Ende 2029 angekuendigt."}
+        {
+          "date": "2023",
+          "status": "under_construction",
+          "text": "5-Mrd.-AUD-Programm fuer 20 auf 29 Standorte angekuendigt."
+        },
+        {
+          "date": "2026-04",
+          "status": "planned",
+          "text": "Neues 25-Mrd.-AUD-Programm bis Ende 2029 angekuendigt."
+        }
       ],
       "sources": [
-        {"date": "2026-04-23", "grade": "A", "publisher": "Microsoft", "title": "Microsoft deepens commitment to Australia", "url": "https://news.microsoft.com/source/asia/features/investing-in-australias-ai-future/"},
-        {"date": "2023", "grade": "A", "publisher": "Microsoft", "title": "Microsoft announces A$5 billion computing investment", "url": "https://news.microsoft.com/en-au/features/microsoft-announces-a5-billion-investment-in-computing-capacity-and-capability-to-help-australia-seize-the-ai-era/"}
+        {
+          "date": "2026-04-23",
+          "grade": "A",
+          "publisher": "Microsoft",
+          "title": "Microsoft deepens commitment to Australia",
+          "url": "https://news.microsoft.com/source/asia/features/investing-in-australias-ai-future/"
+        },
+        {
+          "date": "2023",
+          "grade": "A",
+          "publisher": "Microsoft",
+          "title": "Microsoft announces A$5 billion computing investment",
+          "url": "https://news.microsoft.com/en-au/features/microsoft-announces-a5-billion-investment-in-computing-capacity-and-capability-to-help-australia-seize-the-ai-era/"
+        }
+      ],
+      "record_type": "national_program",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      }
+    },
+    {
+      "id": "stargate-shackelford-texas",
+      "name": "Stargate Shackelford County",
+      "operator": "Oracle / OpenAI",
+      "partners": "SoftBank, Stargate",
+      "country": "USA",
+      "iso3": "USA",
+      "region": "Nordamerika",
+      "location": "Shackelford County, Texas",
+      "lat": 32.74,
+      "lon": -99.3,
+      "location_precision": "County-Zentrum; exakter Campus nicht veroeffentlicht",
+      "record_type": "facility",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "Teil der neuen Stargate-Standorte; Standort-MW nicht separat offengelegt",
+      "investment": "Teil eines standortuebergreifenden >400-Mrd.-USD-Ausbaus; nicht auf diesen Standort allokiert",
+      "announced": "2025",
+      "target_live": "nicht belastbar offengelegt",
+      "actual_live": "—",
+      "latest_update": "OpenAI fuehrt Shackelford County als einen von drei neuen Oracle/Stargate-Standorten.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2025",
+          "status": "planned",
+          "text": "OpenAI fuehrt Shackelford County als einen von drei neuen Oracle/Stargate-Standorten."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2025-09-23",
+          "grade": "A",
+          "publisher": "OpenAI",
+          "title": "Five new Stargate sites",
+          "url": "https://openai.com/index/five-new-stargate-sites/"
+        }
+      ]
+    },
+    {
+      "id": "stargate-dona-ana-new-mexico",
+      "name": "Stargate Doña Ana County",
+      "operator": "Oracle / OpenAI",
+      "partners": "SoftBank, Stargate",
+      "country": "USA",
+      "iso3": "USA",
+      "region": "Nordamerika",
+      "location": "Doña Ana County, New Mexico",
+      "lat": 32.35,
+      "lon": -106.82,
+      "location_precision": "County-Zentrum; exakter Campus nicht veroeffentlicht",
+      "record_type": "facility",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "Teil der neuen Stargate-Standorte; Standort-MW nicht separat offengelegt",
+      "investment": "Teil eines standortuebergreifenden >400-Mrd.-USD-Ausbaus; nicht auf diesen Standort allokiert",
+      "announced": "2025",
+      "target_live": "nicht belastbar offengelegt",
+      "actual_live": "—",
+      "latest_update": "OpenAI fuehrt Doña Ana County als neuen Oracle/Stargate-Standort.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2025",
+          "status": "planned",
+          "text": "OpenAI fuehrt Doña Ana County als neuen Oracle/Stargate-Standort."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2025-09-23",
+          "grade": "A",
+          "publisher": "OpenAI",
+          "title": "Five new Stargate sites",
+          "url": "https://openai.com/index/five-new-stargate-sites/"
+        }
+      ]
+    },
+    {
+      "id": "stargate-vantage-wisconsin",
+      "name": "Stargate / Vantage Wisconsin",
+      "operator": "Vantage Data Centers / Oracle",
+      "partners": "OpenAI, Stargate",
+      "country": "USA",
+      "iso3": "USA",
+      "region": "Nordamerika",
+      "location": "Wisconsin, exakter Ort nicht veroeffentlicht",
+      "lat": 44.5,
+      "lon": -89.5,
+      "location_precision": "Bundesstaat-Zentrum; exakter Standort nicht oeffentlich",
+      "record_type": "facility",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "Teil der neuen Stargate-Standorte; Standort-MW nicht separat offengelegt",
+      "investment": "Teil eines standortuebergreifenden >400-Mrd.-USD-Ausbaus; nicht auf diesen Standort allokiert",
+      "announced": "2025",
+      "target_live": "nicht belastbar offengelegt",
+      "actual_live": "—",
+      "latest_update": "OpenAI nennt einen von Vantage entwickelten Wisconsin-Standort; die oeffentliche Ankuendigung nennt keinen exakten Ort.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2025",
+          "status": "planned",
+          "text": "OpenAI nennt einen von Vantage entwickelten Wisconsin-Standort; die oeffentliche Ankuendigung nennt keinen exakten Ort."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2025-09-23",
+          "grade": "A",
+          "publisher": "OpenAI",
+          "title": "Five new Stargate sites",
+          "url": "https://openai.com/index/five-new-stargate-sites/"
+        }
+      ]
+    },
+    {
+      "id": "stargate-lordstown-ohio",
+      "name": "Stargate Lordstown",
+      "operator": "SoftBank / OpenAI",
+      "partners": "Stargate",
+      "country": "USA",
+      "iso3": "USA",
+      "region": "Nordamerika",
+      "location": "Lordstown, Ohio",
+      "lat": 41.16,
+      "lon": -80.86,
+      "location_precision": "Stadtzentrum; keine Parzellenkoordinate",
+      "record_type": "facility",
+      "current_status": "under_construction",
+      "realization": "in_progress",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "Standort des SoftBank/OpenAI-Verbunds; MW nicht separat offengelegt",
+      "investment": "Teil eines standortuebergreifenden >400-Mrd.-USD-Ausbaus; nicht auf diesen Standort allokiert",
+      "announced": "2025",
+      "target_live": "nicht belastbar offengelegt",
+      "actual_live": "—",
+      "latest_update": "OpenAI meldet fuer Lordstown einen SoftBank/OpenAI-Standort mit laufender Standortentwicklung.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2025",
+          "status": "under_construction",
+          "text": "OpenAI meldet fuer Lordstown einen SoftBank/OpenAI-Standort mit laufender Standortentwicklung."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2025-09-23",
+          "grade": "A",
+          "publisher": "OpenAI",
+          "title": "Five new Stargate sites",
+          "url": "https://openai.com/index/five-new-stargate-sites/"
+        }
+      ]
+    },
+    {
+      "id": "stargate-milam-texas",
+      "name": "Stargate Milam County",
+      "operator": "SoftBank / OpenAI",
+      "partners": "Stargate",
+      "country": "USA",
+      "iso3": "USA",
+      "region": "Nordamerika",
+      "location": "Milam County, Texas",
+      "lat": 30.78,
+      "lon": -96.98,
+      "location_precision": "County-Zentrum; exakter Campus nicht veroeffentlicht",
+      "record_type": "facility",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "Standort des SoftBank/OpenAI-Verbunds; MW nicht separat offengelegt",
+      "investment": "Teil eines standortuebergreifenden >400-Mrd.-USD-Ausbaus; nicht auf diesen Standort allokiert",
+      "announced": "2025",
+      "target_live": "nicht belastbar offengelegt",
+      "actual_live": "—",
+      "latest_update": "OpenAI fuehrt Milam County als neuen SoftBank/OpenAI-Standort.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2025",
+          "status": "planned",
+          "text": "OpenAI fuehrt Milam County als neuen SoftBank/OpenAI-Standort."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2025-09-23",
+          "grade": "A",
+          "publisher": "OpenAI",
+          "title": "Five new Stargate sites",
+          "url": "https://openai.com/index/five-new-stargate-sites/"
+        }
+      ]
+    },
+    {
+      "id": "microsoft-fairwater-atlanta",
+      "name": "Microsoft Fairwater 2 Atlanta",
+      "operator": "Microsoft",
+      "partners": "NVIDIA",
+      "country": "USA",
+      "iso3": "USA",
+      "region": "Nordamerika",
+      "location": "Atlanta, Georgia",
+      "lat": 33.75,
+      "lon": -84.39,
+      "location_precision": "Stadtzentrum; keine Parzellenkoordinate",
+      "record_type": "facility",
+      "current_status": "operational",
+      "realization": "realized",
+      "schedule": "delivered",
+      "confidence": "high",
+      "planned_capacity": "Hunderttausende Blackwell-GPUs; mit Wisconsin als AI-Superfactory gekoppelt",
+      "investment": "nicht separat auf den Standort isoliert",
+      "announced": "2025",
+      "target_live": "2025",
+      "actual_live": "2025-10",
+      "latest_update": "Microsoft beschreibt Atlanta seit Oktober 2025 als zweiten operativen Fairwater-Standort.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": 200000,
+        "component_scores": {
+          "accelerators": 88.4
+        },
+        "score": 88,
+        "band": "mega",
+        "metric_coverage": 0.2,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2025",
+          "status": "operational",
+          "text": "Microsoft beschreibt Atlanta seit Oktober 2025 als zweiten operativen Fairwater-Standort."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2025-11-12",
+          "grade": "A",
+          "publisher": "Microsoft",
+          "title": "Infinite scale: architecture behind the Azure AI superfactory",
+          "url": "https://blogs.microsoft.com/blog/2025/11/12/infinite-scale-the-architecture-behind-the-azure-ai-superfactory/"
+        }
+      ]
+    },
+    {
+      "id": "meta-el-paso",
+      "name": "Meta El Paso Data Center",
+      "operator": "Meta",
+      "partners": "—",
+      "country": "USA",
+      "iso3": "USA",
+      "region": "Nordamerika",
+      "location": "El Paso, Texas",
+      "lat": 31.76,
+      "lon": -106.49,
+      "location_precision": "Stadtzentrum; keine Parzellenkoordinate",
+      "record_type": "facility",
+      "current_status": "under_construction",
+      "realization": "in_progress",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": ">1 GW bei Vollausbau",
+      "investment": "nicht separat offengelegt",
+      "announced": "2025",
+      "target_live": "nicht belastbar offengelegt",
+      "actual_live": "—",
+      "latest_update": "Meta fuehrt El Paso als einen seiner neuen 1-GW+-AI-Campusse.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": 1000,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 81.1
+        },
+        "score": 81,
+        "band": "mega",
+        "metric_coverage": 0.45,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2025",
+          "status": "under_construction",
+          "text": "Meta fuehrt El Paso als einen seiner neuen 1-GW+-AI-Campusse."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026-04",
+          "grade": "A",
+          "publisher": "Meta",
+          "title": "Infrastructure explained: Meta data centers",
+          "url": "https://about.fb.com/news/2026/04/infrastructure-explained-meta-data-centers/"
+        }
+      ]
+    },
+    {
+      "id": "meta-lebanon-indiana",
+      "name": "Meta Lebanon Data Center",
+      "operator": "Meta",
+      "partners": "—",
+      "country": "USA",
+      "iso3": "USA",
+      "region": "Nordamerika",
+      "location": "Lebanon, Indiana",
+      "lat": 40.05,
+      "lon": -86.47,
+      "location_precision": "Stadtzentrum; keine Parzellenkoordinate",
+      "record_type": "facility",
+      "current_status": "under_construction",
+      "realization": "in_progress",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": ">1 GW bei Vollausbau",
+      "investment": "nicht separat offengelegt",
+      "announced": "2025",
+      "target_live": "nicht belastbar offengelegt",
+      "actual_live": "—",
+      "latest_update": "Meta fuehrt Lebanon als einen seiner neuen 1-GW+-AI-Campusse.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": 1000,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 81.1
+        },
+        "score": 81,
+        "band": "mega",
+        "metric_coverage": 0.45,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2025",
+          "status": "under_construction",
+          "text": "Meta fuehrt Lebanon als einen seiner neuen 1-GW+-AI-Campusse."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026-04",
+          "grade": "A",
+          "publisher": "Meta",
+          "title": "Infrastructure explained: Meta data centers",
+          "url": "https://about.fb.com/news/2026/04/infrastructure-explained-meta-data-centers/"
+        }
+      ]
+    },
+    {
+      "id": "meta-new-albany-ohio",
+      "name": "Meta New Albany Data Center",
+      "operator": "Meta",
+      "partners": "—",
+      "country": "USA",
+      "iso3": "USA",
+      "region": "Nordamerika",
+      "location": "New Albany, Ohio",
+      "lat": 40.08,
+      "lon": -82.81,
+      "location_precision": "Stadtzentrum; keine Parzellenkoordinate",
+      "record_type": "facility",
+      "current_status": "under_construction",
+      "realization": "in_progress",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": ">1 GW bei Vollausbau",
+      "investment": "nicht separat offengelegt",
+      "announced": "2025",
+      "target_live": "nicht belastbar offengelegt",
+      "actual_live": "—",
+      "latest_update": "Meta fuehrt New Albany als einen seiner neuen 1-GW+-AI-Campusse.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": 1000,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 81.1
+        },
+        "score": 81,
+        "band": "mega",
+        "metric_coverage": 0.45,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2025",
+          "status": "under_construction",
+          "text": "Meta fuehrt New Albany als einen seiner neuen 1-GW+-AI-Campusse."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026-04",
+          "grade": "A",
+          "publisher": "Meta",
+          "title": "Infrastructure explained: Meta data centers",
+          "url": "https://about.fb.com/news/2026/04/infrastructure-explained-meta-data-centers/"
+        }
+      ]
+    },
+    {
+      "id": "coreweave-lancaster-pa",
+      "name": "CoreWeave Lancaster AI Campus",
+      "operator": "CoreWeave",
+      "partners": "—",
+      "country": "USA",
+      "iso3": "USA",
+      "region": "Nordamerika",
+      "location": "Lancaster, Pennsylvania",
+      "lat": 40.04,
+      "lon": -76.31,
+      "location_precision": "Stadtzentrum; keine Parzellenkoordinate",
+      "record_type": "facility",
+      "current_status": "under_construction",
+      "realization": "in_progress",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "100 MW initial; Ausbauoption bis 300 MW",
+      "investment": "bis zu 6 Mrd. USD (angekuendigte Obergrenze)",
+      "announced": "2025",
+      "target_live": "nicht separat verifiziert",
+      "actual_live": "—",
+      "latest_update": "CoreWeave kuendigte einen mehrstufigen 100-bis-300-MW-Campus und bis zu 6 Mrd. USD an.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": 300,
+        "investment_usd_bn": 6,
+        "investment_value_type": "ceiling",
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 67,
+          "investment": 49.5
+        },
+        "score": 59,
+        "band": "strategic",
+        "metric_coverage": 0.8,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2025",
+          "status": "under_construction",
+          "text": "CoreWeave kuendigte einen mehrstufigen 100-bis-300-MW-Campus und bis zu 6 Mrd. USD an."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2025",
+          "grade": "A",
+          "publisher": "CoreWeave",
+          "title": "Multi-billion dollar commitment to AI infrastructure in Pennsylvania",
+          "url": "https://investors.coreweave.com/news/news-details/2025/CoreWeave-Announces-Multi-Billion-Dollar-Commitment-to-AI-Infrastructure-in-Pennsylvania/default.aspx"
+        }
+      ]
+    },
+    {
+      "id": "applied-digital-ellendale",
+      "name": "Applied Digital Polaris Forge 1",
+      "operator": "Applied Digital",
+      "partners": "CoreWeave",
+      "country": "USA",
+      "iso3": "USA",
+      "region": "Nordamerika",
+      "location": "Ellendale, North Dakota",
+      "lat": 46,
+      "lon": -98.53,
+      "location_precision": "Stadtzentrum; keine Parzellenkoordinate",
+      "record_type": "facility",
+      "current_status": "under_construction",
+      "realization": "in_progress",
+      "schedule": "late_unverified",
+      "confidence": "high",
+      "planned_capacity": "250 MW vermietete kritische IT-Last; Campusoption bis 1 GW",
+      "investment": "7 Mrd. USD erwarteter Mietumsatz, kein Projekt-CapEx",
+      "announced": "2024",
+      "target_live": "100 MW Q4 2025; weitere 150 MW Mitte 2026",
+      "actual_live": "—",
+      "latest_update": "Der 250-MW-Lease ist belegt; die oeffentlichen Go-live-Ziele sind verstrichen bzw. erreicht, aber im Tracker noch nicht primaer verifiziert.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": 250,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 64.9
+        },
+        "score": 65,
+        "band": "strategic",
+        "metric_coverage": 0.45,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2024",
+          "status": "under_construction",
+          "text": "Der 250-MW-Lease ist belegt; die oeffentlichen Go-live-Ziele sind verstrichen bzw. erreicht, aber im Tracker noch nicht primaer verifiziert."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2024",
+          "grade": "A",
+          "publisher": "Applied Digital",
+          "title": "250MW AI data center lease with CoreWeave",
+          "url": "https://ir.applieddigital.com/news-events/press-releases/detail/123/applied-digital-announces-250mw-ai-data-center-lease-with"
+        }
+      ]
+    },
+    {
+      "id": "iren-sweetwater-1",
+      "name": "IREN Sweetwater 1",
+      "operator": "IREN",
+      "partners": "—",
+      "country": "USA",
+      "iso3": "USA",
+      "region": "Nordamerika",
+      "location": "Sweetwater, Texas",
+      "lat": 32.43,
+      "lon": -100.45,
+      "location_precision": "Stadtzentrum; keine Parzellenkoordinate",
+      "record_type": "facility",
+      "current_status": "under_construction",
+      "realization": "in_progress",
+      "schedule": "on_track",
+      "confidence": "high",
+      "planned_capacity": "1,4 GW; Teil eines 2-GW-Standortverbunds",
+      "investment": "nicht separat offengelegt; IREN nennt fuer sein Gesamtportfolio nur Szenariowerte",
+      "announced": "2024",
+      "target_live": "erste Umspannwerkskapazitaet 2026",
+      "actual_live": "—",
+      "latest_update": "IREN kennzeichnet Sweetwater 1 mit 1,4 GW als im Bau.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": 1400,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 85.1
+        },
+        "score": 85,
+        "band": "mega",
+        "metric_coverage": 0.45,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2024",
+          "status": "under_construction",
+          "text": "IREN kennzeichnet Sweetwater 1 mit 1,4 GW als im Bau."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026",
+          "grade": "A",
+          "publisher": "IREN",
+          "title": "Sweetwater data centers",
+          "url": "https://iren.com/data-centers/sweetwater"
+        }
+      ]
+    },
+    {
+      "id": "iren-sweetwater-2",
+      "name": "IREN Sweetwater 2",
+      "operator": "IREN",
+      "partners": "—",
+      "country": "USA",
+      "iso3": "USA",
+      "region": "Nordamerika",
+      "location": "Sweetwater, Texas",
+      "lat": 32.52,
+      "lon": -100.35,
+      "location_precision": "Stadtzentrum; keine Parzellenkoordinate",
+      "record_type": "facility",
+      "current_status": "under_construction",
+      "realization": "in_progress",
+      "schedule": "on_track",
+      "confidence": "high",
+      "planned_capacity": "600 MW; Teil eines 2-GW-Standortverbunds",
+      "investment": "nicht separat offengelegt",
+      "announced": "2025",
+      "target_live": "2027",
+      "actual_live": "—",
+      "latest_update": "IREN kennzeichnet Sweetwater 2 mit 600 MW als im Bau.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": 600,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 75.1
+        },
+        "score": 75,
+        "band": "mega",
+        "metric_coverage": 0.45,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2025",
+          "status": "under_construction",
+          "text": "IREN kennzeichnet Sweetwater 2 mit 600 MW als im Bau."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026",
+          "grade": "A",
+          "publisher": "IREN",
+          "title": "Sweetwater data centers",
+          "url": "https://iren.com/data-centers/sweetwater"
+        }
+      ]
+    },
+    {
+      "id": "nebius-vineland-new-jersey",
+      "name": "Nebius Vineland AI Data Center",
+      "operator": "Nebius",
+      "partners": "Microsoft",
+      "country": "USA",
+      "iso3": "USA",
+      "region": "Nordamerika",
+      "location": "Vineland, New Jersey",
+      "lat": 39.49,
+      "lon": -75.03,
+      "location_precision": "Stadtzentrum; keine Parzellenkoordinate",
+      "record_type": "facility",
+      "current_status": "under_construction",
+      "realization": "in_progress",
+      "schedule": "late_unverified",
+      "confidence": "high",
+      "planned_capacity": "bis 300 MW",
+      "investment": "17,4 Mrd. USD Microsoft-Servicevertrag bis 2031; kein Campus-CapEx",
+      "announced": "2025",
+      "target_live": "erste Kapazitaet Sommer 2025",
+      "actual_live": "—",
+      "latest_update": "300 MW und der langfristige Microsoft-Vertrag sind belegt; physischer Go-live wurde fuer diesen Snapshot noch nicht separat verifiziert.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": 300,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 67
+        },
+        "score": 67,
+        "band": "strategic",
+        "metric_coverage": 0.45,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2025",
+          "status": "under_construction",
+          "text": "300 MW und der langfristige Microsoft-Vertrag sind belegt; physischer Go-live wurde fuer diesen Snapshot noch nicht separat verifiziert."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2025",
+          "grade": "A",
+          "publisher": "Nebius",
+          "title": "US expansion: up to 300 MW in New Jersey",
+          "url": "https://nebius.com/newsroom/nebius-accelerates-us-expansion-adding-up-to-300-mw-capacity-at-new-data-center-in-new-jersey"
+        }
+      ]
+    },
+    {
+      "id": "xai-colossus-memphis",
+      "name": "xAI Colossus Memphis",
+      "operator": "xAI",
+      "partners": "—",
+      "country": "USA",
+      "iso3": "USA",
+      "region": "Nordamerika",
+      "location": "Memphis, Tennessee",
+      "lat": 35.09,
+      "lon": -90.15,
+      "location_precision": "Stadtzentrum; keine Parzellenkoordinate",
+      "record_type": "facility",
+      "current_status": "operational",
+      "realization": "realized",
+      "schedule": "delivered",
+      "confidence": "high",
+      "planned_capacity": "200.000 H100-GPUs erreicht; Roadmap bis 1 Mio. Beschleuniger",
+      "investment": "nicht separat offengelegt",
+      "announced": "2024",
+      "target_live": "2024/2025",
+      "actual_live": "2024; Ausbau 2025",
+      "latest_update": "xAI nennt 200.000 H100-GPUs seit Februar 2025 und eine Ausbau-Roadmap bis eine Million Beschleuniger.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": 280,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": 200000,
+        "component_scores": {
+          "power": 66.2,
+          "accelerators": 88.4
+        },
+        "score": 73,
+        "band": "strategic",
+        "metric_coverage": 0.65,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2024",
+          "status": "operational",
+          "text": "xAI nennt 200.000 H100-GPUs seit Februar 2025 und eine Ausbau-Roadmap bis eine Million Beschleuniger."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2025",
+          "grade": "A",
+          "publisher": "xAI",
+          "title": "Colossus",
+          "url": "https://x.ai/colossus"
+        },
+        {
+          "date": "2025",
+          "grade": "A",
+          "publisher": "Tennessee General Assembly",
+          "title": "Fiscal note HB1461",
+          "url": "https://capitol.tn.gov/Bills/114/Fiscal/HB1461.pdf"
+        }
+      ]
+    },
+    {
+      "id": "bell-ai-fabric-bc",
+      "name": "Bell AI Fabric British Columbia Supercluster",
+      "operator": "Bell Canada",
+      "partners": "—",
+      "country": "Kanada",
+      "iso3": "CAN",
+      "region": "Nordamerika",
+      "location": "Kamloops / Merritt, British Columbia",
+      "lat": 50,
+      "lon": -120.8,
+      "location_precision": "Cluster-Mittelpunkt; umfasst mehrere Anlagen",
+      "record_type": "multi_site_cluster",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "bis 500 MW in sechs Einrichtungen",
+      "investment": "nicht separat offengelegt",
+      "announced": "2025",
+      "target_live": "nicht belastbar offengelegt",
+      "actual_live": "—",
+      "latest_update": "Bell plant einen souverainen AI-Supercluster mit bis zu 500 MW; vier Einrichtungen liegen in Kamloops und Merritt.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": 500,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 73
+        },
+        "score": 73,
+        "band": "strategic",
+        "metric_coverage": 0.45,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2025",
+          "status": "planned",
+          "text": "Bell plant einen souverainen AI-Supercluster mit bis zu 500 MW; vier Einrichtungen liegen in Kamloops und Merritt."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2025",
+          "grade": "A",
+          "publisher": "Bell",
+          "title": "Introducing Bell AI Fabric",
+          "url": "https://explore.business.bell.ca/news-and-events/increasing-sovereign-ai-capacity-introducing-bell-ai-fabric"
+        }
+      ]
+    },
+    {
+      "id": "bell-sherwood-saskatchewan",
+      "name": "Bell AI Fabric Sherwood",
+      "operator": "Bell Canada",
+      "partners": "—",
+      "country": "Kanada",
+      "iso3": "CAN",
+      "region": "Nordamerika",
+      "location": "Sherwood / Regina, Saskatchewan",
+      "lat": 50.52,
+      "lon": -104.58,
+      "location_precision": "Stadtzentrum; keine Parzellenkoordinate",
+      "record_type": "facility",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "300 MW",
+      "investment": "nicht separat offengelegt",
+      "announced": "2025",
+      "target_live": "nicht belastbar offengelegt",
+      "actual_live": "—",
+      "latest_update": "Bell fuehrt Sherwood nahe Regina als 300-MW-Standort seines AI-Fabric-Programms.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": 300,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 67
+        },
+        "score": 67,
+        "band": "strategic",
+        "metric_coverage": 0.45,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2025",
+          "status": "planned",
+          "text": "Bell fuehrt Sherwood nahe Regina als 300-MW-Standort seines AI-Fabric-Programms."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2025",
+          "grade": "A",
+          "publisher": "Bell",
+          "title": "Bell AI Fabric",
+          "url": "https://www.bce.ca/cs-assets/Bell-AI-Fabric.pdf-blt3f7cbf3754b033a2"
+        }
+      ]
+    },
+    {
+      "id": "nebius-finland-310mw",
+      "name": "Nebius Mäntsälä AI Factory Expansion",
+      "operator": "Nebius",
+      "partners": "—",
+      "country": "Finnland",
+      "iso3": "FIN",
+      "region": "Europa",
+      "location": "Mäntsälä, Finnland",
+      "lat": 60.63,
+      "lon": 25.32,
+      "location_precision": "Stadtzentrum; keine Parzellenkoordinate",
+      "record_type": "facility",
+      "current_status": "under_construction",
+      "realization": "in_progress",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "310 MW neue AI-Factory",
+      "investment": "nicht separat offengelegt",
+      "announced": "2025",
+      "target_live": "nicht belastbar offengelegt",
+      "actual_live": "—",
+      "latest_update": "Nebius kuendigte eine neue 310-MW-AI-Factory in Finnland an.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": 310,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 67.4
+        },
+        "score": 67,
+        "band": "strategic",
+        "metric_coverage": 0.45,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2025",
+          "status": "under_construction",
+          "text": "Nebius kuendigte eine neue 310-MW-AI-Factory in Finnland an."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026",
+          "grade": "A",
+          "publisher": "Nebius",
+          "title": "Nebius to construct 310 MW AI factory in Finland",
+          "url": "https://nebius.com/newsroom/nebius-to-construct-310-mw-ai-factory-in-finland"
+        }
+      ]
+    },
+    {
+      "id": "softbank-sakai-ai",
+      "name": "SoftBank Sakai AI Data Center",
+      "operator": "SoftBank",
+      "partners": "—",
+      "country": "Japan",
+      "iso3": "JPN",
+      "region": "Asien-Pazifik",
+      "location": "Sakai, Osaka",
+      "lat": 34.57,
+      "lon": 135.48,
+      "location_precision": "Stadtzentrum; keine Parzellenkoordinate",
+      "record_type": "facility",
+      "current_status": "under_construction",
+      "realization": "in_progress",
+      "schedule": "late_unverified",
+      "confidence": "high",
+      "planned_capacity": "150 MW initial; erweiterbar auf >400 MW",
+      "investment": "nicht separat offengelegt",
+      "announced": "2024",
+      "target_live": "Vollbetrieb 2025 (urspruenglicher Plan)",
+      "actual_live": "—",
+      "latest_update": "Der 150-MW-Start und die >400-MW-Ausbauoption sind primaer belegt; ein aktueller Vollbetriebsnachweis fehlt noch.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": 400,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 70.4
+        },
+        "score": 70,
+        "band": "strategic",
+        "metric_coverage": 0.45,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2024",
+          "status": "under_construction",
+          "text": "Der 150-MW-Start und die >400-MW-Ausbauoption sind primaer belegt; ein aktueller Vollbetriebsnachweis fehlt noch."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2024-06-07",
+          "grade": "A",
+          "publisher": "SoftBank",
+          "title": "Development of a large-scale AI data center in Sakai",
+          "url": "https://www.softbank.jp/en/corp/news/press/sbkk/2024/20240607_01/"
+        }
+      ]
+    },
+    {
+      "id": "sk-aws-ulsan",
+      "name": "SK / AWS Ulsan AI Zone",
+      "operator": "SK Group / AWS",
+      "partners": "—",
+      "country": "Suedkorea",
+      "iso3": "KOR",
+      "region": "Asien-Pazifik",
+      "location": "Ulsan, Suedkorea",
+      "lat": 35.54,
+      "lon": 129.31,
+      "location_precision": "Stadtzentrum; keine Parzellenkoordinate",
+      "record_type": "facility",
+      "current_status": "under_construction",
+      "realization": "in_progress",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "AI-optimierte Cloud- und Rechenzentrumsinfrastruktur; MW nicht offengelegt",
+      "investment": "nicht separat offengelegt",
+      "announced": "2025",
+      "target_live": "nicht belastbar offengelegt",
+      "actual_live": "—",
+      "latest_update": "SK baut das Rechenzentrum; AWS richtet darin eine AI Zone ein.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2025",
+          "status": "under_construction",
+          "text": "SK baut das Rechenzentrum; AWS richtet darin eine AI Zone ein."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2025",
+          "grade": "A",
+          "publisher": "SK Group",
+          "title": "SK Group and AWS team up to build AI infrastructure",
+          "url": "https://eng.sk.com/news/sk-group-and-aws-team-up-to-build-cloud-computing-infrastructure-to-support-ai-innovation"
+        }
+      ]
+    },
+    {
+      "id": "eurohpc-ai-at",
+      "name": "AI:AT Austria",
+      "operator": "EuroHPC JU / national consortium",
+      "partners": "—",
+      "country": "Oesterreich",
+      "iso3": "AUT",
+      "region": "Europa",
+      "location": "Wien",
+      "lat": 48.21,
+      "lon": 16.37,
+      "location_precision": "Hoststadt / bestehendes HPC-Zentrum",
+      "record_type": "ai_factory_compute_deployment",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "EuroHPC AI Factory / AI-optimierter Supercomputer; Standortleistung nicht einheitlich offengelegt",
+      "investment": "Teil des EuroHPC-AI-Factory-Programms; Standortbudget nicht einheitlich offengelegt",
+      "announced": "2024–2025",
+      "target_live": "projektspezifisch; laufende Beschaffung/Installation",
+      "actual_live": "—",
+      "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2024–2025",
+          "status": "planned",
+          "text": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026",
+          "grade": "A",
+          "publisher": "EuroHPC JU",
+          "title": "AI Factories",
+          "url": "https://www.eurohpc-ju.europa.eu/ai-factories_en"
+        }
+      ]
+    },
+    {
+      "id": "eurohpc-jaif-juelich",
+      "name": "JAIF Jülich",
+      "operator": "Jülich Supercomputing Centre",
+      "partners": "—",
+      "country": "Deutschland",
+      "iso3": "DEU",
+      "region": "Europa",
+      "location": "Jülich",
+      "lat": 50.92,
+      "lon": 6.36,
+      "location_precision": "Hoststadt / bestehendes HPC-Zentrum",
+      "record_type": "ai_factory_compute_deployment",
+      "current_status": "under_construction",
+      "realization": "in_progress",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "EuroHPC AI Factory / AI-optimierter Supercomputer; Standortleistung nicht einheitlich offengelegt",
+      "investment": "Teil des EuroHPC-AI-Factory-Programms; Standortbudget nicht einheitlich offengelegt",
+      "announced": "2024–2025",
+      "target_live": "projektspezifisch; laufende Beschaffung/Installation",
+      "actual_live": "—",
+      "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2024–2025",
+          "status": "under_construction",
+          "text": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026",
+          "grade": "A",
+          "publisher": "EuroHPC JU",
+          "title": "AI Factories",
+          "url": "https://www.eurohpc-ju.europa.eu/ai-factories_en"
+        }
+      ]
+    },
+    {
+      "id": "eurohpc-meluxina-ai",
+      "name": "MeluXina-AI",
+      "operator": "LuxProvide",
+      "partners": "—",
+      "country": "Luxemburg",
+      "iso3": "LUX",
+      "region": "Europa",
+      "location": "Bissen",
+      "lat": 49.79,
+      "lon": 6.07,
+      "location_precision": "Hoststadt / bestehendes HPC-Zentrum",
+      "record_type": "ai_factory_compute_deployment",
+      "current_status": "under_construction",
+      "realization": "in_progress",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "EuroHPC AI Factory / AI-optimierter Supercomputer; Standortleistung nicht einheitlich offengelegt",
+      "investment": "Teil des EuroHPC-AI-Factory-Programms; Standortbudget nicht einheitlich offengelegt",
+      "announced": "2024–2025",
+      "target_live": "projektspezifisch; laufende Beschaffung/Installation",
+      "actual_live": "—",
+      "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2024–2025",
+          "status": "under_construction",
+          "text": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026",
+          "grade": "A",
+          "publisher": "EuroHPC JU",
+          "title": "AI Factories",
+          "url": "https://www.eurohpc-ju.europa.eu/ai-factories_en"
+        }
+      ]
+    },
+    {
+      "id": "eurohpc-1healthai",
+      "name": "1HealthAI",
+      "operator": "CESGA",
+      "partners": "—",
+      "country": "Spanien",
+      "iso3": "ESP",
+      "region": "Europa",
+      "location": "A Sionlla / Santiago de Compostela",
+      "lat": 42.9,
+      "lon": -8.49,
+      "location_precision": "Hoststadt / bestehendes HPC-Zentrum",
+      "record_type": "ai_factory_compute_deployment",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "EuroHPC AI Factory / AI-optimierter Supercomputer; Standortleistung nicht einheitlich offengelegt",
+      "investment": "Teil des EuroHPC-AI-Factory-Programms; Standortbudget nicht einheitlich offengelegt",
+      "announced": "2024–2025",
+      "target_live": "projektspezifisch; laufende Beschaffung/Installation",
+      "actual_live": "—",
+      "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2024–2025",
+          "status": "planned",
+          "text": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026",
+          "grade": "A",
+          "publisher": "EuroHPC JU",
+          "title": "AI Factories",
+          "url": "https://www.eurohpc-ju.europa.eu/ai-factories_en"
+        }
+      ]
+    },
+    {
+      "id": "eurohpc-brain-plus",
+      "name": "BRAIN++",
+      "operator": "EuroHPC JU / Bulgarian consortium",
+      "partners": "—",
+      "country": "Bulgarien",
+      "iso3": "BGR",
+      "region": "Europa",
+      "location": "Sofia",
+      "lat": 42.7,
+      "lon": 23.32,
+      "location_precision": "Hoststadt / bestehendes HPC-Zentrum",
+      "record_type": "ai_factory_compute_deployment",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "EuroHPC AI Factory / AI-optimierter Supercomputer; Standortleistung nicht einheitlich offengelegt",
+      "investment": "Teil des EuroHPC-AI-Factory-Programms; Standortbudget nicht einheitlich offengelegt",
+      "announced": "2024–2025",
+      "target_live": "projektspezifisch; laufende Beschaffung/Installation",
+      "actual_live": "—",
+      "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2024–2025",
+          "status": "planned",
+          "text": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026",
+          "grade": "A",
+          "publisher": "EuroHPC JU",
+          "title": "AI Factories",
+          "url": "https://www.eurohpc-ju.europa.eu/ai-factories_en"
+        }
+      ]
+    },
+    {
+      "id": "eurohpc-hammerhai",
+      "name": "HammerHAI",
+      "operator": "HLRS",
+      "partners": "—",
+      "country": "Deutschland",
+      "iso3": "DEU",
+      "region": "Europa",
+      "location": "Stuttgart",
+      "lat": 48.78,
+      "lon": 9.18,
+      "location_precision": "Hoststadt / bestehendes HPC-Zentrum",
+      "record_type": "ai_factory_compute_deployment",
+      "current_status": "under_construction",
+      "realization": "in_progress",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "860 GPU-Beschleuniger; EuroHPC AI Factory",
+      "investment": "Teil des EuroHPC-AI-Factory-Programms; Standortbudget nicht einheitlich offengelegt",
+      "announced": "2024–2025",
+      "target_live": "projektspezifisch; laufende Beschaffung/Installation",
+      "actual_live": "—",
+      "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": 860,
+        "component_scores": {
+          "accelerators": 48.9
+        },
+        "score": 49,
+        "band": "regional",
+        "metric_coverage": 0.2,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2024–2025",
+          "status": "under_construction",
+          "text": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026",
+          "grade": "A",
+          "publisher": "EuroHPC JU",
+          "title": "AI Factories",
+          "url": "https://www.eurohpc-ju.europa.eu/ai-factories_en"
+        }
+      ]
+    },
+    {
+      "id": "eurohpc-piast-aif",
+      "name": "PIAST AI Factory",
+      "operator": "PSNC",
+      "partners": "—",
+      "country": "Polen",
+      "iso3": "POL",
+      "region": "Europa",
+      "location": "Poznań",
+      "lat": 52.41,
+      "lon": 16.93,
+      "location_precision": "Hoststadt / bestehendes HPC-Zentrum",
+      "record_type": "ai_factory_compute_deployment",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "EuroHPC AI Factory / AI-optimierter Supercomputer; Standortleistung nicht einheitlich offengelegt",
+      "investment": "Teil des EuroHPC-AI-Factory-Programms; Standortbudget nicht einheitlich offengelegt",
+      "announced": "2024–2025",
+      "target_live": "projektspezifisch; laufende Beschaffung/Installation",
+      "actual_live": "—",
+      "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2024–2025",
+          "status": "planned",
+          "text": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026",
+          "grade": "A",
+          "publisher": "EuroHPC JU",
+          "title": "AI Factories",
+          "url": "https://www.eurohpc-ju.europa.eu/ai-factories_en"
+        }
+      ]
+    },
+    {
+      "id": "eurohpc-bsc-aif",
+      "name": "BSC AI Factory",
+      "operator": "Barcelona Supercomputing Center",
+      "partners": "—",
+      "country": "Spanien",
+      "iso3": "ESP",
+      "region": "Europa",
+      "location": "Barcelona",
+      "lat": 41.39,
+      "lon": 2.12,
+      "location_precision": "Hoststadt / bestehendes HPC-Zentrum",
+      "record_type": "ai_factory_compute_deployment",
+      "current_status": "under_construction",
+      "realization": "in_progress",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "EuroHPC AI Factory / AI-optimierter Supercomputer; Standortleistung nicht einheitlich offengelegt",
+      "investment": "Teil des EuroHPC-AI-Factory-Programms; Standortbudget nicht einheitlich offengelegt",
+      "announced": "2024–2025",
+      "target_live": "projektspezifisch; laufende Beschaffung/Installation",
+      "actual_live": "—",
+      "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2024–2025",
+          "status": "under_construction",
+          "text": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026",
+          "grade": "A",
+          "publisher": "EuroHPC JU",
+          "title": "AI Factories",
+          "url": "https://www.eurohpc-ju.europa.eu/ai-factories_en"
+        }
+      ]
+    },
+    {
+      "id": "eurohpc-czai",
+      "name": "CZAI",
+      "operator": "VSB – Technical University of Ostrava",
+      "partners": "—",
+      "country": "Tschechien",
+      "iso3": "CZE",
+      "region": "Europa",
+      "location": "Ostrava",
+      "lat": 49.82,
+      "lon": 18.26,
+      "location_precision": "Hoststadt / bestehendes HPC-Zentrum",
+      "record_type": "ai_factory_compute_deployment",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "EuroHPC AI Factory / AI-optimierter Supercomputer; Standortleistung nicht einheitlich offengelegt",
+      "investment": "Teil des EuroHPC-AI-Factory-Programms; Standortbudget nicht einheitlich offengelegt",
+      "announced": "2024–2025",
+      "target_live": "projektspezifisch; laufende Beschaffung/Installation",
+      "actual_live": "—",
+      "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2024–2025",
+          "status": "planned",
+          "text": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026",
+          "grade": "A",
+          "publisher": "EuroHPC JU",
+          "title": "AI Factories",
+          "url": "https://www.eurohpc-ju.europa.eu/ai-factories_en"
+        }
+      ]
+    },
+    {
+      "id": "eurohpc-pharos",
+      "name": "Pharos AI Factory",
+      "operator": "GRNET",
+      "partners": "—",
+      "country": "Griechenland",
+      "iso3": "GRC",
+      "region": "Europa",
+      "location": "Athen",
+      "lat": 37.98,
+      "lon": 23.73,
+      "location_precision": "Hoststadt / bestehendes HPC-Zentrum",
+      "record_type": "ai_factory_compute_deployment",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "EuroHPC AI Factory / AI-optimierter Supercomputer; Standortleistung nicht einheitlich offengelegt",
+      "investment": "Teil des EuroHPC-AI-Factory-Programms; Standortbudget nicht einheitlich offengelegt",
+      "announced": "2024–2025",
+      "target_live": "projektspezifisch; laufende Beschaffung/Installation",
+      "actual_live": "—",
+      "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2024–2025",
+          "status": "planned",
+          "text": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026",
+          "grade": "A",
+          "publisher": "EuroHPC JU",
+          "title": "AI Factories",
+          "url": "https://www.eurohpc-ju.europa.eu/ai-factories_en"
+        }
+      ]
+    },
+    {
+      "id": "eurohpc-gaia-ai",
+      "name": "Gaia AI Factory",
+      "operator": "AGH / Cyfronet consortium",
+      "partners": "—",
+      "country": "Polen",
+      "iso3": "POL",
+      "region": "Europa",
+      "location": "Krakau",
+      "lat": 50.06,
+      "lon": 19.94,
+      "location_precision": "Hoststadt / bestehendes HPC-Zentrum",
+      "record_type": "ai_factory_compute_deployment",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "EuroHPC AI Factory / AI-optimierter Supercomputer; Standortleistung nicht einheitlich offengelegt",
+      "investment": "Teil des EuroHPC-AI-Factory-Programms; Standortbudget nicht einheitlich offengelegt",
+      "announced": "2024–2025",
+      "target_live": "projektspezifisch; laufende Beschaffung/Installation",
+      "actual_live": "—",
+      "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2024–2025",
+          "status": "planned",
+          "text": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026",
+          "grade": "A",
+          "publisher": "EuroHPC JU",
+          "title": "AI Factories",
+          "url": "https://www.eurohpc-ju.europa.eu/ai-factories_en"
+        }
+      ]
+    },
+    {
+      "id": "eurohpc-slaif",
+      "name": "SLAIF",
+      "operator": "EuroHPC JU / Slovenian consortium",
+      "partners": "—",
+      "country": "Slowenien",
+      "iso3": "SVN",
+      "region": "Europa",
+      "location": "Maribor",
+      "lat": 46.55,
+      "lon": 15.65,
+      "location_precision": "Hoststadt / bestehendes HPC-Zentrum",
+      "record_type": "ai_factory_compute_deployment",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "EuroHPC AI Factory / AI-optimierter Supercomputer; Standortleistung nicht einheitlich offengelegt",
+      "investment": "Teil des EuroHPC-AI-Factory-Programms; Standortbudget nicht einheitlich offengelegt",
+      "announced": "2024–2025",
+      "target_live": "projektspezifisch; laufende Beschaffung/Installation",
+      "actual_live": "—",
+      "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2024–2025",
+          "status": "planned",
+          "text": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026",
+          "grade": "A",
+          "publisher": "EuroHPC JU",
+          "title": "AI Factories",
+          "url": "https://www.eurohpc-ju.europa.eu/ai-factories_en"
+        }
+      ]
+    },
+    {
+      "id": "eurohpc-lumi-aif",
+      "name": "LUMI AI Factory",
+      "operator": "CSC",
+      "partners": "—",
+      "country": "Finnland",
+      "iso3": "FIN",
+      "region": "Europa",
+      "location": "Kajaani",
+      "lat": 64.23,
+      "lon": 27.73,
+      "location_precision": "Hoststadt / bestehendes HPC-Zentrum",
+      "record_type": "ai_factory_compute_deployment",
+      "current_status": "operational",
+      "realization": "realized",
+      "schedule": "delivered",
+      "confidence": "high",
+      "planned_capacity": "EuroHPC AI Factory / AI-optimierter Supercomputer; Standortleistung nicht einheitlich offengelegt",
+      "investment": "Teil des EuroHPC-AI-Factory-Programms; Standortbudget nicht einheitlich offengelegt",
+      "announced": "2024–2025",
+      "target_live": "2026",
+      "actual_live": "in Betrieb",
+      "latest_update": "Als Teil des EuroHPC-Netzes in Betrieb; Ausbau- und Serviceumfang wird weiter aktualisiert.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2024–2025",
+          "status": "operational",
+          "text": "Als Teil des EuroHPC-Netzes in Betrieb; Ausbau- und Serviceumfang wird weiter aktualisiert."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026",
+          "grade": "A",
+          "publisher": "EuroHPC JU",
+          "title": "AI Factories",
+          "url": "https://www.eurohpc-ju.europa.eu/ai-factories_en"
+        }
+      ]
+    },
+    {
+      "id": "eurohpc-it4lia",
+      "name": "IT4LIA AI Factory",
+      "operator": "CINECA",
+      "partners": "—",
+      "country": "Italien",
+      "iso3": "ITA",
+      "region": "Europa",
+      "location": "Bologna",
+      "lat": 44.49,
+      "lon": 11.34,
+      "location_precision": "Hoststadt / bestehendes HPC-Zentrum",
+      "record_type": "ai_factory_compute_deployment",
+      "current_status": "under_construction",
+      "realization": "in_progress",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "1.328 GPU-Beschleuniger; EuroHPC AI Factory",
+      "investment": "290 Mio. EUR Beschaffungsbudget plus 50 Mio. EUR LISA-Ausbau",
+      "announced": "2024–2025",
+      "target_live": "projektspezifisch; laufende Beschaffung/Installation",
+      "actual_live": "—",
+      "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": 1328,
+        "component_scores": {
+          "accelerators": 52.1
+        },
+        "score": 52,
+        "band": "regional",
+        "metric_coverage": 0.2,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2024–2025",
+          "status": "under_construction",
+          "text": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026",
+          "grade": "A",
+          "publisher": "EuroHPC JU",
+          "title": "AI Factories",
+          "url": "https://www.eurohpc-ju.europa.eu/ai-factories_en"
+        }
+      ]
+    },
+    {
+      "id": "eurohpc-nlaif",
+      "name": "NLAIF",
+      "operator": "AIFNL / SURF consortium",
+      "partners": "—",
+      "country": "Niederlande",
+      "iso3": "NLD",
+      "region": "Europa",
+      "location": "Niederlande; Hoststandort noch nicht oeffentlich",
+      "lat": 52.13,
+      "lon": 5.29,
+      "location_precision": "Laenderzentrum; Hoststandort noch nicht oeffentlich",
+      "record_type": "ai_factory_compute_deployment",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "EuroHPC AI Factory / AI-optimierter Supercomputer; Standortleistung nicht einheitlich offengelegt",
+      "investment": "Teil des EuroHPC-AI-Factory-Programms; Standortbudget nicht einheitlich offengelegt",
+      "announced": "2024–2025",
+      "target_live": "projektspezifisch; laufende Beschaffung/Installation",
+      "actual_live": "—",
+      "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2024–2025",
+          "status": "planned",
+          "text": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026",
+          "grade": "A",
+          "publisher": "EuroHPC JU",
+          "title": "AI Factories",
+          "url": "https://www.eurohpc-ju.europa.eu/ai-factories_en"
+        }
+      ]
+    },
+    {
+      "id": "eurohpc-mimer",
+      "name": "MIMER AI Factory",
+      "operator": "Linköping University / NAISS",
+      "partners": "—",
+      "country": "Schweden",
+      "iso3": "SWE",
+      "region": "Europa",
+      "location": "Linköping",
+      "lat": 58.41,
+      "lon": 15.62,
+      "location_precision": "Hoststadt / bestehendes HPC-Zentrum",
+      "record_type": "ai_factory_compute_deployment",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "EuroHPC AI Factory / AI-optimierter Supercomputer; Standortleistung nicht einheitlich offengelegt",
+      "investment": "Teil des EuroHPC-AI-Factory-Programms; Standortbudget nicht einheitlich offengelegt",
+      "announced": "2024–2025",
+      "target_live": "projektspezifisch; laufende Beschaffung/Installation",
+      "actual_live": "—",
+      "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2024–2025",
+          "status": "planned",
+          "text": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026",
+          "grade": "A",
+          "publisher": "EuroHPC JU",
+          "title": "AI Factories",
+          "url": "https://www.eurohpc-ju.europa.eu/ai-factories_en"
+        }
+      ]
+    },
+    {
+      "id": "eurohpc-ai2f",
+      "name": "AI2F",
+      "operator": "GENCI / CEA",
+      "partners": "—",
+      "country": "Frankreich",
+      "iso3": "FRA",
+      "region": "Europa",
+      "location": "Bruyères-le-Châtel",
+      "lat": 48.59,
+      "lon": 2.19,
+      "location_precision": "Hoststadt / bestehendes HPC-Zentrum",
+      "record_type": "ai_factory_compute_deployment",
+      "current_status": "under_construction",
+      "realization": "in_progress",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "EuroHPC AI Factory / AI-optimierter Supercomputer; Standortleistung nicht einheitlich offengelegt",
+      "investment": "Teil des EuroHPC-AI-Factory-Programms; Standortbudget nicht einheitlich offengelegt",
+      "announced": "2024–2025",
+      "target_live": "projektspezifisch; laufende Beschaffung/Installation",
+      "actual_live": "—",
+      "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2024–2025",
+          "status": "under_construction",
+          "text": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026",
+          "grade": "A",
+          "publisher": "EuroHPC JU",
+          "title": "AI Factories",
+          "url": "https://www.eurohpc-ju.europa.eu/ai-factories_en"
+        }
+      ]
+    },
+    {
+      "id": "eurohpc-litai",
+      "name": "LitAI Factory",
+      "operator": "Vilnius University / LRTC",
+      "partners": "—",
+      "country": "Litauen",
+      "iso3": "LTU",
+      "region": "Europa",
+      "location": "Vilnius",
+      "lat": 54.69,
+      "lon": 25.28,
+      "location_precision": "Hoststadt / bestehendes HPC-Zentrum",
+      "record_type": "ai_factory_compute_deployment",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "EuroHPC AI Factory / AI-optimierter Supercomputer; Standortleistung nicht einheitlich offengelegt",
+      "investment": "Teil des EuroHPC-AI-Factory-Programms; Standortbudget nicht einheitlich offengelegt",
+      "announced": "2024–2025",
+      "target_live": "projektspezifisch; laufende Beschaffung/Installation",
+      "actual_live": "—",
+      "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2024–2025",
+          "status": "planned",
+          "text": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026",
+          "grade": "A",
+          "publisher": "EuroHPC JU",
+          "title": "AI Factories",
+          "url": "https://www.eurohpc-ju.europa.eu/ai-factories_en"
+        }
+      ]
+    },
+    {
+      "id": "eurohpc-ro-ai",
+      "name": "RO AI Factory",
+      "operator": "ICI Bucharest / UPB",
+      "partners": "—",
+      "country": "Rumaenien",
+      "iso3": "ROU",
+      "region": "Europa",
+      "location": "Bukarest",
+      "lat": 44.43,
+      "lon": 26.1,
+      "location_precision": "Hoststadt / bestehendes HPC-Zentrum",
+      "record_type": "ai_factory_compute_deployment",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "EuroHPC AI Factory / AI-optimierter Supercomputer; Standortleistung nicht einheitlich offengelegt",
+      "investment": "Teil des EuroHPC-AI-Factory-Programms; Standortbudget nicht einheitlich offengelegt",
+      "announced": "2024–2025",
+      "target_live": "projektspezifisch; laufende Beschaffung/Installation",
+      "actual_live": "—",
+      "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
+      "last_checked": "2026-07-15",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      },
+      "history": [
+        {
+          "date": "2024–2025",
+          "status": "planned",
+          "text": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026",
+          "grade": "A",
+          "publisher": "EuroHPC JU",
+          "title": "AI Factories",
+          "url": "https://www.eurohpc-ju.europa.eu/ai-factories_en"
+        }
       ]
     }
   ]
