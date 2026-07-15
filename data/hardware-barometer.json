@@ -19,11 +19,36 @@
     "minimum": 0,
     "maximum": 100,
     "bands": [
-      { "min": 0, "max": 19, "label_de": "Entspannung", "label_en": "Easing" },
-      { "min": 20, "max": 39, "label_de": "Geringer Druck", "label_en": "Low pressure" },
-      { "min": 40, "max": 59, "label_de": "Neutral", "label_en": "Neutral" },
-      { "min": 60, "max": 79, "label_de": "Steigender Preisdruck", "label_en": "Rising price pressure" },
-      { "min": 80, "max": 100, "label_de": "Akuter Preisdruck", "label_en": "Acute price pressure" }
+      {
+        "min": 0,
+        "max": 19,
+        "label_de": "Entspannung",
+        "label_en": "Easing"
+      },
+      {
+        "min": 20,
+        "max": 39,
+        "label_de": "Geringer Druck",
+        "label_en": "Low pressure"
+      },
+      {
+        "min": 40,
+        "max": 59,
+        "label_de": "Neutral",
+        "label_en": "Neutral"
+      },
+      {
+        "min": 60,
+        "max": 79,
+        "label_de": "Steigender Preisdruck",
+        "label_en": "Rising price pressure"
+      },
+      {
+        "min": 80,
+        "max": 100,
+        "label_de": "Akuter Preisdruck",
+        "label_en": "Acute price pressure"
+      }
     ]
   },
   "publication_gate": {
@@ -110,28 +135,28 @@
       "label": "Consumer GPU",
       "normalization": "EUR pro festem Benchmark-Punkt und VRAM-Klasse",
       "target_skus": 12,
-      "series_status": "not_started"
+      "series_status": "source_required"
     },
     {
       "id": "dram",
       "label": "DDR5 DRAM",
       "normalization": "EUR pro GiB, getrennt nach Geschwindigkeit und Kit-Groesse",
       "target_skus": 10,
-      "series_status": "not_started"
+      "series_status": "source_required"
     },
     {
       "id": "ssd",
       "label": "NVMe SSD",
       "normalization": "EUR pro TB, getrennt nach PCIe-Generation und NAND-Klasse",
       "target_skus": 10,
-      "series_status": "not_started"
+      "series_status": "source_required"
     },
     {
       "id": "cpu",
       "label": "Desktop CPU",
       "normalization": "EUR pro festem Multi- und Single-Core-Benchmark-Punkt",
       "target_skus": 8,
-      "series_status": "not_started"
+      "series_status": "source_required"
     }
   ],
   "quality_guardrails": [
@@ -246,5 +271,11 @@
       "use_for": "Wechselkursbedingter Importkostendruck fuer in USD gehandelte Hardware",
       "last_checked": "2026-07-15"
     }
-  ]
+  ],
+  "retail_model": {
+    "file": "retail-baskets.json",
+    "current_level": "L0",
+    "retail_readiness": 0,
+    "retail_grade_gate_met": false
+  }
 }
