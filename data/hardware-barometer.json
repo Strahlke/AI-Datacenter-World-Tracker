@@ -11,8 +11,8 @@
   "confidence": "medium",
   "retail_grade": false,
   "history_file": "hardware-history.json",
-  "summary_de": "Vorlaeufiger datenbasierter Wert: 74,4 von 100 - steigender Preisdruck. Der 12-Monats-Backcast stuetzt sich auf amtliche Verbraucher- und Erzeugerpreise, SEC-Capex, Speicherpreis-Proxys und EUR/USD. Ein erster direkter Geizhals-Snapshot deckt 40 SKUs ab; eine historische SKU- und Verfuegbarkeitsreihe entsteht erst mit den kommenden Wochenlaeufen.",
-  "summary_en": "Provisional data-backed reading: 74.4 out of 100 - rising price pressure. The 12-month backcast uses official consumer and producer prices, SEC capex, memory-price proxies and EUR/USD. A first direct Geizhals snapshot covers 40 SKUs; a historical SKU and availability series will only emerge through the coming weekly runs.",
+  "summary_de": "Vorlaeufiger datenbasierter Wert: 74,4 von 100 - steigender Preisdruck. Zusaetzlich zum amtlichen 12-Monats-Backcast ist jetzt ein direkter 365-Tage-Geizhals-Backfill fuer 40 feste MPNs verfuegbar. Er zeigt die Preisbewegung von GPU-, DDR5-, NVMe- und CPU-Koerben, wird wegen der rueckgerechneten heutigen Korbzusammensetzung aber zunaechst als Diagnose und noch nicht als stiller Score-Umbau verwendet.",
+  "summary_en": "Provisional data-backed reading: 74.4 out of 100 - rising price pressure. In addition to the official 12-month backcast, a direct 365-day Geizhals backfill is now available for 40 fixed MPNs. It shows movements in GPU, DDR5, NVMe and CPU baskets, but because today's basket composition is reconstructed retrospectively it is initially used as a diagnostic rather than silently changing the score.",
   "purpose_de": "Misst den Preisdruck, den private Kaeufer bei GPUs, CPUs, Arbeitsspeicher und SSDs in den kommenden Wochen und Monaten erwarten koennen.",
   "purpose_en": "Measures the price pressure private buyers may face for GPUs, CPUs, memory and SSDs over the coming weeks and months.",
   "scale": {
@@ -55,11 +55,11 @@
     "minimum_weighted_coverage": 0.7,
     "minimum_history_months": 12,
     "minimum_skus_per_retail_category": 6,
-    "minimum_independent_retailers": 2,
+    "minimum_archived_retail_weeks": 26,
     "provisional_gate_met": true,
     "retail_grade_gate_met": false,
-    "rule_de": "Ein klar als vorlaeufig gekennzeichneter Backcast-Wert darf ab 70 Prozent gewichteter Abdeckung und 12 Monatswerten erscheinen. Retail-Grade erfordert zusaetzlich je Kategorie mindestens sechs vergleichbare SKUs von zwei unabhaengigen Haendlern sowie Verfuegbarkeitsdaten.",
-    "rule_en": "A clearly labelled provisional backcast may be published at 70 percent weighted coverage and 12 monthly observations. Retail grade additionally requires at least six comparable SKUs per category from two independent retailers plus availability data."
+    "rule_de": "Ein klar als vorlaeufig gekennzeichneter Backcast-Wert darf ab 70 Prozent gewichteter Abdeckung und 12 Monatswerten erscheinen. Retail-Grade erfordert zusaetzlich 26 selbst archivierte Wochen, mindestens sechs stabile MPNs je Kategorie, Angebotsstatus, Quellenkontinuitaet und eine dokumentierte Revisionsrate des Geizhals-Backfills.",
+    "rule_en": "A clearly labelled provisional backcast may be published at 70 percent weighted coverage and 12 monthly observations. Retail grade additionally requires 26 self-archived weeks, at least six stable MPNs per category, offer status, source continuity and a documented revision rate for the Geizhals backfill."
   },
   "calculation": {
     "frequency": "monthly_with_weekly_refresh",
@@ -81,8 +81,8 @@
       "coverage": 1,
       "current_score": 75.3,
       "status": "tracked",
-      "definition_de": "Gleichgewichteter Sechsmonats-Preistrend des BLS-Computer-CPI fuer die USA und des Eurostat-HVPI fuer Personal Computer im Euroraum. Direkt beobachtet, aber breiter als einzelne GPU-, CPU-, DRAM- oder SSD-SKUs.",
-      "definition_en": "Equal-weight six-month price trend from the U.S. BLS computer CPI and Eurostat HICP for personal computers in the euro area. Directly observed, but broader than individual GPU, CPU, DRAM or SSD SKUs."
+      "definition_de": "Der aktuelle Score verwendet weiterhin den gleichgewichteten Sechsmonats-Preistrend von BLS und Eurostat. Der neue 365-Tage-Geizhals-Backfill fuer 40 feste MPNs ist als direkte Diagnose sichtbar und wird nach 13 selbst archivierten Wochen auf Revisionsstabilitaet geprueft, bevor die Gewichtung geaendert wird.",
+      "definition_en": "The current score continues to use the equal-weight six-month BLS and Eurostat price trend. The new 365-day Geizhals backfill for 40 fixed MPNs is visible as a direct diagnostic and will be tested for revision stability after 13 self-archived weeks before weights change."
     },
     {
       "id": "retail_availability",
@@ -135,28 +135,28 @@
       "label": "Consumer GPU",
       "normalization": "EUR pro festem Benchmark-Punkt und VRAM-Klasse",
       "target_skus": 12,
-      "series_status": "pilot_snapshot"
+      "series_status": "historical_backfill"
     },
     {
       "id": "dram",
       "label": "DDR5 DRAM",
       "normalization": "EUR pro GiB, getrennt nach Geschwindigkeit und Kit-Groesse",
       "target_skus": 10,
-      "series_status": "pilot_snapshot"
+      "series_status": "historical_backfill"
     },
     {
       "id": "ssd",
       "label": "NVMe SSD",
       "normalization": "EUR pro TB, getrennt nach PCIe-Generation und NAND-Klasse",
       "target_skus": 10,
-      "series_status": "pilot_snapshot"
+      "series_status": "historical_backfill"
     },
     {
       "id": "cpu",
       "label": "Desktop CPU",
       "normalization": "EUR pro festem Multi- und Single-Core-Benchmark-Punkt",
       "target_skus": 8,
-      "series_status": "pilot_snapshot"
+      "series_status": "historical_backfill"
     }
   ],
   "quality_guardrails": [
@@ -270,14 +270,28 @@
       "url": "https://data.ecb.europa.eu/data/datasets/EXR/EXR.M.USD.EUR.SP00.A",
       "use_for": "Wechselkursbedingter Importkostendruck fuer in USD gehandelte Hardware",
       "last_checked": "2026-07-15"
+    },
+    {
+      "id": "geizhals-public-price-history",
+      "grade": "B",
+      "publisher": "Geizhals",
+      "title": "Oeffentliche Preisentwicklung der CHPI-DE-Wunschlisten",
+      "url": "https://geizhals.de/wishlists/5081030",
+      "use_for": "365 Tage direkte Produkt- und Fixed-Cohort-Preisverlaeufe fuer 40 feste MPNs in Deutschland",
+      "last_checked": "2026-07-15"
     }
   ],
   "retail_model": {
     "file": "retail-baskets.json",
     "observations_file": "retail-observations.json",
+    "history_file": "retail-history.json",
+    "raw_history_file": "retail-history-daily.json",
     "weekly_snapshots": 1,
-    "current_level": "L0",
-    "retail_readiness": 0.25,
+    "historical_days": 365,
+    "historical_product_series": 40,
+    "historical_product_points": 14573,
+    "current_level": "L1",
+    "retail_readiness": 0.5,
     "retail_grade_gate_met": false
   }
 }

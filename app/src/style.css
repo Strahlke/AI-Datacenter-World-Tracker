@@ -2783,6 +2783,226 @@ h1 {
   text-decoration: none;
 }
 
+.retail-history-section {
+  min-width: 0;
+  margin: 0 0 12px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.retail-history-heading {
+  margin-bottom: 10px;
+}
+
+.retail-history-meta {
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.retail-history-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.retail-history-card {
+  display: grid;
+  min-width: 0;
+  gap: 7px;
+  padding: 11px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--surface-subtle);
+}
+
+.retail-history-card-heading {
+  display: grid;
+  gap: 4px;
+}
+
+.retail-history-card-heading span,
+.retail-history-card small {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.retail-history-card-heading strong {
+  overflow: hidden;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.retail-index-reading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.retail-index-reading > strong {
+  font-size: 24px;
+  letter-spacing: -0.04em;
+}
+
+.retail-index-reading span {
+  font-size: 9px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.retail-index-reading .up {
+  color: var(--status-paused);
+}
+
+.retail-index-reading .down {
+  color: var(--status-operational);
+}
+
+.retail-mini-chart {
+  display: block;
+  width: 100%;
+  height: 72px;
+  overflow: visible;
+}
+
+.retail-mini-baseline {
+  stroke: var(--border);
+  stroke-dasharray: 3 3;
+  stroke-width: 1;
+}
+
+.retail-mini-line {
+  fill: none;
+  stroke: var(--accent);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.retail-history-caveat {
+  margin: 10px 0 0;
+  padding: 9px 11px;
+  border-left: 3px solid var(--status-partial);
+  background: var(--surface-subtle);
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+.product-history-disclosure {
+  margin-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.product-history-disclosure > summary {
+  padding: 11px 0 1px;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.product-history-toolbar {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+  gap: 12px;
+  align-items: end;
+  margin-top: 12px;
+}
+
+.product-history-toolbar label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.product-history-toolbar select {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 8px 9px;
+  background: var(--surface);
+  color: var(--foreground);
+  font-size: 10px;
+}
+
+.retail-product-summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  min-width: 0;
+}
+
+.retail-product-summary > div {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+}
+
+.retail-product-summary > div:last-child {
+  text-align: right;
+}
+
+.retail-product-summary span,
+.retail-product-summary small {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.retail-product-summary strong {
+  overflow: hidden;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.retail-product-chart-wrap {
+  min-width: 0;
+  margin-top: 10px;
+  overflow-x: auto;
+}
+
+#retail-product-chart {
+  display: block;
+  width: 100%;
+  min-width: 560px;
+  height: 190px;
+}
+
+.retail-product-grid {
+  stroke: var(--border);
+  stroke-width: 1;
+}
+
+.retail-product-line {
+  fill: none;
+  stroke: var(--accent);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.5;
+}
+
+.retail-product-point {
+  fill: var(--surface);
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.retail-product-axis {
+  fill: var(--muted);
+  font-size: 9px;
+}
+
 .method-disclosure {
   margin-bottom: 12px;
   border: 1px solid var(--border);
@@ -2818,7 +3038,8 @@ h1 {
 }
 
 @media (max-width: 1100px) {
-  .retail-snapshot-grid {
+  .retail-snapshot-grid,
+  .retail-history-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -2826,8 +3047,18 @@ h1 {
 @media (max-width: 760px) {
   .supply-focus-grid,
   .retail-snapshot-grid,
+  .retail-history-grid,
   .retail-snapshot-header {
     grid-template-columns: 1fr;
+  }
+
+  .product-history-toolbar,
+  .retail-product-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .retail-product-summary > div:last-child {
+    text-align: left;
   }
 
   .reading-path {

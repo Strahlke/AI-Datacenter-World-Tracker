@@ -337,8 +337,8 @@
   "quality_notes": [
     {
       "severity": "medium",
-      "note_de": "Direkte historische GPU-, CPU-, DRAM- und SSD-Strassenpreise nach SKU und Haendler fehlen weiterhin. Der aktuelle Wert ist deshalb ein vorlaeufiger Markt-Druckindex und kein vollstaendiger Retail-Preisindex.",
-      "note_en": "Direct historical street prices by GPU, CPU, DRAM and SSD SKU and retailer are still missing. The current value is therefore a provisional market-pressure index, not a complete retail price index."
+      "note_de": "Ein direkter 365-Tage-Geizhals-Backfill fuer 40 feste GPU-, CPU-, DRAM- und SSD-MPNs liegt nun separat vor. Weil er die heutige Wunschlisten-Zusammensetzung rueckwirkend rekonstruiert, bleibt der aktuelle CHPI bis zur Revisionskalibrierung ein vorlaeufiger Markt-Druckindex und kein vollstaendiger Retail-Preisindex.",
+      "note_en": "A direct 365-day Geizhals backfill for 40 fixed GPU, CPU, DRAM and SSD MPNs is now available separately. Because it reconstructs today's wishlist composition retrospectively, the current CHPI remains a provisional market-pressure index rather than a complete retail price index until revision stability is calibrated."
     },
     {
       "severity": "medium",

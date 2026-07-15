@@ -100,8 +100,23 @@ const copy = {
     retailReadiness: "Retail-Reife",
     weeklyObservations: "Wochenbeobachtungen",
     activeRetailers: "Normalisierte Händler",
+    historicalSkuSeries: "Historische SKU-Reihen",
     sourceAccess: "Quellenzugang",
     pilotSnapshot: "Direkter Pilot-Snapshot",
+    historicalBackfill: "365-Tage-Backfill",
+    retailHistoryTitle: "365-Tage-Retail-Backfill",
+    retailHistoryIntro: "Historische Geizhals-Preise für die heutigen, fest definierten Produktkohorten.",
+    openRetailHistory: "Monatsdaten öffnen",
+    openRetailRaw: "Rohdaten öffnen",
+    showProductHistory: "Einzelprodukt-Verläufe anzeigen",
+    productLabel: "Produkt",
+    fixedCohortIndex: "Vergleichbarer Kohortenindex",
+    changeVsBaseline: "ggü. Basis 100",
+    historyCoverage: "direkte Preisabdeckung",
+    reconstructedCaveat: "Methodischer Hinweis: Die Historie wurde für die heutige feste Wunschlisten-Zusammensetzung rekonstruiert. Sie ist kein Archiv früherer Listeninhalte. Der vergleichbare Index normalisiert jedes Produkt auf seine ersten 31 Tage; rohe Warenkorbsummen können sich auch ändern, wenn Angebote entfallen.",
+    productPriceHistory: "Monatlicher letzter Bestpreis",
+    noPriceHistory: "Für dieses Produkt ist keine auswertbare Historie vorhanden.",
+    retailHistoryMeta: (start, end, series, points) => `${start} bis ${end} · ${series} Produktreihen · ${points} tägliche Produktpreispunkte`,
     availableSkus: "SKUs mit Angebot",
     sumBestPrices: "Summe Einzel-Bestpreise",
     openWishlist: "Wunschliste öffnen",
@@ -265,8 +280,23 @@ const copy = {
     retailReadiness: "Retail maturity",
     weeklyObservations: "Weekly observations",
     activeRetailers: "Normalised retailers",
+    historicalSkuSeries: "Historical SKU series",
     sourceAccess: "Source access",
     pilotSnapshot: "Direct pilot snapshot",
+    historicalBackfill: "365-day backfill",
+    retailHistoryTitle: "365-day retail backfill",
+    retailHistoryIntro: "Historical Geizhals prices for today's fixed, explicitly defined product cohorts.",
+    openRetailHistory: "Open monthly data",
+    openRetailRaw: "Open raw data",
+    showProductHistory: "Show individual product histories",
+    productLabel: "Product",
+    fixedCohortIndex: "Comparable cohort index",
+    changeVsBaseline: "vs baseline 100",
+    historyCoverage: "direct price coverage",
+    reconstructedCaveat: "Method note: History was reconstructed for today's fixed wishlist composition; it is not an archive of earlier list membership. The comparable index normalises each product to its first 31 days. Raw basket totals can also move when offers disappear.",
+    productPriceHistory: "Monthly last best price",
+    noPriceHistory: "No usable price history is available for this product.",
+    retailHistoryMeta: (start, end, series, points) => `${start} to ${end} · ${series} product series · ${points} daily product-price points`,
     availableSkus: "SKUs with an offer",
     sumBestPrices: "Sum of individual best prices",
     openWishlist: "Open wishlist",
@@ -396,6 +426,8 @@ const state = {
   investmentPrograms: null,
   retailBaskets: null,
   retailObservations: null,
+  retailHistory: null,
+  selectedRetailProduct: null,
   view: ["map", "method", "supply", "barometer"].includes(urlParams.get("view")) ? urlParams.get("view") : "map",
   lang: getStoredLanguage(),
 };
@@ -458,6 +490,12 @@ const elements = {
   retailConnectedCount: document.getElementById("retail-connected-count"),
   retailSnapshotHeader: document.getElementById("retail-snapshot-header"),
   retailSnapshotGrid: document.getElementById("retail-snapshot-grid"),
+  retailHistoryMeta: document.getElementById("retail-history-meta"),
+  retailHistoryGrid: document.getElementById("retail-history-grid"),
+  retailHistoryCaveat: document.getElementById("retail-history-caveat"),
+  retailProductSelect: document.getElementById("retail-product-select"),
+  retailProductSummary: document.getElementById("retail-product-summary"),
+  retailProductChart: document.getElementById("retail-product-chart"),
   retailReadiness: document.getElementById("retail-readiness"),
   maturityLadder: document.getElementById("maturity-ladder"),
   retailSourceGrid: document.getElementById("retail-source-grid"),
@@ -1252,6 +1290,150 @@ function renderHardwareHistory() {
   }
 }
 
+function linePath(values, width, height, padding) {
+  const finite = values.filter((point) => Number.isFinite(point.value));
+  if (!finite.length) return { path: "", coordinates: [], min: null, max: null };
+  const min = Math.min(...finite.map((point) => point.value));
+  const max = Math.max(...finite.map((point) => point.value));
+  const span = max - min || 1;
+  const count = Math.max(1, values.length - 1);
+  const coordinates = values.map((point, index) => ({
+    ...point,
+    x: padding.left + index / count * (width - padding.left - padding.right),
+    y: Number.isFinite(point.value) ? padding.top + (max - point.value) / span * (height - padding.top - padding.bottom) : null,
+  }));
+  let path = "";
+  let drawing = false;
+  for (const point of coordinates) {
+    if (!Number.isFinite(point.y)) {
+      drawing = false;
+      continue;
+    }
+    path += `${drawing ? "L" : "M"}${point.x.toFixed(2)},${point.y.toFixed(2)}`;
+    drawing = true;
+  }
+  return { path, coordinates, min, max };
+}
+
+function renderMiniHistoryChart(svg, monthly) {
+  const width = 260;
+  const height = 72;
+  const values = monthly.map((point) => ({ label: point.month, value: point.last_index }));
+  const plotted = linePath(values, width, height, { top: 8, right: 5, bottom: 8, left: 5 });
+  svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+  svg.replaceChildren();
+  const baselineY = plotted.min !== null && plotted.max !== null
+    ? 8 + (plotted.max - 100) / (plotted.max - plotted.min || 1) * (height - 16)
+    : null;
+  if (Number.isFinite(baselineY) && baselineY >= 8 && baselineY <= height - 8) {
+    svg.appendChild(svgElement("line", { x1: 5, x2: width - 5, y1: baselineY, y2: baselineY, class: "retail-mini-baseline" }));
+  }
+  if (plotted.path) svg.appendChild(svgElement("path", { d: plotted.path, class: "retail-mini-line" }));
+}
+
+function renderRetailProductHistory(product, basketDefinition) {
+  const svg = elements.retailProductChart;
+  svg.replaceChildren();
+  if (!product) {
+    elements.retailProductSummary.textContent = t("noPriceHistory");
+    return;
+  }
+  const monthly = (product.monthly || []).map((point) => ({ label: point.month, value: point.last_price_eur }));
+  const finite = monthly.filter((point) => Number.isFinite(point.value));
+  if (!finite.length) {
+    elements.retailProductSummary.textContent = t("noPriceHistory");
+    return;
+  }
+
+  const first = finite[0];
+  const last = finite.at(-1);
+  const change = first.value ? (last.value / first.value - 1) * 100 : null;
+  const signedChange = Number.isFinite(change) ? `${change >= 0 ? "+" : ""}${formatNumber(change)}%` : "—";
+  elements.retailProductSummary.innerHTML = `
+    <div><span>${escapeHtml(localized(basketDefinition, "label"))}</span><strong>${escapeHtml(product.name)}</strong><small>MPN ${escapeHtml(product.mpn)}</small></div>
+    <div><span>${escapeHtml(t("productPriceHistory"))}</span><strong>${escapeHtml(formatEur(last.value))}</strong><small>${escapeHtml(first.label)} → ${escapeHtml(last.label)} · ${escapeHtml(signedChange)}</small></div>`;
+
+  const width = 760;
+  const height = 190;
+  const padding = { top: 18, right: 18, bottom: 34, left: 64 };
+  const plotted = linePath(monthly, width, height, padding);
+  svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+  svg.setAttribute("aria-label", `${product.name}: ${formatEur(first.value)} ${first.label}, ${formatEur(last.value)} ${last.label}`);
+  for (let index = 0; index < 3; index += 1) {
+    const ratio = index / 2;
+    const y = padding.top + ratio * (height - padding.top - padding.bottom);
+    const value = plotted.max - ratio * (plotted.max - plotted.min);
+    svg.appendChild(svgElement("line", { x1: padding.left, x2: width - padding.right, y1: y, y2: y, class: "retail-product-grid" }));
+    const label = svgElement("text", { x: padding.left - 9, y: y + 4, class: "retail-product-axis", "text-anchor": "end" });
+    label.textContent = formatEur(value);
+    svg.appendChild(label);
+  }
+  if (plotted.path) svg.appendChild(svgElement("path", { d: plotted.path, class: "retail-product-line" }));
+  for (const point of plotted.coordinates.filter((item) => Number.isFinite(item.y))) {
+    svg.appendChild(svgElement("circle", { cx: point.x, cy: point.y, r: 3, class: "retail-product-point" }));
+  }
+  for (const index of [0, monthly.length - 1]) {
+    const point = plotted.coordinates[index];
+    if (!point) continue;
+    const label = svgElement("text", { x: point.x, y: height - 9, class: "retail-product-axis", "text-anchor": index === 0 ? "start" : "end" });
+    label.textContent = point.label;
+    svg.appendChild(label);
+  }
+}
+
+function renderRetailHistory() {
+  const history = state.retailHistory;
+  elements.retailHistoryGrid.replaceChildren();
+  if (!history) return;
+
+  const definitions = new Map((state.retailBaskets?.baskets || []).map((basket) => [basket.id, basket]));
+  const quality = history.quality || {};
+  elements.retailHistoryMeta.textContent = t(
+    "retailHistoryMeta",
+    formatDate(history.period_start),
+    formatDate(history.period_end),
+    quality.product_series_count,
+    formatNumber(quality.raw_product_daily_points, 0),
+  );
+  elements.retailHistoryCaveat.textContent = t("reconstructedCaveat");
+
+  const products = [];
+  for (const basket of history.baskets || []) {
+    const definition = definitions.get(basket.basket_id);
+    const monthly = basket.comparable_index?.monthly || [];
+    const latest = monthly.at(-1);
+    const value = latest?.last_index;
+    const change = Number.isFinite(value) ? value - 100 : null;
+    const signedChange = Number.isFinite(change) ? `${change >= 0 ? "+" : ""}${formatNumber(change)}%` : "—";
+    const card = document.createElement("article");
+    card.className = "retail-history-card";
+    card.innerHTML = `
+      <div class="retail-history-card-heading"><span>${escapeHtml(t("fixedCohortIndex"))}</span><strong>${escapeHtml(localized(definition, "label") || basket.wishlist_name)}</strong></div>
+      <div class="retail-index-reading"><strong>${escapeHtml(formatNumber(value))}</strong><span class="${change >= 0 ? "up" : "down"}">${escapeHtml(signedChange)} ${escapeHtml(t("changeVsBaseline"))}</span></div>
+      <svg class="retail-mini-chart" role="img" aria-label="${escapeHtml(localized(definition, "label") || basket.wishlist_name)}"></svg>
+      <small>${escapeHtml(percent(latest?.average_direct_coverage || 0))} ${escapeHtml(t("historyCoverage"))} · n=${basket.comparable_index?.eligible_product_count || 0}</small>`;
+    elements.retailHistoryGrid.appendChild(card);
+    renderMiniHistoryChart(card.querySelector("svg"), monthly);
+    for (const product of basket.products || []) {
+      products.push({ key: `${basket.basket_id}:${product.article_id}`, product, basketDefinition: definition });
+    }
+  }
+
+  const previousSelection = state.selectedRetailProduct;
+  elements.retailProductSelect.replaceChildren();
+  for (const item of products) {
+    const option = document.createElement("option");
+    option.value = item.key;
+    option.textContent = `${localized(item.basketDefinition, "label")} · ${item.product.name}`;
+    elements.retailProductSelect.appendChild(option);
+  }
+  const selection = products.some((item) => item.key === previousSelection) ? previousSelection : products[0]?.key;
+  state.selectedRetailProduct = selection || null;
+  elements.retailProductSelect.value = selection || "";
+  const selected = products.find((item) => item.key === selection);
+  renderRetailProductHistory(selected?.product, selected?.basketDefinition);
+}
+
 function renderBarometer() {
   const model = state.barometer;
   if (!model) return;
@@ -1317,13 +1499,15 @@ function renderBarometer() {
     }
   }
 
+  renderRetailHistory();
+
   elements.retailReadiness.replaceChildren();
   if (retail) {
     const observations = retail.observation_summary;
     elements.retailReadiness.innerHTML = `
       <div><span>${escapeHtml(t("retailReadiness"))}</span><strong>${escapeHtml(retail.current_level)} · ${escapeHtml(localized(retail, "current_level_label"))}</strong></div>
       <div><span>${escapeHtml(t("weeklyObservations"))}</span><strong>${observations.weekly_observations}</strong></div>
-      <div><span>${escapeHtml(t("activeRetailers"))}</span><strong>${observations.active_retailers}</strong></div>
+      <div><span>${escapeHtml(t("historicalSkuSeries"))}</span><strong>${observations.historical_product_series ?? observations.active_retailers}</strong></div>
       <div><span>${escapeHtml(t("dataCoverage"))}</span><strong>${observations.categories_with_minimum_coverage}/${observations.total_categories}</strong></div>`;
 
     elements.maturityLadder.replaceChildren();
@@ -1346,7 +1530,8 @@ function renderBarometer() {
     const observed = basket.observed_skus ?? 0;
     const availability = Number.isInteger(basket.available_skus) ? ` · ${escapeHtml(t("availableSkus"))}: ${basket.available_skus}` : "";
     const wishlist = basket.wishlist_url ? `<a href="${safeUrl(basket.wishlist_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t("openWishlist"))} ↗</a>` : "";
-    item.innerHTML = `<div><span>${escapeHtml(basket.status === "pilot_observed" ? t("pilotSnapshot") : t("retailGradePending"))}</span><h4>${escapeHtml(label)}</h4></div><p>${escapeHtml(normalization)}</p>${basket.cohorts ? `<small>${escapeHtml(basket.cohorts.join(" · "))}</small>` : ""}<strong>${escapeHtml(t("basketTarget"))}: ${target} · ${escapeHtml(t("tracked"))}: ${observed}${availability}</strong>${wishlist}`;
+    const basketStatus = basket.status === "historical_backfill" ? t("historicalBackfill") : basket.status === "pilot_observed" ? t("pilotSnapshot") : t("retailGradePending");
+    item.innerHTML = `<div><span>${escapeHtml(basketStatus)}</span><h4>${escapeHtml(label)}</h4></div><p>${escapeHtml(normalization)}</p>${basket.cohorts ? `<small>${escapeHtml(basket.cohorts.join(" · "))}</small>` : ""}<strong>${escapeHtml(t("basketTarget"))}: ${target} · ${escapeHtml(t("tracked"))}: ${observed}${availability}</strong>${wishlist}`;
     elements.basketGrid.appendChild(item);
   }
 
@@ -1479,6 +1664,10 @@ elements.sourceQueue.addEventListener("change", () => { state.sourceQueue = elem
 elements.sourceCadence.addEventListener("change", () => { state.sourceCadence = elements.sourceCadence.value; renderSourceRegistry(); });
 elements.sourcePriority.addEventListener("change", () => { state.sourcePriority = elements.sourcePriority.value; renderSourceRegistry(); });
 elements.supplyStage.addEventListener("change", () => { state.supplyStage = elements.supplyStage.value; renderSupplyChain(); });
+elements.retailProductSelect.addEventListener("change", () => {
+  state.selectedRetailProduct = elements.retailProductSelect.value;
+  renderRetailHistory();
+});
 
 elements.zoomIn.addEventListener("click", () => {
   if (zoomBehavior) select(elements.map).call(zoomBehavior.scaleBy, 1.5);
@@ -1513,12 +1702,13 @@ async function bootstrap() {
       fetch(`${import.meta.env.BASE_URL}data/investment-programs.json`, { cache: "no-cache" }),
       fetch(`${import.meta.env.BASE_URL}data/retail-baskets.json`, { cache: "no-cache" }),
       fetch(`${import.meta.env.BASE_URL}data/retail-observations.json`, { cache: "no-cache" }),
+      fetch(`${import.meta.env.BASE_URL}data/retail-history.json`, { cache: "no-cache" }),
     ]);
-    const labels = ["projects", "source-registry", "supply-chain", "hardware-barometer", "hardware-history", "investment-programs", "retail-baskets", "retail-observations"];
+    const labels = ["projects", "source-registry", "supply-chain", "hardware-barometer", "hardware-history", "investment-programs", "retail-baskets", "retail-observations", "retail-history"];
     responses.forEach((response, index) => {
       if (!response.ok) throw new Error(`${labels[index]} ${response.status}`);
     });
-    const [payload, sourcePayload, supplyPayload, barometerPayload, hardwareHistoryPayload, investmentProgramsPayload, retailBasketsPayload, retailObservationsPayload] = await Promise.all(responses.map((response) => response.json()));
+    const [payload, sourcePayload, supplyPayload, barometerPayload, hardwareHistoryPayload, investmentProgramsPayload, retailBasketsPayload, retailObservationsPayload, retailHistoryPayload] = await Promise.all(responses.map((response) => response.json()));
     state.projects = payload.projects;
     state.snapshotDate = payload.snapshot_date;
     state.sources = sourcePayload.sources;
@@ -1530,6 +1720,7 @@ async function bootstrap() {
     state.investmentPrograms = investmentProgramsPayload;
     state.retailBaskets = retailBasketsPayload;
     state.retailObservations = retailObservationsPayload;
+    state.retailHistory = retailHistoryPayload;
     elements.snapshot.textContent = t("snapshotMeta", payload.snapshot_date, state.projects.length);
     populateRegions();
     populateSupplyStages();

@@ -1253,7 +1253,36 @@
         "in stock"
       ],
       "use_for": "Tatsaechliche Preise und Verfuegbarkeit eines stabilen, leistungsnormalisierten SKU-Warenkorbs messen.",
-      "caveat": "Nur mit erlaubtem Zugriff, Zeitstempel, SKU-Matching und mindestens zwei unabhaengigen Haendlern; kein unkontrolliertes Scraping.",
+      "caveat": "Nur oeffentliche, reproduzierbare Quellen ohne Registrierung verwenden; Zeitstempel, exakte MPNs, Preisbasis, Angebotsstatus und Revisionen dokumentieren.",
+      "last_verified": "2026-07-15"
+    },
+    {
+      "id": "geizhals-public-price-history",
+      "name": "Geizhals oeffentliche Preisentwicklung",
+      "publisher": "Geizhals",
+      "url": "https://geizhals.de/wishlists",
+      "queue": "hard_reference",
+      "category": "retail_hardware_price_history",
+      "geography": "Deutschland",
+      "priority": "core",
+      "recommended_cadence": "weekly",
+      "run_schedule": "every_week",
+      "access": "public_web_ui_endpoint",
+      "max_grade": "B",
+      "signals": [
+        "daily_product_best_price",
+        "daily_fixed_basket_total",
+        "priced_item_count",
+        "historical_min_max"
+      ],
+      "search_hints": [
+        "Preisentwicklung",
+        "365 Tage",
+        "Produkt-MPN",
+        "Wunschlisten-Gesamtpreis"
+      ],
+      "use_for": "365-Tage-Backfill der 40 festen MPNs und vier aktuellen Warenkoerbe ohne Registrierung oder API-Schluessel.",
+      "caveat": "Der Wunschlistenverlauf wird fuer die heutige feste Korbzusammensetzung rueckgerechnet und ist kein Archiv frueherer Wunschlisten-Mitgliedschaften. Fehlende Angebote und technische Ausreisser muessen sichtbar bleiben.",
       "last_verified": "2026-07-15"
     },
     {
@@ -1280,89 +1309,6 @@
       ],
       "use_for": "Waehrungseffekte von globalen Hardwarepreisbewegungen im Euro-Retailmarkt trennen.",
       "caveat": "Wechselkurse erklaeren keine Produktknappheit und werden nur als Kontrollvariable verwendet.",
-      "last_verified": "2026-07-15"
-    },
-    {
-      "id": "ebay-browse-api",
-      "name": "eBay Browse API",
-      "publisher": "eBay",
-      "category": "retail_price",
-      "geography": "DE/EU/US",
-      "queue": "hard_reference",
-      "priority": "core",
-      "recommended_cadence": "weekly",
-      "run_schedule": "every_week",
-      "access": "api",
-      "url": "https://developer.ebay.com/api-docs/buy/static/api-browse.html",
-      "max_grade": "A",
-      "use_for": "Aktuelle Neuware-Angebote, Bruttopreise und Verfuegbarkeit in unterstuetzten eBay-Marktplatzlaendern.",
-      "caveat": "Marketplace ist kein einzelner Haendler; Seller-, Zustands- und Versandfilter muessen versioniert werden. Keine Historie ohne eigene Snapshots.",
-      "signals": [
-        "sku_price",
-        "availability",
-        "shipping"
-      ],
-      "search_hints": [
-        "GTIN/MPN",
-        "FIXED_PRICE",
-        "condition NEW",
-        "marketplace DE"
-      ],
-      "last_verified": "2026-07-15"
-    },
-    {
-      "id": "bestbuy-products-api",
-      "name": "Best Buy Products API",
-      "publisher": "Best Buy",
-      "category": "retail_price",
-      "geography": "USA",
-      "queue": "hard_reference",
-      "priority": "supporting",
-      "recommended_cadence": "weekly",
-      "run_schedule": "every_week",
-      "access": "api",
-      "url": "https://developer.bestbuy.com/apis",
-      "max_grade": "A",
-      "use_for": "Unabhaengiger US-Retailkanal mit Preis, Verfuegbarkeit und Produktstammdaten.",
-      "caveat": "Nur USA; nicht direkt auf den deutschen Markt uebertragbar.",
-      "signals": [
-        "sku_price",
-        "availability",
-        "catalog_history"
-      ],
-      "search_hints": [
-        "GPU SKU",
-        "DDR5 kit",
-        "NVMe SSD",
-        "desktop CPU"
-      ],
-      "last_verified": "2026-07-15"
-    },
-    {
-      "id": "keepa-api",
-      "name": "Keepa API",
-      "publisher": "Keepa",
-      "category": "retail_price",
-      "geography": "Amazon-Marktplatzlaender",
-      "queue": "hard_reference",
-      "priority": "core",
-      "recommended_cadence": "weekly",
-      "run_schedule": "every_week",
-      "access": "api",
-      "url": "https://keepa.com/#!api",
-      "max_grade": "B",
-      "use_for": "Historische Amazon-Preis- und Verfuegbarkeitsreihen als schneller Backfill fuer den Retail-Warenkorb.",
-      "caveat": "Kostenpflichtiger Drittanbieter, Amazon-zentriert; Lizenz, Revisionen und Angebotsarten muessen dokumentiert werden.",
-      "signals": [
-        "historical_sku_price",
-        "buy_box",
-        "availability"
-      ],
-      "search_hints": [
-        "Amazon DE ASIN",
-        "price history",
-        "stock history"
-      ],
       "last_verified": "2026-07-15"
     },
     {

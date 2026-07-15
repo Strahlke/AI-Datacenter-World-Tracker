@@ -1,15 +1,18 @@
 {
   "snapshot_date": "2026-07-15",
-  "methodology_version": "1.0",
-  "current_level": "L0",
-  "current_level_label_de": "Proxy-Barometer",
-  "current_level_label_en": "Proxy barometer",
-  "retail_readiness": 0.25,
-  "status_de": "Vier oeffentliche Geizhals-Wunschlisten sind verbunden und der erste direkte SKU-Snapshot ist gespeichert. Es gibt erst eine Beobachtungswoche, nur einen Aggregator und noch keine normalisierten Haendleridentitaeten; deshalb bleibt der Reifegrad konservativ auf L0.",
-  "status_en": "Four public Geizhals wishlists are connected and the first direct SKU snapshot is stored. There is only one observation week, one aggregator and no normalised merchant identities yet, so maturity conservatively remains at L0.",
+  "methodology_version": "1.1",
+  "current_level": "L1",
+  "current_level_label_de": "Historische Retail-Zeitreihe",
+  "current_level_label_en": "Historical retail series",
+  "retail_readiness": 0.5,
+  "status_de": "Vier oeffentliche Geizhals-Wunschlisten, 40 feste MPNs und deren 365-Tage-Preisverlaeufe sind verbunden. Der Backfill umfasst 14.573 Produkt-Tagespunkte und 1.460 rekonstruierte Wunschlisten-Tagespunkte. Er wird als Fixed-Cohort-Backfill gekennzeichnet, weil Geizhals die heutige Korbzusammensetzung rueckwirkend berechnet.",
+  "status_en": "Four public Geizhals wishlists, 40 fixed MPNs and their 365-day price histories are connected. The backfill contains 14,573 product-day points and 1,460 reconstructed wishlist-day points. It is labelled as a fixed-cohort backfill because Geizhals calculates today's basket composition retrospectively.",
   "observation_summary": {
     "weekly_observations": 1,
     "active_retailers": 0,
+    "historical_days": 365,
+    "historical_product_series": 40,
+    "historical_product_points": 14573,
     "categories_with_minimum_coverage": 4,
     "total_categories": 4,
     "availability_coverage": 0.975,
@@ -20,32 +23,32 @@
       "id": "L0",
       "label_de": "Proxy",
       "label_en": "Proxy",
-      "gate_de": "Offizielle Preisindizes und Upstream-Signale; erster direkter SKU-Snapshot, aber noch keine Zeitreihe.",
-      "gate_en": "Official price indices and upstream signals; first direct SKU snapshot, but no time series yet.",
+      "gate_de": "Offizielle Preisindizes und Upstream-Signale plus erster direkter SKU-Snapshot.",
+      "gate_en": "Official price indices and upstream signals plus a first direct SKU snapshot.",
       "met": true
     },
     {
       "id": "L1",
-      "label_de": "Instrumentiert",
-      "label_en": "Instrumented",
-      "gate_de": "Versionierte Koerbe plus mindestens zwei regelkonforme Haendler-/Preisdatenfeeds.",
-      "gate_en": "Versioned baskets plus at least two compliant retailer/price-data feeds.",
-      "met": false
+      "label_de": "Historisch instrumentiert",
+      "label_en": "Historically instrumented",
+      "gate_de": "Versionierte Geizhals-Koerbe, exakte MPNs sowie 365 Tage Produkt- und Fixed-Cohort-Historie mit sichtbarer Angebotsabdeckung.",
+      "gate_en": "Versioned Geizhals baskets, exact MPNs and 365 days of product and fixed-cohort history with visible offer coverage.",
+      "met": true
     },
     {
       "id": "L2",
       "label_de": "Kalibriert",
       "label_en": "Calibrated",
-      "gate_de": "Mindestens 13 Wochen und 70 % SKU-Abdeckung je Kategorie.",
-      "gate_en": "At least 13 weeks and 70% SKU coverage per category.",
+      "gate_de": "Mindestens 13 selbst archivierte Wochen-Snapshots und Abgleich gegen den rueckgerechneten Backfill, um Revisionen zu messen.",
+      "gate_en": "At least 13 self-archived weekly snapshots reconciled against the reconstructed backfill to measure revisions.",
       "met": false
     },
     {
       "id": "L3",
       "label_de": "Retail-Grade",
       "label_en": "Retail grade",
-      "gate_de": "26 Wochen, ≥6 vergleichbare SKUs je Kategorie, ≥2 unabhaengige Haendler, Preis plus Verfuegbarkeit, Quellenkontinuitaet ≥90 %.",
-      "gate_en": "26 weeks, ≥6 comparable SKUs per category, ≥2 independent retailers, price plus availability, source continuity ≥90%.",
+      "gate_de": "26 selbst archivierte Wochen, ≥6 stabile MPNs je Kategorie, Preis und Angebotsstatus, Quellenkontinuitaet ≥90 % sowie dokumentierte Revisionsrate.",
+      "gate_en": "26 self-archived weeks, at least 6 stable MPNs per category, price and offer status, source continuity of at least 90%, and a documented revision rate.",
       "met": false
     },
     {
@@ -71,8 +74,10 @@
         "Mid 12–16 GB",
         "High 16–24+ GB"
       ],
-      "status": "pilot_observed",
+      "status": "historical_backfill",
       "wishlist_url": "https://geizhals.de/wishlists/5081030",
+      "geizhals_article_ids": [3010480, 3273115, 3365541, 3382456, 3382462, 3382468, 3382474, 3429991, 3430020, 3472689, 3474748, 3509220],
+      "history_days": 365,
       "observed_skus": 12,
       "available_skus": 11,
       "active_retailers": 0
@@ -89,8 +94,10 @@
         "32 GB 6000 CL30–36",
         "64 GB 6000–6400 CL30–36"
       ],
-      "status": "pilot_observed",
+      "status": "historical_backfill",
       "wishlist_url": "https://geizhals.de/wishlists/5081039",
+      "geizhals_article_ids": [2837569, 2921918, 2952275, 2998430, 3003771, 3138650, 3164911, 3164913, 3204206, 3204227],
+      "history_days": 365,
       "observed_skus": 10,
       "available_skus": 10,
       "active_retailers": 0
@@ -108,8 +115,10 @@
         "2 TB PCIe 4/5 TLC",
         "4 TB PCIe 4 TLC"
       ],
-      "status": "pilot_observed",
+      "status": "historical_backfill",
       "wishlist_url": "https://geizhals.de/wishlists/5081157",
+      "geizhals_article_ids": [2621457, 2770177, 2795958, 2956595, 3053884, 3060489, 3128724, 3316843, 3427162, 3483433],
+      "history_days": 365,
       "observed_skus": 10,
       "available_skus": 10,
       "active_retailers": 0
@@ -127,8 +136,10 @@
         "Upper mainstream 8–16 cores",
         "Enthusiast 16+ cores"
       ],
-      "status": "pilot_observed",
+      "status": "historical_backfill",
       "wishlist_url": "https://geizhals.de/wishlists/5081163",
+      "geizhals_article_ids": [2871174, 3043173, 3202564, 3329402, 3329421, 3329423, 3336051, 3381558],
+      "history_days": 365,
       "observed_skus": 8,
       "available_skus": 8,
       "active_retailers": 0
@@ -139,57 +150,15 @@
       "id": "geizhals-public-wishlists",
       "name": "Geizhals Public Wishlists",
       "geography": "DE",
-      "access": "public web snapshot",
-      "history": false,
-      "price": true,
-      "availability": "offer count",
-      "status": "connected_pilot",
-      "grade": "B",
-      "url": "https://geizhals.de/wishlists",
-      "caveat_de": "Ein Preisvergleichs-Aggregator, kein unabhaengiger Zweitfeed. Preise sind periodische Momentaufnahmen inklusive MwSt. und ohne Versand; einzelne Haendler und Lieferzeiten werden im naechsten Schritt normalisiert.",
-      "caveat_en": "One price-comparison aggregator, not an independent second feed. Prices are periodic snapshots including VAT and excluding shipping; individual merchants and lead times will be normalised next."
-    },
-    {
-      "id": "ebay-browse",
-      "name": "eBay Browse API",
-      "geography": "DE/EU/US",
-      "access": "OAuth API",
-      "history": false,
-      "price": true,
-      "availability": true,
-      "status": "credentials_required",
-      "grade": "A",
-      "url": "https://developer.ebay.com/api-docs/buy/static/api-browse.html",
-      "caveat_de": "Marketplace-Angebote sind kein einzelner Haendler; nur Neuware, feste Preise und definierte Seller-Qualitaetsfilter verwenden.",
-      "caveat_en": "Marketplace offers are not one retailer; use new fixed-price items and defined seller-quality filters only."
-    },
-    {
-      "id": "best-buy",
-      "name": "Best Buy Products API",
-      "geography": "USA",
-      "access": "API key",
-      "history": "catalog past and present",
-      "price": true,
-      "availability": true,
-      "status": "credentials_required",
-      "grade": "A",
-      "url": "https://developer.bestbuy.com/apis",
-      "caveat_de": "Nur USA; als unabhaengiger Retail-Kanal und Plausibilitaetscheck geeignet.",
-      "caveat_en": "US only; suitable as an independent retail channel and plausibility check."
-    },
-    {
-      "id": "keepa",
-      "name": "Keepa API",
-      "geography": "Amazon-Marktplatzlaender",
-      "access": "paid API token",
+      "access": "public web and public UI endpoint",
       "history": true,
       "price": true,
-      "availability": true,
-      "status": "license_required",
+      "availability": "offer count",
+      "status": "connected",
       "grade": "B",
-      "url": "https://keepa.com/#!api",
-      "caveat_de": "Kommerzieller Drittanbieter und Amazon-zentriert; Lizenzbedingungen und Revisionslog dokumentieren.",
-      "caveat_en": "Commercial third party and Amazon-centric; document licence terms and revision log."
+      "url": "https://geizhals.de/wishlists",
+      "caveat_de": "Geizhals ist ein Aggregator. Der historische Wunschlistenpreis wird fuer die heutige feste Produktzusammensetzung rueckgerechnet; bepreiste Artikelzahl, Versand-Ausschluss und moegliche technische Ausreisser bleiben sichtbar.",
+      "caveat_en": "Geizhals is an aggregator. Historical wishlist prices are reconstructed for today's fixed product composition; priced-item count, excluded shipping and possible technical outliers remain visible."
     },
     {
       "id": "reviewed-csv",
@@ -222,6 +191,6 @@
     "source_url",
     "source_revision"
   ],
-  "next_action_de": "Die Geizhals-Koerbe liefern jetzt den ersten direkten Snapshot. Fuer L1 fehlt ein unabhaengiger Zweitfeed oder ein belastbarer Haendler-Level-Export; fuer L2 muessen danach mindestens 13 Wochen mit mindestens 70 Prozent SKU-Abdeckung je Kategorie vorliegen.",
-  "next_action_en": "The Geizhals baskets now provide the first direct snapshot. L1 still needs an independent second feed or a reliable merchant-level export; L2 then requires at least 13 weeks with at least 70 percent SKU coverage in every category."
+  "next_action_de": "Die 365-Tage-Geizhals-Historie startet den Backfill ohne Registrierung. Ab jetzt wird woechentlich ein eigener Snapshot archiviert und mit der spaeter rueckgerechneten Geizhals-Historie verglichen. Nach 13 Wochen kann die Revisionsstabilitaet kalibriert und der direkte Retail-Teil des CHPI neu gewichtet werden.",
+  "next_action_en": "The 365-day Geizhals history starts the backfill without registration. From now on, a separate weekly snapshot is archived and compared with Geizhals's later reconstructed history. After 13 weeks, revision stability can be calibrated and the CHPI's direct retail component reweighted."
 }

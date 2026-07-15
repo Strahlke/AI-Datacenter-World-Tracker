@@ -314,6 +314,28 @@
             </div>
             <div class="retail-snapshot-header" id="retail-snapshot-header"></div>
             <div class="retail-snapshot-grid" id="retail-snapshot-grid"></div>
+            <section class="retail-history-section" aria-labelledby="retail-history-title">
+              <div class="section-subheading retail-history-heading">
+                <div><h3 id="retail-history-title" data-i18n="retailHistoryTitle">365-Tage-Retail-Backfill</h3><p data-i18n="retailHistoryIntro">Historische Geizhals-Preise für die heutigen, fest definierten Produktkohorten.</p></div>
+                <div class="section-actions">
+                  <a class="secondary-link" href="./data/retail-history.json" target="_blank" rel="noopener noreferrer" data-i18n="openRetailHistory">Monatsdaten öffnen</a>
+                  <a class="secondary-link" href="./data/retail-history-daily.json" target="_blank" rel="noopener noreferrer" data-i18n="openRetailRaw">Rohdaten öffnen</a>
+                </div>
+              </div>
+              <div class="retail-history-meta" id="retail-history-meta"></div>
+              <div class="retail-history-grid" id="retail-history-grid"></div>
+              <p class="retail-history-caveat" id="retail-history-caveat"></p>
+              <details class="product-history-disclosure">
+                <summary data-i18n="showProductHistory">Einzelprodukt-Verläufe anzeigen</summary>
+                <div class="product-history-toolbar">
+                  <label for="retail-product-select"><span data-i18n="productLabel">Produkt</span><select id="retail-product-select"></select></label>
+                  <div class="retail-product-summary" id="retail-product-summary"></div>
+                </div>
+                <div class="retail-product-chart-wrap">
+                  <svg id="retail-product-chart" role="img" aria-label="Historischer Preisverlauf des ausgewählten Produkts"></svg>
+                </div>
+              </details>
+            </section>
             <div class="retail-readiness" id="retail-readiness"></div>
             <details class="method-disclosure">
               <summary data-i18n="showMaturityModel">Reifegrad und Datenquellen anzeigen</summary>

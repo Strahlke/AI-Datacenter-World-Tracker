@@ -17,14 +17,14 @@ Interaktive Weltkarte grosser, oeffentlich dokumentierter KI-Rechenzentren und A
 - impact-gewichtete Marker (dokumentierte Leistung, projektbezogene Investition, Beschleunigerzahl) und dezente Laenderdetails beim Zoomen
 - eine Quellen- und Methodikansicht mit Abdeckung nach Queue, Pruefrhythmus und Evidenzstufe
 - eine Lieferkettenansicht fuer zentrale Produzenten von Beschleunigern, Foundry, HBM/DRAM/NAND, Packaging, Netzwerk, Servern sowie Strom/Kuehlung
-- einen transparenten Consumer Hardwarekosten-Druckindex (CHPI) mit 12-Monats-Backcast, sichtbarer Datenabdeckung, Publikationsschwelle und vier versionierten Geizhals-Retail-Warenkoerben
+- einen transparenten Consumer Hardwarekosten-Druckindex (CHPI) mit 12-Monats-Backcast, sichtbarer Datenabdeckung, Publikationsschwelle und vier versionierten Geizhals-Retail-Warenkoerben inklusive 365-Tage-Preishistorie fuer 40 feste MPNs
 - deutsche und englische Oberflaeche; redaktionelle Projekt- und Quellennotizen bleiben bis zum automatisierten Uebersetzungs-Build deutsch gekennzeichnet
 
 ## Daten und Methodik
 
-Der aktuelle Datenstand liegt in `data/projects.json`. `data/investment-programs.json` trennt Dachprogramme strikt von einzelnen Standorten. Das verbindliche Rechercheverzeichnis liegt in `data/source-registry.json`; `data/supply-chain.json` fuehrt Produzenten und Uebertragungskanaele, `data/hardware-barometer.json` die KPI-Definition, Gewichte, Datenluecken und Publikationsregeln. `data/retail-baskets.json` definiert Warenkoerbe, Reifegrade, Beobachtungsschema und Datenfeeds; `data/retail-observations.json` speichert die append-only Wochen-Snapshots auf SKU-Ebene. `data/hardware-history.json` enthaelt die monatlichen und quartalsweisen Rohreihen, Quellenstatus und den reproduzierbaren 12-Monats-Backcast. `docs/research-runbook.md` beschreibt die Reihenfolge und Mindestnachweise jedes Refreshs. Fruehere Staende bleiben ueber die Git-Historie nachvollziehbar.
+Der aktuelle Datenstand liegt in `data/projects.json`. `data/investment-programs.json` trennt Dachprogramme strikt von einzelnen Standorten. Das verbindliche Rechercheverzeichnis liegt in `data/source-registry.json`; `data/supply-chain.json` fuehrt Produzenten und Uebertragungskanaele, `data/hardware-barometer.json` die KPI-Definition, Gewichte, Datenluecken und Publikationsregeln. `data/retail-baskets.json` definiert Warenkoerbe, Reifegrade, Beobachtungsschema und Datenfeeds; `data/retail-observations.json` speichert die append-only Wochen-Snapshots auf SKU-Ebene. `data/retail-history.json` enthaelt die kompakten Monatsreihen und den vergleichbaren Kohortenindex, `data/retail-history-daily.json` die zugrunde liegenden Tagesreihen. `data/hardware-history.json` enthaelt die amtlichen und Branchen-Rohreihen sowie den reproduzierbaren 12-Monats-Backcast. `docs/research-runbook.md` beschreibt die Reihenfolge und Mindestnachweise jedes Refreshs. Fruehere Staende bleiben ueber die Git-Historie nachvollziehbar.
 
-Der aktuelle CHPI ist ein vorlaeufiger Backcast von `74,4 / 100` bei `89,5 %` gewichteter Proxy-Datenabdeckung. Er misst breiten Consumer- und Upstream-Preisdruck, Hyperscaler-Capex und EUR/USD-Transmission. Die 60 quellenbelegten Kartenrecords in 31 Laendern bleiben eine Diagnoseebene und sind keine Vollerhebung oder ein Nachfragenenner. Vier oeffentliche Geizhals-Wunschlisten liefern inzwischen den ersten direkten Snapshot mit 40 SKUs und 39 sichtbaren Angeboten. Die Retail-Reife bleibt dennoch bewusst auf `L0`: Eine Beobachtungswoche und ein Aggregator sind noch keine belastbare SKU-Zeitreihe und kein unabhaengiger Zweitfeed.
+Der aktuelle CHPI ist ein vorlaeufiger Backcast von `74,4 / 100` bei `89,5 %` gewichteter Proxy-Datenabdeckung. Er misst breiten Consumer- und Upstream-Preisdruck, Hyperscaler-Capex und EUR/USD-Transmission. Die 60 quellenbelegten Kartenrecords in 31 Laendern bleiben eine Diagnoseebene und sind keine Vollerhebung oder ein Nachfragenenner. Vier oeffentliche Geizhals-Wunschlisten liefern 40 feste MPNs, einen direkten Snapshot mit 39 sichtbaren Angeboten und 365 Tage historische Preise mit 14.573 Produkt-Tagespunkten. Die Retail-Reife steht damit auf `L1`. Der Backfill wird zunaechst als direkte Diagnose gezeigt und aendert den CHPI nicht stillschweigend, weil Geizhals die heutige feste Korbzusammensetzung rueckwirkend rekonstruiert. Ab jetzt archivierte Wochen-Snapshots messen, wie stabil diese Rueckrechnung bleibt.
 
 Die Punktgroesse ist ein logarithmischer, nur aus vorhandenen Werten berechneter Impact-Score: dokumentierte Leistung 45 Prozent, projektbezogene Investition 35 Prozent und Beschleunigerzahl 20 Prozent. Fehlende Inputs werden nicht geschaetzt. Dachprogramme (zum Beispiel Stargate oder InvestAI), Servicevertraege, Unternehmens-CapEx und Standortinvestitionen bleiben getrennte Ebenen und werden nie addiert.
 
@@ -51,7 +51,7 @@ Statusregeln:
 Barometerregeln:
 
 1. Ein klar als vorlaeufig gekennzeichneter Backcast darf erst ab 70 Prozent gewichteter Datenabdeckung und 12 Monatswerten erscheinen.
-2. Retail-Grade erfordert zusaetzlich je Kategorie mindestens sechs vergleichbare SKUs, zwei unabhaengige Haendler und Verfuegbarkeitsdaten.
+2. Retail-Grade erfordert zusaetzlich 26 selbst archivierte Wochen, mindestens sechs stabile MPNs je Kategorie, Angebotsstatus, mindestens 90 Prozent Quellenkontinuitaet und eine dokumentierte Revisionsrate des Geizhals-Backfills.
 3. Preise werden nach Leistung oder Kapazitaet normalisiert; Produktwechsel, EUR/USD, Zoelle und Steuern werden separat kontrolliert.
 4. AI-Rechenzentrumsausbau ist ein Fruehindikator und darf nie allein einen behaupteten Consumer-Preiseffekt begruenden.
 5. Fehlende Komponenten werden nicht stillschweigend umgewichtet; Abdeckung und Konfidenz bleiben sichtbar.
@@ -76,8 +76,18 @@ cp data/hardware-history.json app/public/data/hardware-history.json
 cp data/investment-programs.json app/public/data/investment-programs.json
 cp data/retail-baskets.json app/public/data/retail-baskets.json
 cp data/retail-observations.json app/public/data/retail-observations.json
+cp data/retail-history.json app/public/data/retail-history.json
+cp data/retail-history-daily.json app/public/data/retail-history-daily.json
 node scripts/validate-data.mjs
 cd app
 npm ci
 npm run dev
 ```
+
+Der Backfill kann ohne Registrierung oder API-Schluessel neu erzeugt werden:
+
+```bash
+node scripts/fetch-geizhals-history.mjs
+```
+
+Das Skript liest die Geizhals-Artikel-IDs aus `data/retail-baskets.json`, ruft den oeffentlichen Preisverlaufs-Endpunkt der Benutzeroberflaeche ab und erzeugt beide Retail-Historiendateien reproduzierbar. Die rohe Wunschlistensumme muss immer zusammen mit der bepreisten Artikelzahl gelesen werden. Fuer den Kategorienvergleich ist deshalb der gleichgewichtete geometrische Produktindex mit Basis 100 massgeblich.

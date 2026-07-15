@@ -8,6 +8,8 @@ const historyFile = new URL("../data/hardware-history.json", import.meta.url);
 const investmentProgramsFile = new URL("../data/investment-programs.json", import.meta.url);
 const retailBasketsFile = new URL("../data/retail-baskets.json", import.meta.url);
 const retailObservationsFile = new URL("../data/retail-observations.json", import.meta.url);
+const retailHistoryFile = new URL("../data/retail-history.json", import.meta.url);
+const retailHistoryDailyFile = new URL("../data/retail-history-daily.json", import.meta.url);
 
 const projectsPayload = JSON.parse(await readFile(projectFile, "utf8"));
 const registryPayload = JSON.parse(await readFile(registryFile, "utf8"));
@@ -17,6 +19,8 @@ const historyPayload = JSON.parse(await readFile(historyFile, "utf8"));
 const investmentProgramsPayload = JSON.parse(await readFile(investmentProgramsFile, "utf8"));
 const retailBasketsPayload = JSON.parse(await readFile(retailBasketsFile, "utf8"));
 const retailObservationsPayload = JSON.parse(await readFile(retailObservationsFile, "utf8"));
+const retailHistoryPayload = JSON.parse(await readFile(retailHistoryFile, "utf8"));
+const retailHistoryDailyPayload = JSON.parse(await readFile(retailHistoryDailyFile, "utf8"));
 
 const errors = [];
 const isoDate = /^\d{4}-\d{2}-\d{2}$/;
@@ -32,7 +36,7 @@ const allowedQueues = new Set(["hard_reference", "early_signal", "cross_check"])
 const allowedPriorities = new Set(["core", "supporting", "watchlist"]);
 const allowedCadences = new Set(["daily", "weekly", "monthly", "quarterly"]);
 const allowedRunSchedules = new Set(["every_week", "first_week_of_month", "first_week_after_quarter"]);
-const allowedAccess = new Set(["api", "download", "web", "search", "dynamic_search"]);
+const allowedAccess = new Set(["api", "download", "web", "search", "dynamic_search", "public_web_ui_endpoint"]);
 const allowedExposure = new Set(["high", "medium", "low"]);
 const allowedComponentStatus = new Set(["tracked", "source_gap", "source_design"]);
 const allowedSeriesEvidence = new Set(["direct", "direct_proxy", "industry_proxy"]);
@@ -247,7 +251,7 @@ for (const basket of retailBasketsPayload.baskets || []) {
   requireValue(Number.isInteger(basket.observed_skus) && basket.observed_skus >= 0, `${prefix}: observed_skus ungueltig`);
   requireValue(Number.isInteger(basket.active_retailers) && basket.active_retailers >= 0, `${prefix}: active_retailers ungueltig`);
 }
-requireValue(Array.isArray(retailBasketsPayload.source_options) && retailBasketsPayload.source_options.length >= 3, "retail-baskets: source_options fehlen");
+requireValue(Array.isArray(retailBasketsPayload.source_options) && retailBasketsPayload.source_options.length >= 2, "retail-baskets: mindestens oeffentliche Hauptquelle und gepruefter Fallback erforderlich");
 checkUnique(retailBasketsPayload.source_options || [], "retail source options");
 for (const option of retailBasketsPayload.source_options || []) {
   requireValue(option.url === null || httpsUrl.test(option.url || ""), `retail source ${option.id}: URL muss HTTPS oder null sein`);
@@ -255,6 +259,8 @@ for (const option of retailBasketsPayload.source_options || []) {
 requireValue(Array.isArray(retailBasketsPayload.required_observation_fields) && retailBasketsPayload.required_observation_fields.length >= 10, "retail-baskets: Beobachtungsschema unvollstaendig");
 requireValue(barometerPayload.retail_model?.file === "retail-baskets.json", "barometer: retail_model file fehlt");
 requireValue(barometerPayload.retail_model?.observations_file === "retail-observations.json", "barometer: retail observations file fehlt");
+requireValue(barometerPayload.retail_model?.history_file === "retail-history.json", "barometer: retail history file fehlt");
+requireValue(barometerPayload.retail_model?.raw_history_file === "retail-history-daily.json", "barometer: raw retail history file fehlt");
 requireValue(barometerPayload.retail_model?.current_level === retailBasketsPayload.current_level, "barometer: retail level stimmt nicht mit retail-baskets ueberein");
 requireValue(approximatelyEqual(barometerPayload.retail_model?.retail_readiness, retailBasketsPayload.retail_readiness), "barometer: retail readiness stimmt nicht mit retail-baskets ueberein");
 
@@ -329,6 +335,93 @@ if (latestRetailSnapshot) {
   requireValue(retailBasketsPayload.observation_summary?.weekly_observations === retailObservationsPayload.snapshots.length, "retail-baskets: weekly_observations stimmt nicht mit retail-observations ueberein");
   requireValue(retailBasketsPayload.observation_summary?.categories_with_minimum_coverage === categoriesWithMinimumCoverage, "retail-baskets: categories_with_minimum_coverage stimmt nicht");
   requireValue(approximatelyEqual(retailBasketsPayload.observation_summary?.availability_coverage, totalAvailableItems / totalRetailItems), "retail-baskets: availability_coverage stimmt nicht");
+}
+
+requireValue(isoDate.test(retailHistoryPayload.snapshot_date || ""), "retail-history: snapshot_date muss YYYY-MM-DD sein");
+requireValue(isoDate.test(retailHistoryPayload.period_start || ""), "retail-history: period_start muss YYYY-MM-DD sein");
+requireValue(isoDate.test(retailHistoryPayload.period_end || ""), "retail-history: period_end muss YYYY-MM-DD sein");
+requireValue(retailHistoryPayload.market === "DE" && retailHistoryPayload.currency === "EUR", "retail-history: Markt/Waehrung muss DE/EUR sein");
+requireValue(retailHistoryPayload.source?.id === "geizhals-public-price-history", "retail-history: unerwartete Quelle");
+requireValue(retailHistoryPayload.source?.access === "public_ui_endpoint_no_credentials", "retail-history: Quelle muss ohne Credentials reproduzierbar sein");
+requireValue(retailHistoryPayload.quality?.reconstructed_history === true, "retail-history: rekonstruierte Historie muss explizit markiert sein");
+requireValue(retailHistoryDailyPayload.requested_days === 365, "retail-history-daily: requested_days muss 365 sein");
+requireValue(retailHistoryDailyPayload.snapshot_date === retailHistoryPayload.snapshot_date, "retail-history: Snapshot-Daten stimmen nicht ueberein");
+requireValue(Array.isArray(retailHistoryPayload.baskets) && retailHistoryPayload.baskets.length === retailBasketDefinitions.size, "retail-history: alle Warenkoerbe erforderlich");
+requireValue(Array.isArray(retailHistoryDailyPayload.baskets) && retailHistoryDailyPayload.baskets.length === retailBasketDefinitions.size, "retail-history-daily: alle Warenkoerbe erforderlich");
+
+const rawHistoryByBasket = new Map((retailHistoryDailyPayload.baskets || []).map((basket) => [basket.basket_id, basket]));
+let historicalProductSeries = 0;
+let historicalProductPoints = 0;
+let historicalBasketPoints = 0;
+const globalHistoricalMpns = new Set();
+
+function validateDailySeries(series, prefix, expectedLength = null) {
+  requireValue(Array.isArray(series) && series.length > 0, `${prefix}: Zeitreihe fehlt`);
+  if (expectedLength !== null) requireValue(series?.length === expectedLength, `${prefix}: ${expectedLength} Punkte erwartet`);
+  let previousDate = null;
+  for (const point of series || []) {
+    requireValue(Array.isArray(point) && point.length >= 3, `${prefix}: Punktformat ungueltig`);
+    requireValue(isoDate.test(point?.[0] || ""), `${prefix}: Datum ungueltig`);
+    if (previousDate !== null) requireValue(point[0] > previousDate, `${prefix}: Daten muessen strikt aufsteigen`);
+    previousDate = point[0];
+    requireValue(point[1] === null || (Number.isFinite(point[1]) && point[1] > 0), `${prefix}: Preis/Index ungueltig`);
+    requireValue(Number.isInteger(point[2]) && point[2] >= 0, `${prefix}: Abdeckung ungueltig`);
+  }
+}
+
+for (const basket of retailHistoryPayload.baskets || []) {
+  const prefix = `retail-history ${basket.basket_id || "<ohne basket_id>"}`;
+  const definition = retailBasketDefinitions.get(basket.basket_id);
+  const raw = rawHistoryByBasket.get(basket.basket_id);
+  requireValue(Boolean(definition), `${prefix}: unbekannter Warenkorb`);
+  requireValue(Boolean(raw), `${prefix}: Rohdaten fehlen`);
+  if (!definition || !raw) continue;
+
+  requireValue(basket.wishlist_url === definition.wishlist_url, `${prefix}: wishlist_url stimmt nicht`);
+  requireValue(basket.target_product_count === definition.target_slots, `${prefix}: target_product_count stimmt nicht`);
+  requireValue(Array.isArray(raw.article_ids) && raw.article_ids.length === definition.target_slots, `${prefix}: article_ids unvollstaendig`);
+  requireValue(JSON.stringify(raw.article_ids) === JSON.stringify(definition.geizhals_article_ids), `${prefix}: article_ids stimmen nicht mit Definition ueberein`);
+  requireValue(Array.isArray(basket.products) && basket.products.length === definition.target_slots, `${prefix}: Produkt-Summaries unvollstaendig`);
+  requireValue(Array.isArray(raw.products) && raw.products.length === definition.target_slots, `${prefix}: Produkt-Rohreihen unvollstaendig`);
+  validateDailySeries(raw.basket_series, `${prefix} basket_series`, 365);
+  validateDailySeries(raw.comparable_index_series, `${prefix} comparable_index_series`, 365);
+  historicalBasketPoints += raw.basket_series.length;
+
+  const rawProducts = new Map(raw.products.map((product) => [product.article_id, product]));
+  const summaryProducts = new Map(basket.products.map((product) => [product.article_id, product]));
+  for (const articleId of definition.geizhals_article_ids || []) {
+    const product = rawProducts.get(articleId);
+    const summary = summaryProducts.get(articleId);
+    requireValue(Boolean(product) && Boolean(summary), `${prefix}: Produkt ${articleId} fehlt`);
+    if (!product || !summary) continue;
+    requireValue(product.name === summary.name && product.mpn === summary.mpn, `${prefix} ${articleId}: Produkt-Metadaten stimmen nicht ueberein`);
+    requireValue(typeof product.mpn === "string" && product.mpn.length > 0, `${prefix} ${articleId}: MPN fehlt`);
+    requireValue(!globalHistoricalMpns.has(product.mpn), `${prefix}: doppelte historische MPN ${product.mpn}`);
+    globalHistoricalMpns.add(product.mpn);
+    validateDailySeries(product.series, `${prefix} ${articleId} product_series`);
+    requireValue(Array.isArray(summary.monthly) && summary.monthly.length >= 12, `${prefix} ${articleId}: mindestens 12 Monatssegmente erforderlich`);
+    historicalProductSeries += 1;
+    historicalProductPoints += product.series.length;
+  }
+
+  const latestIndexMonth = basket.comparable_index?.monthly?.at(-1);
+  const latestIndexPoint = raw.comparable_index_series?.at(-1);
+  requireValue(Number.isFinite(latestIndexMonth?.last_index), `${prefix}: letzter Monatsindex fehlt`);
+  requireValue(approximatelyEqual(latestIndexMonth?.last_index, latestIndexPoint?.[1], 0.011), `${prefix}: letzter Monatsindex stimmt nicht mit Rohreihe ueberein`);
+  requireValue(basket.comparable_index?.eligible_product_count >= definition.minimum_comparable_skus, `${prefix}: zu wenige vergleichbare Produkte`);
+}
+
+requireValue(historicalBasketPoints === retailHistoryPayload.quality?.raw_basket_daily_points, "retail-history: raw_basket_daily_points stimmt nicht");
+requireValue(historicalProductSeries === retailHistoryPayload.quality?.product_series_count, "retail-history: product_series_count stimmt nicht");
+requireValue(historicalProductPoints === retailHistoryPayload.quality?.raw_product_daily_points, "retail-history: raw_product_daily_points stimmt nicht");
+requireValue(retailBasketsPayload.observation_summary?.historical_days === 365, "retail-baskets: historical_days muss 365 sein");
+requireValue(retailBasketsPayload.observation_summary?.historical_product_series === historicalProductSeries, "retail-baskets: historical_product_series stimmt nicht");
+requireValue(retailBasketsPayload.observation_summary?.historical_product_points === historicalProductPoints, "retail-baskets: historical_product_points stimmt nicht");
+requireValue(barometerPayload.retail_model?.historical_days === 365, "barometer: historical_days muss 365 sein");
+requireValue(barometerPayload.retail_model?.historical_product_series === historicalProductSeries, "barometer: historical_product_series stimmt nicht");
+requireValue(barometerPayload.retail_model?.historical_product_points === historicalProductPoints, "barometer: historical_product_points stimmt nicht");
+for (const removedSourceId of ["ebay-browse-api", "bestbuy-products-api", "keepa-api"]) {
+  requireValue(!(registryPayload.sources || []).some((source) => source.id === removedSourceId), `registry: unrealistische Retail-Quelle ${removedSourceId} darf nicht aktiv sein`);
 }
 
 requireValue(isoDate.test(historyPayload.snapshot_date || ""), "history: snapshot_date muss YYYY-MM-DD sein");
