@@ -36,11 +36,13 @@
       </nav>
 
       <div class="dashboard-view active" id="map-view" data-dashboard-view="map">
-        <section class="summary-strip" aria-label="Gefilterte Projektkennzahlen">
+        <section class="summary-strip map-summary" aria-label="Gefilterte Projektkennzahlen">
           <div class="metric"><span data-i18n="projects">Projekte</span><strong id="metric-total">—</strong></div>
+          <div class="metric"><span data-i18n="countries">Länder</span><strong id="metric-countries">—</strong></div>
+          <div class="metric"><span data-i18n="trackedPower">Dokumentierte Leistung</span><strong id="metric-power">—</strong></div>
+          <div class="metric"><span data-i18n="siteInvestment">Standort-Investment*</span><strong id="metric-investment">—</strong></div>
+          <div class="metric"><span data-i18n="umbrellaPrograms">Dachprogramme*</span><strong id="metric-programs">—</strong></div>
           <div class="metric"><span data-i18n="operational">In Betrieb</span><strong id="metric-live">—</strong></div>
-          <div class="metric"><span data-i18n="inProgress">Im Bau / teilweise live</span><strong id="metric-progress">—</strong></div>
-          <div class="metric"><span data-i18n="atRisk">Terminrisiko / gestoppt</span><strong id="metric-risk">—</strong></div>
         </section>
 
         <main class="workspace">
@@ -86,6 +88,7 @@
             </div>
             <div class="map-hint" data-i18n="mapHint">Mausrad oder Pinch zum Zoomen · Ziehen zum Verschieben</div>
             <div class="legend" id="legend" aria-label="Statuslegende"></div>
+            <div class="map-method-note" id="map-method-note"></div>
           </section>
 
           <aside class="detail-panel" id="detail-panel" aria-live="polite">
@@ -283,9 +286,14 @@
 
         <section class="basket-section">
           <div class="section-subheading">
-            <div><h3 data-i18n="retailBaskets">Geplante Retail-Warenkörbe</h3><p data-i18n="basketIntro">Stabile SKU-Körbe statt einzelner Tagesangebote.</p></div>
+            <div><h3 data-i18n="retailBaskets">Retail-Warenkörbe</h3><p data-i18n="basketIntro">Stabile Produktkohorten statt einzelner Tagesangebote.</p></div>
+            <a class="secondary-link" href="./data/retail-baskets.json" target="_blank" rel="noopener noreferrer" data-i18n="openRetailModel">Retail-Modell öffnen</a>
           </div>
+          <div class="retail-readiness" id="retail-readiness"></div>
+          <div class="maturity-ladder" id="maturity-ladder"></div>
           <div class="basket-grid" id="basket-grid"></div>
+          <div class="retail-source-grid" id="retail-source-grid"></div>
+          <p class="retail-next-action" id="retail-next-action"></p>
         </section>
 
         <section class="guardrail-section">
