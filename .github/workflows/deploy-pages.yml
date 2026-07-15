@@ -45,6 +45,7 @@ jobs:
           cp data/hardware-history.json app/public/data/hardware-history.json
           cp data/investment-programs.json app/public/data/investment-programs.json
           cp data/retail-baskets.json app/public/data/retail-baskets.json
+          cp data/retail-observations.json app/public/data/retail-observations.json
 
       - name: Build site
         working-directory: app

@@ -1364,6 +1364,114 @@
         "stock history"
       ],
       "last_verified": "2026-07-15"
+    },
+    {
+      "id": "geizhals-wishlist-gpu",
+      "name": "CHPI-DE-GPU-v1",
+      "publisher": "Geizhals",
+      "category": "retail_price",
+      "geography": "Deutschland",
+      "queue": "hard_reference",
+      "priority": "core",
+      "recommended_cadence": "weekly",
+      "run_schedule": "every_week",
+      "access": "web",
+      "url": "https://geizhals.de/wishlists/5081030",
+      "max_grade": "B",
+      "use_for": "Versionierter GPU-Warenkorb mit konkreten MPNs, sichtbaren Bestpreisen und Angebotsanzahlen.",
+      "caveat": "Preisvergleichs-Aggregator und periodische Momentaufnahme; Versand, Haendleridentitaet und Lieferzeit muessen separat normalisiert werden.",
+      "signals": [
+        "gpu_sku_price",
+        "offer_count",
+        "availability"
+      ],
+      "search_hints": [
+        "MPN",
+        "lowest listed price",
+        "offer count"
+      ],
+      "last_verified": "2026-07-15"
+    },
+    {
+      "id": "geizhals-wishlist-ddr5",
+      "name": "CHPI-DE-DDR5-v1",
+      "publisher": "Geizhals",
+      "category": "retail_price",
+      "geography": "Deutschland",
+      "queue": "hard_reference",
+      "priority": "core",
+      "recommended_cadence": "weekly",
+      "run_schedule": "every_week",
+      "access": "web",
+      "url": "https://geizhals.de/wishlists/5081039",
+      "max_grade": "B",
+      "use_for": "Versionierter DDR5-Warenkorb fuer 32- und 64-GB-Kits mit konkreten MPNs, Bestpreisen und Angebotsanzahlen.",
+      "caveat": "Preisvergleichs-Aggregator und periodische Momentaufnahme; Versand, Haendleridentitaet und Lieferzeit muessen separat normalisiert werden.",
+      "signals": [
+        "dram_sku_price",
+        "offer_count",
+        "availability"
+      ],
+      "search_hints": [
+        "MPN",
+        "EUR per GiB",
+        "offer count"
+      ],
+      "last_verified": "2026-07-15"
+    },
+    {
+      "id": "geizhals-wishlist-nvme",
+      "name": "CHPI-DE-NVME-2TB-v1",
+      "publisher": "Geizhals",
+      "category": "retail_price",
+      "geography": "Deutschland",
+      "queue": "hard_reference",
+      "priority": "core",
+      "recommended_cadence": "weekly",
+      "run_schedule": "every_week",
+      "access": "web",
+      "url": "https://geizhals.de/wishlists/5081157",
+      "max_grade": "B",
+      "use_for": "Versionierter 2-TB-NVMe-Warenkorb fuer PCIe 4.0 und 5.0 mit konkreten MPNs, Bestpreisen und Angebotsanzahlen.",
+      "caveat": "Preisvergleichs-Aggregator und periodische Momentaufnahme; Versand, Haendleridentitaet und Lieferzeit muessen separat normalisiert werden.",
+      "signals": [
+        "ssd_sku_price",
+        "offer_count",
+        "availability"
+      ],
+      "search_hints": [
+        "MPN",
+        "EUR per TB",
+        "offer count"
+      ],
+      "last_verified": "2026-07-15"
+    },
+    {
+      "id": "geizhals-wishlist-cpu",
+      "name": "CHPI-DE-CPU-v1",
+      "publisher": "Geizhals",
+      "category": "retail_price",
+      "geography": "Deutschland",
+      "queue": "hard_reference",
+      "priority": "core",
+      "recommended_cadence": "weekly",
+      "run_schedule": "every_week",
+      "access": "web",
+      "url": "https://geizhals.de/wishlists/5081163",
+      "max_grade": "B",
+      "use_for": "Versionierter Desktop-CPU-Warenkorb mit Boxed-MPNs, sichtbaren Bestpreisen und Angebotsanzahlen.",
+      "caveat": "Preisvergleichs-Aggregator und periodische Momentaufnahme; Versand, Haendleridentitaet und Lieferzeit muessen separat normalisiert werden.",
+      "signals": [
+        "cpu_sku_price",
+        "offer_count",
+        "availability"
+      ],
+      "search_hints": [
+        "MPN",
+        "boxed CPU",
+        "offer count"
+      ],
+      "last_verified": "2026-07-15"
     }
   ]
 }

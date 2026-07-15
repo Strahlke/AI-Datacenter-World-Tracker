@@ -7,6 +7,7 @@ const barometerFile = new URL("../data/hardware-barometer.json", import.meta.url
 const historyFile = new URL("../data/hardware-history.json", import.meta.url);
 const investmentProgramsFile = new URL("../data/investment-programs.json", import.meta.url);
 const retailBasketsFile = new URL("../data/retail-baskets.json", import.meta.url);
+const retailObservationsFile = new URL("../data/retail-observations.json", import.meta.url);
 
 const projectsPayload = JSON.parse(await readFile(projectFile, "utf8"));
 const registryPayload = JSON.parse(await readFile(registryFile, "utf8"));
@@ -15,6 +16,7 @@ const barometerPayload = JSON.parse(await readFile(barometerFile, "utf8"));
 const historyPayload = JSON.parse(await readFile(historyFile, "utf8"));
 const investmentProgramsPayload = JSON.parse(await readFile(investmentProgramsFile, "utf8"));
 const retailBasketsPayload = JSON.parse(await readFile(retailBasketsFile, "utf8"));
+const retailObservationsPayload = JSON.parse(await readFile(retailObservationsFile, "utf8"));
 
 const errors = [];
 const isoDate = /^\d{4}-\d{2}-\d{2}$/;
@@ -252,7 +254,82 @@ for (const option of retailBasketsPayload.source_options || []) {
 }
 requireValue(Array.isArray(retailBasketsPayload.required_observation_fields) && retailBasketsPayload.required_observation_fields.length >= 10, "retail-baskets: Beobachtungsschema unvollstaendig");
 requireValue(barometerPayload.retail_model?.file === "retail-baskets.json", "barometer: retail_model file fehlt");
+requireValue(barometerPayload.retail_model?.observations_file === "retail-observations.json", "barometer: retail observations file fehlt");
 requireValue(barometerPayload.retail_model?.current_level === retailBasketsPayload.current_level, "barometer: retail level stimmt nicht mit retail-baskets ueberein");
+requireValue(approximatelyEqual(barometerPayload.retail_model?.retail_readiness, retailBasketsPayload.retail_readiness), "barometer: retail readiness stimmt nicht mit retail-baskets ueberein");
+
+requireValue(isoDate.test(retailObservationsPayload.snapshot_date || ""), "retail-observations: snapshot_date muss YYYY-MM-DD sein");
+requireValue(retailObservationsPayload.frequency === "weekly", "retail-observations: frequency muss weekly sein");
+requireValue(httpsUrl.test(retailObservationsPayload.source?.url || ""), "retail-observations: source URL muss HTTPS sein");
+requireValue(allowedGrades.has(retailObservationsPayload.source?.grade), "retail-observations: source grade ungueltig");
+requireValue(Array.isArray(retailObservationsPayload.snapshots) && retailObservationsPayload.snapshots.length >= 1, "retail-observations: mindestens ein Snapshot erforderlich");
+requireValue(barometerPayload.retail_model?.weekly_snapshots === retailObservationsPayload.snapshots.length, "barometer: weekly_snapshots stimmt nicht mit retail-observations ueberein");
+
+const retailBasketDefinitions = new Map((retailBasketsPayload.baskets || []).map((basket) => [basket.id, basket]));
+let previousRetailTimestamp = null;
+for (const snapshot of retailObservationsPayload.snapshots || []) {
+  const timestamp = Date.parse(snapshot.observed_at || "");
+  requireValue(Number.isFinite(timestamp), `retail-observations: observed_at ungueltig ${snapshot.observed_at}`);
+  if (previousRetailTimestamp !== null) requireValue(timestamp > previousRetailTimestamp, "retail-observations: Snapshots muessen zeitlich aufsteigend sein");
+  previousRetailTimestamp = timestamp;
+  requireValue(snapshot.market === "DE", "retail-observations: market muss DE sein");
+  requireValue(snapshot.currency === "EUR", "retail-observations: currency muss EUR sein");
+  requireValue(snapshot.price_basis === "gross_ex_shipping", "retail-observations: price_basis muss gross_ex_shipping sein");
+  requireValue(Array.isArray(snapshot.baskets) && snapshot.baskets.length === retailBasketDefinitions.size, "retail-observations: Snapshot muss alle Warenkoerbe enthalten");
+
+  const seenBasketIds = new Set();
+  for (const basketObservation of snapshot.baskets || []) {
+    const prefix = `retail observation ${snapshot.observed_at || "<ohne Zeit>"} ${basketObservation.basket_id || "<ohne basket_id>"}`;
+    requireValue(retailBasketDefinitions.has(basketObservation.basket_id), `${prefix}: unbekannter Warenkorb`);
+    requireValue(!seenBasketIds.has(basketObservation.basket_id), `${prefix}: doppelter Warenkorb`);
+    seenBasketIds.add(basketObservation.basket_id);
+    requireValue(httpsUrl.test(basketObservation.wishlist_url || ""), `${prefix}: wishlist_url muss HTTPS sein`);
+    requireValue(Array.isArray(basketObservation.products), `${prefix}: products fehlt`);
+
+    const seenMpns = new Set();
+    let availableCount = 0;
+    let calculatedTotal = 0;
+    for (const product of basketObservation.products || []) {
+      requireValue(typeof product.name === "string" && product.name.length > 0, `${prefix}: Produktname fehlt`);
+      requireValue(typeof product.mpn === "string" && product.mpn.length > 0, `${prefix}: MPN fehlt`);
+      requireValue(!seenMpns.has(product.mpn), `${prefix}: doppelte MPN ${product.mpn}`);
+      seenMpns.add(product.mpn);
+      requireValue(Number.isInteger(product.offer_count) && product.offer_count >= 0, `${prefix} ${product.mpn}: offer_count ungueltig`);
+      requireValue(["listed", "no_offer"].includes(product.availability), `${prefix} ${product.mpn}: availability ungueltig`);
+      if (product.offer_count > 0) {
+        requireValue(product.availability === "listed", `${prefix} ${product.mpn}: Angebote erfordern listed`);
+        requireValue(Number.isFinite(product.best_price_eur) && product.best_price_eur > 0, `${prefix} ${product.mpn}: positiver Bestpreis fehlt`);
+        availableCount += 1;
+        calculatedTotal += Number(product.best_price_eur || 0);
+      } else {
+        requireValue(product.availability === "no_offer", `${prefix} ${product.mpn}: null Angebote erfordern no_offer`);
+        requireValue(product.best_price_eur === null, `${prefix} ${product.mpn}: ohne Angebot muss Preis null sein`);
+      }
+    }
+    requireValue(basketObservation.item_count === basketObservation.products.length, `${prefix}: item_count stimmt nicht mit products ueberein`);
+    requireValue(basketObservation.available_count === availableCount, `${prefix}: available_count stimmt nicht`);
+    requireValue(approximatelyEqual(basketObservation.total_best_price_eur, Math.round(calculatedTotal * 100) / 100, 0.001), `${prefix}: total_best_price_eur stimmt nicht`);
+
+    const definition = retailBasketDefinitions.get(basketObservation.basket_id);
+    if (definition) {
+      requireValue(definition.target_slots === basketObservation.item_count, `${prefix}: item_count stimmt nicht mit target_slots ueberein`);
+      requireValue(definition.observed_skus === basketObservation.item_count, `${prefix}: observed_skus stimmt nicht`);
+      requireValue(definition.available_skus === basketObservation.available_count, `${prefix}: available_skus stimmt nicht`);
+      requireValue(definition.wishlist_url === basketObservation.wishlist_url, `${prefix}: wishlist_url stimmt nicht mit Definition ueberein`);
+    }
+  }
+}
+
+const latestRetailSnapshot = retailObservationsPayload.snapshots?.at(-1);
+if (latestRetailSnapshot) {
+  const latestBaskets = latestRetailSnapshot.baskets || [];
+  const totalRetailItems = latestBaskets.reduce((sum, basket) => sum + basket.item_count, 0);
+  const totalAvailableItems = latestBaskets.reduce((sum, basket) => sum + basket.available_count, 0);
+  const categoriesWithMinimumCoverage = latestBaskets.filter((basket) => basket.item_count >= (retailBasketDefinitions.get(basket.basket_id)?.minimum_comparable_skus || Infinity)).length;
+  requireValue(retailBasketsPayload.observation_summary?.weekly_observations === retailObservationsPayload.snapshots.length, "retail-baskets: weekly_observations stimmt nicht mit retail-observations ueberein");
+  requireValue(retailBasketsPayload.observation_summary?.categories_with_minimum_coverage === categoriesWithMinimumCoverage, "retail-baskets: categories_with_minimum_coverage stimmt nicht");
+  requireValue(approximatelyEqual(retailBasketsPayload.observation_summary?.availability_coverage, totalAvailableItems / totalRetailItems), "retail-baskets: availability_coverage stimmt nicht");
+}
 
 requireValue(isoDate.test(historyPayload.snapshot_date || ""), "history: snapshot_date muss YYYY-MM-DD sein");
 requireValue(isoMonth.test(historyPayload.period_start || ""), "history: period_start muss YYYY-MM sein");

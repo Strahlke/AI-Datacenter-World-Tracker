@@ -211,6 +211,17 @@
           <div><span data-i18n="primaryEvidence">Primärquellen</span><strong id="producer-grade-a">—</strong></div>
         </section>
 
+        <section class="supply-focus-card" aria-labelledby="supply-focus-title">
+          <div class="section-subheading">
+            <div>
+              <h3 id="supply-focus-title" data-i18n="directPriceChannels">Direkte Preiskanäle zuerst</h3>
+              <p data-i18n="directPriceChannelsIntro">Diese Stufen teilen am ehesten Kapazitäten oder Produktbudgets mit Consumer-Hardware.</p>
+            </div>
+            <span class="reading-path" data-i18n="supplyReadingPath">Überblick → Stufe wählen → Produzenten öffnen</span>
+          </div>
+          <div class="supply-focus-grid" id="supply-focus-grid"></div>
+        </section>
+
         <div class="supply-flow" id="supply-flow" aria-label="Lieferkette vom Chipdesign bis zum Rechenzentrum"></div>
 
         <div class="supply-toolbar">
@@ -247,7 +258,14 @@
           </div>
         </section>
 
-        <section class="history-section" aria-labelledby="history-title">
+        <nav class="insight-tabs" aria-label="Barometer-Detailansichten">
+          <button type="button" class="insight-tab active" data-barometer-panel="trend" aria-selected="true" data-i18n="barometerTrendTab">Trend &amp; Treiber</button>
+          <button type="button" class="insight-tab" data-barometer-panel="retail" aria-selected="false"><span data-i18n="barometerRetailTab">Retail-Tracking</span> <span class="tab-badge" id="retail-connected-count">4</span></button>
+          <button type="button" class="insight-tab" data-barometer-panel="model" aria-selected="false" data-i18n="barometerModelTab">Modell &amp; Quellen</button>
+        </nav>
+
+        <div class="barometer-panel active" data-barometer-panel-content="trend">
+          <section class="history-section" aria-labelledby="history-title">
           <div class="section-subheading history-heading">
             <div>
               <h3 id="history-title" data-i18n="historyTitle">12-Monats-Backcast</h3>
@@ -265,50 +283,63 @@
           <div class="history-legend" id="history-legend" aria-label="Zeitreihenlegende"></div>
           <div class="evidence-signal-grid" id="current-evidence-grid"></div>
           <p class="history-notice" id="backcast-notice"></p>
-        </section>
-
-        <div class="barometer-grid">
-          <section class="analysis-card weight-card">
-            <div class="card-heading">
-              <h3 data-i18n="modelWeights">Modellgewichte & Abdeckung</h3>
-              <span data-i18n="weightPercent">Gewicht in Prozent</span>
-            </div>
-            <div class="component-chart" id="component-chart"></div>
           </section>
-          <section class="analysis-card scale-card">
-            <div class="card-heading">
-              <h3 data-i18n="consumerReading">Lesart für Endkunden</h3>
-              <span>0–100</span>
+
+          <div class="barometer-grid">
+            <section class="analysis-card weight-card">
+              <div class="card-heading">
+                <h3 data-i18n="modelWeights">Modellgewichte & Abdeckung</h3>
+                <span data-i18n="weightPercent">Gewicht in Prozent</span>
+              </div>
+              <div class="component-chart" id="component-chart"></div>
+            </section>
+            <section class="analysis-card scale-card">
+              <div class="card-heading">
+                <h3 data-i18n="consumerReading">Lesart für Endkunden</h3>
+                <span>0–100</span>
+              </div>
+              <div class="score-scale" id="score-scale"></div>
+            </section>
+          </div>
+        </div>
+
+        <div class="barometer-panel" data-barometer-panel-content="retail" hidden>
+          <section class="basket-section">
+            <div class="section-subheading">
+              <div><h3 data-i18n="retailBaskets">Retail-Warenkörbe</h3><p data-i18n="basketIntro">Stabile Produktkohorten statt einzelner Tagesangebote.</p></div>
+              <div class="section-actions">
+                <a class="secondary-link" href="./data/retail-observations.json" target="_blank" rel="noopener noreferrer" data-i18n="openRetailSnapshot">Snapshot öffnen</a>
+                <a class="secondary-link" href="./data/retail-baskets.json" target="_blank" rel="noopener noreferrer" data-i18n="openRetailModel">Retail-Modell öffnen</a>
+              </div>
             </div>
-            <div class="score-scale" id="score-scale"></div>
+            <div class="retail-snapshot-header" id="retail-snapshot-header"></div>
+            <div class="retail-snapshot-grid" id="retail-snapshot-grid"></div>
+            <div class="retail-readiness" id="retail-readiness"></div>
+            <details class="method-disclosure">
+              <summary data-i18n="showMaturityModel">Reifegrad und Datenquellen anzeigen</summary>
+              <div class="maturity-ladder" id="maturity-ladder"></div>
+              <div class="retail-source-grid" id="retail-source-grid"></div>
+              <p class="retail-next-action" id="retail-next-action"></p>
+            </details>
+            <div class="basket-grid" id="basket-grid"></div>
           </section>
         </div>
 
-        <section class="basket-section">
-          <div class="section-subheading">
-            <div><h3 data-i18n="retailBaskets">Retail-Warenkörbe</h3><p data-i18n="basketIntro">Stabile Produktkohorten statt einzelner Tagesangebote.</p></div>
-            <a class="secondary-link" href="./data/retail-baskets.json" target="_blank" rel="noopener noreferrer" data-i18n="openRetailModel">Retail-Modell öffnen</a>
-          </div>
-          <div class="retail-readiness" id="retail-readiness"></div>
-          <div class="maturity-ladder" id="maturity-ladder"></div>
-          <div class="basket-grid" id="basket-grid"></div>
-          <div class="retail-source-grid" id="retail-source-grid"></div>
-          <p class="retail-next-action" id="retail-next-action"></p>
-        </section>
+        <div class="barometer-panel" data-barometer-panel-content="model" hidden>
+          <section class="guardrail-section">
+            <div class="section-subheading">
+              <div><h3 data-i18n="guardrails">Qualitätsregeln</h3><p data-i18n="guardrailIntro">Damit AI-Ausbau nicht fälschlich jeden Preissprung erklärt.</p></div>
+            </div>
+            <div class="guardrail-grid" id="guardrail-grid"></div>
+          </section>
 
-        <section class="guardrail-section">
-          <div class="section-subheading">
-            <div><h3 data-i18n="guardrails">Qualitätsregeln</h3><p data-i18n="guardrailIntro">Damit AI-Ausbau nicht fälschlich jeden Preissprung erklärt.</p></div>
-          </div>
-          <div class="guardrail-grid" id="guardrail-grid"></div>
-        </section>
-
-        <section class="model-sources">
-          <div class="section-subheading">
-            <div><h3 data-i18n="modelSources">Startquellen des Modells</h3><p data-i18n="modelSourcesIntro">Primärquellen für Kapazität, Sekundärquellen für Preise, offizielle Statistik als Kontrollreihe.</p></div>
-          </div>
-          <div class="model-source-list" id="model-source-list"></div>
-        </section>
+          <section class="model-sources">
+            <div class="section-subheading">
+              <div><h3 data-i18n="modelSources">Startquellen des Modells</h3><p data-i18n="modelSourcesIntro">Primärquellen für Kapazität, Sekundärquellen für Preise, offizielle Statistik als Kontrollreihe.</p></div>
+            </div>
+            <div class="model-source-list" id="model-source-list"></div>
+          </section>
+        </div>
       </section>
     </div>
     <script type="module" src="/src/main.js"></script>

@@ -1,0 +1,354 @@
+{
+  "snapshot_date": "2026-07-15",
+  "version": 1,
+  "frequency": "weekly",
+  "source": {
+    "id": "geizhals-public-wishlists",
+    "publisher": "Geizhals",
+    "market": "DE",
+    "url": "https://geizhals.de/wishlists",
+    "grade": "B",
+    "access": "public_web",
+    "price_basis": "gross_ex_shipping",
+    "caveat_de": "Geizhals ist ein Preisvergleichs-Aggregator. Die Werte sind periodische Momentaufnahmen inklusive Mehrwertsteuer und ohne Versand; Haendleridentitaeten und Lieferzeiten wurden in diesem Pilot-Snapshot noch nicht normalisiert.",
+    "caveat_en": "Geizhals is a price-comparison aggregator. Values are periodic snapshots including VAT and excluding shipping; merchant identities and lead times were not yet normalised in this pilot snapshot."
+  },
+  "method": {
+    "grain": "one product SKU within one versioned basket and observation timestamp",
+    "headline_price": "lowest listed product price at observation time",
+    "availability_rule": "available when Geizhals reports at least one offer",
+    "basket_total_rule": "sum of individual lowest listed prices; not a single-merchant checkout total",
+    "history_rule": "append a new weekly snapshot; never overwrite earlier observations",
+    "validation_rule": "basket membership, MPN, offer count, price and availability are checked together"
+  },
+  "snapshots": [
+    {
+      "observed_at": "2026-07-15T12:58:04Z",
+      "market": "DE",
+      "currency": "EUR",
+      "price_basis": "gross_ex_shipping",
+      "baskets": [
+        {
+          "basket_id": "gpu",
+          "wishlist_name": "HPI-DE-GPU-v1",
+          "wishlist_url": "https://geizhals.de/wishlists/5081030",
+          "item_count": 12,
+          "available_count": 11,
+          "total_best_price_eur": 10590.98,
+          "products": [
+            {
+              "name": "Sapphire Pulse Radeon RX 7800 XT 16GB",
+              "mpn": "11330-02-20G",
+              "best_price_eur": null,
+              "offer_count": 0,
+              "availability": "no_offer"
+            },
+            {
+              "name": "ASUS Dual GeForce RTX 4060 OC 8GB",
+              "mpn": "90YV0JC4-M0NA00",
+              "best_price_eur": 366.7,
+              "offer_count": 2,
+              "availability": "listed"
+            },
+            {
+              "name": "ASRock Arc B580 Challenger 12GB OC",
+              "mpn": "90-GA5LZZ-00UANF",
+              "best_price_eur": 274.89,
+              "offer_count": 36,
+              "availability": "listed"
+            },
+            {
+              "name": "ASUS TUF Gaming GeForce RTX 5090 32GB",
+              "mpn": "90YV0LY1-M0NA00",
+              "best_price_eur": 4599,
+              "offer_count": 2,
+              "availability": "listed"
+            },
+            {
+              "name": "ASUS Prime GeForce RTX 5080 OC 16GB",
+              "mpn": "90YV0LX0-M0NA00",
+              "best_price_eur": 1254.99,
+              "offer_count": 49,
+              "availability": "listed"
+            },
+            {
+              "name": "ASUS Prime GeForce RTX 5070 Ti OC 16GB",
+              "mpn": "90YV0MF0-M0NA00",
+              "best_price_eur": 954.61,
+              "offer_count": 35,
+              "availability": "listed"
+            },
+            {
+              "name": "ASUS Prime GeForce RTX 5070 OC 12GB",
+              "mpn": "90YV0M10-M0NA00",
+              "best_price_eur": 619,
+              "offer_count": 41,
+              "availability": "listed"
+            },
+            {
+              "name": "Sapphire Pulse Radeon RX 9070 XT 16GB",
+              "mpn": "11348-03-20G",
+              "best_price_eur": 678.89,
+              "offer_count": 42,
+              "availability": "listed"
+            },
+            {
+              "name": "Sapphire Pulse Radeon RX 9070 16GB",
+              "mpn": "11349-03-20G",
+              "best_price_eur": 605.9,
+              "offer_count": 44,
+              "availability": "listed"
+            },
+            {
+              "name": "ASUS Dual GeForce RTX 5060 Ti OC 16GB",
+              "mpn": "90YV0MH0-M0NA00",
+              "best_price_eur": 539,
+              "offer_count": 46,
+              "availability": "listed"
+            },
+            {
+              "name": "ASUS Dual GeForce RTX 5060 OC 8GB",
+              "mpn": "90YV0N12-M0NA00",
+              "best_price_eur": 299,
+              "offer_count": 49,
+              "availability": "listed"
+            },
+            {
+              "name": "Sapphire Pulse Radeon RX 9060 XT 16GB",
+              "mpn": "11350-03-20G",
+              "best_price_eur": 399,
+              "offer_count": 42,
+              "availability": "listed"
+            }
+          ]
+        },
+        {
+          "basket_id": "dram",
+          "wishlist_name": "CHPI-DE-DDR5-v1",
+          "wishlist_url": "https://geizhals.de/wishlists/5081039",
+          "item_count": 10,
+          "available_count": 10,
+          "total_best_price_eur": 6945.91,
+          "products": [
+            {
+              "name": "G.Skill Trident Z5 NEO RGB 64GB DDR5-6000 CL30",
+              "mpn": "F5-6000J3040G32GX2-TZ5NR",
+              "best_price_eur": 970.21,
+              "offer_count": 28,
+              "availability": "listed"
+            },
+            {
+              "name": "G.Skill Flare X5 32GB DDR5-6000 CL30",
+              "mpn": "F5-6000J3038F16GX2-FX5",
+              "best_price_eur": 459,
+              "offer_count": 29,
+              "availability": "listed"
+            },
+            {
+              "name": "Corsair Vengeance 64GB DDR5-6000 CL30",
+              "mpn": "CMK64GX5M2B6000Z30",
+              "best_price_eur": 949,
+              "offer_count": 29,
+              "availability": "listed"
+            },
+            {
+              "name": "Corsair Vengeance 32GB DDR5-6000 CL30",
+              "mpn": "CMK32GX5M2B6000Z30",
+              "best_price_eur": 519.9,
+              "offer_count": 30,
+              "availability": "listed"
+            },
+            {
+              "name": "G.Skill Flare X5 64GB DDR5-6000 CL30",
+              "mpn": "F5-6000J3040G32GX2-FX5",
+              "best_price_eur": 1048.88,
+              "offer_count": 26,
+              "availability": "listed"
+            },
+            {
+              "name": "Crucial Pro Overclocking 32GB DDR5-6000 CL36",
+              "mpn": "CP2K16G60C36U5B",
+              "best_price_eur": 399.99,
+              "offer_count": 35,
+              "availability": "listed"
+            },
+            {
+              "name": "Kingston FURY Beast 32GB DDR5-6000 CL30",
+              "mpn": "KF560C30BBEK2-32",
+              "best_price_eur": 449.99,
+              "offer_count": 38,
+              "availability": "listed"
+            },
+            {
+              "name": "Kingston FURY Beast 64GB DDR5-6000 CL30",
+              "mpn": "KF560C30BBEK2-64",
+              "best_price_eur": 899.99,
+              "offer_count": 45,
+              "availability": "listed"
+            },
+            {
+              "name": "Patriot Viper VENOM 32GB DDR5-6000 CL30",
+              "mpn": "PVV532G600C30K",
+              "best_price_eur": 409,
+              "offer_count": 28,
+              "availability": "listed"
+            },
+            {
+              "name": "Patriot Viper VENOM 64GB DDR5-6000 CL30",
+              "mpn": "PVV564G600C30K",
+              "best_price_eur": 839.95,
+              "offer_count": 25,
+              "availability": "listed"
+            }
+          ]
+        },
+        {
+          "basket_id": "ssd",
+          "wishlist_name": "CHPI-DE-NVME-2TB-v1",
+          "wishlist_url": "https://geizhals.de/wishlists/5081157",
+          "item_count": 10,
+          "available_count": 10,
+          "total_best_price_eur": 3206.12,
+          "products": [
+            {
+              "name": "Kingston KC3000 2048GB",
+              "mpn": "SKC3000D/2048G",
+              "best_price_eur": 299.9,
+              "offer_count": 49,
+              "availability": "listed"
+            },
+            {
+              "name": "Western Digital WD_BLACK SN850X 2TB",
+              "mpn": "WDS200T2X0E-00BCA0",
+              "best_price_eur": 269.9,
+              "offer_count": 74,
+              "availability": "listed"
+            },
+            {
+              "name": "Samsung SSD 990 PRO 2TB",
+              "mpn": "MZ-V9P2T0BW",
+              "best_price_eur": 319.99,
+              "offer_count": 83,
+              "availability": "listed"
+            },
+            {
+              "name": "Lexar NM790 2TB",
+              "mpn": "LNM790X002T-RNNNG",
+              "best_price_eur": 241.9,
+              "offer_count": 44,
+              "availability": "listed"
+            },
+            {
+              "name": "Crucial T500 2TB",
+              "mpn": "CT2000T500SSD8",
+              "best_price_eur": 337.65,
+              "offer_count": 16,
+              "availability": "listed"
+            },
+            {
+              "name": "Corsair MP700 PRO 2TB",
+              "mpn": "CSSD-F2000GBMP700PNH",
+              "best_price_eur": 398.71,
+              "offer_count": 15,
+              "availability": "listed"
+            },
+            {
+              "name": "Crucial T705 2TB",
+              "mpn": "CT2000T705SSD3",
+              "best_price_eur": 369,
+              "offer_count": 11,
+              "availability": "listed"
+            },
+            {
+              "name": "Samsung SSD 990 EVO Plus 2TB",
+              "mpn": "MZ-V9S2T0BW",
+              "best_price_eur": 279.08,
+              "offer_count": 71,
+              "availability": "listed"
+            },
+            {
+              "name": "Samsung SSD 9100 PRO 2TB",
+              "mpn": "MZ-VAP2T0BW",
+              "best_price_eur": 339.99,
+              "offer_count": 73,
+              "availability": "listed"
+            },
+            {
+              "name": "Western Digital WD_BLACK SN8100 2TB",
+              "mpn": "WDS200T1X0M-00CMT0",
+              "best_price_eur": 350,
+              "offer_count": 62,
+              "availability": "listed"
+            }
+          ]
+        },
+        {
+          "basket_id": "cpu",
+          "wishlist_name": "CHPI-DE-CPU-v1",
+          "wishlist_url": "https://geizhals.de/wishlists/5081163",
+          "item_count": 8,
+          "available_count": 8,
+          "total_best_price_eur": 2489.15,
+          "products": [
+            {
+              "name": "AMD Ryzen 5 7600 boxed",
+              "mpn": "100-100001015BOX",
+              "best_price_eur": 163.71,
+              "offer_count": 40,
+              "availability": "listed"
+            },
+            {
+              "name": "Intel Core i5-14600K boxed",
+              "mpn": "BX8071514600K",
+              "best_price_eur": 239.9,
+              "offer_count": 51,
+              "availability": "listed"
+            },
+            {
+              "name": "AMD Ryzen 5 9600X boxed",
+              "mpn": "100-100001405WOF",
+              "best_price_eur": 172,
+              "offer_count": 52,
+              "availability": "listed"
+            },
+            {
+              "name": "Intel Core Ultra 9 285K boxed",
+              "mpn": "BX80768285K",
+              "best_price_eur": 522.26,
+              "offer_count": 52,
+              "availability": "listed"
+            },
+            {
+              "name": "Intel Core Ultra 7 265K boxed",
+              "mpn": "BX80768265K",
+              "best_price_eur": 266.5,
+              "offer_count": 46,
+              "availability": "listed"
+            },
+            {
+              "name": "Intel Core Ultra 5 245K boxed",
+              "mpn": "BX80768245K",
+              "best_price_eur": 177.9,
+              "offer_count": 49,
+              "availability": "listed"
+            },
+            {
+              "name": "AMD Ryzen 7 9800X3D boxed",
+              "mpn": "100-100001084WOF",
+              "best_price_eur": 369.99,
+              "offer_count": 78,
+              "availability": "listed"
+            },
+            {
+              "name": "AMD Ryzen 9 9950X3D boxed",
+              "mpn": "100-100000719WOF",
+              "best_price_eur": 576.89,
+              "offer_count": 50,
+              "availability": "listed"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

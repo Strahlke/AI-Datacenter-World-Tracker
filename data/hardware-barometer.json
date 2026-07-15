@@ -11,8 +11,8 @@
   "confidence": "medium",
   "retail_grade": false,
   "history_file": "hardware-history.json",
-  "summary_de": "Vorlaeufiger datenbasierter Wert: 74,4 von 100 - steigender Preisdruck. Der 12-Monats-Backcast stuetzt sich auf amtliche Verbraucher- und Erzeugerpreise, SEC-Capex, Speicherpreis-Proxys und EUR/USD. Direkte historische SKU- und Verfuegbarkeitsdaten fehlen noch.",
-  "summary_en": "Provisional data-backed reading: 74.4 out of 100 - rising price pressure. The 12-month backcast uses official consumer and producer prices, SEC capex, memory-price proxies and EUR/USD. Direct historical SKU and availability data are still missing.",
+  "summary_de": "Vorlaeufiger datenbasierter Wert: 74,4 von 100 - steigender Preisdruck. Der 12-Monats-Backcast stuetzt sich auf amtliche Verbraucher- und Erzeugerpreise, SEC-Capex, Speicherpreis-Proxys und EUR/USD. Ein erster direkter Geizhals-Snapshot deckt 40 SKUs ab; eine historische SKU- und Verfuegbarkeitsreihe entsteht erst mit den kommenden Wochenlaeufen.",
+  "summary_en": "Provisional data-backed reading: 74.4 out of 100 - rising price pressure. The 12-month backcast uses official consumer and producer prices, SEC capex, memory-price proxies and EUR/USD. A first direct Geizhals snapshot covers 40 SKUs; a historical SKU and availability series will only emerge through the coming weekly runs.",
   "purpose_de": "Misst den Preisdruck, den private Kaeufer bei GPUs, CPUs, Arbeitsspeicher und SSDs in den kommenden Wochen und Monaten erwarten koennen.",
   "purpose_en": "Measures the price pressure private buyers may face for GPUs, CPUs, memory and SSDs over the coming weeks and months.",
   "scale": {
@@ -135,28 +135,28 @@
       "label": "Consumer GPU",
       "normalization": "EUR pro festem Benchmark-Punkt und VRAM-Klasse",
       "target_skus": 12,
-      "series_status": "source_required"
+      "series_status": "pilot_snapshot"
     },
     {
       "id": "dram",
       "label": "DDR5 DRAM",
       "normalization": "EUR pro GiB, getrennt nach Geschwindigkeit und Kit-Groesse",
       "target_skus": 10,
-      "series_status": "source_required"
+      "series_status": "pilot_snapshot"
     },
     {
       "id": "ssd",
       "label": "NVMe SSD",
       "normalization": "EUR pro TB, getrennt nach PCIe-Generation und NAND-Klasse",
       "target_skus": 10,
-      "series_status": "source_required"
+      "series_status": "pilot_snapshot"
     },
     {
       "id": "cpu",
       "label": "Desktop CPU",
       "normalization": "EUR pro festem Multi- und Single-Core-Benchmark-Punkt",
       "target_skus": 8,
-      "series_status": "source_required"
+      "series_status": "pilot_snapshot"
     }
   ],
   "quality_guardrails": [
@@ -274,8 +274,10 @@
   ],
   "retail_model": {
     "file": "retail-baskets.json",
+    "observations_file": "retail-observations.json",
+    "weekly_snapshots": 1,
     "current_level": "L0",
-    "retail_readiness": 0,
+    "retail_readiness": 0.25,
     "retail_grade_gate_met": false
   }
 }

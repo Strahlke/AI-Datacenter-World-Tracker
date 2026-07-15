@@ -60,6 +60,9 @@ const copy = {
     primaryEvidence: "Primärquellen",
     stage: "Stufe",
     supplyCaveat: "Mehrfachnennungen sind beabsichtigt, wenn ein Unternehmen in mehreren Stufen aktiv ist.",
+    directPriceChannels: "Direkte Preiskanäle zuerst",
+    directPriceChannelsIntro: "Diese Stufen teilen am ehesten Kapazitäten oder Produktbudgets mit Consumer-Hardware.",
+    supplyReadingPath: "Überblick → Stufe wählen → Produzenten öffnen",
     barometerEyebrow: "Consumer impact model",
     openMethod: "Methodik-JSON",
     scoreRange: "von 100",
@@ -70,6 +73,11 @@ const copy = {
     retailBaskets: "Retail-Warenkörbe",
     basketIntro: "Stabile Produktkohorten statt einzelner Tagesangebote.",
     openRetailModel: "Retail-Modell öffnen",
+    openRetailSnapshot: "Snapshot öffnen",
+    showMaturityModel: "Reifegrad und Datenquellen anzeigen",
+    barometerTrendTab: "Trend & Treiber",
+    barometerRetailTab: "Retail-Tracking",
+    barometerModelTab: "Modell & Quellen",
     guardrails: "Qualitätsregeln",
     guardrailIntro: "Damit AI-Ausbau nicht fälschlich jeden Preissprung erklärt.",
     modelSources: "Startquellen des Modells",
@@ -91,8 +99,14 @@ const copy = {
     impactUnknown: "nicht skalierbar",
     retailReadiness: "Retail-Reife",
     weeklyObservations: "Wochenbeobachtungen",
-    activeRetailers: "Aktive Händler",
+    activeRetailers: "Normalisierte Händler",
     sourceAccess: "Quellenzugang",
+    pilotSnapshot: "Direkter Pilot-Snapshot",
+    availableSkus: "SKUs mit Angebot",
+    sumBestPrices: "Summe Einzel-Bestpreise",
+    openWishlist: "Wunschliste öffnen",
+    shippingExcluded: "inkl. MwSt. · zzgl. Versand",
+    offerCoverage: "Angebotsabdeckung",
     all: "Alle",
     planned: "Geplant",
     underConstruction: "Im Bau / Deployment",
@@ -158,6 +172,8 @@ const copy = {
     countryTooltip: (count, power, investment) => `${count} Projekte · ${power} dokumentierte Leistung · ${investment} Standort-Investment`,
     historyRange: (start, end, count) => `${count} Monate · ${start} bis ${end} · heutiger Revisionsstand`,
     historyChartDescription: (start, end, score) => `Rueckgerechneter CHPI von ${start} bis ${end}. Der letzte Wert betraegt ${score} von 100.`,
+    retailSnapshotMeta: (date, available, total) => `Erste direkte Beobachtung · ${date} · ${available}/${total} SKUs mit mindestens einem Angebot`,
+    retailWeekProgress: (current, target) => `${current}/${target} Wochen bis zur Kalibrierung`,
   },
   en: {
     eyebrow: "Global infrastructure monitor",
@@ -209,6 +225,9 @@ const copy = {
     primaryEvidence: "Primary sources",
     stage: "Stage",
     supplyCaveat: "Companies intentionally appear more than once when active in multiple stages.",
+    directPriceChannels: "Direct price channels first",
+    directPriceChannelsIntro: "These stages are most likely to share capacity or product budgets with consumer hardware.",
+    supplyReadingPath: "Overview → choose stage → open producers",
     barometerEyebrow: "Consumer impact model",
     openMethod: "Method JSON",
     scoreRange: "out of 100",
@@ -219,6 +238,11 @@ const copy = {
     retailBaskets: "Retail baskets",
     basketIntro: "Stable product cohorts instead of single-day deals.",
     openRetailModel: "Open retail model",
+    openRetailSnapshot: "Open snapshot",
+    showMaturityModel: "Show maturity model and data sources",
+    barometerTrendTab: "Trend & drivers",
+    barometerRetailTab: "Retail tracking",
+    barometerModelTab: "Model & sources",
     guardrails: "Quality guardrails",
     guardrailIntro: "So AI buildout is not made to explain every price spike.",
     modelSources: "Initial model sources",
@@ -240,8 +264,14 @@ const copy = {
     impactUnknown: "not scalable",
     retailReadiness: "Retail maturity",
     weeklyObservations: "Weekly observations",
-    activeRetailers: "Active retailers",
+    activeRetailers: "Normalised retailers",
     sourceAccess: "Source access",
+    pilotSnapshot: "Direct pilot snapshot",
+    availableSkus: "SKUs with an offer",
+    sumBestPrices: "Sum of individual best prices",
+    openWishlist: "Open wishlist",
+    shippingExcluded: "VAT included · shipping excluded",
+    offerCoverage: "Offer coverage",
     all: "All",
     planned: "Planned",
     underConstruction: "Under construction / deployment",
@@ -307,6 +337,8 @@ const copy = {
     countryTooltip: (count, power, investment) => `${count} projects · ${power} documented power · ${investment} site investment`,
     historyRange: (start, end, count) => `${count} months · ${start} to ${end} · current revision state`,
     historyChartDescription: (start, end, score) => `Backcast CHPI from ${start} to ${end}. The latest value is ${score} out of 100.`,
+    retailSnapshotMeta: (date, available, total) => `First direct observation · ${date} · ${available}/${total} SKUs with at least one offer`,
+    retailWeekProgress: (current, target) => `${current}/${target} weeks to calibration`,
   },
 };
 
@@ -358,10 +390,12 @@ const state = {
   sourcePriority: "all",
   supplyChain: null,
   supplyStage: "all",
+  barometerPanel: ["trend", "retail", "model"].includes(urlParams.get("section")) ? urlParams.get("section") : "trend",
   barometer: null,
   hardwareHistory: null,
   investmentPrograms: null,
   retailBaskets: null,
+  retailObservations: null,
   view: ["map", "method", "supply", "barometer"].includes(urlParams.get("view")) ? urlParams.get("view") : "map",
   lang: getStoredLanguage(),
 };
@@ -402,6 +436,7 @@ const elements = {
   sourceQueueChart: document.getElementById("source-queue-chart"),
   sourceCadenceChart: document.getElementById("source-cadence-chart"),
   evidenceLadder: document.getElementById("evidence-ladder"),
+  supplyFocusGrid: document.getElementById("supply-focus-grid"),
   supplyFlow: document.getElementById("supply-flow"),
   supplyStage: document.getElementById("supply-stage-filter"),
   stageGrid: document.getElementById("stage-grid"),
@@ -420,6 +455,9 @@ const elements = {
   componentChart: document.getElementById("component-chart"),
   scoreScale: document.getElementById("score-scale"),
   basketGrid: document.getElementById("basket-grid"),
+  retailConnectedCount: document.getElementById("retail-connected-count"),
+  retailSnapshotHeader: document.getElementById("retail-snapshot-header"),
+  retailSnapshotGrid: document.getElementById("retail-snapshot-grid"),
   retailReadiness: document.getElementById("retail-readiness"),
   maturityLadder: document.getElementById("maturity-ladder"),
   retailSourceGrid: document.getElementById("retail-source-grid"),
@@ -554,6 +592,26 @@ function formatPeriod(period) {
     }).format(new Date(Date.UTC(year, month - 1, 1)));
   }
   return period || "—";
+}
+
+function formatDate(value) {
+  const date = new Date(value);
+  if (!Number.isFinite(date.getTime())) return value || "—";
+  return new Intl.DateTimeFormat(state.lang === "de" ? "de-DE" : "en-US", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    timeZone: "Europe/Berlin",
+  }).format(date);
+}
+
+function formatEur(value) {
+  if (!Number.isFinite(value)) return "—";
+  return new Intl.NumberFormat(state.lang === "de" ? "de-DE" : "en-US", {
+    style: "currency",
+    currency: "EUR",
+    maximumFractionDigits: 2,
+  }).format(value);
 }
 
 function filteredProjects() {
@@ -1000,6 +1058,23 @@ function renderSupplyChain() {
   elements.highExposureTotal.textContent = stages.filter((stage) => stage.consumer_exposure === "high").length;
   elements.producerGradeA.textContent = producers.filter((producer) => producer.evidence_grade === "A").length;
 
+  elements.supplyFocusGrid.replaceChildren();
+  for (const stage of stages.filter((item) => item.consumer_exposure === "high")) {
+    const stageProducers = producers.filter((producer) => producer.stage === stage.id);
+    const focus = document.createElement("button");
+    focus.type = "button";
+    focus.className = `supply-focus-item${state.supplyStage === stage.id ? " selected" : ""}`;
+    focus.setAttribute("aria-pressed", state.supplyStage === stage.id ? "true" : "false");
+    focus.innerHTML = `<span>${escapeHtml(t("exposureHigh"))}</span><strong>${escapeHtml(localized(stage, "label"))}</strong><p>${escapeHtml(localized(stage, "why_it_matters"))}</p><small>${escapeHtml(t("producerCount", stageProducers.length))} →</small>`;
+    focus.addEventListener("click", () => {
+      state.supplyStage = stage.id;
+      elements.supplyStage.value = stage.id;
+      renderSupplyChain();
+      requestAnimationFrame(() => elements.stageGrid.querySelector("details")?.scrollIntoView({ behavior: "smooth", block: "start" }));
+    });
+    elements.supplyFocusGrid.appendChild(focus);
+  }
+
   elements.supplyFlow.replaceChildren();
   for (const [index, stage] of stages.entries()) {
     const item = document.createElement("button");
@@ -1019,8 +1094,9 @@ function renderSupplyChain() {
   const visibleStages = stages.filter((stage) => state.supplyStage === "all" || stage.id === state.supplyStage);
   for (const stage of visibleStages) {
     const stageProducers = producers.filter((producer) => producer.stage === stage.id);
-    const section = document.createElement("section");
+    const section = document.createElement("details");
     section.className = "stage-card";
+    section.open = state.supplyStage !== "all";
     const producerRows = stageProducers.map((producer) => `
       <article class="producer-row">
         <div class="producer-heading"><strong>${escapeHtml(producer.name)}</strong><span>${escapeHtml(producer.hq_country)}</span></div>
@@ -1028,8 +1104,10 @@ function renderSupplyChain() {
         <div class="producer-meta"><span><strong>${escapeHtml(t("producerSignals"))}:</strong> ${escapeHtml(producer.signals_to_track.join(", "))}</span><a href="${safeUrl(producer.primary_source_url)}" target="_blank" rel="noopener noreferrer">Grade ${escapeHtml(producer.evidence_grade)} ↗</a></div>
       </article>`).join("");
     section.innerHTML = `
-      <header><div><span class="exposure-badge exposure-${escapeHtml(stage.consumer_exposure)}">${escapeHtml(t(`exposure${stage.consumer_exposure[0].toUpperCase()}${stage.consumer_exposure.slice(1)}`))}</span><h3>${escapeHtml(localized(stage, "label"))}</h3></div><strong>${escapeHtml(t("producerCount", stageProducers.length))}</strong></header>
-      <p class="stage-explainer">${escapeHtml(localized(stage, "why_it_matters"))}</p>
+      <summary>
+        <div><span class="exposure-badge exposure-${escapeHtml(stage.consumer_exposure)}">${escapeHtml(t(`exposure${stage.consumer_exposure[0].toUpperCase()}${stage.consumer_exposure.slice(1)}`))}</span><h3>${escapeHtml(localized(stage, "label"))}</h3><p>${escapeHtml(localized(stage, "why_it_matters"))}</p></div>
+        <strong>${escapeHtml(t("producerCount", stageProducers.length))}</strong>
+      </summary>
       <div class="producer-list">${producerRows}</div>`;
     elements.stageGrid.appendChild(section);
   }
@@ -1210,6 +1288,35 @@ function renderBarometer() {
   }
 
   const retail = state.retailBaskets;
+  const latestRetailSnapshot = state.retailObservations?.snapshots?.at(-1);
+  const connectedBaskets = (retail?.baskets || []).filter((basket) => basket.wishlist_url).length;
+  elements.retailConnectedCount.textContent = connectedBaskets;
+  elements.retailSnapshotHeader.replaceChildren();
+  elements.retailSnapshotGrid.replaceChildren();
+  if (latestRetailSnapshot) {
+    const retailItems = latestRetailSnapshot.baskets.reduce((sum, basket) => sum + basket.item_count, 0);
+    const availableItems = latestRetailSnapshot.baskets.reduce((sum, basket) => sum + basket.available_count, 0);
+    elements.retailSnapshotHeader.innerHTML = `
+      <div><span class="snapshot-status">${escapeHtml(t("pilotSnapshot"))}</span><strong>${escapeHtml(t("retailSnapshotMeta", formatDate(latestRetailSnapshot.observed_at), availableItems, retailItems))}</strong></div>
+      <div class="snapshot-progress"><span>${escapeHtml(t("retailWeekProgress", state.retailObservations.snapshots.length, 13))}</span><div class="coverage-track"><span style="width:${Math.min(100, state.retailObservations.snapshots.length / 13 * 100)}%"></span></div></div>`;
+
+    const basketDefinitions = new Map((retail?.baskets || []).map((basket) => [basket.id, basket]));
+    for (const basket of latestRetailSnapshot.baskets) {
+      const definition = basketDefinitions.get(basket.basket_id);
+      const card = document.createElement("article");
+      card.className = "retail-snapshot-card";
+      const coverage = basket.item_count ? basket.available_count / basket.item_count : 0;
+      card.innerHTML = `
+        <div><span>${escapeHtml(t("offerCoverage"))}</span><strong>${escapeHtml(`${basket.available_count}/${basket.item_count}`)}</strong></div>
+        <h4>${escapeHtml(localized(definition, "label") || basket.wishlist_name)}</h4>
+        <div class="coverage-track"><span style="width:${coverage * 100}%"></span></div>
+        <p><span>${escapeHtml(t("sumBestPrices"))}</span><strong>${escapeHtml(formatEur(basket.total_best_price_eur))}</strong></p>
+        <small>${escapeHtml(t("shippingExcluded"))}</small>
+        <a href="${safeUrl(basket.wishlist_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t("openWishlist"))} ↗</a>`;
+      elements.retailSnapshotGrid.appendChild(card);
+    }
+  }
+
   elements.retailReadiness.replaceChildren();
   if (retail) {
     const observations = retail.observation_summary;
@@ -1237,7 +1344,9 @@ function renderBarometer() {
     const normalization = localized(basket, "normalization") || basket.normalization;
     const target = basket.target_slots || basket.target_skus;
     const observed = basket.observed_skus ?? 0;
-    item.innerHTML = `<div><span>${escapeHtml(t("retailGradePending"))}</span><h4>${escapeHtml(label)}</h4></div><p>${escapeHtml(normalization)}</p>${basket.cohorts ? `<small>${escapeHtml(basket.cohorts.join(" · "))}</small>` : ""}<strong>${escapeHtml(t("basketTarget"))}: ${target} · ${escapeHtml(t("tracked"))}: ${observed}</strong>`;
+    const availability = Number.isInteger(basket.available_skus) ? ` · ${escapeHtml(t("availableSkus"))}: ${basket.available_skus}` : "";
+    const wishlist = basket.wishlist_url ? `<a href="${safeUrl(basket.wishlist_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t("openWishlist"))} ↗</a>` : "";
+    item.innerHTML = `<div><span>${escapeHtml(basket.status === "pilot_observed" ? t("pilotSnapshot") : t("retailGradePending"))}</span><h4>${escapeHtml(label)}</h4></div><p>${escapeHtml(normalization)}</p>${basket.cohorts ? `<small>${escapeHtml(basket.cohorts.join(" · "))}</small>` : ""}<strong>${escapeHtml(t("basketTarget"))}: ${target} · ${escapeHtml(t("tracked"))}: ${observed}${availability}</strong>${wishlist}`;
     elements.basketGrid.appendChild(item);
   }
 
@@ -1314,6 +1423,21 @@ function populateSupplyStages() {
   elements.supplyStage.value = state.supplyStage;
 }
 
+function setBarometerPanel(panel) {
+  state.barometerPanel = ["trend", "retail", "model"].includes(panel) ? panel : "trend";
+  document.querySelectorAll("[data-barometer-panel-content]").forEach((section) => {
+    const active = section.dataset.barometerPanelContent === state.barometerPanel;
+    section.hidden = !active;
+    section.classList.toggle("active", active);
+  });
+  document.querySelectorAll("[data-barometer-panel]").forEach((button) => {
+    const active = button.dataset.barometerPanel === state.barometerPanel;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-selected", active ? "true" : "false");
+  });
+  if (state.barometerPanel === "trend") requestAnimationFrame(renderHardwareHistory);
+}
+
 function setView(view) {
   state.view = view;
   document.querySelectorAll("[data-dashboard-view]").forEach((panel) => {
@@ -1327,6 +1451,7 @@ function setView(view) {
     button.setAttribute("aria-pressed", active ? "true" : "false");
   });
   if (view === "map") requestAnimationFrame(renderMap);
+  if (view === "barometer") setBarometerPanel(state.barometerPanel);
 }
 
 function changeLanguage(language) {
@@ -1341,6 +1466,9 @@ function changeLanguage(language) {
 
 document.querySelectorAll(".dashboard-tab").forEach((button) => {
   button.addEventListener("click", () => setView(button.dataset.view));
+});
+document.querySelectorAll("[data-barometer-panel]").forEach((button) => {
+  button.addEventListener("click", () => setBarometerPanel(button.dataset.barometerPanel));
 });
 elements.language.addEventListener("change", () => changeLanguage(elements.language.value));
 elements.search.addEventListener("input", () => { state.search = elements.search.value; renderAll(); });
@@ -1384,12 +1512,13 @@ async function bootstrap() {
       fetch(`${import.meta.env.BASE_URL}data/hardware-history.json`, { cache: "no-cache" }),
       fetch(`${import.meta.env.BASE_URL}data/investment-programs.json`, { cache: "no-cache" }),
       fetch(`${import.meta.env.BASE_URL}data/retail-baskets.json`, { cache: "no-cache" }),
+      fetch(`${import.meta.env.BASE_URL}data/retail-observations.json`, { cache: "no-cache" }),
     ]);
-    const labels = ["projects", "source-registry", "supply-chain", "hardware-barometer", "hardware-history", "investment-programs", "retail-baskets"];
+    const labels = ["projects", "source-registry", "supply-chain", "hardware-barometer", "hardware-history", "investment-programs", "retail-baskets", "retail-observations"];
     responses.forEach((response, index) => {
       if (!response.ok) throw new Error(`${labels[index]} ${response.status}`);
     });
-    const [payload, sourcePayload, supplyPayload, barometerPayload, hardwareHistoryPayload, investmentProgramsPayload, retailBasketsPayload] = await Promise.all(responses.map((response) => response.json()));
+    const [payload, sourcePayload, supplyPayload, barometerPayload, hardwareHistoryPayload, investmentProgramsPayload, retailBasketsPayload, retailObservationsPayload] = await Promise.all(responses.map((response) => response.json()));
     state.projects = payload.projects;
     state.snapshotDate = payload.snapshot_date;
     state.sources = sourcePayload.sources;
@@ -1400,6 +1529,7 @@ async function bootstrap() {
     state.hardwareHistory = hardwareHistoryPayload;
     state.investmentPrograms = investmentProgramsPayload;
     state.retailBaskets = retailBasketsPayload;
+    state.retailObservations = retailObservationsPayload;
     elements.snapshot.textContent = t("snapshotMeta", payload.snapshot_date, state.projects.length);
     populateRegions();
     populateSupplyStages();

@@ -4,15 +4,15 @@
   "current_level": "L0",
   "current_level_label_de": "Proxy-Barometer",
   "current_level_label_en": "Proxy barometer",
-  "retail_readiness": 0,
-  "status_de": "Warenkoerbe versioniert; noch keine lizenzierte oder freigegebene Haendlerquelle konfiguriert. Deshalb keine erfundenen SKU-Preise und kein Retail-Grade-Label.",
-  "status_en": "Baskets are versioned; no licensed or approved retailer source is configured yet. Therefore no fabricated SKU prices and no retail-grade label.",
+  "retail_readiness": 0.25,
+  "status_de": "Vier oeffentliche Geizhals-Wunschlisten sind verbunden und der erste direkte SKU-Snapshot ist gespeichert. Es gibt erst eine Beobachtungswoche, nur einen Aggregator und noch keine normalisierten Haendleridentitaeten; deshalb bleibt der Reifegrad konservativ auf L0.",
+  "status_en": "Four public Geizhals wishlists are connected and the first direct SKU snapshot is stored. There is only one observation week, one aggregator and no normalised merchant identities yet, so maturity conservatively remains at L0.",
   "observation_summary": {
-    "weekly_observations": 0,
+    "weekly_observations": 1,
     "active_retailers": 0,
-    "categories_with_minimum_coverage": 0,
+    "categories_with_minimum_coverage": 4,
     "total_categories": 4,
-    "availability_coverage": 0,
+    "availability_coverage": 0.975,
     "revision_rate": null
   },
   "maturity_levels": [
@@ -20,8 +20,8 @@
       "id": "L0",
       "label_de": "Proxy",
       "label_en": "Proxy",
-      "gate_de": "Offizielle Preisindizes und Upstream-Signale; keine SKU-Zeitreihe.",
-      "gate_en": "Official price indices and upstream signals; no SKU series.",
+      "gate_de": "Offizielle Preisindizes und Upstream-Signale; erster direkter SKU-Snapshot, aber noch keine Zeitreihe.",
+      "gate_en": "Official price indices and upstream signals; first direct SKU snapshot, but no time series yet.",
       "met": true
     },
     {
@@ -71,8 +71,10 @@
         "Mid 12–16 GB",
         "High 16–24+ GB"
       ],
-      "status": "source_required",
-      "observed_skus": 0,
+      "status": "pilot_observed",
+      "wishlist_url": "https://geizhals.de/wishlists/5081030",
+      "observed_skus": 12,
+      "available_skus": 11,
       "active_retailers": 0
     },
     {
@@ -87,8 +89,10 @@
         "32 GB 6000 CL30–36",
         "64 GB 6000–6400 CL30–36"
       ],
-      "status": "source_required",
-      "observed_skus": 0,
+      "status": "pilot_observed",
+      "wishlist_url": "https://geizhals.de/wishlists/5081039",
+      "observed_skus": 10,
+      "available_skus": 10,
       "active_retailers": 0
     },
     {
@@ -104,8 +108,10 @@
         "2 TB PCIe 4/5 TLC",
         "4 TB PCIe 4 TLC"
       ],
-      "status": "source_required",
-      "observed_skus": 0,
+      "status": "pilot_observed",
+      "wishlist_url": "https://geizhals.de/wishlists/5081157",
+      "observed_skus": 10,
+      "available_skus": 10,
       "active_retailers": 0
     },
     {
@@ -121,12 +127,28 @@
         "Upper mainstream 8–16 cores",
         "Enthusiast 16+ cores"
       ],
-      "status": "source_required",
-      "observed_skus": 0,
+      "status": "pilot_observed",
+      "wishlist_url": "https://geizhals.de/wishlists/5081163",
+      "observed_skus": 8,
+      "available_skus": 8,
       "active_retailers": 0
     }
   ],
   "source_options": [
+    {
+      "id": "geizhals-public-wishlists",
+      "name": "Geizhals Public Wishlists",
+      "geography": "DE",
+      "access": "public web snapshot",
+      "history": false,
+      "price": true,
+      "availability": "offer count",
+      "status": "connected_pilot",
+      "grade": "B",
+      "url": "https://geizhals.de/wishlists",
+      "caveat_de": "Ein Preisvergleichs-Aggregator, kein unabhaengiger Zweitfeed. Preise sind periodische Momentaufnahmen inklusive MwSt. und ohne Versand; einzelne Haendler und Lieferzeiten werden im naechsten Schritt normalisiert.",
+      "caveat_en": "One price-comparison aggregator, not an independent second feed. Prices are periodic snapshots including VAT and excluding shipping; individual merchants and lead times will be normalised next."
+    },
     {
       "id": "ebay-browse",
       "name": "eBay Browse API",
@@ -200,6 +222,6 @@
     "source_url",
     "source_revision"
   ],
-  "next_action_de": "Fuer L1 braucht der Tracker Zugangsdaten fuer zwei regelkonforme Feeds. Empfohlen: Keepa fuer historische Amazon-DE-Reihen plus eBay Browse oder ein lizenzierter deutscher Preisvergleichsfeed; bis dahin bleibt der sichtbare Wert ausdruecklich ein Proxy-Barometer.",
-  "next_action_en": "L1 requires credentials for two compliant feeds. Recommended: Keepa for historical Amazon DE series plus eBay Browse or a licensed German price-comparison feed; until then the visible value remains explicitly a proxy barometer."
+  "next_action_de": "Die Geizhals-Koerbe liefern jetzt den ersten direkten Snapshot. Fuer L1 fehlt ein unabhaengiger Zweitfeed oder ein belastbarer Haendler-Level-Export; fuer L2 muessen danach mindestens 13 Wochen mit mindestens 70 Prozent SKU-Abdeckung je Kategorie vorliegen.",
+  "next_action_en": "The Geizhals baskets now provide the first direct snapshot. L1 still needs an independent second feed or a reliable merchant-level export; L2 then requires at least 13 weeks with at least 70 percent SKU coverage in every category."
 }
