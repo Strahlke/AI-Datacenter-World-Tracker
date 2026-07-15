@@ -13,10 +13,20 @@ Interaktive Weltkarte grosser, oeffentlich dokumentierter KI-Rechenzentren und A
 - urspruengliches Ziel und nachweislich realisierter Stand
 - Terminlage, Planhistorie und Quellen je Projekt
 - Suche sowie Status- und Regionsfilter
+- ein filterbares Quellenregister mit Prioritaet, Suchrhythmus, Qualitaetsstufe und Verwendungszweck
 
 ## Daten und Methodik
 
-Der aktuelle Datenstand liegt in `data/projects.json`. Fruehere Staende bleiben ueber die Git-Historie nachvollziehbar.
+Der aktuelle Datenstand liegt in `data/projects.json`. Das verbindliche Rechercheverzeichnis liegt in `data/source-registry.json`; `docs/research-runbook.md` beschreibt die Reihenfolge und Mindestnachweise jedes Refreshs. Fruehere Staende bleiben ueber die Git-Historie nachvollziehbar.
+
+Quellenrollen:
+
+- Grade A: Betreiber, Investor Relations, Behoerden, Regulatoren, Netzbetreiber, Gerichte oder offizielle Register
+- Grade B: belastbare Sekundaerquelle oder transparente Fachdatenbank
+- Grade C: Discovery-Signal, nie alleiniger Beleg fuer Status oder Zahlen
+- `hard_reference`: harte Standort-, Genehmigungs-, Netz-, Bau- oder Betriebsdaten
+- `early_signal`: neue Projekte, Erweiterungen und Investitionssignale
+- `cross_check`: unabhaengige Plausibilisierung und Konfliktpruefung
 
 Statusregeln:
 
@@ -26,6 +36,10 @@ Statusregeln:
 4. Alte Plaene werden nicht ueberschrieben, sondern in `history` fortgeschrieben.
 5. Abgesagte, pausierte und ersetzte Vorhaben bleiben erhalten.
 6. Ueberlappende Programm-, Campus- und Gebaeudeinvestitionen werden nicht addiert.
+7. Cloud-Regionen und Aggregatoren dienen nur der Discovery, solange kein projektspezifischer AI- und Standortbeleg vorliegt.
+8. Grade-C-Quellen duerfen keinen Statuswechsel allein ausloesen.
+
+Vor einem Update validiert `node scripts/validate-data.mjs` Projekte, Quellen, IDs, Pflichtfelder, URLs, Statuswerte und die Abdeckung aller Recherchekategorien.
 
 Der Startbestand ist eine kuratierte, quellenbasierte Auswahl und keine vollstaendige Marktinventur.
 
@@ -38,6 +52,8 @@ Lokaler Build:
 ```bash
 mkdir -p app/public/data
 cp data/projects.json app/public/data/projects.json
+cp data/source-registry.json app/public/data/source-registry.json
+node scripts/validate-data.mjs
 cd app
 npm ci
 npm run dev

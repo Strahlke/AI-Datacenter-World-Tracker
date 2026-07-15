@@ -32,10 +32,14 @@ jobs:
         working-directory: app
         run: npm ci
 
+      - name: Validate data contracts
+        run: node scripts/validate-data.mjs
+
       - name: Stage current dataset
         run: |
           mkdir -p app/public/data
           cp data/projects.json app/public/data/projects.json
+          cp data/source-registry.json app/public/data/source-registry.json
 
       - name: Build site
         working-directory: app

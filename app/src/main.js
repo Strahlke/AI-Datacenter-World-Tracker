@@ -25,6 +25,25 @@ const scheduleLabels = {
   cancelled: "Abgesagt",
 };
 
+const sourceQueueLabels = {
+  hard_reference: "Harte Referenz",
+  early_signal: "Fruehsignal",
+  cross_check: "Validierung",
+};
+
+const sourceCadenceLabels = {
+  daily: "Taeglich",
+  weekly: "Woechentlich",
+  monthly: "Monatlich",
+  quarterly: "Quartalsweise",
+};
+
+const sourcePriorityLabels = {
+  core: "Core",
+  supporting: "Ergaenzend",
+  watchlist: "Watchlist",
+};
+
 const state = {
   projects: [],
   snapshotDate: null,
@@ -32,6 +51,12 @@ const state = {
   region: "all",
   search: "",
   selectedId: window.location.hash.slice(1) || null,
+  sources: [],
+  sourceSnapshotDate: null,
+  sourceSearch: "",
+  sourceQueue: "all",
+  sourceCadence: "all",
+  sourcePriority: "all",
 };
 
 const elements = {
@@ -50,6 +75,20 @@ const elements = {
   live: document.getElementById("metric-live"),
   progress: document.getElementById("metric-progress"),
   risk: document.getElementById("metric-risk"),
+  openSources: document.getElementById("open-sources"),
+  closeSources: document.getElementById("close-sources"),
+  sourceDialog: document.getElementById("source-dialog"),
+  sourceRegistryMeta: document.getElementById("source-registry-meta"),
+  sourceSearch: document.getElementById("source-search"),
+  sourceQueue: document.getElementById("source-queue"),
+  sourceCadence: document.getElementById("source-cadence"),
+  sourcePriority: document.getElementById("source-priority"),
+  sourceList: document.getElementById("source-list"),
+  sourceCount: document.getElementById("source-count"),
+  sourceTotal: document.getElementById("source-total"),
+  sourceCore: document.getElementById("source-core"),
+  sourceGradeA: document.getElementById("source-grade-a"),
+  sourceDynamic: document.getElementById("source-dynamic"),
 };
 
 function svgElement(name, attributes = {}) {
@@ -87,6 +126,18 @@ function filteredProjects() {
     if (state.region !== "all" && project.region !== state.region) return false;
     if (!needle) return true;
     return [project.name, project.operator, project.country, project.location, project.partners]
+      .some((value) => normalize(value).includes(needle));
+  });
+}
+
+function filteredSources() {
+  const needle = normalize(state.sourceSearch).trim();
+  return state.sources.filter((source) => {
+    if (state.sourceQueue !== "all" && source.queue !== state.sourceQueue) return false;
+    if (state.sourceCadence !== "all" && source.recommended_cadence !== state.sourceCadence) return false;
+    if (state.sourcePriority !== "all" && source.priority !== state.sourcePriority) return false;
+    if (!needle) return true;
+    return [source.name, source.publisher, source.category, source.geography, source.use_for, source.caveat, ...(source.signals || [])]
       .some((value) => normalize(value).includes(needle));
   });
 }
@@ -131,6 +182,53 @@ function renderLegend() {
     const count = state.projects.filter((project) => project.current_status === status).length;
     item.append(dot, document.createTextNode(`${meta.label} ${count}`));
     elements.legend.appendChild(item);
+  }
+}
+
+function renderSourceRegistry() {
+  const sources = filteredSources();
+  elements.sourceList.replaceChildren();
+  elements.sourceCount.textContent = `${sources.length} ${sources.length === 1 ? "Quelle" : "Quellen"}`;
+  elements.sourceTotal.textContent = state.sources.length;
+  elements.sourceCore.textContent = state.sources.filter((source) => source.priority === "core").length;
+  elements.sourceGradeA.textContent = state.sources.filter((source) => source.max_grade === "A").length;
+  elements.sourceDynamic.textContent = state.sources.filter((source) => source.access === "dynamic_search").length;
+  elements.openSources.textContent = state.sources.length ? `Quellen (${state.sources.length})` : "Quellen";
+
+  if (!sources.length) {
+    const row = document.createElement("tr");
+    const cell = document.createElement("td");
+    cell.colSpan = 4;
+    cell.className = "source-empty";
+    cell.textContent = "Keine Quellen fuer diese Filter.";
+    row.appendChild(cell);
+    elements.sourceList.appendChild(row);
+    return;
+  }
+
+  for (const source of sources) {
+    const row = document.createElement("tr");
+    const sourceCell = document.createElement("td");
+    sourceCell.dataset.label = "Quelle";
+    const sourceName = source.url
+      ? `<a href="${safeUrl(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.name)}</a>`
+      : `<strong>${escapeHtml(source.name)}</strong>`;
+    sourceCell.innerHTML = `${sourceName}<span>${escapeHtml(source.publisher)} · ${escapeHtml(source.geography)}</span>`;
+
+    const roleCell = document.createElement("td");
+    roleCell.dataset.label = "Rolle";
+    roleCell.innerHTML = `<div class="source-badges"><span class="source-grade grade-${escapeHtml(source.max_grade.toLowerCase())}">${escapeHtml(source.max_grade)}</span><span>${escapeHtml(sourceQueueLabels[source.queue])}</span><span>${escapeHtml(sourcePriorityLabels[source.priority])}</span></div><small>${escapeHtml(source.category.replaceAll("_", " "))}</small>`;
+
+    const cadenceCell = document.createElement("td");
+    cadenceCell.dataset.label = "Rhythmus";
+    cadenceCell.innerHTML = `<strong>${escapeHtml(sourceCadenceLabels[source.recommended_cadence])}</strong><span>${source.access === "dynamic_search" ? "Projektlokale Suche" : escapeHtml(source.access.toUpperCase())}</span>`;
+
+    const useCell = document.createElement("td");
+    useCell.dataset.label = "Nutzen und Grenzen";
+    useCell.innerHTML = `<p>${escapeHtml(source.use_for)}</p><span><strong>Grenze:</strong> ${escapeHtml(source.caveat)}</span><small>Signale: ${escapeHtml(source.signals.join(", "))}</small>`;
+
+    row.append(sourceCell, roleCell, cadenceCell, useCell);
+    elements.sourceList.appendChild(row);
   }
 }
 
@@ -310,6 +408,32 @@ elements.region.addEventListener("change", () => {
   renderAll();
 });
 
+elements.openSources.addEventListener("click", () => {
+  renderSourceRegistry();
+  elements.sourceDialog.showModal();
+  elements.sourceSearch.focus();
+});
+elements.closeSources.addEventListener("click", () => elements.sourceDialog.close());
+elements.sourceSearch.addEventListener("input", () => {
+  state.sourceSearch = elements.sourceSearch.value;
+  renderSourceRegistry();
+});
+elements.sourceQueue.addEventListener("change", () => {
+  state.sourceQueue = elements.sourceQueue.value;
+  renderSourceRegistry();
+});
+elements.sourceCadence.addEventListener("change", () => {
+  state.sourceCadence = elements.sourceCadence.value;
+  renderSourceRegistry();
+});
+elements.sourcePriority.addEventListener("change", () => {
+  state.sourcePriority = elements.sourcePriority.value;
+  renderSourceRegistry();
+});
+elements.sourceDialog.addEventListener("click", (event) => {
+  if (event.target === elements.sourceDialog) elements.sourceDialog.close();
+});
+
 let resizeQueued = false;
 new ResizeObserver(() => {
   if (resizeQueued) return;
@@ -322,14 +446,22 @@ new ResizeObserver(() => {
 
 async function bootstrap() {
   try {
-    const response = await fetch(`${import.meta.env.BASE_URL}data/projects.json`, { cache: "no-cache" });
-    if (!response.ok) throw new Error(`Daten ${response.status}`);
-    const payload = await response.json();
+    const [projectResponse, sourceResponse] = await Promise.all([
+      fetch(`${import.meta.env.BASE_URL}data/projects.json`, { cache: "no-cache" }),
+      fetch(`${import.meta.env.BASE_URL}data/source-registry.json`, { cache: "no-cache" }),
+    ]);
+    if (!projectResponse.ok) throw new Error(`Projektdaten ${projectResponse.status}`);
+    if (!sourceResponse.ok) throw new Error(`Quellenregister ${sourceResponse.status}`);
+    const [payload, sourcePayload] = await Promise.all([projectResponse.json(), sourceResponse.json()]);
     state.projects = payload.projects;
     state.snapshotDate = payload.snapshot_date;
+    state.sources = sourcePayload.sources;
+    state.sourceSnapshotDate = sourcePayload.snapshot_date;
     elements.snapshot.textContent = `Datenstand ${payload.snapshot_date || "unbekannt"} · ${state.projects.length} Projekte`;
+    elements.sourceRegistryMeta.textContent = `Stand ${sourcePayload.snapshot_date || "unbekannt"} · ${state.sources.length} Quellen · feste Suchqueues fuer jeden Refresh`;
     populateRegions();
     renderLegend();
+    renderSourceRegistry();
     renderAll();
   } catch (error) {
     elements.snapshot.textContent = "Datendatei nicht erreichbar";

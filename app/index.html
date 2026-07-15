@@ -17,6 +17,7 @@
           <span class="health-dot" aria-hidden="true"></span>
           <span id="snapshot-label">Daten werden geladen …</span>
           <a href="./data/projects.json" target="_blank" rel="noopener noreferrer">Daten</a>
+          <button class="text-button" id="open-sources" type="button">Quellen</button>
           <a href="https://github.com/Strahlke/AI-Datacenter-World-Tracker" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
       </header>
@@ -74,6 +75,85 @@
           <div class="loading-state">Projekt auswählen …</div>
         </aside>
       </main>
+
+      <dialog class="source-dialog" id="source-dialog" aria-labelledby="source-dialog-title">
+        <div class="source-dialog-shell">
+          <header class="source-dialog-header">
+            <div>
+              <p class="eyebrow">Research registry</p>
+              <h2 id="source-dialog-title">Quellen und Suchplan</h2>
+              <p id="source-registry-meta">Quellenregister wird geladen …</p>
+            </div>
+            <button class="dialog-close" id="close-sources" type="button" aria-label="Quellenregister schliessen">Schliessen</button>
+          </header>
+
+          <section class="source-summary" aria-label="Kennzahlen des Quellenregisters">
+            <div><span>Quellen</span><strong id="source-total">—</strong></div>
+            <div><span>Core</span><strong id="source-core">—</strong></div>
+            <div><span>Grade A</span><strong id="source-grade-a">—</strong></div>
+            <div><span>Dynamische Register</span><strong id="source-dynamic">—</strong></div>
+          </section>
+
+          <section class="source-method" aria-label="Quellenmethodik">
+            <p><strong>A</strong> Primaerbeleg</p>
+            <p><strong>B</strong> belastbare Sekundaerquelle</p>
+            <p><strong>C</strong> Discovery-Signal, nie allein statusaendernd</p>
+          </section>
+
+          <div class="source-filters">
+            <label>
+              <span>Suche</span>
+              <input id="source-search" type="search" placeholder="Quelle, Signal, Region" autocomplete="off" />
+            </label>
+            <label>
+              <span>Queue</span>
+              <select id="source-queue">
+                <option value="all">Alle</option>
+                <option value="hard_reference">Harte Referenzdaten</option>
+                <option value="early_signal">Fruehindikatoren</option>
+                <option value="cross_check">Validierung</option>
+              </select>
+            </label>
+            <label>
+              <span>Rhythmus</span>
+              <select id="source-cadence">
+                <option value="all">Alle</option>
+                <option value="daily">Taeglich</option>
+                <option value="weekly">Woechentlich</option>
+                <option value="monthly">Monatlich</option>
+                <option value="quarterly">Quartalsweise</option>
+              </select>
+            </label>
+            <label>
+              <span>Prioritaet</span>
+              <select id="source-priority">
+                <option value="all">Alle</option>
+                <option value="core">Core</option>
+                <option value="supporting">Ergaenzend</option>
+                <option value="watchlist">Watchlist</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="source-list-heading">
+            <strong id="source-count">0 Quellen</strong>
+            <a href="./data/source-registry.json" target="_blank" rel="noopener noreferrer">JSON oeffnen</a>
+          </div>
+          <div class="source-table-wrap">
+            <table class="source-table">
+              <thead>
+                <tr>
+                  <th scope="col">Quelle</th>
+                  <th scope="col">Rolle</th>
+                  <th scope="col">Rhythmus</th>
+                  <th scope="col">Nutzen und Grenzen</th>
+                </tr>
+              </thead>
+              <tbody id="source-list"></tbody>
+            </table>
+          </div>
+        </div>
+      </dialog>
     </div>
     <script type="module" src="/src/main.js"></script>
   </body>
