@@ -43,6 +43,8 @@ jobs:
           cp data/supply-chain.json app/public/data/supply-chain.json
           cp data/hardware-barometer.json app/public/data/hardware-barometer.json
           cp data/hardware-history.json app/public/data/hardware-history.json
+          cp data/investment-programs.json app/public/data/investment-programs.json
+          cp data/retail-baskets.json app/public/data/retail-baskets.json
 
       - name: Build site
         working-directory: app
