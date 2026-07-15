@@ -1,0 +1,205 @@
+{
+  "snapshot_date": "2026-07-15",
+  "methodology_version": "1.0",
+  "current_level": "L0",
+  "current_level_label_de": "Proxy-Barometer",
+  "current_level_label_en": "Proxy barometer",
+  "retail_readiness": 0,
+  "status_de": "Warenkoerbe versioniert; noch keine lizenzierte oder freigegebene Haendlerquelle konfiguriert. Deshalb keine erfundenen SKU-Preise und kein Retail-Grade-Label.",
+  "status_en": "Baskets are versioned; no licensed or approved retailer source is configured yet. Therefore no fabricated SKU prices and no retail-grade label.",
+  "observation_summary": {
+    "weekly_observations": 0,
+    "active_retailers": 0,
+    "categories_with_minimum_coverage": 0,
+    "total_categories": 4,
+    "availability_coverage": 0,
+    "revision_rate": null
+  },
+  "maturity_levels": [
+    {
+      "id": "L0",
+      "label_de": "Proxy",
+      "label_en": "Proxy",
+      "gate_de": "Offizielle Preisindizes und Upstream-Signale; keine SKU-Zeitreihe.",
+      "gate_en": "Official price indices and upstream signals; no SKU series.",
+      "met": true
+    },
+    {
+      "id": "L1",
+      "label_de": "Instrumentiert",
+      "label_en": "Instrumented",
+      "gate_de": "Versionierte Koerbe plus mindestens zwei regelkonforme Haendler-/Preisdatenfeeds.",
+      "gate_en": "Versioned baskets plus at least two compliant retailer/price-data feeds.",
+      "met": false
+    },
+    {
+      "id": "L2",
+      "label_de": "Kalibriert",
+      "label_en": "Calibrated",
+      "gate_de": "Mindestens 13 Wochen und 70 % SKU-Abdeckung je Kategorie.",
+      "gate_en": "At least 13 weeks and 70% SKU coverage per category.",
+      "met": false
+    },
+    {
+      "id": "L3",
+      "label_de": "Retail-Grade",
+      "label_en": "Retail grade",
+      "gate_de": "26 Wochen, ≥6 vergleichbare SKUs je Kategorie, ≥2 unabhaengige Haendler, Preis plus Verfuegbarkeit, Quellenkontinuitaet ≥90 %.",
+      "gate_en": "26 weeks, ≥6 comparable SKUs per category, ≥2 independent retailers, price plus availability, source continuity ≥90%.",
+      "met": false
+    },
+    {
+      "id": "L4",
+      "label_de": "Prognosefaehig",
+      "label_en": "Predictive",
+      "gate_de": "52 Wochen, Out-of-sample-Backtests, Fehlerband und Sensitivitaetsanalyse.",
+      "gate_en": "52 weeks, out-of-sample backtests, error band and sensitivity analysis.",
+      "met": false
+    }
+  ],
+  "baskets": [
+    {
+      "id": "gpu",
+      "label_de": "Consumer GPU",
+      "label_en": "Consumer GPU",
+      "target_slots": 12,
+      "minimum_comparable_skus": 6,
+      "normalization_de": "EUR je festem Benchmark-Punkt, getrennt nach VRAM- und Leistungsklasse",
+      "normalization_en": "EUR per fixed benchmark point, split by VRAM and performance tier",
+      "cohorts": [
+        "Entry 8–12 GB",
+        "Mid 12–16 GB",
+        "High 16–24+ GB"
+      ],
+      "status": "source_required",
+      "observed_skus": 0,
+      "active_retailers": 0
+    },
+    {
+      "id": "dram",
+      "label_de": "DDR5 DRAM",
+      "label_en": "DDR5 DRAM",
+      "target_slots": 10,
+      "minimum_comparable_skus": 6,
+      "normalization_de": "EUR je GiB fuer 32-/64-GB-Kits, DDR5-6000 bis 6400, CL30–36",
+      "normalization_en": "EUR per GiB for 32/64GB kits, DDR5-6000 to 6400, CL30–36",
+      "cohorts": [
+        "32 GB 6000 CL30–36",
+        "64 GB 6000–6400 CL30–36"
+      ],
+      "status": "source_required",
+      "observed_skus": 0,
+      "active_retailers": 0
+    },
+    {
+      "id": "ssd",
+      "label_de": "NVMe SSD",
+      "label_en": "NVMe SSD",
+      "target_slots": 10,
+      "minimum_comparable_skus": 6,
+      "normalization_de": "EUR je TB, getrennt nach 1/2/4 TB, PCIe 4/5 und TLC-Klasse",
+      "normalization_en": "EUR per TB, split by 1/2/4TB, PCIe 4/5 and TLC class",
+      "cohorts": [
+        "1 TB PCIe 4 TLC",
+        "2 TB PCIe 4/5 TLC",
+        "4 TB PCIe 4 TLC"
+      ],
+      "status": "source_required",
+      "observed_skus": 0,
+      "active_retailers": 0
+    },
+    {
+      "id": "cpu",
+      "label_de": "Desktop CPU",
+      "label_en": "Desktop CPU",
+      "target_slots": 8,
+      "minimum_comparable_skus": 6,
+      "normalization_de": "EUR je festem Single-/Multi-Core-Benchmarkpunkt und Leistungsklasse",
+      "normalization_en": "EUR per fixed single/multi-core benchmark point and performance tier",
+      "cohorts": [
+        "Mainstream 6–8 cores",
+        "Upper mainstream 8–16 cores",
+        "Enthusiast 16+ cores"
+      ],
+      "status": "source_required",
+      "observed_skus": 0,
+      "active_retailers": 0
+    }
+  ],
+  "source_options": [
+    {
+      "id": "ebay-browse",
+      "name": "eBay Browse API",
+      "geography": "DE/EU/US",
+      "access": "OAuth API",
+      "history": false,
+      "price": true,
+      "availability": true,
+      "status": "credentials_required",
+      "grade": "A",
+      "url": "https://developer.ebay.com/api-docs/buy/static/api-browse.html",
+      "caveat_de": "Marketplace-Angebote sind kein einzelner Haendler; nur Neuware, feste Preise und definierte Seller-Qualitaetsfilter verwenden.",
+      "caveat_en": "Marketplace offers are not one retailer; use new fixed-price items and defined seller-quality filters only."
+    },
+    {
+      "id": "best-buy",
+      "name": "Best Buy Products API",
+      "geography": "USA",
+      "access": "API key",
+      "history": "catalog past and present",
+      "price": true,
+      "availability": true,
+      "status": "credentials_required",
+      "grade": "A",
+      "url": "https://developer.bestbuy.com/apis",
+      "caveat_de": "Nur USA; als unabhaengiger Retail-Kanal und Plausibilitaetscheck geeignet.",
+      "caveat_en": "US only; suitable as an independent retail channel and plausibility check."
+    },
+    {
+      "id": "keepa",
+      "name": "Keepa API",
+      "geography": "Amazon-Marktplatzlaender",
+      "access": "paid API token",
+      "history": true,
+      "price": true,
+      "availability": true,
+      "status": "license_required",
+      "grade": "B",
+      "url": "https://keepa.com/#!api",
+      "caveat_de": "Kommerzieller Drittanbieter und Amazon-zentriert; Lizenzbedingungen und Revisionslog dokumentieren.",
+      "caveat_en": "Commercial third party and Amazon-centric; document licence terms and revision log."
+    },
+    {
+      "id": "reviewed-csv",
+      "name": "Reviewed weekly CSV",
+      "geography": "DE/EU",
+      "access": "manual import",
+      "history": true,
+      "price": true,
+      "availability": true,
+      "status": "available_fallback",
+      "grade": "B",
+      "url": null,
+      "caveat_de": "Nur mit URL, Abrufzeit, MwSt./Versand, Lagerstatus und Vier-Augen-Pruefung; kein Screenshot-only-Datensatz.",
+      "caveat_en": "Only with URL, timestamp, VAT/shipping, stock status and four-eyes review; no screenshot-only dataset."
+    }
+  ],
+  "required_observation_fields": [
+    "observed_at",
+    "market",
+    "retailer_id",
+    "basket_id",
+    "cohort",
+    "sku_id",
+    "gtin_or_mpn",
+    "price_gross",
+    "currency",
+    "shipping",
+    "availability",
+    "lead_time_days",
+    "source_url",
+    "source_revision"
+  ],
+  "next_action_de": "Fuer L1 braucht der Tracker Zugangsdaten fuer zwei regelkonforme Feeds. Empfohlen: Keepa fuer historische Amazon-DE-Reihen plus eBay Browse oder ein lizenzierter deutscher Preisvergleichsfeed; bis dahin bleibt der sichtbare Wert ausdruecklich ein Proxy-Barometer.",
+  "next_action_en": "L1 requires credentials for two compliant feeds. Recommended: Keepa for historical Amazon DE series plus eBay Browse or a licensed German price-comparison feed; until then the visible value remains explicitly a proxy barometer."
+}
