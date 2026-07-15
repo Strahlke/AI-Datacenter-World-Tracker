@@ -1,6 +1,6 @@
 # Research runbook
 
-Dieses Runbook ist die verbindliche Reihenfolge fuer jeden Daten-Refresh des AI Datacenter World Trackers. Die maschinenlesbare Quellenliste liegt in `data/source-registry.json`. Produzenten und Lieferkettenstufen stehen in `data/supply-chain.json`; KPI-Definition, Gewichte, Datenluecken und Publikationsregeln des Consumer-Barometers in `data/hardware-barometer.json`.
+Dieses Runbook ist die verbindliche Reihenfolge fuer jeden Daten-Refresh des AI Datacenter World Trackers. Die maschinenlesbare Quellenliste liegt in `data/source-registry.json`. Produzenten und Lieferkettenstufen stehen in `data/supply-chain.json`; KPI-Definition, Gewichte, Datenluecken und Publikationsregeln des Consumer-Barometers in `data/hardware-barometer.json`. Rohreihen, Quellenstatus und der reproduzierbare Backcast stehen in `data/hardware-history.json`.
 
 ## 1. Suchfenster bestimmen
 
@@ -62,14 +62,18 @@ Satellitenbilder koennen Baufortschritt belegen oder Aussagen widersprechen, abe
 
 ## 7. Lieferkette und Hardware-Barometer
 
-1. Quartalsweise die offiziellen Berichte der in `supply-chain.json` gefuehrten Produzenten auf Capex, Produktmix, Kapazitaet, Auslastung, Backlog und Lieferzeiten pruefen.
-2. Woechentlich fuer GPU, DDR5, NVMe-SSD und Desktop-CPU denselben versionierten SKU-Korb mit mindestens zwei unabhaengigen Haendlern erfassen. UVP, Strassenpreis, Lagerstatus, Lieferzeit, Waehrung, Steuer und SKU-Merkmale getrennt speichern.
-3. Produkt-Launch, End-of-Life, Bundle und offensichtliche Marketplace-Ausreisser markieren. Modelle nie nur ueber Modellnamen, sondern ueber Leistung, Kapazitaet und Ausstattung vergleichen.
-4. DRAM-/NAND-Preisberichte als Upstream-Signal erfassen, aber nicht als beobachteten Consumer-Preis ausgeben.
-5. EUR/USD, dokumentierte Zoelle und Steueraenderungen als Kontrollvariablen aktualisieren.
-6. `weighted_coverage`, Komponentenabdeckung und Quellenalter neu berechnen. Unter 70 Prozent Abdeckung oder vor 12 Wochen Historie bleibt `score = null`.
-7. Erst nach Erreichen der Publikationsschwelle Teilindizes robust auf eine rollierende 156-Wochen-Perzentilskala normalisieren und zum CHPI aggregieren.
-8. Korrelationen mit AI-Ausbau nur als Hypothese ausgeben, bis Vorlaeufe, Kontrollvariablen und Sensitivitaetsanalysen einen stabilen Zusammenhang zeigen.
+1. Monatlich BLS-Computer-CPI, BLS-Halbleiter-PPI, Eurostat-HVPI fuer Personal Computer und den monatlichen EZB-Referenzkurs EUR/USD bis zum jeweils letzten veroeffentlichten Wert aktualisieren.
+2. Quartalsweise die SEC-XBRL-Company-Facts von Amazon, Alphabet, Meta und Microsoft fuer Cash-Ausgaben zum Erwerb von PP&E beziehungsweise productive assets aktualisieren. Die vier Einzelwerte und die Summe muessen erhalten bleiben.
+3. Quartalsweise DRAM-/NAND-Vertragspreissignale erfassen. Ist ein Wert Forecast, Klassen-Proxy oder Branchenmittel, muss er explizit so markiert bleiben und darf nicht als beobachteter Consumer-Preis erscheinen.
+4. Quartalsweise die offiziellen Berichte der in `supply-chain.json` gefuehrten Produzenten auf Capex, Produktmix, Kapazitaet, Auslastung, Backlog und Lieferzeiten pruefen.
+5. Woechentlich fuer GPU, DDR5, NVMe-SSD und Desktop-CPU denselben versionierten SKU-Korb mit mindestens zwei unabhaengigen Haendlern erfassen. UVP, Strassenpreis, Lagerstatus, Lieferzeit, Waehrung, Steuer und SKU-Merkmale getrennt speichern.
+6. Produkt-Launch, End-of-Life, Bundle und offensichtliche Marketplace-Ausreisser markieren. Modelle nie nur ueber Modellnamen, sondern ueber Leistung, Kapazitaet und Ausstattung vergleichen.
+7. Fehlende noch nicht publizierte Monate als `null` mit Status fuehren. Amtlich fehlende Zwischenmonate duerfen fuer die Score-Berechnung nur transparent interpoliert werden; der Rohwert bleibt `null`.
+8. `weighted_coverage`, Komponentenabdeckung, Quellenalter und jeden Monatswert neu berechnen. Die Validierung berechnet Abdeckung und Score unabhaengig aus den Komponenten nach.
+9. Ein vorlaeufiger Backcast darf ab 70 Prozent gewichteter Abdeckung und 12 Monatswerten erscheinen. Retail-Grade erfordert zusaetzlich je Kategorie mindestens sechs vergleichbare SKUs von zwei unabhaengigen Haendlern sowie Verfuegbarkeitsdaten.
+10. Bis mindestens 36 Monate Historie vorliegen, werden feste, dokumentierte Schwellen verwendet: Consumer-/PPI-Sechsmonatstrend +/-10 Prozent, Speicherpreise +/-25 Prozent QoQ, Capex +/-20 Prozent QoQ und USD-Kosten in Euro +/-5 Prozent ueber sechs Monate werden jeweils linear auf 0 bis 100 abgebildet und bei 0/100 gekappt.
+11. Die Projektkarte bleibt Diagnose- und Evidenzebene. Projektanzahl oder die 21 kuratierten Eintraege duerfen nicht als globaler Nachfragenenner in den CHPI eingehen; die Nachfragekomponente nutzt derzeit SEC-Capex als explizit gekennzeichneten Konzern-Proxy.
+12. Korrelationen mit AI-Ausbau nur als Hypothese ausgeben, bis Vorlaeufe, Kontrollvariablen und Sensitivitaetsanalysen einen stabilen Zusammenhang zeigen.
 
 ## 8. Datenqualitaet und Deployment
 
@@ -79,7 +83,7 @@ Vor jedem Push:
 node scripts/validate-data.mjs
 ```
 
-Danach muessen Projektanzahl und Statussummen im Dashboard mit `projects.json`, Produzentenzahl und Stufen mit `supply-chain.json` sowie Gewichte und Abdeckung mit `hardware-barometer.json` uebereinstimmen. Der GitHub-Pages-Workflow kopiert alle vier Datendateien in den statischen Build. Nach dem Deploy sind Karte inklusive Zoom, Filter, Projektdetails, Quellenmethodik, Lieferkette, Barometer und Sprachumschaltung live zu pruefen.
+Danach muessen Projektanzahl und Statussummen im Dashboard mit `projects.json`, Produzentenzahl und Stufen mit `supply-chain.json`, Gewichte und Abdeckung mit `hardware-barometer.json` sowie Rohreihen, 12 aufeinanderfolgende Monate und der letzte Score mit `hardware-history.json` uebereinstimmen. Der Validator berechnet aktuelle und historische Scores aus den Komponenten neu und prueft Quellen-IDs, Quartalssummen, Null-/Forecast-Status und die zweistufige Publikationsschwelle. Der GitHub-Pages-Workflow kopiert alle fuenf Datendateien in den statischen Build. Nach dem Deploy sind Karte inklusive Zoom, Filter, Projektdetails, Quellenmethodik, Lieferkette, Backcast-Chart, Evidenzkarten, Barometer und Sprachumschaltung live zu pruefen.
 
 ## 9. Ergebnisbericht
 

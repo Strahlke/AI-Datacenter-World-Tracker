@@ -327,6 +327,25 @@
       "last_verified": "2026-07-15"
     },
     {
+      "id": "sec-xbrl-companyfacts",
+      "name": "SEC EDGAR Company Facts XBRL API",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+      "queue": "hard_reference",
+      "category": "corporate_disclosure",
+      "geography": "USA und US-boersennotierte Emittenten",
+      "priority": "core",
+      "recommended_cadence": "quarterly",
+      "run_schedule": "first_week_after_quarter",
+      "access": "api",
+      "max_grade": "A",
+      "signals": ["PaymentsToAcquirePropertyPlantAndEquipment", "PaymentsToAcquireProductiveAssets", "10-Q", "10-K", "Quartals-Capex"],
+      "search_hints": ["companyfacts CIK", "us-gaap PaymentsToAcquirePropertyPlantAndEquipment", "calendar quarter", "filed"],
+      "use_for": "Quartalsweise Cash-PP&E-Ausgaben grosser Hyperscaler reproduzierbar aus standardisierten SEC-XBRL-Fakten ableiten.",
+      "caveat": "Konzernweite PP&E-Ausgaben umfassen mehr als AI-Rechenzentren; Cash-Flow-Fakten und Fiskalquartale muessen vor der Aggregation auf Kalenderquartale abgegrenzt werden.",
+      "last_verified": "2026-07-15"
+    },
+    {
       "id": "uk-companies-house",
       "name": "Companies House Register",
       "publisher": "UK Companies House",
@@ -723,6 +742,25 @@
       "search_hints": ["site:trendforce.com/presscenter DRAM price", "NAND price", "client SSD", "AI server demand"],
       "use_for": "Upstream-Preisdruck und dokumentierte Kapazitaetsverschiebungen zwischen Server- und Consumer-Segmenten verfolgen.",
       "caveat": "Prognosen und proprietaere Erhebungen sind Sekundaerevidenz; Ist-Preise im Retail-Korb separat messen.",
+      "last_verified": "2026-07-15"
+    },
+    {
+      "id": "bls-semiconductor-ppi",
+      "name": "PPI: Semiconductor and related device manufacturing",
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "url": "https://www.bls.gov/ppi/data-retrieval-guide/home.htm",
+      "queue": "cross_check",
+      "category": "memory_pricing",
+      "geography": "United States",
+      "priority": "core",
+      "recommended_cadence": "monthly",
+      "run_schedule": "first_week_of_month",
+      "access": "api",
+      "max_grade": "A",
+      "signals": ["Producer price index", "Semiconductor manufacturing", "Monatswert", "Revision", "Preliminary"],
+      "search_hints": ["PCU334413334413", "BLS public data API", "semiconductor PPI"],
+      "use_for": "Breiten amtlichen Upstream-Preisverlauf als Gegenstueck zu DRAM-/NAND-Branchenprognosen fuehren.",
+      "caveat": "US-Erzeugerpreise fuer die gesamte Halbleiterindustrie sind kein direkter globaler DRAM-, NAND- oder Retailpreis.",
       "last_verified": "2026-07-15"
     },
     {

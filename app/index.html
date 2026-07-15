@@ -244,6 +244,26 @@
           </div>
         </section>
 
+        <section class="history-section" aria-labelledby="history-title">
+          <div class="section-subheading history-heading">
+            <div>
+              <h3 id="history-title" data-i18n="historyTitle">12-Monats-Backcast</h3>
+              <p data-i18n="historyIntro">Wie sich der vorläufige Hardwarekostendruck mit heute verfügbaren Daten entwickelt hat.</p>
+            </div>
+            <div class="history-actions">
+              <span id="history-range">—</span>
+              <a class="secondary-link" href="./data/hardware-history.json" target="_blank" rel="noopener noreferrer" data-i18n="openHistory">Historien-JSON</a>
+            </div>
+          </div>
+          <div class="history-chart-wrap">
+            <svg id="hardware-history-chart" role="img" aria-labelledby="history-chart-title history-chart-description"></svg>
+            <div class="history-tooltip" id="history-tooltip" role="status" hidden></div>
+          </div>
+          <div class="history-legend" id="history-legend" aria-label="Zeitreihenlegende"></div>
+          <div class="evidence-signal-grid" id="current-evidence-grid"></div>
+          <p class="history-notice" id="backcast-notice"></p>
+        </section>
+
         <div class="barometer-grid">
           <section class="analysis-card weight-card">
             <div class="card-heading">

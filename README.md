@@ -16,12 +16,14 @@ Interaktive Weltkarte grosser, oeffentlich dokumentierter KI-Rechenzentren und A
 - Zoom und Verschieben der Weltkarte per Maus, Touch oder Kartensteuerung
 - eine Quellen- und Methodikansicht mit Abdeckung nach Queue, Pruefrhythmus und Evidenzstufe
 - eine Lieferkettenansicht fuer zentrale Produzenten von Beschleunigern, Foundry, HBM/DRAM/NAND, Packaging, Netzwerk, Servern sowie Strom/Kuehlung
-- einen transparenten Consumer Hardwarekosten-Druckindex (CHPI) mit sichtbarer Datenabdeckung und Publikationsschwelle
+- einen transparenten Consumer Hardwarekosten-Druckindex (CHPI) mit 12-Monats-Backcast, sichtbarer Datenabdeckung und Publikationsschwelle
 - deutsche und englische Oberflaeche; redaktionelle Projekt- und Quellennotizen bleiben bis zum automatisierten Uebersetzungs-Build deutsch gekennzeichnet
 
 ## Daten und Methodik
 
-Der aktuelle Datenstand liegt in `data/projects.json`. Das verbindliche Rechercheverzeichnis liegt in `data/source-registry.json`; `data/supply-chain.json` fuehrt Produzenten und Uebertragungskanaele, `data/hardware-barometer.json` die KPI-Definition, Gewichte, Datenluecken und Publikationsregeln. `docs/research-runbook.md` beschreibt die Reihenfolge und Mindestnachweise jedes Refreshs. Fruehere Staende bleiben ueber die Git-Historie nachvollziehbar.
+Der aktuelle Datenstand liegt in `data/projects.json`. Das verbindliche Rechercheverzeichnis liegt in `data/source-registry.json`; `data/supply-chain.json` fuehrt Produzenten und Uebertragungskanaele, `data/hardware-barometer.json` die KPI-Definition, Gewichte, Datenluecken und Publikationsregeln. `data/hardware-history.json` enthaelt die monatlichen und quartalsweisen Rohreihen, Quellenstatus und den reproduzierbaren 12-Monats-Backcast. `docs/research-runbook.md` beschreibt die Reihenfolge und Mindestnachweise jedes Refreshs. Fruehere Staende bleiben ueber die Git-Historie nachvollziehbar.
+
+Der aktuelle CHPI ist ein vorlaeufiger Backcast von `74,4 / 100` bei `89,5 %` gewichteter Datenabdeckung. Er misst breiten Consumer- und Upstream-Preisdruck, Hyperscaler-Capex und EUR/USD-Transmission. Die 21 kuratierten Kartenprojekte bleiben eine Diagnoseebene und sind kein Nenner fuer die globale Nachfragekomponente. Fuer einen Retail-Grade-Index fehlen noch stabile SKU- und Verfuegbarkeitsreihen ueber mindestens zwei Haendler.
 
 Quellenrollen:
 
@@ -45,8 +47,8 @@ Statusregeln:
 
 Barometerregeln:
 
-1. Kein Gesamtwert unter 70 Prozent gewichteter Datenabdeckung oder vor mindestens 12 Wochen Historie.
-2. Jede Retail-Kategorie braucht mindestens sechs vergleichbare SKUs und zwei unabhaengige Haendler.
+1. Ein klar als vorlaeufig gekennzeichneter Backcast darf erst ab 70 Prozent gewichteter Datenabdeckung und 12 Monatswerten erscheinen.
+2. Retail-Grade erfordert zusaetzlich je Kategorie mindestens sechs vergleichbare SKUs, zwei unabhaengige Haendler und Verfuegbarkeitsdaten.
 3. Preise werden nach Leistung oder Kapazitaet normalisiert; Produktwechsel, EUR/USD, Zoelle und Steuern werden separat kontrolliert.
 4. AI-Rechenzentrumsausbau ist ein Fruehindikator und darf nie allein einen behaupteten Consumer-Preiseffekt begruenden.
 5. Fehlende Komponenten werden nicht stillschweigend umgewichtet; Abdeckung und Konfidenz bleiben sichtbar.
@@ -67,6 +69,7 @@ cp data/projects.json app/public/data/projects.json
 cp data/source-registry.json app/public/data/source-registry.json
 cp data/supply-chain.json app/public/data/supply-chain.json
 cp data/hardware-barometer.json app/public/data/hardware-barometer.json
+cp data/hardware-history.json app/public/data/hardware-history.json
 node scripts/validate-data.mjs
 cd app
 npm ci

@@ -42,6 +42,7 @@ jobs:
           cp data/source-registry.json app/public/data/source-registry.json
           cp data/supply-chain.json app/public/data/supply-chain.json
           cp data/hardware-barometer.json app/public/data/hardware-barometer.json
+          cp data/hardware-history.json app/public/data/hardware-history.json
 
       - name: Build site
         working-directory: app

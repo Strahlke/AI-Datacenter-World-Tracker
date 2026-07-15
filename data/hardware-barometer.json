@@ -1,15 +1,18 @@
 {
   "snapshot_date": "2026-07-15",
-  "version": 1,
+  "version": 2,
   "name_de": "Consumer Hardwarekosten-Druckindex",
   "name_en": "Consumer Hardware Cost Pressure Index",
   "short_name": "CHPI",
-  "status": "building",
-  "score": null,
-  "weighted_coverage": 0.1,
-  "confidence": "insufficient",
-  "summary_de": "Noch kein belastbarer Gesamtwert: Der Rechenzentrums-Nachfrageindikator ist vorhanden, standardisierte Retail-, Verfuegbarkeits- und Upstream-Zeitreihen werden erst aufgebaut.",
-  "summary_en": "No defensible headline score yet: the data-center demand signal exists, while standardized retail, availability and upstream time series are still being built.",
+  "status": "provisional",
+  "score_type": "provisional_backcast",
+  "score": 74.4,
+  "weighted_coverage": 0.895,
+  "confidence": "medium",
+  "retail_grade": false,
+  "history_file": "hardware-history.json",
+  "summary_de": "Vorlaeufiger datenbasierter Wert: 74,4 von 100 - steigender Preisdruck. Der 12-Monats-Backcast stuetzt sich auf amtliche Verbraucher- und Erzeugerpreise, SEC-Capex, Speicherpreis-Proxys und EUR/USD. Direkte historische SKU- und Verfuegbarkeitsdaten fehlen noch.",
+  "summary_en": "Provisional data-backed reading: 74.4 out of 100 - rising price pressure. The 12-month backcast uses official consumer and producer prices, SEC capex, memory-price proxies and EUR/USD. Direct historical SKU and availability data are still missing.",
   "purpose_de": "Misst den Preisdruck, den private Kaeufer bei GPUs, CPUs, Arbeitsspeicher und SSDs in den kommenden Wochen und Monaten erwarten koennen.",
   "purpose_en": "Measures the price pressure private buyers may face for GPUs, CPUs, memory and SSDs over the coming weeks and months.",
   "scale": {
@@ -25,39 +28,44 @@
   },
   "publication_gate": {
     "minimum_weighted_coverage": 0.7,
-    "minimum_history_weeks": 12,
+    "minimum_history_months": 12,
     "minimum_skus_per_retail_category": 6,
     "minimum_independent_retailers": 2,
-    "maximum_weekly_source_age_days": 10,
-    "rule_de": "Unter 70 Prozent gewichteter Datenabdeckung oder vor 12 Wochen Historie wird kein Gesamtwert veroeffentlicht. Jede Retail-Kategorie benoetigt mindestens sechs vergleichbare SKUs und zwei unabhaengige Haendler.",
-    "rule_en": "No headline score is published below 70 percent weighted coverage or before 12 weeks of history. Each retail category needs at least six comparable SKUs and two independent retailers."
+    "provisional_gate_met": true,
+    "retail_grade_gate_met": false,
+    "rule_de": "Ein klar als vorlaeufig gekennzeichneter Backcast-Wert darf ab 70 Prozent gewichteter Abdeckung und 12 Monatswerten erscheinen. Retail-Grade erfordert zusaetzlich je Kategorie mindestens sechs vergleichbare SKUs von zwei unabhaengigen Haendlern sowie Verfuegbarkeitsdaten.",
+    "rule_en": "A clearly labelled provisional backcast may be published at 70 percent weighted coverage and 12 monthly observations. Retail grade additionally requires at least six comparable SKUs per category from two independent retailers plus availability data."
   },
   "calculation": {
-    "frequency": "weekly",
-    "normalization_de": "Je Reihe: 13-Wochen-Aenderung und aktuelles Niveau werden robust auf eine rollierende 156-Wochen-Perzentilskala von 0 bis 100 abgebildet; Ausreisser werden am 5. und 95. Perzentil winsorisiert.",
-    "normalization_en": "For each series, the 13-week change and current level are mapped robustly to a rolling 156-week percentile scale from 0 to 100; outliers are winsorized at the 5th and 95th percentiles.",
-    "aggregation_de": "Gewichtetes Mittel der verfuegbaren Teilindizes. Fehlende Komponenten werden nicht stillschweigend umverteilt; Abdeckung und Konfidenz bleiben sichtbar.",
-    "aggregation_en": "Weighted mean of available sub-indices. Missing components are not silently reweighted; coverage and confidence remain visible.",
+    "frequency": "monthly_with_weekly_refresh",
+    "history_start": "2025-07",
+    "history_end": "2026-06",
+    "normalization_de": "Bis mindestens 36 Monatswerte vorliegen, verwendet der Backcast feste und nachvollziehbare Schwellen: Verbraucher- und Halbleiterpreise +/-10 Prozent in sechs Monaten, Speicherpreise +/-25 Prozent QoQ, Hyperscaler-Capex +/-20 Prozent QoQ und EUR-Kosten eines USD +/-5 Prozent in sechs Monaten werden linear auf 0 bis 100 abgebildet und dort begrenzt.",
+    "normalization_en": "Until at least 36 monthly observations exist, the backcast uses fixed transparent thresholds: consumer and semiconductor prices +/-10 percent over six months, memory prices +/-25 percent QoQ, hyperscaler capex +/-20 percent QoQ and the euro cost of one USD +/-5 percent over six months are mapped linearly to 0-100 and capped.",
+    "aggregation_de": "Summe aus Gewicht mal Quellenabdeckung mal Teilindex, geteilt durch die wirksam abgedeckten Gewichte. Die 89,5 Prozent Abdeckung und der fehlende Verfuegbarkeitsbaustein bleiben sichtbar; der Wert wird nicht als Retail-Grade ausgegeben.",
+    "aggregation_en": "Sum of weight times source coverage times component score, divided by effectively covered weights. The 89.5 percent coverage and missing availability component remain visible; the result is not labelled retail grade.",
     "revision_policy_de": "Historische Werte duerfen bei nachtraeglichen Korrekturen revidiert werden; jede Revision wird im Git-Verlauf dokumentiert.",
     "revision_policy_en": "Historical values may be revised after source corrections; every revision is documented in Git history."
   },
   "components": [
     {
       "id": "retail_price",
-      "label_de": "Tatsaechliche Endkundenpreise",
-      "label_en": "Actual retail prices",
-      "weight": 0.45,
-      "coverage": 0,
-      "status": "source_gap",
-      "definition_de": "Medianer Strassenpreis vergleichbarer SKU-Koerbe, normiert auf Leistung oder Kapazitaet: GPU 20, DRAM 10, SSD 9 und CPU 6 Prozentpunkte des Gesamtindex.",
-      "definition_en": "Median street price of comparable SKU baskets normalized by performance or capacity: GPU 20, DRAM 10, SSD 9 and CPU 6 percentage points of the total index."
+      "label_de": "Beobachtete Endkundenpreise",
+      "label_en": "Observed consumer prices",
+      "weight": 0.35,
+      "coverage": 1,
+      "current_score": 75.3,
+      "status": "tracked",
+      "definition_de": "Gleichgewichteter Sechsmonats-Preistrend des BLS-Computer-CPI fuer die USA und des Eurostat-HVPI fuer Personal Computer im Euroraum. Direkt beobachtet, aber breiter als einzelne GPU-, CPU-, DRAM- oder SSD-SKUs.",
+      "definition_en": "Equal-weight six-month price trend from the U.S. BLS computer CPI and Eurostat HICP for personal computers in the euro area. Directly observed, but broader than individual GPU, CPU, DRAM or SSD SKUs."
     },
     {
       "id": "retail_availability",
       "label_de": "Verfuegbarkeit & Lieferzeit",
       "label_en": "Availability & lead time",
-      "weight": 0.15,
+      "weight": 0.05,
       "coverage": 0,
+      "current_score": null,
       "status": "source_gap",
       "definition_de": "Anteil lieferbarer SKUs, Haendlerabdeckung, Lieferzeit und Aufpreis gegen Hersteller-UVP.",
       "definition_en": "Share of in-stock SKUs, retailer coverage, lead time and premium over manufacturer MSRP."
@@ -66,31 +74,34 @@
       "id": "upstream_prices",
       "label_de": "Upstream-Speicher & Fertigung",
       "label_en": "Upstream memory & manufacturing",
-      "weight": 0.2,
-      "coverage": 0,
-      "status": "source_design",
-      "definition_de": "DRAM-/NAND-Vertrags- und Spotpreisindikatoren sowie belegte Foundry- und Packaging-Knappheit.",
-      "definition_en": "DRAM and NAND contract or spot-price indicators plus evidenced foundry and packaging tightness."
+      "weight": 0.25,
+      "coverage": 0.9,
+      "current_score": 78.9,
+      "status": "tracked",
+      "definition_de": "Gleichgewichteter Mix aus dem amtlichen BLS-Erzeugerpreisindex fuer Halbleiter und quartalsweisen DRAM-/NAND-Vertragspreis-Mittelpunkten von TrendForce. Forecasts und breitere Speicherklassen werden als Proxy markiert.",
+      "definition_en": "Equal-weight mix of the official BLS producer-price index for semiconductors and quarterly DRAM/NAND contract-price midpoints from TrendForce. Forecasts and broader memory categories are marked as proxies."
     },
     {
       "id": "ai_infrastructure_demand",
       "label_de": "AI-Infrastrukturnachfrage",
       "label_en": "AI infrastructure demand",
-      "weight": 0.1,
-      "coverage": 1,
+      "weight": 0.2,
+      "coverage": 0.85,
+      "current_score": 73.4,
       "status": "tracked",
-      "definition_de": "Neue, im Bau befindliche und realisierte AI-Rechenzentrumsprojekte, gewichtet nach Evidenz, Projektphase und veroeffentlichter Kapazitaet. Dient nur als Fruehindikator, nicht als direkter Preisbeleg.",
-      "definition_en": "New, under-construction and realized AI data-center projects weighted by evidence, stage and disclosed capacity. This is a leading indicator, not direct price evidence."
+      "definition_de": "Quartalsveraenderung der bei der SEC gemeldeten Cash-Ausgaben fuer PP&E von Amazon, Alphabet, Meta und Microsoft. Die Projektkarte bleibt Diagnoseebene; der Score wird nicht mehr aus 21 kuratierten Projekten abgeleitet. Konzern-Capex ist breiter als AI-Rechenzentren und nur ein Nachfrage-Proxy.",
+      "definition_en": "Quarterly change in SEC-reported cash PP&E spending by Amazon, Alphabet, Meta and Microsoft. The project map remains diagnostic; the score is no longer derived from 21 curated projects. Company capex is broader than AI data centers and is only a demand proxy."
     },
     {
       "id": "macro_transmission",
       "label_de": "Wechselkurs, Handel & Produktzyklus",
       "label_en": "FX, trade & product cycle",
-      "weight": 0.1,
-      "coverage": 0,
-      "status": "source_design",
-      "definition_de": "EUR/USD, Zoelle und Steuern sowie Launch-/End-of-Life-Effekte, damit AI-Nachfrage nicht faelschlich jeden Preissprung erklaert.",
-      "definition_en": "EUR/USD, tariffs and taxes plus launch or end-of-life effects so AI demand is not made to explain every price move."
+      "weight": 0.15,
+      "coverage": 1,
+      "current_score": 66.6,
+      "status": "tracked",
+      "definition_de": "Sechsmonatsveraenderung der Eurokosten eines US-Dollars auf Basis des monatlichen ECB-Referenzkurses. Zoelle, Steuern und Produktzyklen bleiben sichtbare Kontrollluecken und Guardrails.",
+      "definition_en": "Six-month change in the euro cost of one U.S. dollar based on the monthly ECB reference rate. Tariffs, taxes and product cycles remain visible control gaps and guardrails."
     }
   ],
   "retail_baskets": [
@@ -200,12 +211,39 @@
       "last_checked": "2026-07-15"
     },
     {
-      "id": "eurostat-hicp",
+      "id": "eurostat-hicp-computers",
       "grade": "A",
       "publisher": "Eurostat",
-      "title": "Harmonised Index of Consumer Prices information and methodology",
+      "title": "HICP ECOICOP v2 monthly index for personal computers",
       "url": "https://ec.europa.eu/eurostat/web/hicp/information-data",
-      "use_for": "Offizieller europaeischer Kontrollindex und Inflationskontext",
+      "use_for": "Direkt beobachteter Personal-Computer-Preisindex fuer den Euroraum",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "bls-semiconductor-ppi",
+      "grade": "A",
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "title": "PPI industry series: Semiconductor and related device manufacturing",
+      "url": "https://www.bls.gov/ppi/data-retrieval-guide/home.htm",
+      "use_for": "Amtlicher breiter Upstream-Preisproxy fuer die Halbleiterfertigung",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "sec-xbrl-companyfacts",
+      "grade": "A",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "title": "EDGAR Company Facts XBRL API",
+      "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+      "use_for": "Quartalsweise Cash-PP&E-Ausgaben von Amazon, Alphabet, Meta und Microsoft",
+      "last_checked": "2026-07-15"
+    },
+    {
+      "id": "ecb-reference-rates",
+      "grade": "A",
+      "publisher": "European Central Bank",
+      "title": "Monthly US dollar / euro reference rate",
+      "url": "https://data.ecb.europa.eu/data/datasets/EXR/EXR.M.USD.EUR.SP00.A",
+      "use_for": "Wechselkursbedingter Importkostendruck fuer in USD gehandelte Hardware",
       "last_checked": "2026-07-15"
     }
   ]

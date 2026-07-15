@@ -1,0 +1,362 @@
+{
+  "snapshot_date": "2026-07-15",
+  "version": 1,
+  "period_start": "2025-07",
+  "period_end": "2026-06",
+  "history_months": 12,
+  "publication_mode": "provisional_backcast",
+  "backcast_notice_de": "Die historischen Werte sind ein rueckgerechneter Verlauf mit dem heute verfuegbaren und gegebenenfalls revidierten Datenstand. Sie sind keine archivierten Echtzeit-Prognosen.",
+  "backcast_notice_en": "Historical values are a backcast using the data and revisions available today. They are not archived real-time forecasts.",
+  "method": {
+    "score_formula": "sum(component_weight * component_coverage * component_score) / sum(component_weight * component_coverage)",
+    "weighted_coverage": 0.895,
+    "retail_price_normalization": "Six-month percentage change; 0 points at -10%, 50 at 0%, 100 at +10%.",
+    "semiconductor_ppi_normalization": "Six-month percentage change; 0 points at -10%, 50 at 0%, 100 at +10%.",
+    "memory_normalization": "Quarter-on-quarter percentage change; 0 points at -25%, 50 at 0%, 100 at +25%. DRAM and NAND scores are averaged.",
+    "capex_normalization": "Quarter-on-quarter percentage change; 0 points at -20%, 50 at 0%, 100 at +20%.",
+    "fx_normalization": "Six-month change in EUR cost of one USD; 0 points at -5%, 50 at 0%, 100 at +5%.",
+    "component_mix": {
+      "retail_price": "Equal average of BLS computer CPI and Eurostat personal-computer HICP.",
+      "upstream_prices": "Equal average of BLS semiconductor PPI and the quarterly TrendForce memory signal.",
+      "ai_infrastructure_demand": "Quarter-on-quarter cash PP&E capex change for Amazon, Alphabet, Meta and Microsoft from SEC XBRL filings.",
+      "macro_transmission": "EUR cost of one USD from the ECB reference rate."
+    },
+    "missing_data_policy": "Raw missing values remain null. BLS computer CPI October 2025 is linearly interpolated only inside the derived six-month calculation and is visibly documented. Eurostat June 2026 and BLS semiconductor PPI June 2026 use the latest available May observation for the June backcast.",
+    "future_model_rule": "After at least 36 monthly observations, compare these fixed thresholds with a rolling percentile model before changing the published method. Any change must be versioned."
+  },
+  "monthly_series": [
+    {
+      "id": "bls_computer_cpi",
+      "component": "retail_price",
+      "evidence_type": "direct",
+      "frequency": "monthly",
+      "unit": "index",
+      "geography": "United States",
+      "series_code": "CUUR0000SEEE01",
+      "source_id": "bls-computer-cpi",
+      "source_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/CUUR0000SEEE01?startyear=2025&endyear=2026",
+      "latest_period": "2026-06",
+      "observations": [
+        { "period": "2025-01", "value": 34.237, "status": "direct_observation" },
+        { "period": "2025-02", "value": 34.477, "status": "direct_observation" },
+        { "period": "2025-03", "value": 34.547, "status": "direct_observation" },
+        { "period": "2025-04", "value": 34.805, "status": "direct_observation" },
+        { "period": "2025-05", "value": 35.202, "status": "direct_observation" },
+        { "period": "2025-06", "value": 35.685, "status": "direct_observation" },
+        { "period": "2025-07", "value": 35.273, "status": "direct_observation" },
+        { "period": "2025-08", "value": 35.064, "status": "direct_observation" },
+        { "period": "2025-09", "value": 35.141, "status": "direct_observation" },
+        { "period": "2025-10", "value": null, "status": "unavailable" },
+        { "period": "2025-11", "value": 34.184, "status": "direct_observation" },
+        { "period": "2025-12", "value": 33.73, "status": "direct_observation" },
+        { "period": "2026-01", "value": 34.773, "status": "direct_observation" },
+        { "period": "2026-02", "value": 34.782, "status": "direct_observation" },
+        { "period": "2026-03", "value": 35.293, "status": "direct_observation" },
+        { "period": "2026-04", "value": 35.601, "status": "direct_observation" },
+        { "period": "2026-05", "value": 35.662, "status": "direct_observation" },
+        { "period": "2026-06", "value": 35.406, "status": "direct_observation" }
+      ]
+    },
+    {
+      "id": "eurostat_personal_computer_hicp",
+      "component": "retail_price",
+      "evidence_type": "direct",
+      "frequency": "monthly",
+      "unit": "index_2025_100",
+      "geography": "Euro area 20",
+      "series_code": "PRC_HICP_MINR/M.I25.CP08131.EA20",
+      "source_id": "eurostat-hicp-computers",
+      "source_url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/3.0/data/dataflow/ESTAT/PRC_HICP_MINR/1.0/M.I25.CP08131.EA20?c%5BTIME_PERIOD%5D=ge%3A2025-01&format=tsv&compress=false",
+      "latest_period": "2026-05",
+      "observations": [
+        { "period": "2025-01", "value": 102.93, "status": "direct_observation" },
+        { "period": "2025-02", "value": 102.99, "status": "direct_observation" },
+        { "period": "2025-03", "value": 102.1, "status": "direct_observation" },
+        { "period": "2025-04", "value": 100.63, "status": "direct_observation" },
+        { "period": "2025-05", "value": 100.32, "status": "direct_observation" },
+        { "period": "2025-06", "value": 99.93, "status": "direct_observation" },
+        { "period": "2025-07", "value": 98.13, "status": "direct_observation" },
+        { "period": "2025-08", "value": 98.88, "status": "direct_observation" },
+        { "period": "2025-09", "value": 97.79, "status": "direct_observation" },
+        { "period": "2025-10", "value": 98.84, "status": "direct_observation" },
+        { "period": "2025-11", "value": 98.47, "status": "direct_observation" },
+        { "period": "2025-12", "value": 99, "status": "direct_observation" },
+        { "period": "2026-01", "value": 100.33, "status": "direct_observation" },
+        { "period": "2026-02", "value": 101.9, "status": "direct_observation" },
+        { "period": "2026-03", "value": 102.34, "status": "direct_observation" },
+        { "period": "2026-04", "value": 103.5, "status": "direct_observation" },
+        { "period": "2026-05", "value": 103.53, "status": "direct_observation" },
+        { "period": "2026-06", "value": null, "status": "not_released" }
+      ]
+    },
+    {
+      "id": "bls_semiconductor_ppi",
+      "component": "upstream_prices",
+      "evidence_type": "direct_proxy",
+      "frequency": "monthly",
+      "unit": "index",
+      "geography": "United States",
+      "series_code": "PCU334413334413",
+      "source_id": "bls-semiconductor-ppi",
+      "source_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/PCU334413334413?startyear=2025&endyear=2026",
+      "latest_period": "2026-05",
+      "observations": [
+        { "period": "2025-01", "value": 30.118, "status": "direct_observation" },
+        { "period": "2025-02", "value": 30.132, "status": "direct_observation" },
+        { "period": "2025-03", "value": 30.322, "status": "direct_observation" },
+        { "period": "2025-04", "value": 30.235, "status": "direct_observation" },
+        { "period": "2025-05", "value": 29.982, "status": "direct_observation" },
+        { "period": "2025-06", "value": 29.882, "status": "direct_observation" },
+        { "period": "2025-07", "value": 29.798, "status": "direct_observation" },
+        { "period": "2025-08", "value": 29.392, "status": "direct_observation" },
+        { "period": "2025-09", "value": 29.45, "status": "direct_observation" },
+        { "period": "2025-10", "value": 29.64, "status": "direct_observation" },
+        { "period": "2025-11", "value": 29.646, "status": "direct_observation" },
+        { "period": "2025-12", "value": 29.668, "status": "direct_observation" },
+        { "period": "2026-01", "value": 29.62, "status": "direct_observation" },
+        { "period": "2026-02", "value": 30.138, "status": "direct_observation" },
+        { "period": "2026-03", "value": 30.132, "status": "direct_observation" },
+        { "period": "2026-04", "value": 30.62, "status": "preliminary" },
+        { "period": "2026-05", "value": 30.104, "status": "preliminary" },
+        { "period": "2026-06", "value": null, "status": "not_released" }
+      ]
+    },
+    {
+      "id": "ecb_eur_usd",
+      "component": "macro_transmission",
+      "evidence_type": "direct",
+      "frequency": "monthly",
+      "unit": "usd_per_eur",
+      "geography": "Euro area",
+      "series_code": "EXR.M.USD.EUR.SP00.A",
+      "source_id": "ecb-reference-rates",
+      "source_url": "https://data-api.ecb.europa.eu/service/data/EXR/M.USD.EUR.SP00.A?startPeriod=2025-01&endPeriod=2026-06&format=csvdata",
+      "latest_period": "2026-06",
+      "observations": [
+        { "period": "2025-01", "value": 1.035373, "status": "direct_observation" },
+        { "period": "2025-02", "value": 1.04125, "status": "direct_observation" },
+        { "period": "2025-03", "value": 1.080681, "status": "direct_observation" },
+        { "period": "2025-04", "value": 1.121395, "status": "direct_observation" },
+        { "period": "2025-05", "value": 1.127805, "status": "direct_observation" },
+        { "period": "2025-06", "value": 1.151619, "status": "direct_observation" },
+        { "period": "2025-07", "value": 1.167687, "status": "direct_observation" },
+        { "period": "2025-08", "value": 1.163143, "status": "direct_observation" },
+        { "period": "2025-09", "value": 1.173223, "status": "direct_observation" },
+        { "period": "2025-10", "value": 1.163043, "status": "direct_observation" },
+        { "period": "2025-11", "value": 1.15602, "status": "direct_observation" },
+        { "period": "2025-12", "value": 1.170871, "status": "direct_observation" },
+        { "period": "2026-01", "value": 1.173824, "status": "direct_observation" },
+        { "period": "2026-02", "value": 1.182395, "status": "direct_observation" },
+        { "period": "2026-03", "value": 1.155832, "status": "direct_observation" },
+        { "period": "2026-04", "value": 1.17064, "status": "direct_observation" },
+        { "period": "2026-05", "value": 1.16732, "status": "direct_observation" },
+        { "period": "2026-06", "value": 1.1518, "status": "direct_observation" }
+      ]
+    }
+  ],
+  "quarterly_series": [
+    {
+      "id": "hyperscaler_cash_capex",
+      "component": "ai_infrastructure_demand",
+      "evidence_type": "direct_proxy",
+      "frequency": "quarterly",
+      "unit": "usd_billion",
+      "scope": "Cash payments to acquire PP&E or productive assets for Amazon, Alphabet, Meta and Microsoft. Company-wide capex is a demand proxy and is not identical to AI data-center spend.",
+      "source_id": "sec-xbrl-companyfacts",
+      "source_url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+      "observations": [
+        {
+          "period": "2025-Q1",
+          "value": 71.902,
+          "status": "reported_actual",
+          "breakdown": { "Amazon": 25.019, "Alphabet": 17.197, "Meta": 12.941, "Microsoft": 16.745 }
+        },
+        {
+          "period": "2025-Q2",
+          "value": 88.246,
+          "status": "reported_actual",
+          "breakdown": { "Amazon": 32.183, "Alphabet": 22.446, "Meta": 16.538, "Microsoft": 17.079 }
+        },
+        {
+          "period": "2025-Q3",
+          "value": 97.271,
+          "status": "reported_actual",
+          "breakdown": { "Amazon": 35.095, "Alphabet": 23.953, "Meta": 18.829, "Microsoft": 19.394 }
+        },
+        {
+          "period": "2025-Q4",
+          "value": 118.632,
+          "status": "reported_actual",
+          "breakdown": { "Amazon": 39.522, "Alphabet": 27.851, "Meta": 21.383, "Microsoft": 29.876 }
+        },
+        {
+          "period": "2026-Q1",
+          "value": 129.75,
+          "status": "reported_actual",
+          "breakdown": { "Amazon": 44.203, "Alphabet": 35.674, "Meta": 18.997, "Microsoft": 30.876 }
+        }
+      ]
+    },
+    {
+      "id": "memory_contract_price_signal",
+      "component": "upstream_prices",
+      "evidence_type": "industry_proxy",
+      "frequency": "quarterly",
+      "unit": "qoq_percent_change",
+      "scope": "TrendForce midpoints. Consumer-specific PC DRAM and client SSD values are preferred; broader conventional DRAM and NAND values are used where no comparable consumer series is public.",
+      "source_id": "trendforce-memory-pricing",
+      "source_url": "https://www.trendforce.com/presscenter/news/20260331-12995.html",
+      "observations": [
+        {
+          "period": "2025-Q2",
+          "dram_change_pct": 15.5,
+          "nand_change_pct": 5.5,
+          "status": "forecast_midpoint",
+          "scope": "PC DDR4 and client SSD",
+          "source_url": "https://www.trendforce.com/presscenter/news/20250605-12608.html"
+        },
+        {
+          "period": "2025-Q3",
+          "dram_change_pct": 10.5,
+          "nand_change_pct": 5.5,
+          "status": "forecast_midpoint",
+          "scope": "PC DRAM and client SSD",
+          "source_url": "https://www.trendforce.com/presscenter/news/20250707-12633.html"
+        },
+        {
+          "period": "2025-Q4",
+          "dram_change_pct": 47.5,
+          "nand_change_pct": 22.5,
+          "status": "mixed_actual_forecast",
+          "scope": "Conventional DRAM actual midpoint and updated total NAND forecast midpoint",
+          "source_url": "https://www.trendforce.com/presscenter/news/20260226-12937.html"
+        },
+        {
+          "period": "2026-Q1",
+          "dram_change_pct": 95.5,
+          "nand_change_pct": 87.5,
+          "status": "mixed_actual_forecast",
+          "scope": "Conventional DRAM actual midpoint and total NAND forecast midpoint",
+          "source_url": "https://www.trendforce.com/presscenter/news/20260601-13070.html"
+        },
+        {
+          "period": "2026-Q2",
+          "dram_change_pct": 60.5,
+          "nand_change_pct": 72.5,
+          "status": "forecast_midpoint",
+          "scope": "Conventional DRAM and total NAND",
+          "source_url": "https://www.trendforce.com/presscenter/news/20260331-12995.html"
+        }
+      ]
+    }
+  ],
+  "monthly_scores": [
+    { "period": "2025-07", "score": 46.2, "weighted_coverage": 0.895, "confidence": "medium", "components": { "retail_price": 45.9, "upstream_prices": 55.3, "ai_infrastructure_demand": 75.6, "macro_transmission": 0 } },
+    { "period": "2025-08", "score": 44.7, "weighted_coverage": 0.895, "confidence": "medium", "components": { "retail_price": 44.3, "upstream_prices": 51.9, "ai_infrastructure_demand": 75.6, "macro_transmission": 0 } },
+    { "period": "2025-09", "score": 44.2, "weighted_coverage": 0.895, "confidence": "medium", "components": { "retail_price": 43.7, "upstream_prices": 50.8, "ai_infrastructure_demand": 75.6, "macro_transmission": 0 } },
+    { "period": "2025-10", "score": 56.1, "weighted_coverage": 0.895, "confidence": "medium", "components": { "retail_price": 44.5, "upstream_prices": 68.8, "ai_infrastructure_demand": 100, "macro_transmission": 14.2 } },
+    { "period": "2025-11", "score": 56, "weighted_coverage": 0.895, "confidence": "medium", "components": { "retail_price": 38.2, "upstream_prices": 70.9, "ai_infrastructure_demand": 100, "macro_transmission": 25.6 } },
+    { "period": "2025-12", "score": 56, "weighted_coverage": 0.895, "confidence": "medium", "components": { "retail_price": 34, "upstream_prices": 72, "ai_infrastructure_demand": 100, "macro_transmission": 33.6 } },
+    { "period": "2026-01", "score": 60.3, "weighted_coverage": 0.895, "confidence": "medium", "components": { "retail_price": 52.1, "upstream_prices": 73.5, "ai_infrastructure_demand": 73.4, "macro_transmission": 44.8 } },
+    { "period": "2026-02", "score": 61.8, "weighted_coverage": 0.895, "confidence": "medium", "components": { "retail_price": 55.6, "upstream_prices": 81.3, "ai_infrastructure_demand": 73.4, "macro_transmission": 33.7 } },
+    { "period": "2026-03", "score": 69.7, "weighted_coverage": 0.895, "confidence": "medium", "components": { "retail_price": 62.7, "upstream_prices": 80.8, "ai_infrastructure_demand": 73.4, "macro_transmission": 65 } },
+    { "period": "2026-04", "score": 69, "weighted_coverage": 0.895, "confidence": "medium", "components": { "retail_price": 68.6, "upstream_prices": 83.3, "ai_infrastructure_demand": 73.4, "macro_transmission": 43.5 } },
+    { "period": "2026-05", "score": 69.3, "weighted_coverage": 0.895, "confidence": "medium", "components": { "retail_price": 73.7, "upstream_prices": 78.9, "ai_infrastructure_demand": 73.4, "macro_transmission": 40.3 } },
+    { "period": "2026-06", "score": 74.4, "weighted_coverage": 0.895, "confidence": "medium", "components": { "retail_price": 75.3, "upstream_prices": 78.9, "ai_infrastructure_demand": 73.4, "macro_transmission": 66.6 } }
+  ],
+  "current_evidence": [
+    {
+      "id": "us_consumer_computers",
+      "label_de": "US-Computerpreise",
+      "label_en": "US computer prices",
+      "value": 4.97,
+      "unit_de": "% / 6 Monate",
+      "unit_en": "% / 6 months",
+      "period": "2026-06",
+      "evidence_type": "direct",
+      "source_id": "bls-computer-cpi"
+    },
+    {
+      "id": "euro_area_personal_computers",
+      "label_de": "Euroraum-PC-Preise",
+      "label_en": "Euro-area PC prices",
+      "value": 5.14,
+      "unit_de": "% / 6 Monate",
+      "unit_en": "% / 6 months",
+      "period": "2026-05",
+      "evidence_type": "direct",
+      "source_id": "eurostat-hicp-computers"
+    },
+    {
+      "id": "semiconductor_producer_prices",
+      "label_de": "Halbleiter-Erzeugerpreise",
+      "label_en": "Semiconductor producer prices",
+      "value": 1.54,
+      "unit_de": "% / 6 Monate",
+      "unit_en": "% / 6 months",
+      "period": "2026-05",
+      "evidence_type": "direct_proxy",
+      "source_id": "bls-semiconductor-ppi"
+    },
+    {
+      "id": "hyperscaler_capex",
+      "label_de": "Cash-Capex der 4 Hyperscaler",
+      "label_en": "Cash capex of 4 hyperscalers",
+      "value": 129.75,
+      "unit_de": "Mrd. USD / Quartal",
+      "unit_en": "USD bn / quarter",
+      "delta": 9.37,
+      "delta_unit": "% QoQ",
+      "period": "2026-Q1",
+      "evidence_type": "direct_proxy",
+      "source_id": "sec-xbrl-companyfacts"
+    },
+    {
+      "id": "eur_usd_import_cost",
+      "label_de": "USD-Kosten in Euro",
+      "label_en": "USD cost in euros",
+      "value": 1.66,
+      "unit_de": "% / 6 Monate",
+      "unit_en": "% / 6 months",
+      "period": "2026-06",
+      "evidence_type": "direct",
+      "source_id": "ecb-reference-rates"
+    },
+    {
+      "id": "memory_contract_prices",
+      "label_de": "DRAM / NAND Vertragspreise",
+      "label_en": "DRAM / NAND contract prices",
+      "value": 66.5,
+      "unit_de": "% QoQ, Mittelwert",
+      "unit_en": "% QoQ, midpoint average",
+      "period": "2026-Q2",
+      "evidence_type": "industry_proxy",
+      "source_id": "trendforce-memory-pricing"
+    }
+  ],
+  "quality_notes": [
+    {
+      "severity": "medium",
+      "note_de": "Direkte historische GPU-, CPU-, DRAM- und SSD-Strassenpreise nach SKU und Haendler fehlen weiterhin. Der aktuelle Wert ist deshalb ein vorlaeufiger Markt-Druckindex und kein vollstaendiger Retail-Preisindex.",
+      "note_en": "Direct historical street prices by GPU, CPU, DRAM and SSD SKU and retailer are still missing. The current value is therefore a provisional market-pressure index, not a complete retail price index."
+    },
+    {
+      "severity": "medium",
+      "note_de": "Die SEC-Capex-Reihe umfasst konzernweite PP&E-Ausgaben der vier Unternehmen. Sie ist breiter als AI-Rechenzentren und deckt nicht den gesamten Weltmarkt ab.",
+      "note_en": "The SEC capex series covers company-wide PP&E spending by four companies. It is broader than AI data centers and does not cover the whole global market."
+    },
+    {
+      "severity": "low",
+      "note_de": "Der BLS-Wert fuer Oktober 2025 fehlt wegen des damaligen Ausfalls der US-Bundesfinanzierung. Nur fuer die abgeleitete Sechsmonatsrechnung wird zwischen September und November linear interpoliert.",
+      "note_en": "The October 2025 BLS value is unavailable because of the U.S. federal funding lapse. It is linearly interpolated between September and November only for the derived six-month calculation."
+    }
+  ],
+  "sources": [
+    { "id": "bls-computer-cpi", "grade": "A", "publisher": "U.S. Bureau of Labor Statistics", "url": "https://www.bls.gov/cpi/factsheets/personal-computers.htm", "last_checked": "2026-07-15" },
+    { "id": "eurostat-hicp-computers", "grade": "A", "publisher": "Eurostat", "url": "https://ec.europa.eu/eurostat/web/hicp/information-data", "last_checked": "2026-07-15" },
+    { "id": "bls-semiconductor-ppi", "grade": "A", "publisher": "U.S. Bureau of Labor Statistics", "url": "https://www.bls.gov/ppi/data-retrieval-guide/home.htm", "last_checked": "2026-07-15" },
+    { "id": "sec-xbrl-companyfacts", "grade": "A", "publisher": "U.S. Securities and Exchange Commission", "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces", "last_checked": "2026-07-15" },
+    { "id": "ecb-reference-rates", "grade": "A", "publisher": "European Central Bank", "url": "https://data.ecb.europa.eu/data/datasets/EXR/EXR.M.USD.EUR.SP00.A", "last_checked": "2026-07-15" },
+    { "id": "trendforce-memory-pricing", "grade": "B", "publisher": "TrendForce", "url": "https://www.trendforce.com/presscenter/news/20260331-12995.html", "last_checked": "2026-07-15" }
+  ]
+}

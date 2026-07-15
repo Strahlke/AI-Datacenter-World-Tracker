@@ -68,6 +68,18 @@ const copy = {
     guardrailIntro: "Damit AI-Ausbau nicht fälschlich jeden Preissprung erklärt.",
     modelSources: "Startquellen des Modells",
     modelSourcesIntro: "Primärquellen für Kapazität, Sekundärquellen für Preise, offizielle Statistik als Kontrollreihe.",
+    historyTitle: "12-Monats-Backcast",
+    historyIntro: "Wie sich der vorläufige Hardwarekostendruck mit heute verfügbaren Daten entwickelt hat.",
+    openHistory: "Historien-JSON",
+    compositeScore: "CHPI gesamt",
+    observedPrices: "Beobachtete Endkundenpreise",
+    upstreamPressure: "Upstream-Preisdruck",
+    directEvidence: "Direkt beobachtet",
+    proxyEvidence: "Proxy",
+    latestPeriod: "Stand",
+    provisional: "Vorläufig",
+    retailGradePending: "Retail-Grade ausstehend",
+    componentScore: "Teilindex",
     all: "Alle",
     planned: "Geplant",
     underConstruction: "Im Bau / Deployment",
@@ -129,6 +141,8 @@ const copy = {
     methodologyC: "Discovery-Signal; darf Status oder Zahlen nie allein ändern.",
     mapTitle: "Weltkarte grosser KI-Rechenzentrumsprojekte",
     mapDescription: "Punkte zeigen verifizierte Standorte und Programme. Farbe kennzeichnet den Lebenszyklusstatus.",
+    historyRange: (start, end, count) => `${count} Monate · ${start} bis ${end} · heutiger Revisionsstand`,
+    historyChartDescription: (start, end, score) => `Rueckgerechneter CHPI von ${start} bis ${end}. Der letzte Wert betraegt ${score} von 100.`,
   },
   en: {
     eyebrow: "Global infrastructure monitor",
@@ -189,6 +203,18 @@ const copy = {
     guardrailIntro: "So AI buildout is not made to explain every price spike.",
     modelSources: "Initial model sources",
     modelSourcesIntro: "Primary evidence for capacity, secondary evidence for prices and official statistics as controls.",
+    historyTitle: "12-month backcast",
+    historyIntro: "How provisional hardware-cost pressure evolved using the data available today.",
+    openHistory: "History JSON",
+    compositeScore: "CHPI composite",
+    observedPrices: "Observed consumer prices",
+    upstreamPressure: "Upstream price pressure",
+    directEvidence: "Direct observation",
+    proxyEvidence: "Proxy",
+    latestPeriod: "As of",
+    provisional: "Provisional",
+    retailGradePending: "Retail grade pending",
+    componentScore: "Sub-index",
     all: "All",
     planned: "Planned",
     underConstruction: "Under construction / deployment",
@@ -250,6 +276,8 @@ const copy = {
     methodologyC: "Discovery signal; must never change status or figures on its own.",
     mapTitle: "World map of major AI data-center projects",
     mapDescription: "Points show verified locations and programs. Color indicates the lifecycle status.",
+    historyRange: (start, end, count) => `${count} months · ${start} to ${end} · current revision state`,
+    historyChartDescription: (start, end, score) => `Backcast CHPI from ${start} to ${end}. The latest value is ${score} out of 100.`,
   },
 };
 
@@ -302,6 +330,7 @@ const state = {
   supplyChain: null,
   supplyStage: "all",
   barometer: null,
+  hardwareHistory: null,
   view: "map",
   lang: getStoredLanguage(),
 };
@@ -359,6 +388,12 @@ const elements = {
   basketGrid: document.getElementById("basket-grid"),
   guardrailGrid: document.getElementById("guardrail-grid"),
   modelSourceList: document.getElementById("model-source-list"),
+  historyChart: document.getElementById("hardware-history-chart"),
+  historyTooltip: document.getElementById("history-tooltip"),
+  historyLegend: document.getElementById("history-legend"),
+  historyRange: document.getElementById("history-range"),
+  currentEvidenceGrid: document.getElementById("current-evidence-grid"),
+  backcastNotice: document.getElementById("backcast-notice"),
   zoomIn: document.getElementById("zoom-in"),
   zoomOut: document.getElementById("zoom-out"),
   zoomReset: document.getElementById("zoom-reset"),
@@ -433,6 +468,25 @@ function normalize(value) {
 
 function percent(value) {
   return `${Math.round(Number(value || 0) * 100)}%`;
+}
+
+function formatNumber(value, maximumFractionDigits = 1) {
+  return new Intl.NumberFormat(state.lang === "de" ? "de-DE" : "en-US", {
+    maximumFractionDigits,
+    minimumFractionDigits: maximumFractionDigits,
+  }).format(value);
+}
+
+function formatPeriod(period) {
+  if (/^\d{4}-\d{2}$/.test(period || "")) {
+    const [year, month] = period.split("-").map(Number);
+    return new Intl.DateTimeFormat(state.lang === "de" ? "de-DE" : "en-US", {
+      month: "short",
+      year: "2-digit",
+      timeZone: "UTC",
+    }).format(new Date(Date.UTC(year, month - 1, 1)));
+  }
+  return period || "—";
 }
 
 function filteredProjects() {
@@ -831,13 +885,153 @@ function renderSupplyChain() {
   }
 }
 
+function renderHardwareHistory() {
+  const history = state.hardwareHistory;
+  if (!history || !elements.historyChart) return;
+  const observations = history.monthly_scores || [];
+  if (!observations.length) return;
+
+  const width = 1000;
+  const height = 300;
+  const margin = { top: 18, right: 24, bottom: 42, left: 48 };
+  const plotWidth = width - margin.left - margin.right;
+  const plotHeight = height - margin.top - margin.bottom;
+  const x = (index) => margin.left + (index / Math.max(1, observations.length - 1)) * plotWidth;
+  const y = (value) => margin.top + (1 - value / 100) * plotHeight;
+  const linePath = (accessor) => observations.map((observation, index) => `${index ? "L" : "M"}${x(index).toFixed(1)},${y(accessor(observation)).toFixed(1)}`).join(" ");
+
+  elements.historyChart.replaceChildren();
+  elements.historyChart.setAttribute("viewBox", `0 0 ${width} ${height}`);
+  elements.historyChart.setAttribute("preserveAspectRatio", "xMidYMid meet");
+
+  const title = svgElement("title", { id: "history-chart-title" });
+  title.textContent = t("historyTitle");
+  const description = svgElement("desc", { id: "history-chart-description" });
+  description.textContent = t("historyChartDescription", formatPeriod(history.period_start), formatPeriod(history.period_end), formatNumber(observations.at(-1).score));
+  elements.historyChart.append(title, description);
+
+  const bands = [
+    { min: 80, max: 100, className: "history-band acute" },
+    { min: 60, max: 80, className: "history-band rising" },
+  ];
+  for (const band of bands) {
+    elements.historyChart.appendChild(svgElement("rect", {
+      class: band.className,
+      x: margin.left,
+      y: y(band.max),
+      width: plotWidth,
+      height: y(band.min) - y(band.max),
+    }));
+  }
+
+  for (const tick of [0, 20, 40, 60, 80, 100]) {
+    elements.historyChart.appendChild(svgElement("line", {
+      class: "history-grid-line",
+      x1: margin.left,
+      x2: width - margin.right,
+      y1: y(tick),
+      y2: y(tick),
+    }));
+    const label = svgElement("text", { class: "history-axis-label", x: margin.left - 9, y: y(tick) + 4, "text-anchor": "end" });
+    label.textContent = tick;
+    elements.historyChart.appendChild(label);
+  }
+
+  observations.forEach((observation, index) => {
+    if (index % 2 !== 0 && index !== observations.length - 1) return;
+    const label = svgElement("text", { class: "history-axis-label", x: x(index), y: height - 13, "text-anchor": "middle" });
+    label.textContent = formatPeriod(observation.period);
+    elements.historyChart.appendChild(label);
+  });
+
+  const series = [
+    { id: "score", className: "composite", label: t("compositeScore"), accessor: (row) => row.score },
+    { id: "retail", className: "retail", label: t("observedPrices"), accessor: (row) => row.components.retail_price },
+    { id: "upstream", className: "upstream", label: t("upstreamPressure"), accessor: (row) => row.components.upstream_prices },
+  ];
+  for (const item of series) {
+    elements.historyChart.appendChild(svgElement("path", {
+      class: `history-line ${item.className}`,
+      d: linePath(item.accessor),
+      fill: "none",
+    }));
+  }
+
+  observations.forEach((observation, index) => {
+    const point = svgElement("circle", {
+      class: "history-point",
+      cx: x(index),
+      cy: y(observation.score),
+      r: index === observations.length - 1 ? 5 : 3,
+    });
+    const pointTitle = svgElement("title");
+    pointTitle.textContent = `${formatPeriod(observation.period)}: ${formatNumber(observation.score)} / 100`;
+    point.appendChild(pointTitle);
+    elements.historyChart.appendChild(point);
+
+    const hit = svgElement("rect", {
+      class: "history-hit",
+      x: x(index) - plotWidth / observations.length / 2,
+      y: margin.top,
+      width: plotWidth / observations.length,
+      height: plotHeight,
+    });
+    const showTooltip = (event) => {
+      elements.historyTooltip.hidden = false;
+      elements.historyTooltip.innerHTML = `
+        <strong>${escapeHtml(formatPeriod(observation.period))} · ${escapeHtml(formatNumber(observation.score))} / 100</strong>
+        <span>${escapeHtml(t("observedPrices"))}: ${escapeHtml(formatNumber(observation.components.retail_price))}</span>
+        <span>${escapeHtml(t("upstreamPressure"))}: ${escapeHtml(formatNumber(observation.components.upstream_prices))}</span>
+        <span>${escapeHtml(t("dataCoverage"))}: ${escapeHtml(percent(observation.weighted_coverage))}</span>`;
+      const wrap = elements.historyChart.parentElement.getBoundingClientRect();
+      const left = Math.min(Math.max(8, event.clientX - wrap.left + 12), Math.max(8, wrap.width - 190));
+      const top = Math.min(Math.max(8, event.clientY - wrap.top - 76), Math.max(8, wrap.height - 96));
+      elements.historyTooltip.style.left = `${left}px`;
+      elements.historyTooltip.style.top = `${top}px`;
+    };
+    hit.addEventListener("pointerenter", showTooltip);
+    hit.addEventListener("pointermove", showTooltip);
+    hit.addEventListener("pointerleave", () => { elements.historyTooltip.hidden = true; });
+    elements.historyChart.appendChild(hit);
+  });
+
+  elements.historyLegend.replaceChildren();
+  for (const item of series) {
+    const legendItem = document.createElement("span");
+    legendItem.innerHTML = `<i class="legend-line ${escapeHtml(item.className)}" aria-hidden="true"></i>${escapeHtml(item.label)}`;
+    elements.historyLegend.appendChild(legendItem);
+  }
+
+  elements.historyRange.textContent = t("historyRange", formatPeriod(history.period_start), formatPeriod(history.period_end), history.history_months);
+  elements.backcastNotice.textContent = localized(history, "backcast_notice");
+
+  const sourceById = new Map((history.sources || []).map((source) => [source.id, source]));
+  elements.currentEvidenceGrid.replaceChildren();
+  for (const evidence of history.current_evidence || []) {
+    const item = document.createElement("article");
+    item.className = "evidence-signal";
+    const isDirect = evidence.evidence_type === "direct";
+    const signed = evidence.id === "hyperscaler_capex" ? formatNumber(evidence.value) : `${evidence.value > 0 ? "+" : ""}${formatNumber(evidence.value)}`;
+    const source = sourceById.get(evidence.source_id);
+    const delta = Number.isFinite(evidence.delta) ? `<span class="evidence-delta">+${escapeHtml(formatNumber(evidence.delta))} ${escapeHtml(evidence.delta_unit)}</span>` : "";
+    item.innerHTML = `
+      <div class="evidence-signal-heading"><span class="evidence-type ${isDirect ? "direct" : "proxy"}">${escapeHtml(isDirect ? t("directEvidence") : t("proxyEvidence"))}</span><small>${escapeHtml(t("latestPeriod"))} ${escapeHtml(formatPeriod(evidence.period))}</small></div>
+      <h4>${escapeHtml(localized(evidence, "label"))}</h4>
+      <strong>${escapeHtml(signed)} <small>${escapeHtml(localized(evidence, "unit"))}</small></strong>
+      ${delta}
+      ${source ? `<a href="${safeUrl(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.publisher)} ↗</a>` : ""}`;
+    elements.currentEvidenceGrid.appendChild(item);
+  }
+}
+
 function renderBarometer() {
   const model = state.barometer;
   if (!model) return;
+  renderHardwareHistory();
   elements.barometerName.textContent = localized(model, "name");
   elements.barometerPurpose.textContent = localized(model, "purpose");
-  elements.barometerStatus.textContent = model.status === "building" ? t("inBuild") : model.status;
-  elements.barometerScore.textContent = model.score ?? "—";
+  elements.barometerStatus.textContent = model.status === "building" ? t("inBuild") : model.status === "provisional" ? t("provisional") : model.status;
+  elements.barometerScore.textContent = model.score == null ? "—" : formatNumber(model.score);
   elements.coverageValue.textContent = percent(model.weighted_coverage);
   elements.coverageBar.style.width = percent(model.weighted_coverage);
   elements.barometerSummary.textContent = localized(model, "summary");
@@ -848,17 +1042,19 @@ function renderBarometer() {
     const row = document.createElement("div");
     row.className = "component-row";
     const status = component.status === "tracked" ? t("tracked") : component.status === "source_gap" ? t("sourceGap") : t("sourceDesign");
+    const componentScore = component.current_score == null ? "—" : `${formatNumber(component.current_score)} / 100`;
     row.innerHTML = `
-      <div class="component-heading"><strong>${escapeHtml(localized(component, "label"))}</strong><span>${Math.round(component.weight * 100)}%</span></div>
+      <div class="component-heading"><strong>${escapeHtml(localized(component, "label"))}</strong><span>${escapeHtml(componentScore)}</span></div>
       <p>${escapeHtml(localized(component, "definition"))}</p>
-      <div class="component-bars"><div class="weight-track"><span style="width:${component.weight * 100}%"></span></div><div class="coverage-track mini"><span style="width:${component.coverage * 100}%"></span></div><small>${escapeHtml(status)} · ${escapeHtml(t("coverage"))} ${percent(component.coverage)}</small></div>`;
+      <div class="component-bars"><div class="weight-track"><span style="width:${component.weight * 100}%"></span></div><div class="coverage-track mini"><span style="width:${component.coverage * 100}%"></span></div><small>${escapeHtml(status)} · ${escapeHtml(t("weight"))} ${Math.round(component.weight * 100)}% · ${escapeHtml(t("coverage"))} ${percent(component.coverage)}</small></div>`;
     elements.componentChart.appendChild(row);
   }
 
   elements.scoreScale.replaceChildren();
   for (const band of model.scale.bands) {
     const item = document.createElement("div");
-    item.className = `scale-band band-${band.min}`;
+    const active = Number.isFinite(model.score) && model.score >= band.min && model.score <= band.max;
+    item.className = `scale-band band-${band.min}${active ? " active" : ""}`;
     item.innerHTML = `<strong>${band.min}–${band.max}</strong><span>${escapeHtml(localized(band, "label"))}</span>`;
     elements.scoreScale.appendChild(item);
   }
@@ -867,7 +1063,7 @@ function renderBarometer() {
   for (const basket of model.retail_baskets) {
     const item = document.createElement("article");
     item.className = "basket-card";
-    item.innerHTML = `<div><span>${escapeHtml(t("seriesPending"))}</span><h4>${escapeHtml(basket.label)}</h4></div><p>${escapeHtml(basket.normalization)}</p><strong>${escapeHtml(t("basketTarget"))}: ${basket.target_skus}</strong>`;
+    item.innerHTML = `<div><span>${escapeHtml(t("retailGradePending"))}</span><h4>${escapeHtml(basket.label)}</h4></div><p>${escapeHtml(basket.normalization)}</p><strong>${escapeHtml(t("basketTarget"))}: ${basket.target_skus}</strong>`;
     elements.basketGrid.appendChild(item);
   }
 
@@ -1001,12 +1197,13 @@ async function bootstrap() {
       fetch(`${import.meta.env.BASE_URL}data/source-registry.json`, { cache: "no-cache" }),
       fetch(`${import.meta.env.BASE_URL}data/supply-chain.json`, { cache: "no-cache" }),
       fetch(`${import.meta.env.BASE_URL}data/hardware-barometer.json`, { cache: "no-cache" }),
+      fetch(`${import.meta.env.BASE_URL}data/hardware-history.json`, { cache: "no-cache" }),
     ]);
-    const labels = ["projects", "source-registry", "supply-chain", "hardware-barometer"];
+    const labels = ["projects", "source-registry", "supply-chain", "hardware-barometer", "hardware-history"];
     responses.forEach((response, index) => {
       if (!response.ok) throw new Error(`${labels[index]} ${response.status}`);
     });
-    const [payload, sourcePayload, supplyPayload, barometerPayload] = await Promise.all(responses.map((response) => response.json()));
+    const [payload, sourcePayload, supplyPayload, barometerPayload, hardwareHistoryPayload] = await Promise.all(responses.map((response) => response.json()));
     state.projects = payload.projects;
     state.snapshotDate = payload.snapshot_date;
     state.sources = sourcePayload.sources;
@@ -1014,6 +1211,7 @@ async function bootstrap() {
     state.sourceSnapshotDate = sourcePayload.snapshot_date;
     state.supplyChain = supplyPayload;
     state.barometer = barometerPayload;
+    state.hardwareHistory = hardwareHistoryPayload;
     elements.snapshot.textContent = t("snapshotMeta", payload.snapshot_date, state.projects.length);
     populateRegions();
     populateSupplyStages();

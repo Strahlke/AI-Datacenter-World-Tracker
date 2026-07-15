@@ -4,14 +4,18 @@ const projectFile = new URL("../data/projects.json", import.meta.url);
 const registryFile = new URL("../data/source-registry.json", import.meta.url);
 const supplyChainFile = new URL("../data/supply-chain.json", import.meta.url);
 const barometerFile = new URL("../data/hardware-barometer.json", import.meta.url);
+const historyFile = new URL("../data/hardware-history.json", import.meta.url);
 
 const projectsPayload = JSON.parse(await readFile(projectFile, "utf8"));
 const registryPayload = JSON.parse(await readFile(registryFile, "utf8"));
 const supplyChainPayload = JSON.parse(await readFile(supplyChainFile, "utf8"));
 const barometerPayload = JSON.parse(await readFile(barometerFile, "utf8"));
+const historyPayload = JSON.parse(await readFile(historyFile, "utf8"));
 
 const errors = [];
 const isoDate = /^\d{4}-\d{2}-\d{2}$/;
+const isoMonth = /^\d{4}-\d{2}$/;
+const isoQuarter = /^\d{4}-Q[1-4]$/;
 const httpsUrl = /^https:\/\//;
 const allowedStatuses = new Set(["planned", "under_construction", "partly_live", "operational", "paused", "cancelled"]);
 const allowedRealizations = new Set(["planned", "in_progress", "partly_realized", "realized", "not_realized"]);
@@ -25,6 +29,9 @@ const allowedRunSchedules = new Set(["every_week", "first_week_of_month", "first
 const allowedAccess = new Set(["api", "download", "web", "search", "dynamic_search"]);
 const allowedExposure = new Set(["high", "medium", "low"]);
 const allowedComponentStatus = new Set(["tracked", "source_gap", "source_design"]);
+const allowedSeriesEvidence = new Set(["direct", "direct_proxy", "industry_proxy"]);
+const allowedMonthlyObservationStatus = new Set(["direct_observation", "preliminary", "unavailable", "not_released"]);
+const allowedQuarterlyObservationStatus = new Set(["reported_actual", "forecast_midpoint", "mixed_actual_forecast"]);
 
 function requireValue(condition, message) {
   if (!condition) errors.push(message);
@@ -37,6 +44,16 @@ function checkUnique(items, label) {
     requireValue(!seen.has(item.id), `${label}: doppelte id ${item.id}`);
     seen.add(item.id);
   }
+}
+
+function nextMonth(period) {
+  const [year, month] = period.split("-").map(Number);
+  const next = new Date(Date.UTC(year, month, 1));
+  return `${next.getUTCFullYear()}-${String(next.getUTCMonth() + 1).padStart(2, "0")}`;
+}
+
+function approximatelyEqual(actual, expected, tolerance = 0.000001) {
+  return Math.abs(actual - expected) <= tolerance;
 }
 
 requireValue(isoDate.test(projectsPayload.snapshot_date || ""), "projects: snapshot_date muss YYYY-MM-DD sein");
@@ -134,12 +151,22 @@ requireValue(Array.isArray(barometerPayload.components) && barometerPayload.comp
 checkUnique(barometerPayload.components || [], "barometer components");
 const componentWeight = (barometerPayload.components || []).reduce((sum, component) => sum + Number(component.weight || 0), 0);
 requireValue(Math.abs(componentWeight - 1) < 0.000001, `barometer: Komponenten-Gewichte ergeben ${componentWeight} statt 1`);
+const calculatedCoverage = (barometerPayload.components || []).reduce((sum, component) => sum + Number(component.weight || 0) * Number(component.coverage || 0), 0);
+requireValue(approximatelyEqual(calculatedCoverage, barometerPayload.weighted_coverage), `barometer: gewichtete Abdeckung ${barometerPayload.weighted_coverage} stimmt nicht mit ${calculatedCoverage} ueberein`);
 for (const component of barometerPayload.components || []) {
   const prefix = `barometer component ${component.id || "<ohne id>"}`;
   requireValue(Number.isFinite(component.weight) && component.weight > 0, `${prefix}: weight ungueltig`);
   requireValue(Number.isFinite(component.coverage) && component.coverage >= 0 && component.coverage <= 1, `${prefix}: coverage ungueltig`);
+  requireValue(component.current_score === null || (Number.isFinite(component.current_score) && component.current_score >= 0 && component.current_score <= 100), `${prefix}: current_score ungueltig`);
   requireValue(allowedComponentStatus.has(component.status), `${prefix}: status ungueltig`);
   requireValue(typeof component.label_de === "string" && typeof component.label_en === "string", `${prefix}: zweisprachige Labels fehlen`);
+}
+if (barometerPayload.score !== null) {
+  const weightedScore = (barometerPayload.components || []).reduce((sum, component) => {
+    if (!Number.isFinite(component.current_score)) return sum;
+    return sum + component.weight * component.coverage * component.current_score;
+  }, 0) / calculatedCoverage;
+  requireValue(approximatelyEqual(weightedScore, barometerPayload.score, 0.11), `barometer: Score ${barometerPayload.score} stimmt nicht mit Komponentenwert ${weightedScore} ueberein`);
 }
 requireValue(Array.isArray(barometerPayload.retail_baskets) && barometerPayload.retail_baskets.length >= 4, "barometer: mindestens vier Retail-Warenkoerbe erforderlich");
 checkUnique(barometerPayload.retail_baskets || [], "barometer retail baskets");
@@ -154,10 +181,112 @@ for (const source of barometerPayload.sources || []) {
   requireValue(isoDate.test(source.last_checked || ""), `${prefix}: last_checked muss YYYY-MM-DD sein`);
 }
 
+requireValue(isoDate.test(historyPayload.snapshot_date || ""), "history: snapshot_date muss YYYY-MM-DD sein");
+requireValue(isoMonth.test(historyPayload.period_start || ""), "history: period_start muss YYYY-MM sein");
+requireValue(isoMonth.test(historyPayload.period_end || ""), "history: period_end muss YYYY-MM sein");
+requireValue(Number.isInteger(historyPayload.history_months) && historyPayload.history_months >= 12, "history: mindestens 12 Monate erforderlich");
+requireValue(approximatelyEqual(historyPayload.method?.weighted_coverage, barometerPayload.weighted_coverage), "history: weighted_coverage muss dem Barometer entsprechen");
+
+requireValue(Array.isArray(historyPayload.monthly_series) && historyPayload.monthly_series.length >= 4, "history: mindestens vier Monatsreihen erforderlich");
+checkUnique(historyPayload.monthly_series || [], "history monthly series");
+for (const series of historyPayload.monthly_series || []) {
+  const prefix = `history monthly series ${series.id || "<ohne id>"}`;
+  requireValue(allowedSeriesEvidence.has(series.evidence_type), `${prefix}: evidence_type ungueltig`);
+  requireValue(series.frequency === "monthly", `${prefix}: frequency muss monthly sein`);
+  requireValue(httpsUrl.test(series.source_url || ""), `${prefix}: source_url muss HTTPS sein`);
+  requireValue(isoMonth.test(series.latest_period || ""), `${prefix}: latest_period muss YYYY-MM sein`);
+  requireValue(Array.isArray(series.observations) && series.observations.length >= 12, `${prefix}: zu wenige Beobachtungen`);
+  const seenPeriods = new Set();
+  let previousPeriod = null;
+  for (const observation of series.observations || []) {
+    requireValue(isoMonth.test(observation.period || ""), `${prefix}: ungueltige Periode ${observation.period}`);
+    requireValue(!seenPeriods.has(observation.period), `${prefix}: doppelte Periode ${observation.period}`);
+    if (previousPeriod) requireValue(observation.period > previousPeriod, `${prefix}: Perioden nicht aufsteigend`);
+    seenPeriods.add(observation.period);
+    previousPeriod = observation.period;
+    requireValue(allowedMonthlyObservationStatus.has(observation.status), `${prefix}: ungueltiger Beobachtungsstatus ${observation.status}`);
+    requireValue(observation.value === null || Number.isFinite(observation.value), `${prefix}: value muss Zahl oder null sein`);
+    if (["unavailable", "not_released"].includes(observation.status)) requireValue(observation.value === null, `${prefix}: fehlender Status muss value null haben`);
+    if (["direct_observation", "preliminary"].includes(observation.status)) requireValue(Number.isFinite(observation.value), `${prefix}: beobachteter Status braucht Zahlenwert`);
+  }
+}
+
+requireValue(Array.isArray(historyPayload.quarterly_series) && historyPayload.quarterly_series.length >= 2, "history: mindestens zwei Quartalsreihen erforderlich");
+checkUnique(historyPayload.quarterly_series || [], "history quarterly series");
+for (const series of historyPayload.quarterly_series || []) {
+  const prefix = `history quarterly series ${series.id || "<ohne id>"}`;
+  requireValue(allowedSeriesEvidence.has(series.evidence_type), `${prefix}: evidence_type ungueltig`);
+  requireValue(series.frequency === "quarterly", `${prefix}: frequency muss quarterly sein`);
+  requireValue(httpsUrl.test(series.source_url || ""), `${prefix}: source_url muss HTTPS sein`);
+  requireValue(Array.isArray(series.observations) && series.observations.length >= 4, `${prefix}: zu wenige Quartalsbeobachtungen`);
+  let previousPeriod = null;
+  for (const observation of series.observations || []) {
+    requireValue(isoQuarter.test(observation.period || ""), `${prefix}: ungueltige Periode ${observation.period}`);
+    if (previousPeriod) requireValue(observation.period > previousPeriod, `${prefix}: Perioden nicht aufsteigend`);
+    previousPeriod = observation.period;
+    requireValue(allowedQuarterlyObservationStatus.has(observation.status), `${prefix}: ungueltiger Beobachtungsstatus ${observation.status}`);
+    if (series.id === "hyperscaler_cash_capex") {
+      requireValue(Number.isFinite(observation.value) && observation.value > 0, `${prefix}: Capex-Wert ungueltig`);
+      requireValue(observation.breakdown && Object.keys(observation.breakdown).length === 4, `${prefix}: vier Unternehmen im Breakdown erforderlich`);
+      const breakdownTotal = Object.values(observation.breakdown || {}).reduce((sum, value) => sum + Number(value || 0), 0);
+      requireValue(approximatelyEqual(breakdownTotal, observation.value, 0.0011), `${prefix}: Breakdown ${breakdownTotal} stimmt nicht mit ${observation.value} ueberein`);
+    }
+    if (series.id === "memory_contract_price_signal") {
+      requireValue(Number.isFinite(observation.dram_change_pct), `${prefix}: dram_change_pct fehlt`);
+      requireValue(Number.isFinite(observation.nand_change_pct), `${prefix}: nand_change_pct fehlt`);
+      requireValue(httpsUrl.test(observation.source_url || ""), `${prefix}: Beobachtungsquelle muss HTTPS sein`);
+    }
+  }
+}
+
+requireValue(Array.isArray(historyPayload.monthly_scores) && historyPayload.monthly_scores.length === historyPayload.history_months, "history: monthly_scores muss genau history_months enthalten");
+const componentMap = new Map((barometerPayload.components || []).map((component) => [component.id, component]));
+let previousScorePeriod = null;
+for (const observation of historyPayload.monthly_scores || []) {
+  const prefix = `history score ${observation.period || "<ohne Periode>"}`;
+  requireValue(isoMonth.test(observation.period || ""), `${prefix}: Periode ungueltig`);
+  if (previousScorePeriod) requireValue(observation.period === nextMonth(previousScorePeriod), `${prefix}: Monatsfolge hat eine Luecke nach ${previousScorePeriod}`);
+  previousScorePeriod = observation.period;
+  requireValue(Number.isFinite(observation.score) && observation.score >= 0 && observation.score <= 100, `${prefix}: score ungueltig`);
+  requireValue(approximatelyEqual(observation.weighted_coverage, barometerPayload.weighted_coverage), `${prefix}: Abdeckung weicht vom Barometer ab`);
+  requireValue(observation.confidence === barometerPayload.confidence, `${prefix}: Konfidenz weicht vom Barometer ab`);
+  let numerator = 0;
+  for (const [componentId, componentScore] of Object.entries(observation.components || {})) {
+    const component = componentMap.get(componentId);
+    requireValue(Boolean(component), `${prefix}: unbekannte Komponente ${componentId}`);
+    requireValue(Number.isFinite(componentScore) && componentScore >= 0 && componentScore <= 100, `${prefix}: Komponentenwert ${componentId} ungueltig`);
+    if (component) numerator += component.weight * component.coverage * componentScore;
+  }
+  requireValue(approximatelyEqual(numerator / barometerPayload.weighted_coverage, observation.score, 0.11), `${prefix}: Score stimmt nicht mit Komponenten ueberein`);
+}
+const firstHistoryScore = historyPayload.monthly_scores?.[0];
+const latestHistoryScore = historyPayload.monthly_scores?.at(-1);
+requireValue(firstHistoryScore?.period === historyPayload.period_start, "history: erster Score stimmt nicht mit period_start ueberein");
+requireValue(latestHistoryScore?.period === historyPayload.period_end, "history: letzter Score stimmt nicht mit period_end ueberein");
+requireValue(approximatelyEqual(latestHistoryScore?.score, barometerPayload.score, 0.001), "history: letzter Score muss dem Barometer-Score entsprechen");
+requireValue(approximatelyEqual(latestHistoryScore?.weighted_coverage, barometerPayload.weighted_coverage), "history: letzte Abdeckung muss dem Barometer entsprechen");
+requireValue(barometerPayload.publication_gate?.provisional_gate_met === (barometerPayload.weighted_coverage >= barometerPayload.publication_gate?.minimum_weighted_coverage && historyPayload.history_months >= barometerPayload.publication_gate?.minimum_history_months), "barometer: provisional_gate_met ist inkonsistent");
+
+requireValue(Array.isArray(historyPayload.current_evidence) && historyPayload.current_evidence.length >= 5, "history: current_evidence unvollstaendig");
+checkUnique(historyPayload.current_evidence || [], "history current evidence");
+requireValue(Array.isArray(historyPayload.sources) && historyPayload.sources.length >= 5, "history: sources unvollstaendig");
+checkUnique(historyPayload.sources || [], "history sources");
+const historySourceIds = new Set((historyPayload.sources || []).map((source) => source.id));
+for (const source of historyPayload.sources || []) {
+  const prefix = `history source ${source.id || "<ohne id>"}`;
+  requireValue(allowedGrades.has(source.grade), `${prefix}: grade ungueltig`);
+  requireValue(httpsUrl.test(source.url || ""), `${prefix}: URL muss HTTPS sein`);
+  requireValue(isoDate.test(source.last_checked || ""), `${prefix}: last_checked muss YYYY-MM-DD sein`);
+}
+for (const evidence of historyPayload.current_evidence || []) {
+  requireValue(historySourceIds.has(evidence.source_id), `history evidence ${evidence.id}: unbekannte source_id ${evidence.source_id}`);
+  requireValue(Number.isFinite(evidence.value), `history evidence ${evidence.id}: value fehlt`);
+}
+
 if (errors.length) {
   console.error(`Datenvalidierung fehlgeschlagen (${errors.length}):`);
   for (const error of errors) console.error(`- ${error}`);
   process.exitCode = 1;
 } else {
-  console.log(`Datenvalidierung bestanden: ${projectsPayload.projects.length} Projekte, ${registryPayload.sources.length} Recherchequellen, ${supplyChainPayload.producers.length} Produzenten, Barometer-Abdeckung ${Math.round(barometerPayload.weighted_coverage * 100)}%.`);
+  console.log(`Datenvalidierung bestanden: ${projectsPayload.projects.length} Projekte, ${registryPayload.sources.length} Recherchequellen, ${supplyChainPayload.producers.length} Produzenten, ${historyPayload.history_months} Barometer-Monate, CHPI ${barometerPayload.score}, Abdeckung ${Math.round(barometerPayload.weighted_coverage * 100)}%.`);
 }
