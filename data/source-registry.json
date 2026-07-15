@@ -92,8 +92,19 @@
       "run_schedule": "every_week",
       "access": "api",
       "max_grade": "B",
-      "signals": ["Facility", "Betreiber", "Adresse", "Interconnection"],
-      "search_hints": ["fac", "org", "net", "campus", "updated"],
+      "signals": [
+        "Facility",
+        "Betreiber",
+        "Adresse",
+        "Interconnection"
+      ],
+      "search_hints": [
+        "fac",
+        "org",
+        "net",
+        "campus",
+        "updated"
+      ],
       "use_for": "Bestehende Facilities und Netzanschluesse entdecken oder gegen Betreiberangaben abgleichen.",
       "caveat": "Operator- und Community-Daten; beweist weder AI-Nutzung noch Baustatus.",
       "last_verified": "2026-07-15"
@@ -111,8 +122,20 @@
       "run_schedule": "every_week",
       "access": "download",
       "max_grade": "B",
-      "signals": ["Bauzeit", "IT-Leistung", "Compute", "Kosten", "Satellitenbefund", "Permits"],
-      "search_hints": ["records", "timelines", "changelog", "downloads"],
+      "signals": [
+        "Bauzeit",
+        "IT-Leistung",
+        "Compute",
+        "Kosten",
+        "Satellitenbefund",
+        "Permits"
+      ],
+      "search_hints": [
+        "records",
+        "timelines",
+        "changelog",
+        "downloads"
+      ],
       "use_for": "Frontier-Cluster entdecken sowie Baufortschritt, Leistungs- und Kostenschaetzungen plausibilisieren.",
       "caveat": "Schaetzungen und abgeleitete Werte bleiben Sekundaerevidenz; Methodik und Record-Sources mitpruefen.",
       "last_verified": "2026-07-15"
@@ -130,8 +153,18 @@
       "run_schedule": "every_week",
       "access": "web",
       "max_grade": "A",
-      "signals": ["Neue Region", "Availability Zones", "Region live", "Expansion"],
-      "search_hints": ["announced Region", "launch", "investment", "AI infrastructure"],
+      "signals": [
+        "Neue Region",
+        "Availability Zones",
+        "Region live",
+        "Expansion"
+      ],
+      "search_hints": [
+        "announced Region",
+        "launch",
+        "investment",
+        "AI infrastructure"
+      ],
       "use_for": "Neue oder gestartete AWS-Regionen und grobe regionale Infrastruktur-Signale.",
       "caveat": "Regionen koennen mehrere nicht offengelegte Standorte umfassen; kein Beleg fuer exakte Adresse oder AI-spezifische Nutzung.",
       "last_verified": "2026-07-15"
@@ -149,8 +182,18 @@
       "run_schedule": "every_week",
       "access": "web",
       "max_grade": "A",
-      "signals": ["Neue Region", "Coming soon", "Region live", "Availability Zones"],
-      "search_hints": ["coming soon", "datacenter region", "AI infrastructure", "investment"],
+      "signals": [
+        "Neue Region",
+        "Coming soon",
+        "Region live",
+        "Availability Zones"
+      ],
+      "search_hints": [
+        "coming soon",
+        "datacenter region",
+        "AI infrastructure",
+        "investment"
+      ],
       "use_for": "Neue und gestartete Azure-Regionen sowie regionale Ausbauhinweise.",
       "caveat": "Regionsebene ist keine Standort- oder AI-Kapazitaetsbestaetigung.",
       "last_verified": "2026-07-15"
@@ -168,8 +211,18 @@
       "run_schedule": "every_week",
       "access": "web",
       "max_grade": "A",
-      "signals": ["Neue Region", "Region live", "Zonen", "AI-optimierte Infrastruktur"],
-      "search_hints": ["new region", "AI infrastructure", "data center investment", "Cloud Location Finder"],
+      "signals": [
+        "Neue Region",
+        "Region live",
+        "Zonen",
+        "AI-optimierte Infrastruktur"
+      ],
+      "search_hints": [
+        "new region",
+        "AI infrastructure",
+        "data center investment",
+        "Cloud Location Finder"
+      ],
       "use_for": "Regionale Google-Cloud-Expansion und neue Standortsignale.",
       "caveat": "Cloud-Regionen sind nur ein Fruehsignal; exakte Facility und AI-Zweck separat belegen.",
       "last_verified": "2026-07-15"
@@ -187,8 +240,18 @@
       "run_schedule": "every_week",
       "access": "web",
       "max_grade": "A",
-      "signals": ["Neue Region", "Status live", "Sovereign Region", "Interconnect"],
-      "search_hints": ["planned", "live", "AI supercluster", "data center region"],
+      "signals": [
+        "Neue Region",
+        "Status live",
+        "Sovereign Region",
+        "Interconnect"
+      ],
+      "search_hints": [
+        "planned",
+        "live",
+        "AI supercluster",
+        "data center region"
+      ],
       "use_for": "Oracle-Regionen und moegliche AI-Infrastruktur-Expansion entdecken.",
       "caveat": "Oeffentliche Regionstabellen belegen keine exakten Standorte oder AI-Auslastung.",
       "last_verified": "2026-07-15"
@@ -206,8 +269,18 @@
       "run_schedule": "every_week",
       "access": "web",
       "max_grade": "A",
-      "signals": ["Neue Region", "Zone live", "Region geschlossen", "Expansion"],
-      "search_hints": ["released", "closing down", "new region", "AI data center"],
+      "signals": [
+        "Neue Region",
+        "Zone live",
+        "Region geschlossen",
+        "Expansion"
+      ],
+      "search_hints": [
+        "released",
+        "closing down",
+        "new region",
+        "AI data center"
+      ],
       "use_for": "Neue, gestartete oder geschlossene Alibaba-Cloud-Regionen erkennen.",
       "caveat": "Regionsebene ist kein Beleg fuer einen einzelnen AI-Campus.",
       "last_verified": "2026-07-15"
@@ -225,8 +298,22 @@
       "run_schedule": "every_week",
       "access": "dynamic_search",
       "max_grade": "A",
-      "signals": ["Ankuendigung", "Capex", "JV", "Landkauf", "PPA", "GPU-Deal", "Go-live"],
-      "search_hints": ["site:official-domain data center", "AI factory", "campus", "operational", "investor relations"],
+      "signals": [
+        "Ankuendigung",
+        "Capex",
+        "JV",
+        "Landkauf",
+        "PPA",
+        "GPU-Deal",
+        "Go-live"
+      ],
+      "search_hints": [
+        "site:official-domain data center",
+        "AI factory",
+        "campus",
+        "operational",
+        "investor relations"
+      ],
       "use_for": "Projekt, Umfang, Partner, Investition, Baseline und Betriebsnachweis aus erster Hand.",
       "caveat": "Marketingaussagen koennen Programm-, Campus- und Gebaeudeumfang vermischen; jede Zahl auf Bezugsobjekt und Zeitraum pruefen.",
       "last_verified": "2026-07-15"
@@ -244,8 +331,22 @@
       "run_schedule": "every_week",
       "access": "dynamic_search",
       "max_grade": "A",
-      "signals": ["Bauantrag", "Air permit", "EIA", "Zoning", "Land-use", "Baustart", "Withdrawn"],
-      "search_hints": ["project address permit", "planning application", "environmental impact assessment", "rezoning", "withdrawn"],
+      "signals": [
+        "Bauantrag",
+        "Air permit",
+        "EIA",
+        "Zoning",
+        "Land-use",
+        "Baustart",
+        "Withdrawn"
+      ],
+      "search_hints": [
+        "project address permit",
+        "planning application",
+        "environmental impact assessment",
+        "rezoning",
+        "withdrawn"
+      ],
       "use_for": "Projektstandort, beantragten Umfang, Genehmigungsphase, Auflagen, Pausierung oder Ruecknahme belegen.",
       "caveat": "Portale sind dezentral; Suchbegriffe muessen Betreiber, Projektgesellschaft, Adresse und Flurstueck abdecken.",
       "last_verified": "2026-07-15"
@@ -263,8 +364,21 @@
       "run_schedule": "every_week",
       "access": "dynamic_search",
       "max_grade": "A",
-      "signals": ["Load request", "Netzanschluss", "PPA", "Umspannwerk", "Transmission upgrade", "Energization"],
-      "search_hints": ["large load", "data center load", "interconnection", "substation", "transmission upgrade"],
+      "signals": [
+        "Load request",
+        "Netzanschluss",
+        "PPA",
+        "Umspannwerk",
+        "Transmission upgrade",
+        "Energization"
+      ],
+      "search_hints": [
+        "large load",
+        "data center load",
+        "interconnection",
+        "substation",
+        "transmission upgrade"
+      ],
       "use_for": "Strombedarf, Anschlussreife, Engpaesse und reale Inbetriebnahme-Voraussetzungen pruefen.",
       "caveat": "Projekt- oder Kundennamen koennen anonymisiert sein; Standort und Lastprofil nur mit weiteren Quellen zuordnen.",
       "last_verified": "2026-07-15"
@@ -282,8 +396,20 @@
       "run_schedule": "first_week_of_month",
       "access": "dynamic_search",
       "max_grade": "A",
-      "signals": ["Landkauf", "Eigentumswechsel", "Parcel", "Zoning", "Bebauungsplan"],
-      "search_hints": ["parcel owner", "deed", "land registry", "zoning map", "special purpose entity"],
+      "signals": [
+        "Landkauf",
+        "Eigentumswechsel",
+        "Parcel",
+        "Zoning",
+        "Bebauungsplan"
+      ],
+      "search_hints": [
+        "parcel owner",
+        "deed",
+        "land registry",
+        "zoning map",
+        "special purpose entity"
+      ],
       "use_for": "Fruehe Landbewegungen, Projektgesellschaften und Standortpraezision ermitteln.",
       "caveat": "Zugang, Aktualitaet und Eigentumsdarstellung unterscheiden sich stark nach Jurisdiktion.",
       "last_verified": "2026-07-15"
@@ -301,8 +427,21 @@
       "run_schedule": "first_week_of_month",
       "access": "dynamic_search",
       "max_grade": "A",
-      "signals": ["Wasseranschluss", "Entnahme", "Abwasser", "Kuehltechnik", "Auflage", "Moratorium"],
-      "search_hints": ["data center water service", "water use application", "cooling", "wastewater", "large user"],
+      "signals": [
+        "Wasseranschluss",
+        "Entnahme",
+        "Abwasser",
+        "Kuehltechnik",
+        "Auflage",
+        "Moratorium"
+      ],
+      "search_hints": [
+        "data center water service",
+        "water use application",
+        "cooling",
+        "wastewater",
+        "large user"
+      ],
       "use_for": "Kuehlkonzept, Wasserengpaesse, lokale Auflagen und Terminrisiken erkennen.",
       "caveat": "Nicht jede Anlage nutzt wasserintensive Kuehlung; Antragswerte sind nicht automatisch realer Verbrauch.",
       "last_verified": "2026-07-15"
@@ -320,8 +459,20 @@
       "run_schedule": "first_week_after_quarter",
       "access": "search",
       "max_grade": "A",
-      "signals": ["Capex", "Commitments", "Risiken", "Tochtergesellschaft", "Finanzierung"],
-      "search_hints": ["data center", "AI infrastructure", "capital expenditures", "power purchase", "commitments"],
+      "signals": [
+        "Capex",
+        "Commitments",
+        "Risiken",
+        "Tochtergesellschaft",
+        "Finanzierung"
+      ],
+      "search_hints": [
+        "data center",
+        "AI infrastructure",
+        "capital expenditures",
+        "power purchase",
+        "commitments"
+      ],
       "use_for": "Capex, finanzielle Verpflichtungen, Eigentum und Risikofaktoren belegen.",
       "caveat": "Unternehmensweite Capex-Angaben nicht automatisch einzelnen Projekten zurechnen.",
       "last_verified": "2026-07-15"
@@ -339,8 +490,19 @@
       "run_schedule": "first_week_after_quarter",
       "access": "api",
       "max_grade": "A",
-      "signals": ["PaymentsToAcquirePropertyPlantAndEquipment", "PaymentsToAcquireProductiveAssets", "10-Q", "10-K", "Quartals-Capex"],
-      "search_hints": ["companyfacts CIK", "us-gaap PaymentsToAcquirePropertyPlantAndEquipment", "calendar quarter", "filed"],
+      "signals": [
+        "PaymentsToAcquirePropertyPlantAndEquipment",
+        "PaymentsToAcquireProductiveAssets",
+        "10-Q",
+        "10-K",
+        "Quartals-Capex"
+      ],
+      "search_hints": [
+        "companyfacts CIK",
+        "us-gaap PaymentsToAcquirePropertyPlantAndEquipment",
+        "calendar quarter",
+        "filed"
+      ],
       "use_for": "Quartalsweise Cash-PP&E-Ausgaben grosser Hyperscaler reproduzierbar aus standardisierten SEC-XBRL-Fakten ableiten.",
       "caveat": "Konzernweite PP&E-Ausgaben umfassen mehr als AI-Rechenzentren; Cash-Flow-Fakten und Fiskalquartale muessen vor der Aggregation auf Kalenderquartale abgegrenzt werden.",
       "last_verified": "2026-07-15"
@@ -358,8 +520,19 @@
       "run_schedule": "first_week_after_quarter",
       "access": "search",
       "max_grade": "A",
-      "signals": ["Projektgesellschaft", "Eigentum", "Charges", "Accounts", "Status"],
-      "search_hints": ["operator name", "project company", "filing history", "charges"],
+      "signals": [
+        "Projektgesellschaft",
+        "Eigentum",
+        "Charges",
+        "Accounts",
+        "Status"
+      ],
+      "search_hints": [
+        "operator name",
+        "project company",
+        "filing history",
+        "charges"
+      ],
       "use_for": "Projektgesellschaften, Eigentums- und Finanzierungsspuren im UK bestaetigen.",
       "caveat": "Companies House weist darauf hin, dass eingereichte Angaben nicht inhaltlich verifiziert werden.",
       "last_verified": "2026-07-15"
@@ -377,8 +550,20 @@
       "run_schedule": "every_week",
       "access": "download",
       "max_grade": "A",
-      "signals": ["Air permit", "Water permit", "Facility status", "Compliance", "Facility ID"],
-      "search_hints": ["facility name", "city", "county", "owner operator", "permit status"],
+      "signals": [
+        "Air permit",
+        "Water permit",
+        "Facility status",
+        "Compliance",
+        "Facility ID"
+      ],
+      "search_hints": [
+        "facility name",
+        "city",
+        "county",
+        "owner operator",
+        "permit status"
+      ],
       "use_for": "US-Umweltgenehmigungen und Facility-Status nach Standort oder Betreiber durchsuchen.",
       "caveat": "Abdeckung und Aktualitaet variieren nach Programm und zustaendiger Behoerde.",
       "last_verified": "2026-07-15"
@@ -396,8 +581,20 @@
       "run_schedule": "every_week",
       "access": "search",
       "max_grade": "A",
-      "signals": ["Docket", "Transmission", "Tariff", "Large load", "Generator permit"],
-      "search_hints": ["data center", "large load", "substation", "transmission", "generator"],
+      "signals": [
+        "Docket",
+        "Transmission",
+        "Tariff",
+        "Large load",
+        "Generator permit"
+      ],
+      "search_hints": [
+        "data center",
+        "large load",
+        "substation",
+        "transmission",
+        "generator"
+      ],
       "use_for": "Bundesweite Energie- und Transmission-Filings als Projekt- oder Engpasssignal.",
       "caveat": "Dockets koennen technische Projektnamen statt oeffentlicher Campusnamen verwenden.",
       "last_verified": "2026-07-15"
@@ -415,8 +612,20 @@
       "run_schedule": "first_week_of_month",
       "access": "api",
       "max_grade": "A",
-      "signals": ["Last", "Erzeugung", "Transmission", "Engpass", "Netzentwicklung"],
-      "search_hints": ["load", "transmission", "outage", "generation", "TYNDP"],
+      "signals": [
+        "Last",
+        "Erzeugung",
+        "Transmission",
+        "Engpass",
+        "Netzentwicklung"
+      ],
+      "search_hints": [
+        "load",
+        "transmission",
+        "outage",
+        "generation",
+        "TYNDP"
+      ],
       "use_for": "Regionale Last- und Netzentwicklung plausibilisieren und Engpasskontext liefern.",
       "caveat": "Plattformdaten nennen einzelne Rechenzentren meist nicht; Zuordnung nur als Kontextsignal.",
       "last_verified": "2026-07-15"
@@ -434,8 +643,18 @@
       "run_schedule": "first_week_of_month",
       "access": "web",
       "max_grade": "A",
-      "signals": ["New service request", "Transmission upgrade", "Queue", "Site control"],
-      "search_hints": ["large load", "new service request", "queue", "substation"],
+      "signals": [
+        "New service request",
+        "Transmission upgrade",
+        "Queue",
+        "Site control"
+      ],
+      "search_hints": [
+        "large load",
+        "new service request",
+        "queue",
+        "substation"
+      ],
       "use_for": "Fruehe Strom- und Netzausbau-Signale in einer zentralen US-Datacenter-Region.",
       "caveat": "Nicht alle Queue-Eintraege nennen Endkunden oder AI-Zweck.",
       "last_verified": "2026-07-15"
@@ -453,8 +672,20 @@
       "run_schedule": "first_week_of_month",
       "access": "download",
       "max_grade": "A",
-      "signals": ["Grid planning", "Load", "Transmission", "Resource adequacy", "Interconnection"],
-      "search_hints": ["large load", "data center", "planning", "transmission", "interconnection"],
+      "signals": [
+        "Grid planning",
+        "Load",
+        "Transmission",
+        "Resource adequacy",
+        "Interconnection"
+      ],
+      "search_hints": [
+        "large load",
+        "data center",
+        "planning",
+        "transmission",
+        "interconnection"
+      ],
       "use_for": "Texas-Netz- und Energieprojekte sowie Anschlussrisiken verfolgen.",
       "caveat": "Oeffentliche Reports anonymisieren oder aggregieren grosse Verbraucher teilweise.",
       "last_verified": "2026-07-15"
@@ -472,8 +703,19 @@
       "run_schedule": "first_week_of_month",
       "access": "web",
       "max_grade": "B",
-      "signals": ["Erdarbeiten", "Gebaeudehuelle", "Kuehlung", "Umspannwerk", "Flaechenfortschritt"],
-      "search_hints": ["project coordinates", "Sentinel-2", "compare dates", "cloud coverage"],
+      "signals": [
+        "Erdarbeiten",
+        "Gebaeudehuelle",
+        "Kuehlung",
+        "Umspannwerk",
+        "Flaechenfortschritt"
+      ],
+      "search_hints": [
+        "project coordinates",
+        "Sentinel-2",
+        "compare dates",
+        "cloud coverage"
+      ],
       "use_for": "Physischen Baufortschritt und Standortveraenderungen unabhaengig sichtbar machen.",
       "caveat": "Aufloesung, Bewoelkung und Bilddatum begrenzen Aussagen; kein Betriebsnachweis ohne weitere Evidenz.",
       "last_verified": "2026-07-15"
@@ -491,8 +733,18 @@
       "run_schedule": "every_week",
       "access": "download",
       "max_grade": "A",
-      "signals": ["Planning area", "Constraint", "Local authority", "Spatial planning data"],
-      "search_hints": ["data centre", "planning application", "local authority", "site"],
+      "signals": [
+        "Planning area",
+        "Constraint",
+        "Local authority",
+        "Spatial planning data"
+      ],
+      "search_hints": [
+        "data centre",
+        "planning application",
+        "local authority",
+        "site"
+      ],
       "use_for": "Raeumliche Planungsdaten und zustaendige Behoerden fuer UK-Projekte identifizieren.",
       "caveat": "Einzelne Bauantraege koennen weiterhin im lokalen Council-Portal liegen.",
       "last_verified": "2026-07-15"
@@ -510,8 +762,18 @@
       "run_schedule": "every_week",
       "access": "search",
       "max_grade": "A",
-      "signals": ["Environmental clearance", "Proposal", "Approval", "Compliance"],
-      "search_hints": ["data centre", "project proponent", "district", "environment clearance"],
+      "signals": [
+        "Environmental clearance",
+        "Proposal",
+        "Approval",
+        "Compliance"
+      ],
+      "search_hints": [
+        "data centre",
+        "project proponent",
+        "district",
+        "environment clearance"
+      ],
       "use_for": "Umwelt- und Genehmigungsstatus groesserer indischer Projekte pruefen.",
       "caveat": "Projektbezeichnungen und Antragsteller koennen von Marken- oder Campusnamen abweichen.",
       "last_verified": "2026-07-15"
@@ -529,8 +791,18 @@
       "run_schedule": "first_week_of_month",
       "access": "search",
       "max_grade": "A",
-      "signals": ["Impact assessment", "Project filing", "Public comments", "Decision"],
-      "search_hints": ["data centre", "energy project", "project proponent", "location"],
+      "signals": [
+        "Impact assessment",
+        "Project filing",
+        "Public comments",
+        "Decision"
+      ],
+      "search_hints": [
+        "data centre",
+        "energy project",
+        "project proponent",
+        "location"
+      ],
       "use_for": "Bundesrelevante kanadische Umwelt- und Infrastrukturverfahren pruefen.",
       "caveat": "Viele Rechenzentren fallen primaer unter Provinz- oder Kommunalverfahren.",
       "last_verified": "2026-07-15"
@@ -548,8 +820,18 @@
       "run_schedule": "first_week_of_month",
       "access": "search",
       "max_grade": "A",
-      "signals": ["Referral", "Assessment", "Decision", "Conditions"],
-      "search_hints": ["data centre", "project proponent", "location", "referral"],
+      "signals": [
+        "Referral",
+        "Assessment",
+        "Decision",
+        "Conditions"
+      ],
+      "search_hints": [
+        "data centre",
+        "project proponent",
+        "location",
+        "referral"
+      ],
       "use_for": "Bundesweite Umweltverfahren und Auflagen fuer australische Projekte pruefen.",
       "caveat": "State- und lokale Planning-Portale bleiben fuer viele Projekte die Hauptquelle.",
       "last_verified": "2026-07-15"
@@ -567,8 +849,18 @@
       "run_schedule": "every_week",
       "access": "web",
       "max_grade": "C",
-      "signals": ["Neue Facility", "AI Frontier Site", "Cloud Region", "Koordinaten"],
-      "search_hints": ["recently added", "AI frontier", "facility", "source"],
+      "signals": [
+        "Neue Facility",
+        "AI Frontier Site",
+        "Cloud Region",
+        "Koordinaten"
+      ],
+      "search_hints": [
+        "recently added",
+        "AI frontier",
+        "facility",
+        "source"
+      ],
       "use_for": "Breite Discovery und Lueckenvergleich gegen PeeringDB, Epoch AI und Provider-Regionen.",
       "caveat": "Aggregator; jeden relevanten Fund gegen die angegebene Originalquelle verifizieren.",
       "last_verified": "2026-07-15"
@@ -586,8 +878,19 @@
       "run_schedule": "every_week",
       "access": "web",
       "max_grade": "C",
-      "signals": ["Facility", "Operator", "Campus", "Adresse", "Service"],
-      "search_hints": ["new data center", "operator", "campus", "country"],
+      "signals": [
+        "Facility",
+        "Operator",
+        "Campus",
+        "Adresse",
+        "Service"
+      ],
+      "search_hints": [
+        "new data center",
+        "operator",
+        "campus",
+        "country"
+      ],
       "use_for": "Facility-Discovery und Betreiberabgleich ausserhalb der Frontier-AI-Auswahl.",
       "caveat": "Listings stammen teils von Betreibern und externen Quellen; Vollstaendigkeit und AI-Bezug separat pruefen.",
       "last_verified": "2026-07-15"
@@ -605,8 +908,19 @@
       "run_schedule": "every_week",
       "access": "web",
       "max_grade": "C",
-      "signals": ["Capex", "Projekt", "Landkauf", "Power contract", "Groundbreaking"],
-      "search_hints": ["new project", "capex", "groundbreaking", "power"],
+      "signals": [
+        "Capex",
+        "Projekt",
+        "Landkauf",
+        "Power contract",
+        "Groundbreaking"
+      ],
+      "search_hints": [
+        "new project",
+        "capex",
+        "groundbreaking",
+        "power"
+      ],
       "use_for": "US-Investitions- und Projektmeldungen als Discovery-Queue sammeln.",
       "caveat": "Aggregierte Capex-Summen und Projektzahlen nie ohne Einzelquellen uebernehmen.",
       "last_verified": "2026-07-15"
@@ -624,8 +938,18 @@
       "run_schedule": "every_week",
       "access": "web",
       "max_grade": "C",
-      "signals": ["Investment", "Announcement", "Operator", "Region"],
-      "search_hints": ["investment", "new data center", "country", "operator"],
+      "signals": [
+        "Investment",
+        "Announcement",
+        "Operator",
+        "Region"
+      ],
+      "search_hints": [
+        "investment",
+        "new data center",
+        "country",
+        "operator"
+      ],
       "use_for": "Neue Investitionsmeldungen entdecken und fuer Primaerquellen-Recherche priorisieren.",
       "caveat": "Nur Discovery; Methodik und Originalbelege fuer jeden Eintrag separat pruefen.",
       "last_verified": "2026-07-15"
@@ -643,8 +967,20 @@
       "run_schedule": "every_week",
       "access": "search",
       "max_grade": "B",
-      "signals": ["Ankuendigung", "Finanzierung", "Verzoegerung", "Absage", "Regulierung"],
-      "search_hints": ["AI data center", "hyperscaler capex", "power", "permit", "cancelled"],
+      "signals": [
+        "Ankuendigung",
+        "Finanzierung",
+        "Verzoegerung",
+        "Absage",
+        "Regulierung"
+      ],
+      "search_hints": [
+        "AI data center",
+        "hyperscaler capex",
+        "power",
+        "permit",
+        "cancelled"
+      ],
       "use_for": "Globale Unternehmens- und Politikmeldungen gegen Primaerquellen querpruefen.",
       "caveat": "Sekundaerquelle; fuer Statuswechsel nach Moeglichkeit Originaldokument nachziehen.",
       "last_verified": "2026-07-15"
@@ -662,8 +998,21 @@
       "run_schedule": "every_week",
       "access": "search",
       "max_grade": "B",
-      "signals": ["Projekt", "Expansion", "Utility", "Permit", "Go-live", "Absage"],
-      "search_hints": ["AI data center", "campus", "MW", "construction", "operational"],
+      "signals": [
+        "Projekt",
+        "Expansion",
+        "Utility",
+        "Permit",
+        "Go-live",
+        "Absage"
+      ],
+      "search_hints": [
+        "AI data center",
+        "campus",
+        "MW",
+        "construction",
+        "operational"
+      ],
       "use_for": "Fachmeldungen und lokale Originalquellen fuer neue Projekte finden.",
       "caveat": "Berichtete Werte auf Primaerquelle, Bezugsobjekt und Einheit zurueckverfolgen.",
       "last_verified": "2026-07-15"
@@ -681,8 +1030,20 @@
       "run_schedule": "every_week",
       "access": "search",
       "max_grade": "B",
-      "signals": ["Facility", "Netzwerk", "Cloud region", "Investment", "Expansion"],
-      "search_hints": ["AI data center", "hyperscale", "cloud region", "power", "campus"],
+      "signals": [
+        "Facility",
+        "Netzwerk",
+        "Cloud region",
+        "Investment",
+        "Expansion"
+      ],
+      "search_hints": [
+        "AI data center",
+        "hyperscale",
+        "cloud region",
+        "power",
+        "campus"
+      ],
       "use_for": "Netzwerk- und Datacenter-Fachmeldungen als Discovery und Cross-check.",
       "caveat": "Projektstatus und Investitionsumfang mit Primaerbelegen bestaetigen.",
       "last_verified": "2026-07-15"
@@ -700,8 +1061,18 @@
       "run_schedule": "first_week_after_quarter",
       "access": "web",
       "max_grade": "B",
-      "signals": ["Satellitenmethodik", "Baufortschritt", "Unsicherheit", "Permit-Abgleich"],
-      "search_hints": ["case study", "satellite imagery", "construction", "limitations"],
+      "signals": [
+        "Satellitenmethodik",
+        "Baufortschritt",
+        "Unsicherheit",
+        "Permit-Abgleich"
+      ],
+      "search_hints": [
+        "case study",
+        "satellite imagery",
+        "construction",
+        "limitations"
+      ],
       "use_for": "Satellitenbefunde methodisch einordnen und Ueberinterpretation vermeiden.",
       "caveat": "Methodikquelle, keine laufende vollstaendige Projektinventur.",
       "last_verified": "2026-07-15"
@@ -719,8 +1090,22 @@
       "run_schedule": "first_week_after_quarter",
       "access": "dynamic_search",
       "max_grade": "A",
-      "signals": ["Capex", "Kapazitaet", "Produktmix", "Auslastung", "Backlog", "Lieferzeit"],
-      "search_hints": ["earnings release", "prepared remarks", "capacity", "HBM", "CoWoS", "AI server backlog"],
+      "signals": [
+        "Capex",
+        "Kapazitaet",
+        "Produktmix",
+        "Auslastung",
+        "Backlog",
+        "Lieferzeit"
+      ],
+      "search_hints": [
+        "earnings release",
+        "prepared remarks",
+        "capacity",
+        "HBM",
+        "CoWoS",
+        "AI server backlog"
+      ],
       "use_for": "Produzentenrolle, Ausbauplaene und Kapazitaetssignale aus offiziellen Quartalsberichten erfassen.",
       "caveat": "Unternehmens-Guidance ist zukunftsgerichtet; Marktanteile, Knappheit und Preiseffekt separat belegen.",
       "last_verified": "2026-07-15"
@@ -738,8 +1123,19 @@
       "run_schedule": "every_week",
       "access": "search",
       "max_grade": "B",
-      "signals": ["DRAM contract price", "NAND contract price", "Client SSD", "Server DRAM", "HBM allocation"],
-      "search_hints": ["site:trendforce.com/presscenter DRAM price", "NAND price", "client SSD", "AI server demand"],
+      "signals": [
+        "DRAM contract price",
+        "NAND contract price",
+        "Client SSD",
+        "Server DRAM",
+        "HBM allocation"
+      ],
+      "search_hints": [
+        "site:trendforce.com/presscenter DRAM price",
+        "NAND price",
+        "client SSD",
+        "AI server demand"
+      ],
       "use_for": "Upstream-Preisdruck und dokumentierte Kapazitaetsverschiebungen zwischen Server- und Consumer-Segmenten verfolgen.",
       "caveat": "Prognosen und proprietaere Erhebungen sind Sekundaerevidenz; Ist-Preise im Retail-Korb separat messen.",
       "last_verified": "2026-07-15"
@@ -757,8 +1153,18 @@
       "run_schedule": "first_week_of_month",
       "access": "api",
       "max_grade": "A",
-      "signals": ["Producer price index", "Semiconductor manufacturing", "Monatswert", "Revision", "Preliminary"],
-      "search_hints": ["PCU334413334413", "BLS public data API", "semiconductor PPI"],
+      "signals": [
+        "Producer price index",
+        "Semiconductor manufacturing",
+        "Monatswert",
+        "Revision",
+        "Preliminary"
+      ],
+      "search_hints": [
+        "PCU334413334413",
+        "BLS public data API",
+        "semiconductor PPI"
+      ],
       "use_for": "Breiten amtlichen Upstream-Preisverlauf als Gegenstueck zu DRAM-/NAND-Branchenprognosen fuehren.",
       "caveat": "US-Erzeugerpreise fuer die gesamte Halbleiterindustrie sind kein direkter globaler DRAM-, NAND- oder Retailpreis.",
       "last_verified": "2026-07-15"
@@ -776,8 +1182,17 @@
       "run_schedule": "first_week_of_month",
       "access": "download",
       "max_grade": "A",
-      "signals": ["Qualitaetsbereinigter Preisindex", "Monatsrate", "Jahresrate", "Methodenaenderung"],
-      "search_hints": ["BLS CPI computers peripherals", "CU series", "quality adjustment"],
+      "signals": [
+        "Qualitaetsbereinigter Preisindex",
+        "Monatsrate",
+        "Jahresrate",
+        "Methodenaenderung"
+      ],
+      "search_hints": [
+        "BLS CPI computers peripherals",
+        "CU series",
+        "quality adjustment"
+      ],
       "use_for": "Offiziellen qualitaetsbereinigten Computerpreisindex als langsamen Kontrollindikator verwenden.",
       "caveat": "Breite Kategorie und Qualitaetsbereinigung; bildet einzelne GPU-, DRAM- oder SSD-Preisspitzen nicht direkt ab.",
       "last_verified": "2026-07-15"
@@ -795,8 +1210,17 @@
       "run_schedule": "first_week_of_month",
       "access": "api",
       "max_grade": "A",
-      "signals": ["HICP Teilindex", "Monatsrate", "Jahresrate", "Laendervergleich"],
-      "search_hints": ["prc_hicp_ecoicop2", "personal computers", "information processing equipment"],
+      "signals": [
+        "HICP Teilindex",
+        "Monatsrate",
+        "Jahresrate",
+        "Laendervergleich"
+      ],
+      "search_hints": [
+        "prc_hicp_ecoicop2",
+        "personal computers",
+        "information processing equipment"
+      ],
       "use_for": "Europaeischen Inflations- und Laenderkontext fuer Consumer-Elektronik kontrollieren.",
       "caveat": "Aggregierter qualitaetsbereinigter Index; nicht als Ersatz fuer einen komponentenspezifischen Retail-Preisindex verwenden.",
       "last_verified": "2026-07-15"
@@ -814,8 +1238,20 @@
       "run_schedule": "every_week",
       "access": "dynamic_search",
       "max_grade": "B",
-      "signals": ["Strassenpreis", "UVP", "Lagerstatus", "Lieferzeit", "Haendlerabdeckung"],
-      "search_hints": ["GPU price", "DDR5 kit price", "NVMe SSD price", "desktop CPU price", "in stock"],
+      "signals": [
+        "Strassenpreis",
+        "UVP",
+        "Lagerstatus",
+        "Lieferzeit",
+        "Haendlerabdeckung"
+      ],
+      "search_hints": [
+        "GPU price",
+        "DDR5 kit price",
+        "NVMe SSD price",
+        "desktop CPU price",
+        "in stock"
+      ],
       "use_for": "Tatsaechliche Preise und Verfuegbarkeit eines stabilen, leistungsnormalisierten SKU-Warenkorbs messen.",
       "caveat": "Nur mit erlaubtem Zugriff, Zeitstempel, SKU-Matching und mindestens zwei unabhaengigen Haendlern; kein unkontrolliertes Scraping.",
       "last_verified": "2026-07-15"
@@ -833,10 +1269,100 @@
       "run_schedule": "every_week",
       "access": "api",
       "max_grade": "A",
-      "signals": ["EUR/USD", "Wochenveraenderung", "13-Wochen-Trend"],
-      "search_hints": ["EXR D USD EUR", "ECB Data Portal API"],
+      "signals": [
+        "EUR/USD",
+        "Wochenveraenderung",
+        "13-Wochen-Trend"
+      ],
+      "search_hints": [
+        "EXR D USD EUR",
+        "ECB Data Portal API"
+      ],
       "use_for": "Waehrungseffekte von globalen Hardwarepreisbewegungen im Euro-Retailmarkt trennen.",
       "caveat": "Wechselkurse erklaeren keine Produktknappheit und werden nur als Kontrollvariable verwendet.",
+      "last_verified": "2026-07-15"
+    },
+    {
+      "id": "ebay-browse-api",
+      "name": "eBay Browse API",
+      "publisher": "eBay",
+      "category": "retail_price",
+      "geography": "DE/EU/US",
+      "queue": "hard_reference",
+      "priority": "core",
+      "recommended_cadence": "weekly",
+      "run_schedule": "every_week",
+      "access": "api",
+      "url": "https://developer.ebay.com/api-docs/buy/static/api-browse.html",
+      "max_grade": "A",
+      "use_for": "Aktuelle Neuware-Angebote, Bruttopreise und Verfuegbarkeit in unterstuetzten eBay-Marktplatzlaendern.",
+      "caveat": "Marketplace ist kein einzelner Haendler; Seller-, Zustands- und Versandfilter muessen versioniert werden. Keine Historie ohne eigene Snapshots.",
+      "signals": [
+        "sku_price",
+        "availability",
+        "shipping"
+      ],
+      "search_hints": [
+        "GTIN/MPN",
+        "FIXED_PRICE",
+        "condition NEW",
+        "marketplace DE"
+      ],
+      "last_verified": "2026-07-15"
+    },
+    {
+      "id": "bestbuy-products-api",
+      "name": "Best Buy Products API",
+      "publisher": "Best Buy",
+      "category": "retail_price",
+      "geography": "USA",
+      "queue": "hard_reference",
+      "priority": "supporting",
+      "recommended_cadence": "weekly",
+      "run_schedule": "every_week",
+      "access": "api",
+      "url": "https://developer.bestbuy.com/apis",
+      "max_grade": "A",
+      "use_for": "Unabhaengiger US-Retailkanal mit Preis, Verfuegbarkeit und Produktstammdaten.",
+      "caveat": "Nur USA; nicht direkt auf den deutschen Markt uebertragbar.",
+      "signals": [
+        "sku_price",
+        "availability",
+        "catalog_history"
+      ],
+      "search_hints": [
+        "GPU SKU",
+        "DDR5 kit",
+        "NVMe SSD",
+        "desktop CPU"
+      ],
+      "last_verified": "2026-07-15"
+    },
+    {
+      "id": "keepa-api",
+      "name": "Keepa API",
+      "publisher": "Keepa",
+      "category": "retail_price",
+      "geography": "Amazon-Marktplatzlaender",
+      "queue": "hard_reference",
+      "priority": "core",
+      "recommended_cadence": "weekly",
+      "run_schedule": "every_week",
+      "access": "api",
+      "url": "https://keepa.com/#!api",
+      "max_grade": "B",
+      "use_for": "Historische Amazon-Preis- und Verfuegbarkeitsreihen als schneller Backfill fuer den Retail-Warenkorb.",
+      "caveat": "Kostenpflichtiger Drittanbieter, Amazon-zentriert; Lizenz, Revisionen und Angebotsarten muessen dokumentiert werden.",
+      "signals": [
+        "historical_sku_price",
+        "buy_box",
+        "availability"
+      ],
+      "search_hints": [
+        "Amazon DE ASIN",
+        "price history",
+        "stock history"
+      ],
       "last_verified": "2026-07-15"
     }
   ]
