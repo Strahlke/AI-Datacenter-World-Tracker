@@ -1,0 +1,90 @@
+{
+  "snapshot_date": "2026-07-15",
+  "scope_de": "Oeffentlich angekuendigte Dachprogramme und Investitionsrahmen. Nicht additiv zu einzelnen Standorten; Originalwaehrungen bleiben erhalten.",
+  "scope_en": "Public umbrella programmes and investment envelopes. Not additive to individual sites; original currencies are retained.",
+  "programs": [
+    {
+      "id": "stargate-us",
+      "name": "Stargate US",
+      "geography": "USA",
+      "iso3": "USA",
+      "status": "active",
+      "period": "2025–2029",
+      "commitment": {
+        "value_bn": 500,
+        "currency": "USD",
+        "value_type": "ceiling"
+      },
+      "dedicated_capacity_gw": 10,
+      "includes_project_ids": [
+        "openai-stargate-abilene",
+        "stargate-shackelford-texas",
+        "stargate-dona-ana-new-mexico",
+        "stargate-vantage-wisconsin",
+        "stargate-lordstown-ohio",
+        "stargate-milam-texas"
+      ],
+      "countable_with_sites": false,
+      "double_count_group": "stargate-us",
+      "note_de": "Bis zu 500 Mrd. USD und 10 GW; Standortanteile sind nicht offengelegt.",
+      "note_en": "Up to USD 500bn and 10 GW; site allocations are not disclosed.",
+      "source": {
+        "publisher": "OpenAI",
+        "title": "Announcing The Stargate Project",
+        "url": "https://openai.com/index/announcing-the-stargate-project/"
+      }
+    },
+    {
+      "id": "eu-investai",
+      "name": "InvestAI / EU AI Gigafactory Fund",
+      "geography": "Europaeische Union",
+      "iso3": null,
+      "status": "active",
+      "period": "2025–",
+      "commitment": {
+        "value_bn": 200,
+        "currency": "EUR",
+        "value_type": "mobilisation_target"
+      },
+      "dedicated_subfund": {
+        "value_bn": 20,
+        "currency": "EUR"
+      },
+      "includes_project_ids": [],
+      "countable_with_sites": false,
+      "double_count_group": "eu-investai",
+      "note_de": "200 Mrd. EUR Mobilisierungsziel fuer AI insgesamt; darin 20 Mrd. EUR fuer bis zu fuenf AI-Gigafactories. Noch keine Standortallokation.",
+      "note_en": "EUR 200bn AI mobilisation target, including EUR 20bn for up to five AI gigafactories. No site allocation yet.",
+      "source": {
+        "publisher": "European Commission",
+        "title": "EU launches InvestAI initiative",
+        "url": "https://ec.europa.eu/commission/presscorner/api/files/document/print/en/ip_25_467/IP_25_467_EN.pdf"
+      }
+    },
+    {
+      "id": "microsoft-australia",
+      "name": "Microsoft Australia AI infrastructure programme",
+      "geography": "Australien",
+      "iso3": "AUS",
+      "status": "active",
+      "period": "2025–2029",
+      "commitment": {
+        "value_bn": 25,
+        "currency": "AUD",
+        "value_type": "capex_and_opex"
+      },
+      "includes_project_ids": [
+        "microsoft-australia-program"
+      ],
+      "countable_with_sites": false,
+      "double_count_group": "microsoft-australia",
+      "note_de": "25 Mrd. AUD CapEx und OpEx; kein einzelner Campuswert.",
+      "note_en": "AUD 25bn capex and opex; not an individual campus value.",
+      "source": {
+        "publisher": "Microsoft",
+        "title": "Microsoft Australia AI investment",
+        "url": "https://news.microsoft.com/en-au/features/microsoft-to-invest-a25-billion-to-expand-australias-ai-infrastructure/"
+      }
+    }
+  ]
+}
