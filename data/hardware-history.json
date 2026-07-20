@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-07-15",
+  "snapshot_date": "2026-07-20",
   "version": 1,
   "period_start": "2025-07",
   "period_end": "2026-06",
@@ -356,7 +356,7 @@
     { "id": "eurostat-hicp-computers", "grade": "A", "publisher": "Eurostat", "url": "https://ec.europa.eu/eurostat/web/hicp/information-data", "last_checked": "2026-07-15" },
     { "id": "bls-semiconductor-ppi", "grade": "A", "publisher": "U.S. Bureau of Labor Statistics", "url": "https://www.bls.gov/ppi/data-retrieval-guide/home.htm", "last_checked": "2026-07-15" },
     { "id": "sec-xbrl-companyfacts", "grade": "A", "publisher": "U.S. Securities and Exchange Commission", "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces", "last_checked": "2026-07-15" },
-    { "id": "ecb-reference-rates", "grade": "A", "publisher": "European Central Bank", "url": "https://data.ecb.europa.eu/data/datasets/EXR/EXR.M.USD.EUR.SP00.A", "last_checked": "2026-07-15" },
-    { "id": "trendforce-memory-pricing", "grade": "B", "publisher": "TrendForce", "url": "https://www.trendforce.com/presscenter/news/20260331-12995.html", "last_checked": "2026-07-15" }
+    { "id": "ecb-reference-rates", "grade": "A", "publisher": "European Central Bank", "url": "https://data.ecb.europa.eu/data/datasets/EXR/EXR.M.USD.EUR.SP00.A", "last_checked": "2026-07-20" },
+    { "id": "trendforce-memory-pricing", "grade": "B", "publisher": "TrendForce", "url": "https://www.trendforce.com/presscenter/news/20260331-12995.html", "last_checked": "2026-07-20" }
   ]
 }

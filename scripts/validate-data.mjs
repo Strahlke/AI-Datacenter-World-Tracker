@@ -72,6 +72,10 @@ function approximatelyEqual(actual, expected, tolerance = 0.000001) {
 
 requireValue(isoDate.test(projectsPayload.snapshot_date || ""), "projects: snapshot_date muss YYYY-MM-DD sein");
 requireValue(Array.isArray(projectsPayload.projects) && projectsPayload.projects.length > 0, "projects: projects muss ein nicht-leeres Array sein");
+requireValue(projectsPayload.method && typeof projectsPayload.method === "object" && !Array.isArray(projectsPayload.method), "projects: method muss ein Objekt sein");
+requireValue(typeof projectsPayload.method?.status_method_de === "string" && projectsPayload.method.status_method_de.length > 0, "projects: deutsche Statusmethode fehlt");
+requireValue(typeof projectsPayload.method?.status_method_en === "string" && projectsPayload.method.status_method_en.length > 0, "projects: englische Statusmethode fehlt");
+requireValue(!Object.keys(projectsPayload.method || {}).some((key) => /^\d+$/.test(key)), "projects: method enthaelt versehentlich Zeichenindex-Schluessel");
 checkUnique(projectsPayload.projects || [], "projects");
 
 for (const project of projectsPayload.projects || []) {

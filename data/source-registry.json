@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-07-15",
+  "snapshot_date": "2026-07-20",
   "version": 1,
   "scope": "Recherchequellen fuer grosse, oeffentlich dokumentierte KI-Rechenzentren und AI-Factory-Programme weltweit.",
   "method": {
@@ -107,7 +107,7 @@
       ],
       "use_for": "Bestehende Facilities und Netzanschluesse entdecken oder gegen Betreiberangaben abgleichen.",
       "caveat": "Operator- und Community-Daten; beweist weder AI-Nutzung noch Baustatus.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "epoch-ai-data-centers",
@@ -138,7 +138,7 @@
       ],
       "use_for": "Frontier-Cluster entdecken sowie Baufortschritt, Leistungs- und Kostenschaetzungen plausibilisieren.",
       "caveat": "Schaetzungen und abgeleitete Werte bleiben Sekundaerevidenz; Methodik und Record-Sources mitpruefen.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "aws-global-infrastructure",
@@ -167,7 +167,7 @@
       ],
       "use_for": "Neue oder gestartete AWS-Regionen und grobe regionale Infrastruktur-Signale.",
       "caveat": "Regionen koennen mehrere nicht offengelegte Standorte umfassen; kein Beleg fuer exakte Adresse oder AI-spezifische Nutzung.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "azure-geographies",
@@ -196,7 +196,7 @@
       ],
       "use_for": "Neue und gestartete Azure-Regionen sowie regionale Ausbauhinweise.",
       "caveat": "Regionsebene ist keine Standort- oder AI-Kapazitaetsbestaetigung.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "google-cloud-locations",
@@ -225,7 +225,7 @@
       ],
       "use_for": "Regionale Google-Cloud-Expansion und neue Standortsignale.",
       "caveat": "Cloud-Regionen sind nur ein Fruehsignal; exakte Facility und AI-Zweck separat belegen.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "oracle-cloud-regions",
@@ -254,7 +254,7 @@
       ],
       "use_for": "Oracle-Regionen und moegliche AI-Infrastruktur-Expansion entdecken.",
       "caveat": "Oeffentliche Regionstabellen belegen keine exakten Standorte oder AI-Auslastung.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "alibaba-cloud-locations",
@@ -283,7 +283,7 @@
       ],
       "use_for": "Neue, gestartete oder geschlossene Alibaba-Cloud-Regionen erkennen.",
       "caveat": "Regionsebene ist kein Beleg fuer einen einzelnen AI-Campus.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "operator-primary-disclosures",
@@ -316,7 +316,7 @@
       ],
       "use_for": "Projekt, Umfang, Partner, Investition, Baseline und Betriebsnachweis aus erster Hand.",
       "caveat": "Marketingaussagen koennen Programm-, Campus- und Gebaeudeumfang vermischen; jede Zahl auf Bezugsobjekt und Zeitraum pruefen.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "local-planning-permits",
@@ -349,7 +349,7 @@
       ],
       "use_for": "Projektstandort, beantragten Umfang, Genehmigungsphase, Auflagen, Pausierung oder Ruecknahme belegen.",
       "caveat": "Portale sind dezentral; Suchbegriffe muessen Betreiber, Projektgesellschaft, Adresse und Flurstueck abdecken.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "local-grid-utility-filings",
@@ -381,7 +381,7 @@
       ],
       "use_for": "Strombedarf, Anschlussreife, Engpaesse und reale Inbetriebnahme-Voraussetzungen pruefen.",
       "caveat": "Projekt- oder Kundennamen koennen anonymisiert sein; Standort und Lastprofil nur mit weiteren Quellen zuordnen.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "local-land-property-records",
@@ -475,7 +475,7 @@
       ],
       "use_for": "Capex, finanzielle Verpflichtungen, Eigentum und Risikofaktoren belegen.",
       "caveat": "Unternehmensweite Capex-Angaben nicht automatisch einzelnen Projekten zurechnen.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "sec-xbrl-companyfacts",
@@ -505,7 +505,7 @@
       ],
       "use_for": "Quartalsweise Cash-PP&E-Ausgaben grosser Hyperscaler reproduzierbar aus standardisierten SEC-XBRL-Fakten ableiten.",
       "caveat": "Konzernweite PP&E-Ausgaben umfassen mehr als AI-Rechenzentren; Cash-Flow-Fakten und Fiskalquartale muessen vor der Aggregation auf Kalenderquartale abgegrenzt werden.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "uk-companies-house",
@@ -566,7 +566,7 @@
       ],
       "use_for": "US-Umweltgenehmigungen und Facility-Status nach Standort oder Betreiber durchsuchen.",
       "caveat": "Abdeckung und Aktualitaet variieren nach Programm und zustaendiger Behoerde.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "ferc-elibrary",
@@ -597,7 +597,7 @@
       ],
       "use_for": "Bundesweite Energie- und Transmission-Filings als Projekt- oder Engpasssignal.",
       "caveat": "Dockets koennen technische Projektnamen statt oeffentlicher Campusnamen verwenden.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "entsoe-transparency",
@@ -718,7 +718,7 @@
       ],
       "use_for": "Physischen Baufortschritt und Standortveraenderungen unabhaengig sichtbar machen.",
       "caveat": "Aufloesung, Bewoelkung und Bilddatum begrenzen Aussagen; kein Betriebsnachweis ohne weitere Evidenz.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "uk-planning-data",
@@ -747,7 +747,7 @@
       ],
       "use_for": "Raeumliche Planungsdaten und zustaendige Behoerden fuer UK-Projekte identifizieren.",
       "caveat": "Einzelne Bauantraege koennen weiterhin im lokalen Council-Portal liegen.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "india-parivesh",
@@ -776,7 +776,7 @@
       ],
       "use_for": "Umwelt- und Genehmigungsstatus groesserer indischer Projekte pruefen.",
       "caveat": "Projektbezeichnungen und Antragsteller koennen von Marken- oder Campusnamen abweichen.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "canada-impact-assessment-registry",
@@ -863,7 +863,7 @@
       ],
       "use_for": "Breite Discovery und Lueckenvergleich gegen PeeringDB, Epoch AI und Provider-Regionen.",
       "caveat": "Aggregator; jeden relevanten Fund gegen die angegebene Originalquelle verifizieren.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "datacentermap",
@@ -893,7 +893,7 @@
       ],
       "use_for": "Facility-Discovery und Betreiberabgleich ausserhalb der Frontier-AI-Auswahl.",
       "caveat": "Listings stammen teils von Betreibern und externen Quellen; Vollstaendigkeit und AI-Bezug separat pruefen.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "valueaddvc-ai-buildout",
@@ -923,7 +923,7 @@
       ],
       "use_for": "US-Investitions- und Projektmeldungen als Discovery-Queue sammeln.",
       "caveat": "Aggregierte Capex-Summen und Projektzahlen nie ohne Einzelquellen uebernehmen.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "ai-datacenter-index",
@@ -952,7 +952,7 @@
       ],
       "use_for": "Neue Investitionsmeldungen entdecken und fuer Primaerquellen-Recherche priorisieren.",
       "caveat": "Nur Discovery; Methodik und Originalbelege fuer jeden Eintrag separat pruefen.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "reuters-technology",
@@ -983,7 +983,7 @@
       ],
       "use_for": "Globale Unternehmens- und Politikmeldungen gegen Primaerquellen querpruefen.",
       "caveat": "Sekundaerquelle; fuer Statuswechsel nach Moeglichkeit Originaldokument nachziehen.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "datacenter-dynamics",
@@ -1015,7 +1015,7 @@
       ],
       "use_for": "Fachmeldungen und lokale Originalquellen fuer neue Projekte finden.",
       "caveat": "Berichtete Werte auf Primaerquelle, Bezugsobjekt und Einheit zurueckverfolgen.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "capacity-media",
@@ -1046,7 +1046,7 @@
       ],
       "use_for": "Netzwerk- und Datacenter-Fachmeldungen als Discovery und Cross-check.",
       "caveat": "Projektstatus und Investitionsumfang mit Primaerbelegen bestaetigen.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "fas-hyperscale-satellite-method",
@@ -1108,7 +1108,7 @@
       ],
       "use_for": "Produzentenrolle, Ausbauplaene und Kapazitaetssignale aus offiziellen Quartalsberichten erfassen.",
       "caveat": "Unternehmens-Guidance ist zukunftsgerichtet; Marktanteile, Knappheit und Preiseffekt separat belegen.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "trendforce-memory-pricing",
@@ -1138,7 +1138,7 @@
       ],
       "use_for": "Upstream-Preisdruck und dokumentierte Kapazitaetsverschiebungen zwischen Server- und Consumer-Segmenten verfolgen.",
       "caveat": "Prognosen und proprietaere Erhebungen sind Sekundaerevidenz; Ist-Preise im Retail-Korb separat messen.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "bls-semiconductor-ppi",
@@ -1167,7 +1167,7 @@
       ],
       "use_for": "Breiten amtlichen Upstream-Preisverlauf als Gegenstueck zu DRAM-/NAND-Branchenprognosen fuehren.",
       "caveat": "US-Erzeugerpreise fuer die gesamte Halbleiterindustrie sind kein direkter globaler DRAM-, NAND- oder Retailpreis.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "bls-computer-cpi",
@@ -1254,7 +1254,7 @@
       ],
       "use_for": "Tatsaechliche Preise und Verfuegbarkeit eines stabilen, leistungsnormalisierten SKU-Warenkorbs messen.",
       "caveat": "Nur oeffentliche, reproduzierbare Quellen ohne Registrierung verwenden; Zeitstempel, exakte MPNs, Preisbasis, Angebotsstatus und Revisionen dokumentieren.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "geizhals-public-price-history",
@@ -1283,7 +1283,7 @@
       ],
       "use_for": "365-Tage-Backfill der 40 festen MPNs und vier aktuellen Warenkoerbe ohne Registrierung oder API-Schluessel.",
       "caveat": "Der Wunschlistenverlauf wird fuer die heutige feste Korbzusammensetzung rueckgerechnet und ist kein Archiv frueherer Wunschlisten-Mitgliedschaften. Fehlende Angebote und technische Ausreisser muessen sichtbar bleiben.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "ecb-reference-rates",
@@ -1309,7 +1309,7 @@
       ],
       "use_for": "Waehrungseffekte von globalen Hardwarepreisbewegungen im Euro-Retailmarkt trennen.",
       "caveat": "Wechselkurse erklaeren keine Produktknappheit und werden nur als Kontrollvariable verwendet.",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "geizhals-wishlist-gpu",
@@ -1336,7 +1336,7 @@
         "lowest listed price",
         "offer count"
       ],
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "geizhals-wishlist-ddr5",
@@ -1363,7 +1363,7 @@
         "EUR per GiB",
         "offer count"
       ],
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "geizhals-wishlist-nvme",
@@ -1390,7 +1390,7 @@
         "EUR per TB",
         "offer count"
       ],
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
     },
     {
       "id": "geizhals-wishlist-cpu",
@@ -1417,7 +1417,152 @@
         "boxed CPU",
         "offer count"
       ],
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-20"
+    },
+    {
+      "id": "crusoe-newsroom",
+      "name": "Crusoe Newsroom",
+      "publisher": "Crusoe",
+      "url": "https://www.crusoe.ai/resources/newsroom",
+      "geography": "Global / USA",
+      "signals": [
+        "new AI campuses",
+        "construction milestones",
+        "energisation",
+        "capacity and customers"
+      ],
+      "search_hints": [
+        "AI factory",
+        "data center",
+        "groundbreaking",
+        "energized"
+      ],
+      "use_for": "Crusoe-Standorte, Kapazitaets- und Betriebsmeilensteine direkt beim Betreiber pruefen.",
+      "caveat": "Unternehmensquelle; Zieldaten bleiben bis zu physischem Vergleichsmeilenstein nicht als on_track bewertet.",
+      "queue": "hard_reference",
+      "category": "operator_primary_disclosure",
+      "priority": "core",
+      "recommended_cadence": "weekly",
+      "run_schedule": "every_week",
+      "access": "web",
+      "max_grade": "A",
+      "last_verified": "2026-07-20"
+    },
+    {
+      "id": "nscale-newsroom",
+      "name": "Nscale Newsroom und technische Updates",
+      "publisher": "Nscale",
+      "url": "https://www.nscale.com/newsroom",
+      "geography": "Global",
+      "signals": [
+        "GPU deployments",
+        "production validation",
+        "data center construction",
+        "customer contracts"
+      ],
+      "search_hints": [
+        "data center",
+        "GB300",
+        "operational",
+        "deployment"
+      ],
+      "use_for": "Nscale-Facilities und getrennte AI-Compute-Deployments anhand technischer Betriebsnachweise pruefen.",
+      "caveat": "Servicevertraege und Standortinvestitionen getrennt halten; Flottenaussagen nicht automatisch einem Campus zurechnen.",
+      "queue": "hard_reference",
+      "category": "operator_primary_disclosure",
+      "priority": "core",
+      "recommended_cadence": "weekly",
+      "run_schedule": "every_week",
+      "access": "web",
+      "max_grade": "A",
+      "last_verified": "2026-07-20"
+    },
+    {
+      "id": "elea-data-centers",
+      "name": "Elea Data Centers",
+      "publisher": "Elea Data Centers",
+      "url": "https://eleadatacenters.com/en/news/",
+      "geography": "Brasilien / Lateinamerika",
+      "signals": [
+        "AI facilities",
+        "power capacity",
+        "cooling and water",
+        "target live date"
+      ],
+      "search_hints": [
+        "AI",
+        "data center",
+        "MW",
+        "Belém"
+      ],
+      "use_for": "Elea-Standorte und AI-spezifische Kapazitaet in Lateinamerika pruefen.",
+      "caveat": "Betreiberangaben zu Ausbaupotenzial nicht mit fest zugesagter Erstphase gleichsetzen.",
+      "queue": "hard_reference",
+      "category": "operator_primary_disclosure",
+      "priority": "core",
+      "recommended_cadence": "weekly",
+      "run_schedule": "every_week",
+      "access": "web",
+      "max_grade": "A",
+      "last_verified": "2026-07-20"
+    },
+    {
+      "id": "hcltech-press-releases",
+      "name": "HCLTech Press Releases",
+      "publisher": "HCLTech",
+      "url": "https://www.hcltech.com/press-release",
+      "geography": "Global / Indien",
+      "signals": [
+        "AI data center investment",
+        "capacity",
+        "subsidiaries",
+        "customer deployments"
+      ],
+      "search_hints": [
+        "AI data center",
+        "MW",
+        "investment",
+        "subsidiary"
+      ],
+      "use_for": "HCLTechs neues standortoffenes AI-Rechenzentrumsprogramm und spaetere Standortallokationen pruefen.",
+      "caveat": "Nationalprogramm bleibt von konkreten Facilities getrennt, bis Standorte und Projektbudgets offengelegt sind.",
+      "queue": "hard_reference",
+      "category": "operator_primary_disclosure",
+      "priority": "core",
+      "recommended_cadence": "weekly",
+      "run_schedule": "every_week",
+      "access": "web",
+      "max_grade": "A",
+      "last_verified": "2026-07-20"
+    },
+    {
+      "id": "g42-news",
+      "name": "G42 News",
+      "publisher": "G42",
+      "url": "https://www.g42.ai/resources/news",
+      "geography": "UAE / Global",
+      "signals": [
+        "Stargate UAE",
+        "export approvals",
+        "deployment milestones",
+        "operational compute"
+      ],
+      "search_hints": [
+        "Stargate",
+        "data center",
+        "advanced computing",
+        "operational"
+      ],
+      "use_for": "Stargate UAE und G42/Core42-Deployments samt regulatorischen Freigaben pruefen.",
+      "caveat": "Regulatorische Chipfreigabe ist ein Enabler, aber kein physischer Bau- oder Betriebsnachweis.",
+      "queue": "hard_reference",
+      "category": "operator_primary_disclosure",
+      "priority": "core",
+      "recommended_cadence": "weekly",
+      "run_schedule": "every_week",
+      "access": "web",
+      "max_grade": "A",
+      "last_verified": "2026-07-20"
     }
   ]
 }

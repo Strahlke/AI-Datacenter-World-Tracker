@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-07-15",
+  "snapshot_date": "2026-07-20",
   "version": 1,
   "scope": "Wesentliche Produzenten und Engpassstufen zwischen AI-Rechenzentrumsnachfrage und Consumer-Hardware. Die Liste ist kuratiert, nicht vollstaendig und enthaelt bewusst keine ungesicherten Marktanteile.",
   "method": {
@@ -309,7 +309,7 @@
       "signals_to_track": ["Cloud-Networking-Umsatz", "AI-Server-Ramp", "Werksausbau", "Kundenprogramme"],
       "primary_source_url": "https://www.honhai.com/en-us/investor-relations",
       "evidence_grade": "A",
-      "last_checked": "2026-07-15"
+      "last_checked": "2026-07-20"
     },
     {
       "id": "vertiv",

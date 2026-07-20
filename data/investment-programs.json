@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-07-15",
+  "snapshot_date": "2026-07-20",
   "scope_de": "Oeffentlich angekuendigte Dachprogramme und Investitionsrahmen. Nicht additiv zu einzelnen Standorten; Originalwaehrungen bleiben erhalten.",
   "scope_en": "Public umbrella programmes and investment envelopes. Not additive to individual sites; original currencies are retained.",
   "programs": [
@@ -84,6 +84,33 @@
         "publisher": "Microsoft",
         "title": "Microsoft Australia AI investment",
         "url": "https://news.microsoft.com/en-au/features/microsoft-to-invest-a25-billion-to-expand-australias-ai-infrastructure/"
+      }
+    },
+    {
+      "id": "hcltech-india-ai-dc",
+      "name": "HCLTech India AI data center programme",
+      "geography": "Indien",
+      "iso3": "IND",
+      "status": "active",
+      "period": "2026–",
+      "commitment": {
+        "value_bn": 35,
+        "currency": "INR",
+        "value_type": "ceiling"
+      },
+      "approximate_usd_bn": 0.37,
+      "dedicated_capacity_gw": 0.05,
+      "includes_project_ids": [
+        "hcltech-india-ai-dc-program"
+      ],
+      "countable_with_sites": false,
+      "double_count_group": "hcltech-india-ai-dc",
+      "note_de": "Bis zu 35 Mrd. INR bzw. rund 370 Mio. USD und 50 MW; noch keine Standortallokation. Nicht mit spaeteren Facilities addieren.",
+      "note_en": "Up to INR 35bn, approximately USD 370m, and 50 MW; no site allocation yet. Do not add to later facilities.",
+      "source": {
+        "publisher": "HCLTech",
+        "title": "HCLTech launches full-stack AI offering powered by new AI data center investment",
+        "url": "https://www.hcltech.com/press-releases/hcltech-launches-full-stack-ai-offering-powered-new-ai-data-center-investment"
       }
     }
   ]

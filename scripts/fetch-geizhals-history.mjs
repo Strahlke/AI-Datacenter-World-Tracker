@@ -2,7 +2,7 @@ import { readFile, writeFile } from "node:fs/promises";
 
 const ENDPOINT = "https://geizhals.de/api/gh0/price_history";
 const DAYS = 365;
-const CONCURRENCY = 4;
+const CONCURRENCY = 2;
 const BASELINE_DAYS = 31;
 const MIN_BASELINE_OBSERVATIONS = 14;
 const MAX_FORWARD_FILL_DAYS = 7;
@@ -44,8 +44,12 @@ async function requestHistory({ id, itemcount, referer }, attempt = 1) {
   });
 
   if (!response.ok) {
-    if (attempt < 3 && response.status >= 500) {
-      await sleep(750 * attempt);
+    if (attempt < 5 && (response.status === 429 || response.status >= 500)) {
+      const retryAfter = Number(response.headers.get("retry-after"));
+      const backoff = Number.isFinite(retryAfter) && retryAfter > 0
+        ? retryAfter * 1000
+        : 1000 * (2 ** (attempt - 1));
+      await sleep(backoff);
       return requestHistory({ id, itemcount, referer }, attempt + 1);
     }
     throw new Error(`Geizhals price history returned ${response.status}: ${await response.text()}`);
