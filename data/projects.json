@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-07-20",
+  "snapshot_date": "2026-07-27",
   "scope": "Globaler, quellenbelegter Bestand grosser AI-Rechenzentren, Campusprogramme und klar gekennzeichneter AI-Compute-Deployments. Keine Vollerhebung; Programme und einzelne Standorte werden nicht addiert.",
   "method": {
     "status_method_de": "Status nur nach oeffentlich belegtem physischem Meilenstein. 'On track' erfordert ein publiziertes Zieldatum und einen aktuellen, vergleichbaren Fortschrittsnachweis.",
@@ -33,7 +33,7 @@
       "target_live": "2025",
       "actual_live": "2025",
       "latest_update": "AWS bezeichnet Rainier als operativen KI-Supercomputer; Anthropic trainiert und bedient Claude darauf.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "history": [
         {
           "date": "2024",
@@ -105,7 +105,7 @@
       "target_live": "2026",
       "actual_live": "2026-04",
       "latest_update": "Microsoft bestaetigt die Inbetriebnahme der Anlagen von Fairwater 1 im April 2026.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "history": [
         {
           "date": "2024",
@@ -177,7 +177,7 @@
       "target_live": "mehrjaehriger Ausbau; kein belastbares Gesamt-Enddatum",
       "actual_live": "—",
       "latest_update": "Bau laeuft; Meta erhoehte den oeffentlichen Ausbauplan auf 5 GW und mehr als 50 Mrd. USD.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "history": [
         {
           "date": "2024-12",
@@ -250,7 +250,7 @@
       "target_live": "nicht publiziert",
       "actual_live": "—",
       "latest_update": "Standort und Energiepartnerschaft angekuendigt; kein oeffentliches Go-live-Datum.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "history": [
         {
           "date": "2026-02",
@@ -303,7 +303,7 @@
       "target_live": "stufenweise ab 2025",
       "actual_live": "2025-06 (erste Racks/Workloads)",
       "latest_update": "Der Standort trainiert und bedient bereits KI-Systeme; weitere Ausbauphasen laufen.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "history": [
         {
           "date": "2025-01",
@@ -375,7 +375,7 @@
       "target_live": "Sommer 2025",
       "actual_live": "2025-09-24",
       "latest_update": "Operativ, Kundenbetrieb; laut TELUS im Mai 2026 voll ausgelastet.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "history": [
         {
           "date": "2025-03",
@@ -445,7 +445,7 @@
       "target_live": "stufenweise bis 2032",
       "actual_live": "—",
       "latest_update": "Drei geplante Anlagen in British Columbia; Details der Zusammenarbeit sind noch in Arbeit.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "history": [
         {
           "date": "2026-05",
@@ -501,7 +501,7 @@
       "target_live": "nicht publiziert",
       "actual_live": "—",
       "latest_update": "Uruguays Praesidentschaft bestaetigte im April 2026 aktive Bauarbeiten vor Ort.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "history": [
         {
           "date": "2024-08",
@@ -568,7 +568,7 @@
       "target_live": "nicht realisiert",
       "actual_live": "—",
       "latest_update": "Google zog den urspruenglichen Genehmigungsweg zurueck; ein neuer luftgekuehlter Entwurf waere ein neues Projekt.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "history": [
         {
           "date": "2020",
@@ -633,7 +633,7 @@
       "target_live": "abgesagt",
       "actual_live": "—",
       "latest_update": "Meta zog sich im Juni 2022 endgueltig zurueck; das Projekt wurde nicht realisiert.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "history": [
         {
           "date": "2021",
@@ -705,7 +705,7 @@
       "target_live": "stufenweise 2026",
       "actual_live": "Betriebsstart 2026 angekuendigt; Vollbetrieb nicht verifiziert",
       "latest_update": "Bauphase laeuft; im Juli 2026 wurde eine lokale Betriebsgesellschaft gegruendet. Der Ankerkundenmix verlagerte sich zu Microsoft.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "history": [
         {
           "date": "2025-07",
@@ -785,7 +785,7 @@
       "target_live": "erste AI-Phase ab Q1 2026; Rubin-Ausbau ab Ende 2027",
       "actual_live": "erste Blackwell-Ultra-Bereitstellung 2026; Detailgrad begrenzt",
       "latest_update": "Erste Gebaeudephase mit 12.600+ GPUs; zweite 200-MW-Halle und 66.000+ Rubin-GPUs ab Ende 2027 vertraglich angekuendigt.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "history": [
         {
           "date": "2025",
@@ -846,7 +846,7 @@
       "target_live": "erste Frankreichphase bis 2031",
       "actual_live": "—",
       "latest_update": "Der urspruengliche Fluidstack-Plan wurde im Maerz 2026 aufgegeben. SoftBank und Sesterce wurden im Mai 2026 als Ersatzentwickler fuer den 1-GW-Campus benannt; ein physischer Baumeilenstein ist noch nicht belegt.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "history": [
         {
           "date": "2025-02",
@@ -925,7 +925,7 @@
       "target_live": "erste 200 MW in 2026",
       "actual_live": "—",
       "latest_update": "G42 bezeichnet den 1-GW-Cluster als im Bau; Chipexportfreigaben markieren den Uebergang von Planung zu Deployment.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "history": [
         {
           "date": "2025-05",
@@ -992,7 +992,7 @@
       "target_live": "erste Phase ohne belastbares Datum; Fuenfjahresplan",
       "actual_live": "—",
       "latest_update": "Erste Phase mit 18.000 GB300-Systemen angekuendigt; Standort- und Bautermintransparenz noch gering.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "history": [
         {
           "date": "2025-05",
@@ -1047,7 +1047,7 @@
       "target_live": "Investitionszeitraum 2026–2030",
       "actual_live": "—",
       "latest_update": "Google brach im April 2026 den Boden und bezeichnet das Projekt als in der Bauphase.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "history": [
         {
           "date": "2025-10",
@@ -1115,7 +1115,7 @@
       "target_live": "Mitte 2024 (erste Phase)",
       "actual_live": "2025-10-31 bestaetigt",
       "latest_update": "YTL bestaetigte die Fertigstellung der NVIDIA-basierten AI-Facility und den operativen YTL AI Cloud Service.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "history": [
         {
           "date": "2023-12",
@@ -1182,7 +1182,7 @@
       "target_live": "Geschaeftsjahr 2026",
       "actual_live": "—",
       "latest_update": "SoftBank nennt die Eroeffnung im Geschaeftsjahr 2026; aktueller physischer Meilenstein nicht publiziert.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "history": [
         {
           "date": "2025",
@@ -1235,7 +1235,7 @@
       "target_live": "1. Halbjahr 2026",
       "actual_live": "nicht verifiziert",
       "latest_update": "Das publizierte Ziel 1. Halbjahr 2026 ist verstrichen; ein Primaernachweis der Inbetriebnahme wurde nicht gefunden.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "history": [
         {
           "date": "2025-11",
@@ -1293,7 +1293,7 @@
       "target_live": "Juni 2025",
       "actual_live": "nicht verifiziert",
       "latest_update": "Cassava beschreibt das Projekt im April 2026 weiter als 'deploying'. Damit ist das urspruengliche Juni-2025-Ziel nicht belastbar als erreicht belegt.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "history": [
         {
           "date": "2025-03",
@@ -1363,7 +1363,7 @@
       "target_live": "bis Ende 2029",
       "actual_live": "—",
       "latest_update": "Programm angekuendigt; keine standortgenaue oeffentliche Zuordnung der Investitionssumme.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "history": [
         {
           "date": "2023",
@@ -1429,7 +1429,7 @@
       "target_live": "nicht belastbar offengelegt",
       "actual_live": "—",
       "latest_update": "OpenAI fuehrt Shackelford County als einen von drei neuen Oracle/Stargate-Standorten.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,
@@ -1482,7 +1482,7 @@
       "target_live": "nicht belastbar offengelegt",
       "actual_live": "—",
       "latest_update": "OpenAI fuehrt Doña Ana County als neuen Oracle/Stargate-Standort.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,
@@ -1535,7 +1535,7 @@
       "target_live": "nicht belastbar offengelegt",
       "actual_live": "—",
       "latest_update": "OpenAI nennt einen von Vantage entwickelten Wisconsin-Standort; die oeffentliche Ankuendigung nennt keinen exakten Ort.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,
@@ -1588,7 +1588,7 @@
       "target_live": "nicht belastbar offengelegt",
       "actual_live": "—",
       "latest_update": "OpenAI meldet fuer Lordstown einen SoftBank/OpenAI-Standort mit laufender Standortentwicklung.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,
@@ -1641,7 +1641,7 @@
       "target_live": "nicht belastbar offengelegt",
       "actual_live": "—",
       "latest_update": "OpenAI fuehrt Milam County als neuen SoftBank/OpenAI-Standort.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,
@@ -1694,7 +1694,7 @@
       "target_live": "2025",
       "actual_live": "2025-10",
       "latest_update": "Microsoft beschreibt Atlanta seit Oktober 2025 als zweiten operativen Fairwater-Standort.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,
@@ -1749,7 +1749,7 @@
       "target_live": "nicht belastbar offengelegt",
       "actual_live": "—",
       "latest_update": "Meta fuehrt El Paso als einen seiner neuen 1-GW+-AI-Campusse.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": 1000,
         "investment_usd_bn": null,
@@ -1804,7 +1804,7 @@
       "target_live": "nicht belastbar offengelegt",
       "actual_live": "—",
       "latest_update": "Meta fuehrt Lebanon als einen seiner neuen 1-GW+-AI-Campusse.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": 1000,
         "investment_usd_bn": null,
@@ -1859,7 +1859,7 @@
       "target_live": "nicht belastbar offengelegt",
       "actual_live": "—",
       "latest_update": "Meta fuehrt New Albany als einen seiner neuen 1-GW+-AI-Campusse.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": 1000,
         "investment_usd_bn": null,
@@ -1914,7 +1914,7 @@
       "target_live": "nicht separat verifiziert",
       "actual_live": "—",
       "latest_update": "CoreWeave kuendigte einen mehrstufigen 100-bis-300-MW-Campus und bis zu 6 Mrd. USD an.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": 300,
         "investment_usd_bn": 6,
@@ -1970,7 +1970,7 @@
       "target_live": "100 MW Q4 2025; weitere 150 MW Mitte 2026",
       "actual_live": "—",
       "latest_update": "Der 250-MW-Lease ist belegt; die oeffentlichen Go-live-Ziele sind verstrichen bzw. erreicht, aber im Tracker noch nicht primaer verifiziert.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": 250,
         "investment_usd_bn": null,
@@ -2025,7 +2025,7 @@
       "target_live": "erste Umspannwerkskapazitaet 2026",
       "actual_live": "—",
       "latest_update": "IREN kennzeichnet Sweetwater 1 mit 1,4 GW als im Bau.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": 1400,
         "investment_usd_bn": null,
@@ -2080,7 +2080,7 @@
       "target_live": "2027",
       "actual_live": "—",
       "latest_update": "IREN kennzeichnet Sweetwater 2 mit 600 MW als im Bau.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": 600,
         "investment_usd_bn": null,
@@ -2135,7 +2135,7 @@
       "target_live": "erste Kapazitaet Sommer 2025",
       "actual_live": "—",
       "latest_update": "300 MW und der langfristige Microsoft-Vertrag sind belegt; physischer Go-live wurde fuer diesen Snapshot noch nicht separat verifiziert.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": 300,
         "investment_usd_bn": null,
@@ -2190,7 +2190,7 @@
       "target_live": "2024/2025",
       "actual_live": "2024; Ausbau 2025",
       "latest_update": "xAI nennt 200.000 H100-GPUs seit Februar 2025 und eine Ausbau-Roadmap bis eine Million Beschleuniger.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": 280,
         "investment_usd_bn": null,
@@ -2253,7 +2253,7 @@
       "target_live": "nicht belastbar offengelegt",
       "actual_live": "—",
       "latest_update": "Bell plant einen souverainen AI-Supercluster mit bis zu 500 MW; vier Einrichtungen liegen in Kamloops und Merritt.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": 500,
         "investment_usd_bn": null,
@@ -2308,7 +2308,7 @@
       "target_live": "nicht belastbar offengelegt",
       "actual_live": "—",
       "latest_update": "Bell fuehrt Sherwood nahe Regina als 300-MW-Standort seines AI-Fabric-Programms.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": 300,
         "investment_usd_bn": null,
@@ -2363,7 +2363,7 @@
       "target_live": "nicht belastbar offengelegt",
       "actual_live": "—",
       "latest_update": "Nebius kuendigte eine neue 310-MW-AI-Factory in Finnland an.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": 310,
         "investment_usd_bn": null,
@@ -2418,7 +2418,7 @@
       "target_live": "Vollbetrieb 2025 (urspruenglicher Plan)",
       "actual_live": "—",
       "latest_update": "Der 150-MW-Start und die >400-MW-Ausbauoption sind primaer belegt; ein aktueller Vollbetriebsnachweis fehlt noch.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": 400,
         "investment_usd_bn": null,
@@ -2470,10 +2470,10 @@
       "planned_capacity": "AI-optimierte Cloud- und Rechenzentrumsinfrastruktur; MW nicht offengelegt",
       "investment": "nicht separat offengelegt",
       "announced": "2025",
-      "target_live": "nicht belastbar offengelegt",
+      "target_live": "2027",
       "actual_live": "—",
-      "latest_update": "SK baut das Rechenzentrum; AWS richtet darin eine AI Zone ein.",
-      "last_checked": "2026-07-20",
+      "latest_update": "SK bezeichnet den Ulsan-Campus im Juli 2026 als im Bau und nennt 2027 als erwarteten Betriebsstart. Ohne direkt vergleichbaren Fortschrittsmeilenstein bleibt die Terminlage noch nicht bewertbar.",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,
@@ -2491,6 +2491,11 @@
           "date": "2025",
           "status": "under_construction",
           "text": "SK baut das Rechenzentrum; AWS richtet darin eine AI Zone ein."
+        },
+        {
+          "date": "2026-07",
+          "status": "under_construction",
+          "text": "SK bestaetigte den laufenden Bau und konkretisierte den erwarteten Betriebsstart auf 2027."
         }
       ],
       "sources": [
@@ -2499,6 +2504,13 @@
           "grade": "A",
           "publisher": "SK Group",
           "title": "SK Group and AWS team up to build AI infrastructure",
+          "url": "https://eng.sk.com/news/sk-group-and-aws-team-up-to-build-cloud-computing-infrastructure-to-support-ai-innovation"
+        },
+        {
+          "date": "2026-07-05",
+          "grade": "A",
+          "publisher": "SK Group",
+          "title": "SK Group and AWS team up to build cloud computing infrastructure to support AI innovation",
           "url": "https://eng.sk.com/news/sk-group-and-aws-team-up-to-build-cloud-computing-infrastructure-to-support-ai-innovation"
         }
       ]
@@ -2526,7 +2538,7 @@
       "target_live": "projektspezifisch; laufende Beschaffung/Installation",
       "actual_live": "—",
       "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,
@@ -2579,7 +2591,7 @@
       "target_live": "projektspezifisch; laufende Beschaffung/Installation",
       "actual_live": "—",
       "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,
@@ -2632,7 +2644,7 @@
       "target_live": "projektspezifisch; laufende Beschaffung/Installation",
       "actual_live": "—",
       "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,
@@ -2685,7 +2697,7 @@
       "target_live": "projektspezifisch; laufende Beschaffung/Installation",
       "actual_live": "—",
       "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,
@@ -2738,7 +2750,7 @@
       "target_live": "projektspezifisch; laufende Beschaffung/Installation",
       "actual_live": "—",
       "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,
@@ -2791,7 +2803,7 @@
       "target_live": "projektspezifisch; laufende Beschaffung/Installation",
       "actual_live": "—",
       "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,
@@ -2846,7 +2858,7 @@
       "target_live": "projektspezifisch; laufende Beschaffung/Installation",
       "actual_live": "—",
       "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,
@@ -2899,7 +2911,7 @@
       "target_live": "projektspezifisch; laufende Beschaffung/Installation",
       "actual_live": "—",
       "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,
@@ -2952,7 +2964,7 @@
       "target_live": "projektspezifisch; laufende Beschaffung/Installation",
       "actual_live": "—",
       "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,
@@ -3005,7 +3017,7 @@
       "target_live": "projektspezifisch; laufende Beschaffung/Installation",
       "actual_live": "—",
       "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,
@@ -3058,7 +3070,7 @@
       "target_live": "projektspezifisch; laufende Beschaffung/Installation",
       "actual_live": "—",
       "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,
@@ -3111,7 +3123,7 @@
       "target_live": "projektspezifisch; laufende Beschaffung/Installation",
       "actual_live": "—",
       "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,
@@ -3164,7 +3176,7 @@
       "target_live": "2026",
       "actual_live": "in Betrieb",
       "latest_update": "Als Teil des EuroHPC-Netzes in Betrieb; Ausbau- und Serviceumfang wird weiter aktualisiert.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,
@@ -3217,7 +3229,7 @@
       "target_live": "projektspezifisch; laufende Beschaffung/Installation",
       "actual_live": "—",
       "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,
@@ -3272,7 +3284,7 @@
       "target_live": "projektspezifisch; laufende Beschaffung/Installation",
       "actual_live": "—",
       "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,
@@ -3325,7 +3337,7 @@
       "target_live": "projektspezifisch; laufende Beschaffung/Installation",
       "actual_live": "—",
       "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,
@@ -3378,7 +3390,7 @@
       "target_live": "projektspezifisch; laufende Beschaffung/Installation",
       "actual_live": "—",
       "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,
@@ -3431,7 +3443,7 @@
       "target_live": "projektspezifisch; laufende Beschaffung/Installation",
       "actual_live": "—",
       "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,
@@ -3484,7 +3496,7 @@
       "target_live": "projektspezifisch; laufende Beschaffung/Installation",
       "actual_live": "—",
       "latest_update": "Als EuroHPC AI Factory ausgewaehlt bzw. in Umsetzung; der physische Go-live wird projektspezifisch weiter verifiziert.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,
@@ -3536,7 +3548,7 @@
       "target_live": "Baubeginn fuer Q3 2026 angekuendigt; Betriebsdatum nicht offengelegt",
       "actual_live": "—",
       "latest_update": "Crusoe und Lancium kuendigten den 270-Acre- und 1-GW-Campus an. Der Bau soll in Q3 2026 beginnen; ein physischer Baumeilenstein liegt noch nicht vor.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "history": [
         {
           "date": "2026-07",
@@ -3598,7 +3610,7 @@
       "target_live": "Kein urspruengliches Zieldatum offengelegt",
       "actual_live": "Produktiver 64-Rack-Cluster; Trainingsvalidierung im Juni 2026, Bestaetigung am 16. Juli 2026",
       "latest_update": "Nscale dokumentiert produktive Trainingslaeufe ueber den gesamten 64-Rack-GB300-NVL72-Cluster in Keflavík; 112 Validierungslaeufe bestanden die NVIDIA-Kriterien.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "history": [
         {
           "date": "2026-06",
@@ -3665,7 +3677,7 @@
       "target_live": "Q2 2027",
       "actual_live": "—",
       "latest_update": "Elea plant 7,5 MW initial fuer hochdichte AI-/Cloud-Workloads mit geschlossenem Kuehlkreislauf. Im Juli wurde eine praeventive umweltrechtliche Pruefung beantragt; ein Genehmigungs- oder Baumeilenstein ist noch nicht belegt.",
-      "last_checked": "2026-07-20",
+      "last_checked": "2026-07-27",
       "history": [
         {
           "date": "2026-06",
@@ -3731,13 +3743,18 @@
       "announced": "2026-07-13",
       "target_live": "Nicht offengelegt",
       "actual_live": "—",
-      "latest_update": "HCLTech kuendigte ein standortoffenes AI-Rechenzentrumsprogramm bis 50 MW an. Ohne Standort- oder Bauangabe bleibt es als Nationalprogramm getrennt von Facilities.",
-      "last_checked": "2026-07-20",
+      "latest_update": "HCLTech benannte Bhubaneswar als ersten Standort seines AI-Rechenzentrumsprogramms. Der 50-MW-Programmmarker bleibt als nicht-additives Dachprogramm erhalten; die konkrete Odisha-Facility wird separat gefuehrt.",
+      "last_checked": "2026-07-27",
       "history": [
         {
           "date": "2026-07",
           "status": "planned",
           "text": "Bis zu 35 Mrd. INR und 50 MW AI-Rechenzentrumskapazitaet angekuendigt."
+        },
+        {
+          "date": "2026-07",
+          "status": "planned",
+          "text": "Bhubaneswar/Odisha als erste konkrete Standortallokation des Programms bekanntgegeben."
         }
       ],
       "sources": [
@@ -3754,6 +3771,13 @@
           "publisher": "HCLTech",
           "title": "HCLTech delivers robust Q1 led by record deal bookings",
           "url": "https://www.hcltech.com/press-releases/hcltech-delivers-robust-q1-led-record-deal-bookings-24-billion"
+        },
+        {
+          "date": "2026-07-24",
+          "grade": "A",
+          "publisher": "HCLTech",
+          "title": "HCLTech announces AI data center in Bhubaneswar in partnership with Sarvam and Government of Odisha",
+          "url": "https://www.hcltech.com/press-releases/hcltech-announces-ai-data-center-bhubaneswar-partnership-sarvam-and-government"
         }
       ],
       "record_type": "national_program",
@@ -3770,6 +3794,553 @@
         "score": 29,
         "band": "local",
         "metric_coverage": 0.8,
+        "method_version": "1.0"
+      }
+    },
+    {
+      "id": "amentum-srs-ai-campus",
+      "name": "Amentum Savannah River Site AI Campus",
+      "operator": "Amentum",
+      "partners": "U.S. Department of Energy / NNSA",
+      "country": "USA",
+      "iso3": "USA",
+      "region": "Nordamerika",
+      "location": "Savannah River Site, South Carolina",
+      "lat": 33.346,
+      "lon": -81.735,
+      "location_precision": "DOE-Gelaende; Marker am ungefaehren Zentrum des Savannah River Site, nicht an einer bestaetigten Parzelle",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "Vorgeschlagener 1-GW-AI-Rechenzentrumscampus mit eigener Energieerzeugung",
+      "investment": "Nicht offengelegt; Amentum wurde fuer Lease-Verhandlungen ausgewaehlt",
+      "announced": "2026-07-20",
+      "target_live": "Nicht offengelegt",
+      "actual_live": "—",
+      "latest_update": "NNSA waehlt Amentum fuer Verhandlungen ueber einen phasenweisen Pachtvertrag aus. Auswahl und 1-GW-Vorschlag sind belegt, ein Abschluss des Vertrags oder physischer Baubeginn noch nicht.",
+      "last_checked": "2026-07-27",
+      "history": [
+        {
+          "date": "2026-07",
+          "status": "planned",
+          "text": "Fuer Verhandlungen ueber einen 1-GW-AI-Rechenzentrumscampus mit Onsite-Erzeugung ausgewaehlt."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026-07-20",
+          "grade": "A",
+          "publisher": "U.S. Department of Energy / NNSA",
+          "title": "NNSA selects Amentum AI data center and energy project at Savannah River Site",
+          "url": "https://www.energy.gov/nnsa/articles/nnsa-selects-amentum-ai-data-center-and-energy-project-savannah-river-site"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": 1000,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 81.1
+        },
+        "score": 81,
+        "band": "mega",
+        "metric_coverage": 0.45,
+        "method_version": "1.0"
+      }
+    },
+    {
+      "id": "openai-camellia-effingham-georgia",
+      "name": "OpenAI Project Camellia",
+      "operator": "OpenAI",
+      "partners": "Georgia Power; Effingham County",
+      "country": "USA",
+      "iso3": "USA",
+      "region": "Nordamerika",
+      "location": "Effingham County, Georgia",
+      "lat": 32.367,
+      "lon": -81.338,
+      "location_precision": "County-Marker; exakte Projektparzelle in den Primaerquellen nicht angegeben",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "3,2 GW vertraglich mit Georgia Power, phasenweise",
+      "investment": "Projektbezogene Summe nicht in Primaerquelle offengelegt",
+      "announced": "2026-07-22",
+      "target_live": "Phasenweise Strombereitstellung 2028–2032",
+      "actual_live": "—",
+      "latest_update": "OpenAI und Georgia Power nennen 3,2 GW vertraglich vereinbarte Leistung mit stufenweiser Bereitstellung von 2028 bis 2032. Ein vergleichbarer Baufortschrittsmeilenstein liegt noch nicht vor.",
+      "last_checked": "2026-07-27",
+      "history": [
+        {
+          "date": "2026-07",
+          "status": "planned",
+          "text": "Project Camellia in Effingham County mit 3,2 GW vertraglicher Georgia-Power-Leistung angekuendigt."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026-07-22",
+          "grade": "A",
+          "publisher": "OpenAI",
+          "title": "Building AI infrastructure with the Effingham County community",
+          "url": "https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community/"
+        },
+        {
+          "date": "2026-07-22",
+          "grade": "A",
+          "publisher": "Georgia Power",
+          "title": "Georgia Power to serve OpenAI project in Effingham County",
+          "url": "https://www.georgiapower.com/news-hub/press-releases/georgia-power-to-serve-openai-project-in-effingham-county.html"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": 3200,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 94.8
+        },
+        "score": 95,
+        "band": "mega",
+        "metric_coverage": 0.45,
+        "method_version": "1.0"
+      }
+    },
+    {
+      "id": "meta-temple-texas",
+      "name": "Meta Temple Data Center",
+      "operator": "Meta",
+      "partners": "City of Temple; local utilities",
+      "country": "USA",
+      "iso3": "USA",
+      "region": "Nordamerika",
+      "location": "Temple, Texas",
+      "lat": 31.099,
+      "lon": -97.342,
+      "location_precision": "Stadtmarker; oeffentliche Projektseite bestaetigt Temple, nicht die exakte Parzelle",
+      "current_status": "operational",
+      "realization": "realized",
+      "schedule": "delivered",
+      "confidence": "medium",
+      "planned_capacity": "AI-optimiertes Meta-Rechenzentrum; Leistung nicht offengelegt",
+      "investment": "Mehr als 800 Mio. USD laut Meta",
+      "announced": "2023-10",
+      "target_live": "Nicht offengelegt",
+      "actual_live": "2026-07",
+      "latest_update": "Meta meldete am 22. Juli den Betriebsstart beziehungsweise das Servieren von Traffic. Die Anlage gehoert zu Metas AI-optimierter Rechenzentrumsgeneration; die Betriebsbehauptung wird derzeit durch eine belastbare Fachquelle getragen.",
+      "last_checked": "2026-07-27",
+      "history": [
+        {
+          "date": "2023-10",
+          "status": "under_construction",
+          "text": "Meta meldete hochgefahrene Bauarbeiten und mehr als 800 Mio. USD Investition."
+        },
+        {
+          "date": "2026-07",
+          "status": "operational",
+          "text": "Beginn des Betriebs und Servieren von Traffic gemeldet."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2023-10-05",
+          "grade": "A",
+          "publisher": "Meta",
+          "title": "Ramping up construction on the Temple Data Center",
+          "url": "https://datacenters.atmeta.com/2023/10/ramping-up-construction-on-the-temple-data-center/"
+        },
+        {
+          "date": "2026-07-23",
+          "grade": "B",
+          "publisher": "Data Center Dynamics",
+          "title": "Meta starts operations at data center in Temple, Texas",
+          "url": "https://www.datacenterdynamics.com/en/news/meta-starts-operations-at-data-center-in-temple-texas/"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": 0.8,
+        "investment_value_type": "minimum",
+        "investment_countable": true,
+        "accelerator_count": null,
+        "component_scores": {
+          "investment": 14.9
+        },
+        "score": 15,
+        "band": "local",
+        "metric_coverage": 0.35,
+        "method_version": "1.0"
+      }
+    },
+    {
+      "id": "hcltech-sarvam-odisha",
+      "name": "HCLTech–Sarvam Odisha Sovereign AI Park",
+      "operator": "HCLTech",
+      "partners": "Sarvam AI; Government of Odisha",
+      "country": "Indien",
+      "iso3": "IND",
+      "region": "Asien",
+      "location": "Bhubaneswar, Odisha",
+      "lat": 20.296,
+      "lon": 85.824,
+      "location_precision": "Stadtmarker; finale Projektparzelle nicht offengelegt",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "50 MW AI-Rechenzentrum und Sovereign AI Park",
+      "investment": "Geplanter Kapitalaufwand 142,57 Mrd. INR inklusive angekuendigter staatlicher Unterstuetzung; USD-Wert nicht umgerechnet",
+      "announced": "2026-07-24",
+      "target_live": "Nicht offengelegt",
+      "actual_live": "—",
+      "latest_update": "HCLTech, Sarvam und Odisha unterzeichneten eine Vereinbarung fuer HCLTechs erstes AI-Rechenzentrum im Bundesstaat. Die 50 MW stammen aus Sarvams offizieller Standortankuendigung; Bau- oder Genehmigungsmeilensteine sind noch nicht belegt.",
+      "last_checked": "2026-07-27",
+      "history": [
+        {
+          "date": "2026-02",
+          "status": "planned",
+          "text": "Sarvam nannte Bhubaneswar als Standort eines 50-MW-Sovereign-AI-Hubs."
+        },
+        {
+          "date": "2026-07",
+          "status": "planned",
+          "text": "HCLTech, Sarvam und Odisha kuendigten den AI-Park und HCLTechs erstes AI-Rechenzentrum an."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026-07-24",
+          "grade": "A",
+          "publisher": "HCLTech",
+          "title": "HCLTech announces AI data center in Bhubaneswar in partnership with Sarvam and Government of Odisha",
+          "url": "https://www.hcltech.com/press-releases/hcltech-announces-ai-data-center-bhubaneswar-partnership-sarvam-and-government"
+        },
+        {
+          "date": "2026-02-08",
+          "grade": "A",
+          "publisher": "Sarvam AI",
+          "title": "Partnerships with Indian states",
+          "url": "https://www.sarvam.ai/blogs/partnerships-with-indian-states"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": 50,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 46.2
+        },
+        "score": 46,
+        "band": "regional",
+        "metric_coverage": 0.45,
+        "method_version": "1.0"
+      }
+    },
+    {
+      "id": "sarvam-tamil-nadu-digital-sangam",
+      "name": "Sarvam Tamil Nadu Digital Sangam",
+      "operator": "Sarvam AI",
+      "partners": "Government of Tamil Nadu; IIT Madras",
+      "country": "Indien",
+      "iso3": "IND",
+      "region": "Asien",
+      "location": "Chennai, Tamil Nadu",
+      "lat": 12.991,
+      "lon": 80.233,
+      "location_precision": "Marker bei IIT Madras; finale Rechenzentrumsparzelle nicht offengelegt",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "20 MW AI-optimiertes Rechenzentrum im Sovereign AI Research Park",
+      "investment": "Nicht offengelegt",
+      "announced": "2026-02-08",
+      "target_live": "Nicht offengelegt",
+      "actual_live": "—",
+      "latest_update": "Sarvam und Tamil Nadu kuendigten ein 20-MW-AI-Rechenzentrum innerhalb des Digital-Sangam-Programms an. Ein physischer Bau- oder Betriebsnachweis liegt noch nicht vor.",
+      "last_checked": "2026-07-27",
+      "history": [
+        {
+          "date": "2026-02",
+          "status": "planned",
+          "text": "20-MW-AI-Rechenzentrum und Sovereign AI Research Park angekuendigt."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026-02-08",
+          "grade": "A",
+          "publisher": "Sarvam AI",
+          "title": "Partnerships with Indian states",
+          "url": "https://www.sarvam.ai/blogs/partnerships-with-indian-states"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": 20,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 35.7
+        },
+        "score": 36,
+        "band": "regional",
+        "metric_coverage": 0.45,
+        "method_version": "1.0"
+      }
+    },
+    {
+      "id": "sk-korea-aidc-program",
+      "name": "SK Telecom Korea AI Data Center Program",
+      "operator": "SK Telecom / SK Hyper",
+      "partners": "SK Group; regionale Energie- und Infrastrukturpartner",
+      "country": "Suedkorea",
+      "iso3": "KOR",
+      "region": "Asien",
+      "location": "Suedkorea (Marker bei Seoul)",
+      "lat": 37.5665,
+      "lon": 126.978,
+      "location_precision": "Nationalprogramm; Marker ist Seoul, keine einzelne Facility",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "5 GW in Phasen ab 2029; 15 GW bis 2035 landesweit",
+      "investment": "SK Hyper: 750 Mrd. KRW bis 2030 fuer Land und Umspannwerke; kein projektbezogener USD-Wert",
+      "announced": "2026-07-05",
+      "target_live": "Erste 5-GW-Phase ab 2029; 15 GW bis 2035",
+      "actual_live": "—",
+      "latest_update": "SK Telecom bestaetigte die Gruendung von SK Hyper und den Finanzierungsrahmen fuer vorbereitende Infrastruktur. Das 15-GW-Ziel ist ein landesweites Dachprogramm und wird nicht zur realisierten Standortleistung addiert.",
+      "last_checked": "2026-07-27",
+      "history": [
+        {
+          "date": "2026-07",
+          "status": "planned",
+          "text": "15-GW-Programm bis 2035 und SK-Hyper-Aufbau mit 750 Mrd. KRW bis 2030 angekuendigt."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026-07-05",
+          "grade": "A",
+          "publisher": "SK Telecom",
+          "title": "SK Telecom presents national AI data center strategy",
+          "url": "https://news.sktelecom.com/en/3155"
+        },
+        {
+          "date": "2026-07-23",
+          "grade": "A",
+          "publisher": "SK Telecom",
+          "title": "SK Telecom approves establishment of SK Hyper",
+          "url": "https://news.sktelecom.com/en/3192"
+        }
+      ],
+      "record_type": "national_program",
+      "impact": {
+        "power_mw": 15000,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 100
+        },
+        "score": 100,
+        "band": "mega",
+        "metric_coverage": 0.45,
+        "method_version": "1.0"
+      }
+    },
+    {
+      "id": "sk-nvidia-dsx-ai-factory",
+      "name": "SK Telecom–NVIDIA DSX AI Factory",
+      "operator": "SK Telecom",
+      "partners": "NVIDIA; SK Group",
+      "country": "Suedkorea",
+      "iso3": "KOR",
+      "region": "Asien",
+      "location": "Suedkorea (Standort nicht offengelegt)",
+      "lat": 36.5,
+      "lon": 127.8,
+      "location_precision": "Laendermarker; weder Stadt noch Parzelle offengelegt",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "Bis zu 2 GW Vera-Rubin-DSX-AI-Factory-Kapazitaet",
+      "investment": "Nicht separat offengelegt; die breitere 500-Mrd.-USD-SK/NVIDIA-Absichtserklaerung umfasst auch HBM und weitere Geschaefte und ist hier nicht zaehlbar",
+      "announced": "2026-07-24",
+      "target_live": "Erste AI Factory 2027",
+      "actual_live": "—",
+      "latest_update": "SK und NVIDIA unterzeichneten Absichtserklaerungen fuer eine bis zu 2 GW grosse DSX-AI-Factory-Plattform. Standort, bindende Bestellung und physischer Baufortschritt sind noch nicht offengelegt.",
+      "last_checked": "2026-07-27",
+      "history": [
+        {
+          "date": "2026-07",
+          "status": "planned",
+          "text": "Bis zu 2 GW Vera-Rubin-DSX-AI-Factory-Kapazitaet mit erster Bereitstellung 2027 angekuendigt."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026-07-24",
+          "grade": "A",
+          "publisher": "NVIDIA",
+          "title": "SK Group and NVIDIA expand strategic partnership across AI factories and next-generation memory",
+          "url": "https://nvidianews.nvidia.com/news/sk-group-and-nvidia-expand-strategic-partnership-across-ai-factories-and-next-generation-memory"
+        },
+        {
+          "date": "2026-07-25",
+          "grade": "A",
+          "publisher": "SK Telecom",
+          "title": "SK Group and NVIDIA expand strategic partnership",
+          "url": "https://news.sktelecom.com/228330"
+        }
+      ],
+      "record_type": "ai_factory_compute_deployment",
+      "impact": {
+        "power_mw": 2000,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 89.2
+        },
+        "score": 89,
+        "band": "mega",
+        "metric_coverage": 0.45,
+        "method_version": "1.0"
+      }
+    },
+    {
+      "id": "mindstream-al-risha-jordan",
+      "name": "Mindstream Al-Risha AI & HPC Campus",
+      "operator": "Mindstream Energy",
+      "partners": "Nicht offengelegt",
+      "country": "Jordanien",
+      "iso3": "JOR",
+      "region": "Nahost",
+      "location": "Al-Risha, Jordanien",
+      "lat": 32.44,
+      "lon": 38.17,
+      "location_precision": "Ortsmarker in der Al-Risha-Region; exakte 245-acre-Parzelle nicht offengelegt",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "medium",
+      "planned_capacity": "Bis zu 400 MW modularer Sovereign-AI-, HPC- und Digital-Campus",
+      "investment": "Nicht offengelegt",
+      "announced": "2026-07-09",
+      "target_live": "Nicht offengelegt",
+      "actual_live": "—",
+      "latest_update": "Der Betreiber kuendigte einen 245-acre-Campus mit bis zu 400 MW an. Es gibt noch keinen unabhaengigen Genehmigungs-, Netz-, Kunden- oder Baunachweis; die Aufnahme bleibt deshalb trotz Primaerquelle mit mittlerer Konfidenz.",
+      "last_checked": "2026-07-27",
+      "history": [
+        {
+          "date": "2026-07",
+          "status": "planned",
+          "text": "Bis zu 400 MW modularer AI-/HPC-Campus in Al-Risha angekuendigt."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026-07-09",
+          "grade": "A",
+          "publisher": "Mindstream Energy",
+          "title": "Mindstream announces Jordan AI and digital infrastructure campus",
+          "url": "https://mindstreamenergy.com/mindstream-jordan-press-release/"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": 400,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 70.4
+        },
+        "score": 70,
+        "band": "strategic",
+        "metric_coverage": 0.45,
+        "method_version": "1.0"
+      }
+    },
+    {
+      "id": "meta-sturgeon-county-alberta",
+      "name": "Meta Sturgeon County Data Center",
+      "operator": "Meta",
+      "partners": "Sturgeon County; Alberta utilities",
+      "country": "Kanada",
+      "iso3": "CAN",
+      "region": "Nordamerika",
+      "location": "Sturgeon County, Alberta",
+      "lat": 53.81,
+      "lon": -113.65,
+      "location_precision": "County-Marker; Meta veroeffentlichte keine exakten Koordinaten",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "Bis zu 1 GW",
+      "investment": "Mehr als 13 Mrd. CAD; nicht in USD umgerechnet",
+      "announced": "2026-07-08",
+      "target_live": "Nicht offengelegt",
+      "actual_live": "—",
+      "latest_update": "Meta kuendigte einen neuen, bis zu 1 GW grossen Rechenzentrumsstandort mit mehr als 13 Mrd. CAD Investition an. Aktuelle Meta-Neubauten sind fuer AI-Workloads optimiert; ein physischer Meilenstein ist noch nicht belegt.",
+      "last_checked": "2026-07-27",
+      "history": [
+        {
+          "date": "2026-07",
+          "status": "planned",
+          "text": "Bis zu 1 GW und mehr als 13 Mrd. CAD in Sturgeon County angekuendigt."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026-07-08",
+          "grade": "A",
+          "publisher": "Meta",
+          "title": "Hello Sturgeon County",
+          "url": "https://datacenters.atmeta.com/2026/07/hello-sturgeon-county/"
+        },
+        {
+          "date": "2026-04-28",
+          "grade": "A",
+          "publisher": "Meta",
+          "title": "Infrastructure explained: Meta data centers",
+          "url": "https://about.fb.com/news/2026/04/infrastructure-explained-meta-data-centers/"
+        }
+      ],
+      "record_type": "facility",
+      "impact": {
+        "power_mw": 1000,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {
+          "power": 81.1
+        },
+        "score": 81,
+        "band": "mega",
+        "metric_coverage": 0.45,
         "method_version": "1.0"
       }
     }

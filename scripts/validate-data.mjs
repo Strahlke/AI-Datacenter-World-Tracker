@@ -333,6 +333,23 @@ for (const snapshot of retailObservationsPayload.snapshots || []) {
 const latestRetailSnapshot = retailObservationsPayload.snapshots?.at(-1);
 if (latestRetailSnapshot) {
   const latestBaskets = latestRetailSnapshot.baskets || [];
+  for (const basket of latestBaskets) {
+    const prefix = `latest retail observation ${basket.basket_id || "<ohne basket_id>"}`;
+    requireValue(typeof basket.cohort === "string" && basket.cohort.length > 0, `${prefix}: cohort fehlt`);
+    requireValue(typeof basket.revision === "string" && basket.revision.length > 0, `${prefix}: revision fehlt`);
+    requireValue(["public", "private_link_visible", "connected_session"].includes(basket.visibility), `${prefix}: visibility ungueltig`);
+    for (const product of basket.products || []) {
+      requireValue(Number.isInteger(product.article_id) && product.article_id > 0, `${prefix} ${product.mpn}: article_id fehlt`);
+      requireValue(product.sku === product.mpn, `${prefix} ${product.mpn}: sku muss der stabilen MPN entsprechen`);
+      requireValue(product.gtin === null || (typeof product.gtin === "string" && product.gtin.length > 0), `${prefix} ${product.mpn}: gtin ungueltig`);
+      requireValue(product.currency === "EUR", `${prefix} ${product.mpn}: currency muss EUR sein`);
+      requireValue(product.shipping_eur === null || (Number.isFinite(product.shipping_eur) && product.shipping_eur >= 0), `${prefix} ${product.mpn}: shipping_eur ungueltig`);
+      requireValue(product.retailer === null || (typeof product.retailer === "string" && product.retailer.length > 0), `${prefix} ${product.mpn}: retailer ungueltig`);
+      requireValue(product.delivery_time === null || (typeof product.delivery_time === "string" && product.delivery_time.length > 0), `${prefix} ${product.mpn}: delivery_time ungueltig`);
+      requireValue(httpsUrl.test(product.product_url || ""), `${prefix} ${product.mpn}: product_url muss HTTPS sein`);
+      requireValue(product.revision === basket.revision, `${prefix} ${product.mpn}: revision stimmt nicht mit Warenkorb ueberein`);
+    }
+  }
   const totalRetailItems = latestBaskets.reduce((sum, basket) => sum + basket.item_count, 0);
   const totalAvailableItems = latestBaskets.reduce((sum, basket) => sum + basket.available_count, 0);
   const categoriesWithMinimumCoverage = latestBaskets.filter((basket) => basket.item_count >= (retailBasketDefinitions.get(basket.basket_id)?.minimum_comparable_skus || Infinity)).length;

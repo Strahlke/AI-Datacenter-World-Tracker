@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-07-20",
+  "snapshot_date": "2026-07-27",
   "scope_de": "Oeffentlich angekuendigte Dachprogramme und Investitionsrahmen. Nicht additiv zu einzelnen Standorten; Originalwaehrungen bleiben erhalten.",
   "scope_en": "Public umbrella programmes and investment envelopes. Not additive to individual sites; original currencies are retained.",
   "programs": [
@@ -101,16 +101,45 @@
       "approximate_usd_bn": 0.37,
       "dedicated_capacity_gw": 0.05,
       "includes_project_ids": [
-        "hcltech-india-ai-dc-program"
+        "hcltech-india-ai-dc-program",
+        "hcltech-sarvam-odisha"
       ],
       "countable_with_sites": false,
       "double_count_group": "hcltech-india-ai-dc",
-      "note_de": "Bis zu 35 Mrd. INR bzw. rund 370 Mio. USD und 50 MW; noch keine Standortallokation. Nicht mit spaeteren Facilities addieren.",
-      "note_en": "Up to INR 35bn, approximately USD 370m, and 50 MW; no site allocation yet. Do not add to later facilities.",
+      "note_de": "Bis zu 35 Mrd. INR und 50 MW auf Programmebene; Bhubaneswar ist nun als erste Facility benannt. Die separat angekuendigten 142,57 Mrd. INR des Odisha-Parks haben einen anderen Umfang und werden weder hier noch mit dem Standort addiert.",
+      "note_en": "Up to INR 35bn and 50 MW at programme level; Bhubaneswar is now the first named facility. The separately announced INR 142.57bn Odisha park has a different scope and is not added here or to the site.",
       "source": {
         "publisher": "HCLTech",
         "title": "HCLTech launches full-stack AI offering powered by new AI data center investment",
         "url": "https://www.hcltech.com/press-releases/hcltech-launches-full-stack-ai-offering-powered-new-ai-data-center-investment"
+      }
+    },
+    {
+      "id": "sk-korea-aidc",
+      "name": "SK Telecom Korea AI data center programme",
+      "geography": "Suedkorea",
+      "iso3": "KOR",
+      "status": "active",
+      "period": "2026–2035",
+      "commitment": {
+        "value_bn": 750,
+        "currency": "KRW",
+        "value_type": "enabling_capital_ceiling"
+      },
+      "dedicated_capacity_gw": 15,
+      "includes_project_ids": [
+        "sk-korea-aidc-program",
+        "sk-nvidia-dsx-ai-factory",
+        "sk-aws-ulsan"
+      ],
+      "countable_with_sites": false,
+      "double_count_group": "sk-korea-aidc",
+      "note_de": "750 Mrd. KRW bis 2030 fuer Land und Umspannwerke von SK Hyper; das 15-GW-Ziel bis 2035 ist ein Dachprogramm. Die breitere 500-Mrd.-USD-SK/NVIDIA-Absichtserklaerung umfasst HBM und weitere Geschaefte und wird nicht als Rechenzentrumsinvestment gezaehlt.",
+      "note_en": "KRW 750bn through 2030 for SK Hyper land and substations; the 15GW target through 2035 is an umbrella programme. The broader USD 500bn SK/NVIDIA memorandum includes HBM and other business and is not counted as data-center investment.",
+      "source": {
+        "publisher": "SK Telecom",
+        "title": "SK Telecom approves establishment of SK Hyper",
+        "url": "https://news.sktelecom.com/en/3192"
       }
     }
   ]

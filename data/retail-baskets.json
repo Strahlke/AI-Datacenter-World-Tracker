@@ -1,18 +1,18 @@
 {
-  "snapshot_date": "2026-07-20",
+  "snapshot_date": "2026-07-27",
   "methodology_version": "1.1",
   "current_level": "L1",
   "current_level_label_de": "Historische Retail-Zeitreihe",
   "current_level_label_en": "Historical retail series",
   "retail_readiness": 0.5,
-  "status_de": "Vier Geizhals-Wunschlisten, 40 feste MPNs und deren 365-Tage-Preisverlaeufe sind verbunden. Zwei eigene Wochen-Snapshots liegen vor. Die Listen waren am 20.07.2026 in der verbundenen Sitzung lesbar, wurden in der Geizhals-UI jedoch als privat markiert; das bleibt eine Reproduzierbarkeitsluecke.",
-  "status_en": "Four Geizhals wishlists, 40 fixed MPNs and their 365-day price histories are connected. Two self-archived weekly snapshots are available. The lists were readable in the connected session on 20 July 2026 but marked private in the Geizhals UI; this remains a reproducibility gap.",
+  "status_de": "L1: 365-Tage-Fixed-Cohort-Backfill plus drei selbst archivierte Wochensnapshots. Kalibrierung der Revisionsstabilitaet beginnt ab Woche 13.",
+  "status_en": "L1: 365-day fixed-cohort backfill plus three self-archived weekly snapshots. Revision-stability calibration starts at week 13.",
   "observation_summary": {
-    "weekly_observations": 2,
+    "weekly_observations": 3,
     "active_retailers": 0,
     "historical_days": 365,
     "historical_product_series": 40,
-    "historical_product_points": 14568,
+    "historical_product_points": 14561,
     "categories_with_minimum_coverage": 4,
     "total_categories": 4,
     "availability_coverage": 0.975,
@@ -235,6 +235,6 @@
     "source_url",
     "source_revision"
   ],
-  "next_action_de": "Die 365-Tage-Geizhals-Historie startet den Backfill ohne Registrierung. Ab jetzt wird woechentlich ein eigener Snapshot archiviert und mit der spaeter rueckgerechneten Geizhals-Historie verglichen. Nach 13 Wochen kann die Revisionsstabilitaet kalibriert und der direkte Retail-Teil des CHPI neu gewichtet werden.",
-  "next_action_en": "The 365-day Geizhals history starts the backfill without registration. From now on, a separate weekly snapshot is archived and compared with Geizhals's later reconstructed history. After 13 weeks, revision stability can be calibrated and the CHPI's direct retail component reweighted."
+  "next_action_de": "Noch 10 selbst archivierte Wochen bis zur L2-Kalibrierung. Bis dahin bleiben Korbrevisionen, private UI-Markierung und fehlende Haendler-/Lieferzeitnormalisierung sichtbare Luecken.",
+  "next_action_en": "Ten more self-archived weeks are required before L2 calibration. Until then, basket revisions, the private UI label and missing merchant/lead-time normalisation remain visible gaps."
 }

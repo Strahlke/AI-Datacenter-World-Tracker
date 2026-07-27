@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-07-20",
+  "snapshot_date": "2026-07-27",
   "version": 2,
   "name_de": "Consumer Hardwarekosten-Druckindex",
   "name_en": "Consumer Hardware Cost Pressure Index",
@@ -11,8 +11,8 @@
   "confidence": "medium",
   "retail_grade": false,
   "history_file": "hardware-history.json",
-  "summary_de": "Vorlaeufiger datenbasierter Wert: 74,4 von 100 - steigender Preisdruck. Zusaetzlich zum amtlichen 12-Monats-Backcast ist jetzt ein direkter 365-Tage-Geizhals-Backfill fuer 40 feste MPNs verfuegbar. Er zeigt die Preisbewegung von GPU-, DDR5-, NVMe- und CPU-Koerben, wird wegen der rueckgerechneten heutigen Korbzusammensetzung aber zunaechst als Diagnose und noch nicht als stiller Score-Umbau verwendet.",
-  "summary_en": "Provisional data-backed reading: 74.4 out of 100 - rising price pressure. In addition to the official 12-month backcast, a direct 365-day Geizhals backfill is now available for 40 fixed MPNs. It shows movements in GPU, DDR5, NVMe and CPU baskets, but because today's basket composition is reconstructed retrospectively it is initially used as a diagnostic rather than silently changing the score.",
+  "summary_de": "Vorlaeufiger datenbasierter Wert: 74,4 von 100 – steigender Preisdruck. Drei selbst archivierte Geizhals-Wochen zeigen aktuell einen gemischten Retail-Impuls: DDR5 steigt stark, waehrend NVMe-SSD und Desktop-CPU leicht nachgeben. TrendForce meldet zugleich eine NAND-Angebotsluecke fuer 2026. Diese Wochensignale werden sichtbar dokumentiert, veraendern den monatlichen CHPI aber vor der 13-Wochen-Kalibrierung nicht.",
+  "summary_en": "Provisional data-backed reading: 74.4 out of 100 – rising price pressure. Three self-archived Geizhals weeks currently show a mixed retail impulse: DDR5 is rising strongly while NVMe SSD and desktop CPU prices ease slightly. TrendForce also reports a 2026 NAND supply gap. These weekly signals are displayed but do not change the monthly CHPI before the 13-week calibration.",
   "purpose_de": "Misst den Preisdruck, den private Kaeufer bei GPUs, CPUs, Arbeitsspeicher und SSDs in den kommenden Wochen und Monaten erwarten koennen.",
   "purpose_en": "Measures the price pressure private buyers may face for GPUs, CPUs, memory and SSDs over the coming weeks and months.",
   "scale": {
@@ -279,6 +279,24 @@
       "url": "https://geizhals.de/wishlists/5081030",
       "use_for": "365 Tage direkte Produkt- und Fixed-Cohort-Preisverlaeufe fuer 40 feste MPNs in Deutschland",
       "last_checked": "2026-07-20"
+    },
+    {
+      "id": "trendforce-nand-2026-07",
+      "grade": "B",
+      "publisher": "TrendForce",
+      "title": "NAND Flash market to remain undersupplied throughout 2026",
+      "url": "https://www.trendforce.com/presscenter/news/20260721-13148.html",
+      "use_for": "Aktuelles NAND-Angebotsdefizit, Server-Bit-Nachfrage und erwartete Entspannung",
+      "last_checked": "2026-07-27"
+    },
+    {
+      "id": "intel-q2-2026",
+      "grade": "A",
+      "publisher": "Intel",
+      "title": "Intel reports second-quarter 2026 financial results",
+      "url": "https://newsroom.intel.com/corporate/intel-reports-second-quarter-2026-financial-results",
+      "use_for": "Quartalsweises Nachfrage-Signal fuer Data Center and AI, nicht als direkter Consumer-Preisbeleg",
+      "last_checked": "2026-07-27"
     }
   ],
   "retail_model": {
@@ -286,12 +304,53 @@
     "observations_file": "retail-observations.json",
     "history_file": "retail-history.json",
     "raw_history_file": "retail-history-daily.json",
-    "weekly_snapshots": 2,
+    "weekly_snapshots": 3,
     "historical_days": 365,
     "historical_product_series": 40,
-    "historical_product_points": 14568,
+    "historical_product_points": 14561,
     "current_level": "L1",
     "retail_readiness": 0.5,
     "retail_grade_gate_met": false
-  }
+  },
+  "weekly_signals": [
+    {
+      "id": "geizhals-2026-07-27",
+      "date": "2026-07-27",
+      "direction": "mixed",
+      "title_de": "Retail-Koerbe: DDR5 zieht an",
+      "title_en": "Retail baskets: DDR5 rises",
+      "reading_de": "DDR5 +4,04 % zur Vorwoche; GPU +0,35 %; NVMe −0,70 %; CPU −0,69 %. 39 von 40 SKUs mit Angebot.",
+      "reading_en": "DDR5 +4.04% week over week; GPU +0.35%; NVMe −0.70%; CPU −0.69%. 39 of 40 SKUs have an offer.",
+      "interpretation_de": "Gemischter Endkundenimpuls; die rohe Korbsumme stieg bei unveraenderter Zusammensetzung insgesamt um 1,19 %.",
+      "interpretation_en": "Mixed consumer impulse; the raw total for the unchanged cohort rose 1.19% overall.",
+      "source_url": "https://geizhals.de/wishlists/5081039",
+      "grade": "B"
+    },
+    {
+      "id": "trendforce-nand-2026-07-21",
+      "date": "2026-07-21",
+      "direction": "pressure_up",
+      "title_de": "NAND bleibt unterversorgt",
+      "title_en": "NAND remains undersupplied",
+      "reading_de": "TrendForce erwartet fuer 2026 eine Angebotsluecke von 4–5 %; Server sollen mehr als 40 % der Bit-Nachfrage stellen.",
+      "reading_en": "TrendForce expects a 4–5% supply gap in 2026, with servers accounting for more than 40% of bit demand.",
+      "interpretation_de": "Aufwaertsdruck fuer NAND/SSD bleibt plausibel, obwohl der deutsche NVMe-Korb diese Woche leicht nachgab.",
+      "interpretation_en": "Upward NAND/SSD pressure remains plausible even though the German NVMe basket eased this week.",
+      "source_url": "https://www.trendforce.com/presscenter/news/20260721-13148.html",
+      "grade": "B"
+    },
+    {
+      "id": "intel-q2-2026-dcai",
+      "date": "2026-07-23",
+      "direction": "demand_up",
+      "title_de": "Servernachfrage bleibt hoch",
+      "title_en": "Server demand remains high",
+      "reading_de": "Intel meldete fuer Q2 2026 im Data Center and AI Segment 6,3 Mrd. USD Umsatz, 59 % mehr als im Vorjahr.",
+      "reading_en": "Intel reported Q2 2026 Data Center and AI revenue of USD 6.3bn, up 59% year over year.",
+      "interpretation_de": "Unterstuetzt den Infrastruktur-Nachfrageindikator, ist aber kein direkter Beleg fuer Consumer-Preise.",
+      "interpretation_en": "Supports the infrastructure-demand indicator but is not direct evidence of consumer prices.",
+      "source_url": "https://newsroom.intel.com/corporate/intel-reports-second-quarter-2026-financial-results",
+      "grade": "A"
+    }
+  ]
 }

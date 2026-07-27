@@ -20,7 +20,7 @@ const copy = {
     tabBarometer: "Hardware-Barometer",
     projects: "Projekte",
     countries: "Länder",
-    trackedPower: "Dokumentierte Leistung",
+    trackedPower: "Standort-/Deployment-Leistung",
     siteInvestment: "Standort-Investment*",
     umbrellaPrograms: "Dachprogramme*",
     operational: "In Betrieb",
@@ -187,8 +187,14 @@ const copy = {
     countryTooltip: (count, power, investment) => `${count} Projekte · ${power} dokumentierte Leistung · ${investment} Standort-Investment`,
     historyRange: (start, end, count) => `${count} Monate · ${start} bis ${end} · heutiger Revisionsstand`,
     historyChartDescription: (start, end, score) => `Rueckgerechneter CHPI von ${start} bis ${end}. Der letzte Wert betraegt ${score} von 100.`,
-    retailSnapshotMeta: (date, available, total) => `Erste direkte Beobachtung · ${date} · ${available}/${total} SKUs mit mindestens einem Angebot`,
+    retailSnapshotMeta: (date, available, total) => `Direkter Wochensnapshot · ${date} · ${available}/${total} SKUs mit mindestens einem Angebot`,
     retailWeekProgress: (current, target) => `${current}/${target} Wochen bis zur Kalibrierung`,
+    weeklySignalsTitle: "Aktuelle Wochensignale",
+    weeklySignalsIntro: "Frühe Preis- und Nachfragesignale, getrennt vom monatlichen CHPI.",
+    signalDirectionMixed: "gemischt",
+    signalDirectionPressureUp: "Preisdruck ↑",
+    signalDirectionDemandUp: "Nachfrage ↑",
+    sourceLink: "Quelle",
   },
   en: {
     eyebrow: "Global infrastructure monitor",
@@ -200,7 +206,7 @@ const copy = {
     tabBarometer: "Hardware barometer",
     projects: "Projects",
     countries: "Countries",
-    trackedPower: "Documented power",
+    trackedPower: "Site/deployment power",
     siteInvestment: "Site investment*",
     umbrellaPrograms: "Umbrella programmes*",
     operational: "Operational",
@@ -367,8 +373,14 @@ const copy = {
     countryTooltip: (count, power, investment) => `${count} projects · ${power} documented power · ${investment} site investment`,
     historyRange: (start, end, count) => `${count} months · ${start} to ${end} · current revision state`,
     historyChartDescription: (start, end, score) => `Backcast CHPI from ${start} to ${end}. The latest value is ${score} out of 100.`,
-    retailSnapshotMeta: (date, available, total) => `First direct observation · ${date} · ${available}/${total} SKUs with at least one offer`,
+    retailSnapshotMeta: (date, available, total) => `Direct weekly snapshot · ${date} · ${available}/${total} SKUs with at least one offer`,
     retailWeekProgress: (current, target) => `${current}/${target} weeks to calibration`,
+    weeklySignalsTitle: "Current weekly signals",
+    weeklySignalsIntro: "Early price and demand signals, kept separate from the monthly CHPI.",
+    signalDirectionMixed: "mixed",
+    signalDirectionPressureUp: "price pressure ↑",
+    signalDirectionDemandUp: "demand ↑",
+    sourceLink: "Source",
   },
 };
 
@@ -507,6 +519,7 @@ const elements = {
   historyLegend: document.getElementById("history-legend"),
   historyRange: document.getElementById("history-range"),
   currentEvidenceGrid: document.getElementById("current-evidence-grid"),
+  weeklySignalGrid: document.getElementById("weekly-signal-grid"),
   backcastNotice: document.getElementById("backcast-notice"),
   zoomIn: document.getElementById("zoom-in"),
   zoomOut: document.getElementById("zoom-out"),
@@ -735,7 +748,7 @@ function renderMetrics() {
   const projects = filteredProjects();
   elements.total.textContent = projects.length;
   elements.countries.textContent = new Set(projects.map((project) => project.iso3)).size;
-  elements.power.textContent = formatPower(projects.reduce((sum, project) => sum + Number(project.impact?.power_mw || 0), 0));
+  elements.power.textContent = formatPower(projects.filter(isPowerCountable).reduce((sum, project) => sum + Number(project.impact?.power_mw || 0), 0));
   const countableInvestment = projects
     .filter((project) => project.impact?.investment_countable && !["paused", "cancelled"].includes(project.current_status))
     .reduce((sum, project) => sum + Number(project.impact?.investment_usd_bn || 0), 0);
@@ -744,6 +757,11 @@ function renderMetrics() {
   elements.programs.title = programmeEnvelope(state.investmentPrograms?.programs || []);
   elements.live.textContent = projects.filter((project) => project.current_status === "operational").length;
   elements.count.textContent = t("projectCount", projects.length);
+}
+
+function isPowerCountable(project) {
+  return ["facility", "ai_factory_compute_deployment"].includes(project.record_type)
+    && !["paused", "cancelled"].includes(project.current_status);
 }
 
 function renderLegend() {
@@ -941,7 +959,7 @@ function showTooltip(project, point) {
 
 function countrySummary(projects, iso3) {
   const matches = projects.filter((project) => project.iso3 === iso3);
-  const power = matches.reduce((sum, project) => sum + Number(project.impact?.power_mw || 0), 0);
+  const power = matches.filter(isPowerCountable).reduce((sum, project) => sum + Number(project.impact?.power_mw || 0), 0);
   const investment = matches
     .filter((project) => project.impact?.investment_countable && !["paused", "cancelled"].includes(project.current_status))
     .reduce((sum, project) => sum + Number(project.impact?.investment_usd_bn || 0), 0);
@@ -1446,6 +1464,24 @@ function renderBarometer() {
   elements.coverageBar.style.width = percent(model.weighted_coverage);
   elements.barometerSummary.textContent = localized(model, "summary");
   elements.publicationRule.innerHTML = `<strong>${escapeHtml(t("publicationGate"))}:</strong> ${escapeHtml(localized(model.publication_gate, "rule"))}`;
+
+  elements.weeklySignalGrid.replaceChildren();
+  const directionLabels = {
+    mixed: t("signalDirectionMixed"),
+    pressure_up: t("signalDirectionPressureUp"),
+    demand_up: t("signalDirectionDemandUp"),
+  };
+  for (const signal of model.weekly_signals || []) {
+    const item = document.createElement("article");
+    item.className = `weekly-signal signal-${escapeHtml(signal.direction || "mixed")}`;
+    item.innerHTML = `
+      <div class="weekly-signal-meta"><span>${escapeHtml(directionLabels[signal.direction] || signal.direction)}</span><time datetime="${escapeHtml(signal.date)}">${escapeHtml(formatDate(signal.date))}</time></div>
+      <h4>${escapeHtml(localized(signal, "title"))}</h4>
+      <p>${escapeHtml(localized(signal, "reading"))}</p>
+      <small>${escapeHtml(localized(signal, "interpretation"))}</small>
+      <a href="${safeUrl(signal.source_url)}" target="_blank" rel="noopener noreferrer">Grade ${escapeHtml(signal.grade)} · ${escapeHtml(t("sourceLink"))} ↗</a>`;
+    elements.weeklySignalGrid.appendChild(item);
+  }
 
   elements.componentChart.replaceChildren();
   for (const component of model.components) {

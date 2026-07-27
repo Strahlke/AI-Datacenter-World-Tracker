@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-07-20",
+  "snapshot_date": "2026-07-27",
   "version": 1,
   "scope": "Wesentliche Produzenten und Engpassstufen zwischen AI-Rechenzentrumsnachfrage und Consumer-Hardware. Die Liste ist kuratiert, nicht vollstaendig und enthaelt bewusst keine ungesicherten Marktanteile.",
   "method": {
@@ -78,10 +78,15 @@
       "hq_country": "United States",
       "role_de": "AI-GPUs, CPU-GPU-Systeme, NVLink, Netzwerk und Referenzsysteme.",
       "role_en": "AI GPUs, CPU-GPU systems, NVLink, networking and reference systems.",
-      "signals_to_track": ["Data-Center-Umsatz", "Produkt-Ramps", "Lieferzeiten", "Cloud- und ODM-Partnerschaften"],
+      "signals_to_track": [
+        "Data-Center-Umsatz",
+        "Produkt-Ramps",
+        "Lieferzeiten",
+        "Cloud- und ODM-Partnerschaften"
+      ],
       "primary_source_url": "https://investor.nvidia.com/",
       "evidence_grade": "A",
-      "last_checked": "2026-07-15"
+      "last_checked": "2026-07-27"
     },
     {
       "id": "amd",
@@ -90,10 +95,15 @@
       "hq_country": "United States",
       "role_de": "Instinct-Beschleuniger, EPYC-CPUs und ROCm-Plattform.",
       "role_en": "Instinct accelerators, EPYC CPUs and the ROCm platform.",
-      "signals_to_track": ["Data-Center-Umsatz", "Instinct-Ramp", "Foundry- und HBM-Partner", "OEM-Verfuegbarkeit"],
+      "signals_to_track": [
+        "Data-Center-Umsatz",
+        "Instinct-Ramp",
+        "Foundry- und HBM-Partner",
+        "OEM-Verfuegbarkeit"
+      ],
       "primary_source_url": "https://ir.amd.com/",
       "evidence_grade": "A",
-      "last_checked": "2026-07-15"
+      "last_checked": "2026-07-27"
     },
     {
       "id": "broadcom-custom-silicon",
@@ -102,7 +112,12 @@
       "hq_country": "United States",
       "role_de": "Custom AI-Beschleuniger und Konnektivitaets-Silizium fuer Hyperscaler.",
       "role_en": "Custom AI accelerators and connectivity silicon for hyperscalers.",
-      "signals_to_track": ["AI-Umsatz", "Custom-ASIC-Kunden", "Packaging-Bedarf", "Netzwerk-Nachfrage"],
+      "signals_to_track": [
+        "AI-Umsatz",
+        "Custom-ASIC-Kunden",
+        "Packaging-Bedarf",
+        "Netzwerk-Nachfrage"
+      ],
       "primary_source_url": "https://investors.broadcom.com/",
       "evidence_grade": "A",
       "last_checked": "2026-07-15"
@@ -114,10 +129,15 @@
       "hq_country": "United States",
       "role_de": "Xeon-CPUs, AI-Beschleuniger und Plattformkomponenten.",
       "role_en": "Xeon CPUs, AI accelerators and platform components.",
-      "signals_to_track": ["Data-Center-Umsatz", "Produkt-Roadmap", "Kapazitaetsauslastung", "OEM-Auslieferungen"],
+      "signals_to_track": [
+        "Data-Center-Umsatz",
+        "Produkt-Roadmap",
+        "Kapazitaetsauslastung",
+        "OEM-Auslieferungen"
+      ],
       "primary_source_url": "https://www.intc.com/",
       "evidence_grade": "A",
-      "last_checked": "2026-07-15"
+      "last_checked": "2026-07-27"
     },
     {
       "id": "tsmc",
@@ -126,7 +146,12 @@
       "hq_country": "Taiwan",
       "role_de": "Fuehrende Logikfertigung und CoWoS-Packaging fuer viele AI-, CPU- und GPU-Produkte.",
       "role_en": "Leading-edge logic manufacturing and CoWoS packaging for many AI, CPU and GPU products.",
-      "signals_to_track": ["HPC-Umsatzmix", "Capex", "N2/N3-Kapazitaet", "CoWoS-Kapazitaet"],
+      "signals_to_track": [
+        "HPC-Umsatzmix",
+        "Capex",
+        "N2/N3-Kapazitaet",
+        "CoWoS-Kapazitaet"
+      ],
       "primary_source_url": "https://investor.tsmc.com/english",
       "evidence_grade": "A",
       "last_checked": "2026-07-15"
@@ -138,7 +163,12 @@
       "hq_country": "South Korea",
       "role_de": "Logikfertigung an fortgeschrittenen Prozessknoten.",
       "role_en": "Logic manufacturing on advanced process nodes.",
-      "signals_to_track": ["Foundry-Capex", "Knoten-Ramps", "Auslastung", "Grosskunden"],
+      "signals_to_track": [
+        "Foundry-Capex",
+        "Knoten-Ramps",
+        "Auslastung",
+        "Grosskunden"
+      ],
       "primary_source_url": "https://semiconductor.samsung.com/foundry/",
       "evidence_grade": "A",
       "last_checked": "2026-07-15"
@@ -150,10 +180,15 @@
       "hq_country": "United States",
       "role_de": "Foundry-Fertigung, Packaging und US/EU-Kapazitaetsausbau.",
       "role_en": "Foundry manufacturing, packaging and US/EU capacity expansion.",
-      "signals_to_track": ["Foundry-Auftraege", "Capex", "Knoten-Ramps", "Packaging"],
+      "signals_to_track": [
+        "Foundry-Auftraege",
+        "Capex",
+        "Knoten-Ramps",
+        "Packaging"
+      ],
       "primary_source_url": "https://www.intel.com/content/www/us/en/foundry/overview.html",
       "evidence_grade": "A",
-      "last_checked": "2026-07-15"
+      "last_checked": "2026-07-27"
     },
     {
       "id": "sk-hynix",
@@ -162,10 +197,15 @@
       "hq_country": "South Korea",
       "role_de": "HBM, DRAM, NAND und Enterprise-SSDs.",
       "role_en": "HBM, DRAM, NAND and enterprise SSDs.",
-      "signals_to_track": ["HBM-Mix", "DRAM-ASP", "Wafer-Kapazitaet", "M15X/Yongin-Ramp"],
+      "signals_to_track": [
+        "HBM-Mix",
+        "DRAM-ASP",
+        "Wafer-Kapazitaet",
+        "M15X/Yongin-Ramp"
+      ],
       "primary_source_url": "https://news.skhynix.com/q1-2026-business-results/",
       "evidence_grade": "A",
-      "last_checked": "2026-07-15"
+      "last_checked": "2026-07-27"
     },
     {
       "id": "samsung-memory",
@@ -174,7 +214,12 @@
       "hq_country": "South Korea",
       "role_de": "HBM, DRAM, NAND und Client-/Enterprise-SSDs.",
       "role_en": "HBM, DRAM, NAND and client or enterprise SSDs.",
-      "signals_to_track": ["Memory-Capex", "HBM-Qualifikation", "DRAM/NAND-Bitwachstum", "ASP"],
+      "signals_to_track": [
+        "Memory-Capex",
+        "HBM-Qualifikation",
+        "DRAM/NAND-Bitwachstum",
+        "ASP"
+      ],
       "primary_source_url": "https://www.samsung.com/global/ir/",
       "evidence_grade": "A",
       "last_checked": "2026-07-15"
@@ -186,7 +231,12 @@
       "hq_country": "United States",
       "role_de": "HBM, DRAM, NAND und Consumer-/Enterprise-Speicherprodukte.",
       "role_en": "HBM, DRAM, NAND and consumer or enterprise memory products.",
-      "signals_to_track": ["HBM-Auslieferung", "DRAM/NAND-ASP", "Capex", "Client- und Data-Center-Mix"],
+      "signals_to_track": [
+        "HBM-Auslieferung",
+        "DRAM/NAND-ASP",
+        "Capex",
+        "Client- und Data-Center-Mix"
+      ],
       "primary_source_url": "https://investors.micron.com/",
       "evidence_grade": "A",
       "last_checked": "2026-07-15"
@@ -198,7 +248,12 @@
       "hq_country": "Taiwan",
       "role_de": "2.5D-Packaging fuer AI-Beschleuniger und HBM.",
       "role_en": "2.5D packaging for AI accelerators and HBM.",
-      "signals_to_track": ["CoWoS-Kapazitaet", "Capex", "Yield", "Substrat-Verfuegbarkeit"],
+      "signals_to_track": [
+        "CoWoS-Kapazitaet",
+        "Capex",
+        "Yield",
+        "Substrat-Verfuegbarkeit"
+      ],
       "primary_source_url": "https://3dfabric.tsmc.com/english/dedicatedFoundry/technology/cowos.htm",
       "evidence_grade": "A",
       "last_checked": "2026-07-15"
@@ -210,7 +265,12 @@
       "hq_country": "Taiwan",
       "role_de": "Outsourced Semiconductor Assembly and Test sowie Advanced Packaging.",
       "role_en": "Outsourced semiconductor assembly and test plus advanced packaging.",
-      "signals_to_track": ["Advanced-Packaging-Umsatz", "Capex", "Auslastung", "AI-Auftraege"],
+      "signals_to_track": [
+        "Advanced-Packaging-Umsatz",
+        "Capex",
+        "Auslastung",
+        "AI-Auftraege"
+      ],
       "primary_source_url": "https://www.aseglobal.com/investors/",
       "evidence_grade": "A",
       "last_checked": "2026-07-15"
@@ -222,7 +282,12 @@
       "hq_country": "United States",
       "role_de": "Halbleiter-Packaging und Test mit wachsendem Advanced-Packaging-Angebot.",
       "role_en": "Semiconductor packaging and test with a growing advanced-packaging portfolio.",
-      "signals_to_track": ["Advanced-Packaging-Capex", "Werk-Ramps", "Auslastung", "Grosskunden"],
+      "signals_to_track": [
+        "Advanced-Packaging-Capex",
+        "Werk-Ramps",
+        "Auslastung",
+        "Grosskunden"
+      ],
       "primary_source_url": "https://ir.amkor.com/",
       "evidence_grade": "A",
       "last_checked": "2026-07-15"
@@ -234,7 +299,12 @@
       "hq_country": "United States",
       "role_de": "Switching-, Routing-, NIC- und Optik-Silizium.",
       "role_en": "Switching, routing, NIC and optics silicon.",
-      "signals_to_track": ["AI-Networking-Umsatz", "Switch-Generationen", "Optik", "Hyperscaler-Auftraege"],
+      "signals_to_track": [
+        "AI-Networking-Umsatz",
+        "Switch-Generationen",
+        "Optik",
+        "Hyperscaler-Auftraege"
+      ],
       "primary_source_url": "https://investors.broadcom.com/",
       "evidence_grade": "A",
       "last_checked": "2026-07-15"
@@ -246,7 +316,12 @@
       "hq_country": "United States",
       "role_de": "Data-Center-Netzwerk, Optik, DSPs und Custom Silicon.",
       "role_en": "Data-center networking, optics, DSPs and custom silicon.",
-      "signals_to_track": ["Data-Center-Umsatz", "Optik-Ramp", "Custom-Silicon-Pipeline", "Lieferzeiten"],
+      "signals_to_track": [
+        "Data-Center-Umsatz",
+        "Optik-Ramp",
+        "Custom-Silicon-Pipeline",
+        "Lieferzeiten"
+      ],
       "primary_source_url": "https://investor.marvell.com/",
       "evidence_grade": "A",
       "last_checked": "2026-07-15"
@@ -258,7 +333,12 @@
       "hq_country": "United States",
       "role_de": "Ethernet-Switches und Netzwerksoftware fuer Cloud- und AI-Cluster.",
       "role_en": "Ethernet switches and networking software for cloud and AI clusters.",
-      "signals_to_track": ["Cloud-Titan-Umsatz", "AI-Center-Piloten", "Backlog", "400G/800G-Mix"],
+      "signals_to_track": [
+        "Cloud-Titan-Umsatz",
+        "AI-Center-Piloten",
+        "Backlog",
+        "400G/800G-Mix"
+      ],
       "primary_source_url": "https://investors.arista.com/",
       "evidence_grade": "A",
       "last_checked": "2026-07-15"
@@ -270,7 +350,12 @@
       "hq_country": "Taiwan",
       "role_de": "Cloud- und AI-Server-ODM ueber QCT.",
       "role_en": "Cloud and AI server ODM through QCT.",
-      "signals_to_track": ["Server-Umsatz", "Rack-Auslieferung", "Capex", "Komponentenbestand"],
+      "signals_to_track": [
+        "Server-Umsatz",
+        "Rack-Auslieferung",
+        "Capex",
+        "Komponentenbestand"
+      ],
       "primary_source_url": "https://www.quantatw.com/Quanta/english/investment/financials.aspx",
       "evidence_grade": "A",
       "last_checked": "2026-07-15"
@@ -282,7 +367,12 @@
       "hq_country": "Taiwan",
       "role_de": "Cloud-Infrastruktur und rackskalige AI-Systeme.",
       "role_en": "Cloud infrastructure and rack-scale AI systems.",
-      "signals_to_track": ["AI-Server-Umsatz", "Rack-Ramps", "Capex", "Kundenkonzentration"],
+      "signals_to_track": [
+        "AI-Server-Umsatz",
+        "Rack-Ramps",
+        "Capex",
+        "Kundenkonzentration"
+      ],
       "primary_source_url": "https://www.wiwynn.com/investors/",
       "evidence_grade": "A",
       "last_checked": "2026-07-15"
@@ -294,7 +384,12 @@
       "hq_country": "Taiwan",
       "role_de": "Server- und Rechenzentrumssysteme fuer Cloud-Kunden.",
       "role_en": "Server and data-center systems for cloud customers.",
-      "signals_to_track": ["Server-Umsatz", "AI-Systemmix", "Capex", "Auslieferungen"],
+      "signals_to_track": [
+        "Server-Umsatz",
+        "AI-Systemmix",
+        "Capex",
+        "Auslieferungen"
+      ],
       "primary_source_url": "https://www.inventec.com/en/investor",
       "evidence_grade": "A",
       "last_checked": "2026-07-15"
@@ -306,7 +401,12 @@
       "hq_country": "Taiwan",
       "role_de": "AI-Server, Racks und Systemfertigung.",
       "role_en": "AI servers, racks and systems manufacturing.",
-      "signals_to_track": ["Cloud-Networking-Umsatz", "AI-Server-Ramp", "Werksausbau", "Kundenprogramme"],
+      "signals_to_track": [
+        "Cloud-Networking-Umsatz",
+        "AI-Server-Ramp",
+        "Werksausbau",
+        "Kundenprogramme"
+      ],
       "primary_source_url": "https://www.honhai.com/en-us/investor-relations",
       "evidence_grade": "A",
       "last_checked": "2026-07-20"
@@ -318,7 +418,12 @@
       "hq_country": "United States",
       "role_de": "Stromversorgung, Waermemanagement und modulare Rechenzentrumsinfrastruktur.",
       "role_en": "Power, thermal management and modular data-center infrastructure.",
-      "signals_to_track": ["Organic orders", "Backlog", "Liquid-Cooling-Umsatz", "Lieferzeiten"],
+      "signals_to_track": [
+        "Organic orders",
+        "Backlog",
+        "Liquid-Cooling-Umsatz",
+        "Lieferzeiten"
+      ],
       "primary_source_url": "https://investors.vertiv.com/",
       "evidence_grade": "A",
       "last_checked": "2026-07-15"
@@ -330,7 +435,12 @@
       "hq_country": "France",
       "role_de": "Energieverteilung, USV, Kuehlung und Rechenzentrumsmanagement.",
       "role_en": "Power distribution, UPS, cooling and data-center management.",
-      "signals_to_track": ["Data-Center-Nachfrage", "Auftragseingang", "Liquid Cooling", "Kapazitaetsausbau"],
+      "signals_to_track": [
+        "Data-Center-Nachfrage",
+        "Auftragseingang",
+        "Liquid Cooling",
+        "Kapazitaetsausbau"
+      ],
       "primary_source_url": "https://www.se.com/ww/en/about-us/investor-relations/",
       "evidence_grade": "A",
       "last_checked": "2026-07-15"
@@ -342,10 +452,32 @@
       "hq_country": "Ireland",
       "role_de": "Stromverteilung, USV und elektrische Infrastruktur fuer Rechenzentren.",
       "role_en": "Power distribution, UPS and electrical infrastructure for data centers.",
-      "signals_to_track": ["Data-Center-Auftraege", "Backlog", "Kapazitaetserweiterung", "Lieferzeiten"],
+      "signals_to_track": [
+        "Data-Center-Auftraege",
+        "Backlog",
+        "Kapazitaetserweiterung",
+        "Lieferzeiten"
+      ],
       "primary_source_url": "https://www.eaton.com/us/en-us/company/investor-relations.html",
       "evidence_grade": "A",
       "last_checked": "2026-07-15"
+    },
+    {
+      "id": "on-energy",
+      "name": "ON.energy",
+      "stage": "power_cooling",
+      "hq_country": "USA",
+      "role_de": "Batteriebasierte AI-USV und netzstuetzende Strominfrastruktur fuer Hyperscale-Campusse.",
+      "role_en": "Battery-based AI UPS and grid-supporting power infrastructure for hyperscale campuses.",
+      "signals_to_track": [
+        "AI-USV-Deployments",
+        "GW-Inbetriebnahmen",
+        "Batteriezellen",
+        "Lieferzeiten"
+      ],
+      "primary_source_url": "https://www.crusoe.ai/resources/newsroom/crusoe-and-on-energy-to-deploy-5-gw-of-ai-ups-tm-at-multiple-hyperscale-campuses",
+      "evidence_grade": "A",
+      "last_checked": "2026-07-27"
     }
   ]
 }
