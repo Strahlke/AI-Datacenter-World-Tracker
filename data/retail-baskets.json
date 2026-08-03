@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-07-27",
+  "snapshot_date": "2026-08-03",
   "methodology_version": "1.1",
   "current_level": "L1",
   "current_level_label_de": "Historische Retail-Zeitreihe",
@@ -8,11 +8,11 @@
   "status_de": "L1: 365-Tage-Fixed-Cohort-Backfill plus drei selbst archivierte Wochensnapshots. Kalibrierung der Revisionsstabilitaet beginnt ab Woche 13.",
   "status_en": "L1: 365-day fixed-cohort backfill plus three self-archived weekly snapshots. Revision-stability calibration starts at week 13.",
   "observation_summary": {
-    "weekly_observations": 3,
+    "weekly_observations": 4,
     "active_retailers": 0,
     "historical_days": 365,
     "historical_product_series": 40,
-    "historical_product_points": 14561,
+    "historical_product_points": 14600,
     "categories_with_minimum_coverage": 4,
     "total_categories": 4,
     "availability_coverage": 0.975,
@@ -201,8 +201,8 @@
       "status": "connected",
       "grade": "B",
       "url": "https://geizhals.de/wishlists",
-      "caveat_de": "Geizhals ist ein Aggregator. Der historische Wunschlistenpreis wird fuer die heutige feste Produktzusammensetzung rueckgerechnet. Die vier Listen wurden am 20.07.2026 in der UI als privat markiert; bis zur Freigabe ist der Wochen-Snapshot nicht ohne Sitzung reproduzierbar.",
-      "caveat_en": "Geizhals is an aggregator. Historical wishlist prices are reconstructed for today's fixed product composition. The four lists were marked private in the UI on 20 July 2026; until shared publicly, the weekly snapshot is not reproducible without a session."
+      "caveat_de": "Geizhals ist ein Aggregator. Der historische Wunschlistenpreis wird fuer die heutige feste Produktzusammensetzung rueckgerechnet. Die vier Listen waren am 3. August 2026 weiterhin als privat markiert, obwohl die Direktlinks ohne Login lesbar waren; diese eingeschraenkte Reproduzierbarkeit bleibt eine Datenluecke.",
+      "caveat_en": "Geizhals is an aggregator. Historical wishlist prices are reconstructed for today's fixed product composition. On 3 August 2026 the four lists were still labelled private even though direct links were readable without login; this limited reproducibility remains a data gap."
     },
     {
       "id": "reviewed-csv",

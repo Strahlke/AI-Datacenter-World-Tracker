@@ -1,18 +1,18 @@
 {
-  "snapshot_date": "2026-07-27",
+  "snapshot_date": "2026-08-03",
   "version": 2,
   "name_de": "Consumer Hardwarekosten-Druckindex",
   "name_en": "Consumer Hardware Cost Pressure Index",
   "short_name": "CHPI",
   "status": "provisional",
   "score_type": "provisional_backcast",
-  "score": 74.4,
+  "score": 73.2,
   "weighted_coverage": 0.895,
   "confidence": "medium",
   "retail_grade": false,
   "history_file": "hardware-history.json",
-  "summary_de": "Vorlaeufiger datenbasierter Wert: 74,4 von 100 – steigender Preisdruck. Drei selbst archivierte Geizhals-Wochen zeigen aktuell einen gemischten Retail-Impuls: DDR5 steigt stark, waehrend NVMe-SSD und Desktop-CPU leicht nachgeben. TrendForce meldet zugleich eine NAND-Angebotsluecke fuer 2026. Diese Wochensignale werden sichtbar dokumentiert, veraendern den monatlichen CHPI aber vor der 13-Wochen-Kalibrierung nicht.",
-  "summary_en": "Provisional data-backed reading: 74.4 out of 100 – rising price pressure. Three self-archived Geizhals weeks currently show a mixed retail impulse: DDR5 is rising strongly while NVMe SSD and desktop CPU prices ease slightly. TrendForce also reports a 2026 NAND supply gap. These weekly signals are displayed but do not change the monthly CHPI before the 13-week calibration.",
+  "summary_de": "Vorlaeufiger datenbasierter Wert: 73,2 von 100 – steigender Preisdruck. Vier selbst archivierte Geizhals-Wochen zeigen aktuell einen breiten Preisauftrieb: GPU +4,07 %, DDR5 +4,94 %, NVMe +1,34 % und CPU +1,16 % zur Vorwoche bei 39 von 40 angebotenen SKUs. Die nun direkt vorliegenden amtlichen Juni-Werte senken den monatlichen CHPI; der Wochenimpuls wird vor der 13-Wochen-Kalibrierung noch nicht eingerechnet.",
+  "summary_en": "Provisional data-backed reading: 73.2 out of 100 – rising price pressure. Four self-archived Geizhals weeks now show broad increases: GPU +4.07%, DDR5 +4.94%, NVMe +1.34% and CPU +1.16% week over week, with offers for 39 of 40 SKUs. Newly available official June observations lower the monthly CHPI; the weekly impulse is not yet included before the 13-week calibration.",
   "purpose_de": "Misst den Preisdruck, den private Kaeufer bei GPUs, CPUs, Arbeitsspeicher und SSDs in den kommenden Wochen und Monaten erwarten koennen.",
   "purpose_en": "Measures the price pressure private buyers may face for GPUs, CPUs, memory and SSDs over the coming weeks and months.",
   "scale": {
@@ -79,7 +79,7 @@
       "label_en": "Observed consumer prices",
       "weight": 0.35,
       "coverage": 1,
-      "current_score": 75.3,
+      "current_score": 74.6,
       "status": "tracked",
       "definition_de": "Der aktuelle Score verwendet weiterhin den gleichgewichteten Sechsmonats-Preistrend von BLS und Eurostat. Der neue 365-Tage-Geizhals-Backfill fuer 40 feste MPNs ist als direkte Diagnose sichtbar und wird nach 13 selbst archivierten Wochen auf Revisionsstabilitaet geprueft, bevor die Gewichtung geaendert wird.",
       "definition_en": "The current score continues to use the equal-weight six-month BLS and Eurostat price trend. The new 365-day Geizhals backfill for 40 fixed MPNs is visible as a direct diagnostic and will be tested for revision stability after 13 self-archived weeks before weights change."
@@ -101,7 +101,7 @@
       "label_en": "Upstream memory & manufacturing",
       "weight": 0.25,
       "coverage": 0.9,
-      "current_score": 78.9,
+      "current_score": 75.3,
       "status": "tracked",
       "definition_de": "Gleichgewichteter Mix aus dem amtlichen BLS-Erzeugerpreisindex fuer Halbleiter und quartalsweisen DRAM-/NAND-Vertragspreis-Mittelpunkten von TrendForce. Forecasts und breitere Speicherklassen werden als Proxy markiert.",
       "definition_en": "Equal-weight mix of the official BLS producer-price index for semiconductors and quarterly DRAM/NAND contract-price midpoints from TrendForce. Forecasts and broader memory categories are marked as proxies."
@@ -233,7 +233,7 @@
       "title": "How BLS measures price change for computers and peripherals",
       "url": "https://www.bls.gov/cpi/factsheets/personal-computers.htm",
       "use_for": "Qualitaetsbereinigter offizieller Kontrollindex fuer Computerpreise",
-      "last_checked": "2026-07-15"
+      "last_checked": "2026-08-03"
     },
     {
       "id": "eurostat-hicp-computers",
@@ -242,7 +242,7 @@
       "title": "HICP ECOICOP v2 monthly index for personal computers",
       "url": "https://ec.europa.eu/eurostat/web/hicp/information-data",
       "use_for": "Direkt beobachteter Personal-Computer-Preisindex fuer den Euroraum",
-      "last_checked": "2026-07-15"
+      "last_checked": "2026-08-03"
     },
     {
       "id": "bls-semiconductor-ppi",
@@ -251,7 +251,7 @@
       "title": "PPI industry series: Semiconductor and related device manufacturing",
       "url": "https://www.bls.gov/ppi/data-retrieval-guide/home.htm",
       "use_for": "Amtlicher breiter Upstream-Preisproxy fuer die Halbleiterfertigung",
-      "last_checked": "2026-07-15"
+      "last_checked": "2026-08-03"
     },
     {
       "id": "sec-xbrl-companyfacts",
@@ -260,7 +260,7 @@
       "title": "EDGAR Company Facts XBRL API",
       "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
       "use_for": "Quartalsweise Cash-PP&E-Ausgaben von Amazon, Alphabet, Meta und Microsoft",
-      "last_checked": "2026-07-15"
+      "last_checked": "2026-08-03"
     },
     {
       "id": "ecb-reference-rates",
@@ -269,7 +269,7 @@
       "title": "Monthly US dollar / euro reference rate",
       "url": "https://data.ecb.europa.eu/data/datasets/EXR/EXR.M.USD.EUR.SP00.A",
       "use_for": "Wechselkursbedingter Importkostendruck fuer in USD gehandelte Hardware",
-      "last_checked": "2026-07-20"
+      "last_checked": "2026-08-03"
     },
     {
       "id": "geizhals-public-price-history",
@@ -278,7 +278,7 @@
       "title": "Oeffentliche Preisentwicklung der CHPI-DE-Wunschlisten",
       "url": "https://geizhals.de/wishlists/5081030",
       "use_for": "365 Tage direkte Produkt- und Fixed-Cohort-Preisverlaeufe fuer 40 feste MPNs in Deutschland",
-      "last_checked": "2026-07-20"
+      "last_checked": "2026-08-03"
     },
     {
       "id": "trendforce-nand-2026-07",
@@ -304,15 +304,54 @@
     "observations_file": "retail-observations.json",
     "history_file": "retail-history.json",
     "raw_history_file": "retail-history-daily.json",
-    "weekly_snapshots": 3,
+    "weekly_snapshots": 4,
     "historical_days": 365,
     "historical_product_series": 40,
-    "historical_product_points": 14561,
+    "historical_product_points": 14600,
     "current_level": "L1",
     "retail_readiness": 0.5,
     "retail_grade_gate_met": false
   },
   "weekly_signals": [
+    {
+      "id": "geizhals-2026-08-03",
+      "date": "2026-08-03",
+      "direction": "pressure_up",
+      "title_de": "Retail-Koerbe steigen auf breiter Front",
+      "title_en": "Retail baskets rise broadly",
+      "reading_de": "GPU +4,07 %, DDR5 +4,94 %, NVMe +1,34 % und CPU +1,16 % zur Vorwoche. 39 von 40 SKUs mit Angebot.",
+      "reading_en": "GPU +4.07%, DDR5 +4.94%, NVMe +1.34% and CPU +1.16% week over week. 39 of 40 SKUs have an offer.",
+      "interpretation_de": "Breiter Endkunden-Preisdruck; die rohe Summe der unveraenderten Koerbe stieg um 3,67 %. Noch nicht im monatlichen CHPI gewichtet.",
+      "interpretation_en": "Broad consumer price pressure; the raw total of the unchanged baskets rose 3.67%. Not yet weighted into the monthly CHPI.",
+      "source_url": "https://geizhals.de/wishlists/5081030",
+      "grade": "B"
+    },
+    {
+      "id": "core-scientific-amd-2026-07-28",
+      "date": "2026-07-28",
+      "direction": "demand_up",
+      "title_de": "AMD bindet 530 MW AI-Colocation",
+      "title_en": "AMD contracts 530 MW of AI colocation",
+      "reading_de": "Core Scientific meldet ausgefuehrte 15-Jahres-Vertraege fuer rund 530 MW an fuenf US-Standorten, mit Bereitstellungen ab 2027.",
+      "reading_en": "Core Scientific reports executed 15-year agreements for about 530 MW across five U.S. sites, with deployments starting in 2027.",
+      "interpretation_de": "Belastbarer Fruehindikator fuer AI-Infrastrukturnachfrage, aber kein direkter Consumer-Preisbeleg.",
+      "interpretation_en": "Strong early indicator for AI infrastructure demand, but not direct evidence of consumer prices.",
+      "source_url": "https://investors.corescientific.com/news-events/press-releases/detail/139/core-scientific-announces-second-quarter-2026-results",
+      "grade": "A"
+    },
+    {
+      "id": "eurohpc-gigafactories-2026-07-30",
+      "date": "2026-07-30",
+      "direction": "demand_up",
+      "title_de": "EU startet formale Gigafactory-Auswahl",
+      "title_en": "EU opens formal gigafactory selection",
+      "reading_de": "EuroHPC sucht bis zu sieben Konsortien; Auswahl Anfang 2027, erwarteter Betrieb binnen 18 Monaten und >20 Mrd. EUR erwartete private Investitionen.",
+      "reading_en": "EuroHPC seeks up to seven consortia; selection is expected in early 2027, operations within 18 months and more than EUR 20bn in expected private investment.",
+      "interpretation_de": "Fruehes Nachfrage- und Finanzierungssignal; ohne ausgewaehlte Standorte noch keine Facility und kein Consumer-Preisbeleg.",
+      "interpretation_en": "Early demand and funding signal; without selected sites it is not yet a facility or consumer-price evidence.",
+      "source_url": "https://www.eurohpc-ju.europa.eu/eurohpc-joint-undertaking-launches-ai-gigafactories-call-2026-07-30_en",
+      "grade": "A"
+    },
     {
       "id": "geizhals-2026-07-27",
       "date": "2026-07-27",

@@ -86,6 +86,11 @@ function normaliseSeries(rows) {
   ]);
 }
 
+function alignSeriesToDates(series, dates) {
+  const byDate = new Map(series.map((point) => [point[0], point]));
+  return dates.map((date) => byDate.get(date) || [date, null, 0]);
+}
+
 function aggregateMonthly(series) {
   const months = new Map();
   for (const [date, price, pricedItemCount] of series) {
@@ -225,6 +230,8 @@ for (const config of basketConfig) {
     itemcount: config.articleIds.map(() => 1),
     referer,
   });
+  const basketSeries = normaliseSeries(basketHistory.response);
+  const basketDates = basketSeries.map(([date]) => date);
   const products = await mapWithConcurrency(config.articleIds, async (articleId, index) => {
     const history = await requestHistory({ id: articleId, referer });
     const observedProduct = basket.products[index];
@@ -233,11 +240,10 @@ for (const config of basketConfig) {
       name: observedProduct.name,
       mpn: observedProduct.mpn,
       meta: history.meta,
-      series: normaliseSeries(history.response),
+      series: alignSeriesToDates(normaliseSeries(history.response), basketDates),
     };
   });
 
-  const basketSeries = normaliseSeries(basketHistory.response);
   const comparableIndex = buildComparableIndex(products);
   rawBaskets.push({
     basket_id: config.id,

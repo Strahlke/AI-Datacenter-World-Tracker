@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-07-27",
+  "snapshot_date": "2026-08-03",
   "version": 1,
   "period_start": "2025-07",
   "period_end": "2026-06",
@@ -21,7 +21,7 @@
       "ai_infrastructure_demand": "Quarter-on-quarter cash PP&E capex change for Amazon, Alphabet, Meta and Microsoft from SEC XBRL filings.",
       "macro_transmission": "EUR cost of one USD from the ECB reference rate."
     },
-    "missing_data_policy": "Raw missing values remain null. BLS computer CPI October 2025 is linearly interpolated only inside the derived six-month calculation and is visibly documented. Eurostat June 2026 and BLS semiconductor PPI June 2026 use the latest available May observation for the June backcast.",
+    "missing_data_policy": "Raw missing values remain null. BLS computer CPI October 2025 is linearly interpolated only inside the derived six-month calculation and is visibly documented. Eurostat June 2026 and BLS semiconductor PPI June 2026 are direct observations; July 2026 is incomplete and therefore unscored.",
     "future_model_rule": "After at least 36 monthly observations, compare these fixed thresholds with a rolling percentile model before changing the published method. Any change must be versioned."
   },
   "monthly_series": [
@@ -139,7 +139,7 @@
       "series_code": "PRC_HICP_MINR/M.I25.CP08131.EA20",
       "source_id": "eurostat-hicp-computers",
       "source_url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/3.0/data/dataflow/ESTAT/PRC_HICP_MINR/1.0/M.I25.CP08131.EA20?c%5BTIME_PERIOD%5D=ge%3A2025-01&format=tsv&compress=false",
-      "latest_period": "2026-05",
+      "latest_period": "2026-06",
       "observations": [
         {
           "period": "2025-01",
@@ -228,8 +228,8 @@
         },
         {
           "period": "2026-06",
-          "value": null,
-          "status": "not_released"
+          "value": 103.83,
+          "status": "direct_observation"
         }
       ]
     },
@@ -243,7 +243,7 @@
       "series_code": "PCU334413334413",
       "source_id": "bls-semiconductor-ppi",
       "source_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/PCU334413334413?startyear=2025&endyear=2026",
-      "latest_period": "2026-05",
+      "latest_period": "2026-06",
       "observations": [
         {
           "period": "2025-01",
@@ -322,18 +322,18 @@
         },
         {
           "period": "2026-04",
-          "value": 30.62,
-          "status": "preliminary"
+          "value": 30.602,
+          "status": "direct_observation"
         },
         {
           "period": "2026-05",
-          "value": 30.104,
-          "status": "preliminary"
+          "value": 30.162,
+          "status": "direct_observation"
         },
         {
           "period": "2026-06",
-          "value": null,
-          "status": "not_released"
+          "value": 29.695,
+          "status": "preliminary"
         }
       ]
     },
@@ -346,8 +346,8 @@
       "geography": "Euro area",
       "series_code": "EXR.M.USD.EUR.SP00.A",
       "source_id": "ecb-reference-rates",
-      "source_url": "https://data-api.ecb.europa.eu/service/data/EXR/M.USD.EUR.SP00.A?startPeriod=2025-01&endPeriod=2026-06&format=csvdata",
-      "latest_period": "2026-06",
+      "source_url": "https://data-api.ecb.europa.eu/service/data/EXR/M.USD.EUR.SP00.A?startPeriod=2025-01&endPeriod=2026-07&format=csvdata",
+      "latest_period": "2026-07",
       "observations": [
         {
           "period": "2025-01",
@@ -437,6 +437,11 @@
         {
           "period": "2026-06",
           "value": 1.1518,
+          "status": "direct_observation"
+        },
+        {
+          "period": "2026-07",
+          "value": 1.1417478260869562,
           "status": "direct_observation"
         }
       ]
@@ -571,7 +576,7 @@
       "confidence": "medium",
       "components": {
         "retail_price": 45.9,
-        "upstream_prices": 55.3,
+        "upstream_prices": 55.4,
         "ai_infrastructure_demand": 75.6,
         "macro_transmission": 0
       }
@@ -590,11 +595,11 @@
     },
     {
       "period": "2025-09",
-      "score": 44.2,
+      "score": 44.3,
       "weighted_coverage": 0.895,
       "confidence": "medium",
       "components": {
-        "retail_price": 43.7,
+        "retail_price": 43.8,
         "upstream_prices": 50.8,
         "ai_infrastructure_demand": 75.6,
         "macro_transmission": 0
@@ -618,8 +623,8 @@
       "weighted_coverage": 0.895,
       "confidence": "medium",
       "components": {
-        "retail_price": 38.2,
-        "upstream_prices": 70.9,
+        "retail_price": 38.1,
+        "upstream_prices": 71,
         "ai_infrastructure_demand": 100,
         "macro_transmission": 25.6
       }
@@ -642,7 +647,7 @@
       "weighted_coverage": 0.895,
       "confidence": "medium",
       "components": {
-        "retail_price": 52.1,
+        "retail_price": 52,
         "upstream_prices": 73.5,
         "ai_infrastructure_demand": 73.4,
         "macro_transmission": 44.8
@@ -666,7 +671,7 @@
       "weighted_coverage": 0.895,
       "confidence": "medium",
       "components": {
-        "retail_price": 62.7,
+        "retail_price": 62.8,
         "upstream_prices": 80.8,
         "ai_infrastructure_demand": 73.4,
         "macro_transmission": 65
@@ -674,36 +679,36 @@
     },
     {
       "period": "2026-04",
-      "score": 69,
+      "score": 68.9,
       "weighted_coverage": 0.895,
       "confidence": "medium",
       "components": {
-        "retail_price": 68.6,
-        "upstream_prices": 83.3,
+        "retail_price": 68.5,
+        "upstream_prices": 83.1,
         "ai_infrastructure_demand": 73.4,
         "macro_transmission": 43.5
       }
     },
     {
       "period": "2026-05",
-      "score": 69.3,
+      "score": 69.5,
       "weighted_coverage": 0.895,
       "confidence": "medium",
       "components": {
         "retail_price": 73.7,
-        "upstream_prices": 78.9,
+        "upstream_prices": 79.3,
         "ai_infrastructure_demand": 73.4,
         "macro_transmission": 40.3
       }
     },
     {
       "period": "2026-06",
-      "score": 74.4,
+      "score": 73.2,
       "weighted_coverage": 0.895,
       "confidence": "medium",
       "components": {
-        "retail_price": 75.3,
-        "upstream_prices": 78.9,
+        "retail_price": 74.6,
+        "upstream_prices": 75.3,
         "ai_infrastructure_demand": 73.4,
         "macro_transmission": 66.6
       }
@@ -725,10 +730,10 @@
       "id": "euro_area_personal_computers",
       "label_de": "Euroraum-PC-Preise",
       "label_en": "Euro-area PC prices",
-      "value": 5.14,
+      "value": 4.88,
       "unit_de": "% / 6 Monate",
       "unit_en": "% / 6 months",
-      "period": "2026-05",
+      "period": "2026-06",
       "evidence_type": "direct",
       "source_id": "eurostat-hicp-computers"
     },
@@ -736,10 +741,10 @@
       "id": "semiconductor_producer_prices",
       "label_de": "Halbleiter-Erzeugerpreise",
       "label_en": "Semiconductor producer prices",
-      "value": 1.54,
+      "value": 0.09,
       "unit_de": "% / 6 Monate",
       "unit_en": "% / 6 months",
-      "period": "2026-05",
+      "period": "2026-06",
       "evidence_type": "direct_proxy",
       "source_id": "bls-semiconductor-ppi"
     },
@@ -794,6 +799,11 @@
       "severity": "low",
       "note_de": "Der BLS-Wert fuer Oktober 2025 fehlt wegen des damaligen Ausfalls der US-Bundesfinanzierung. Nur fuer die abgeleitete Sechsmonatsrechnung wird zwischen September und November linear interpoliert.",
       "note_en": "The October 2025 BLS value is unavailable because of the U.S. federal funding lapse. It is linearly interpolated between September and November only for the derived six-month calculation."
+    },
+    {
+      "severity": "medium",
+      "note_de": "Die Q2-2026-Cash-Capex-Werte sind fuer Amazon, Alphabet und Microsoft verfuegbar, aber Meta fehlt zum Stichtag in SEC Company Facts. Das Quartal bleibt deshalb roh unvollstaendig und wird weder addiert noch gescort.",
+      "note_en": "Q2 2026 cash-capex values are available for Amazon, Alphabet and Microsoft, but Meta is missing from SEC Company Facts at the cutoff. The quarter remains incomplete and is neither summed nor scored."
     }
   ],
   "sources": [
@@ -802,42 +812,42 @@
       "grade": "A",
       "publisher": "U.S. Bureau of Labor Statistics",
       "url": "https://www.bls.gov/cpi/factsheets/personal-computers.htm",
-      "last_checked": "2026-07-15"
+      "last_checked": "2026-08-03"
     },
     {
       "id": "eurostat-hicp-computers",
       "grade": "A",
       "publisher": "Eurostat",
       "url": "https://ec.europa.eu/eurostat/web/hicp/information-data",
-      "last_checked": "2026-07-15"
+      "last_checked": "2026-08-03"
     },
     {
       "id": "bls-semiconductor-ppi",
       "grade": "A",
       "publisher": "U.S. Bureau of Labor Statistics",
       "url": "https://www.bls.gov/ppi/data-retrieval-guide/home.htm",
-      "last_checked": "2026-07-15"
+      "last_checked": "2026-08-03"
     },
     {
       "id": "sec-xbrl-companyfacts",
       "grade": "A",
       "publisher": "U.S. Securities and Exchange Commission",
       "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
-      "last_checked": "2026-07-15"
+      "last_checked": "2026-08-03"
     },
     {
       "id": "ecb-reference-rates",
       "grade": "A",
       "publisher": "European Central Bank",
       "url": "https://data.ecb.europa.eu/data/datasets/EXR/EXR.M.USD.EUR.SP00.A",
-      "last_checked": "2026-07-20"
+      "last_checked": "2026-08-03"
     },
     {
       "id": "trendforce-memory-pricing",
       "grade": "B",
       "publisher": "TrendForce",
       "url": "https://www.trendforce.com/presscenter/news/20260331-12995.html",
-      "last_checked": "2026-07-20"
+      "last_checked": "2026-08-03"
     }
   ]
 }

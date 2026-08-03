@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-07-27",
+  "snapshot_date": "2026-08-03",
   "scope_de": "Oeffentlich angekuendigte Dachprogramme und Investitionsrahmen. Nicht additiv zu einzelnen Standorten; Originalwaehrungen bleiben erhalten.",
   "scope_en": "Public umbrella programmes and investment envelopes. Not additive to individual sites; original currencies are retained.",
   "programs": [
@@ -53,12 +53,23 @@
       "includes_project_ids": [],
       "countable_with_sites": false,
       "double_count_group": "eu-investai",
-      "note_de": "200 Mrd. EUR Mobilisierungsziel fuer AI insgesamt; darin 20 Mrd. EUR fuer bis zu fuenf AI-Gigafactories. Noch keine Standortallokation.",
-      "note_en": "EUR 200bn AI mobilisation target, including EUR 20bn for up to five AI gigafactories. No site allocation yet.",
+      "note_de": "200 Mrd. EUR Mobilisierungsziel fuer AI insgesamt und ein 20-Mrd.-EUR-Dachfonds. Der formale EuroHPC-Aufruf vom 30. Juli 2026 zielt auf bis zu sieben AI-Gigafactories in mindestens sieben Mitgliedstaaten und erwartet mehr als 20 Mrd. EUR private Investitionen. Noch keine Standorte oder Konsortien ausgewaehlt; Auswahl Anfang 2027, Betrieb binnen 18 Monaten danach.",
+      "note_en": "EUR 200bn AI mobilisation target and a EUR 20bn umbrella fund. The formal EuroHPC call of 30 July 2026 targets up to seven AI gigafactories in at least seven member states and expects more than EUR 20bn in private investment. No sites or consortia have been selected; selection is expected in early 2027 and operations within 18 months thereafter.",
       "source": {
-        "publisher": "European Commission",
-        "title": "EU launches InvestAI initiative",
-        "url": "https://ec.europa.eu/commission/presscorner/api/files/document/print/en/ip_25_467/IP_25_467_EN.pdf"
+        "publisher": "EuroHPC Joint Undertaking",
+        "title": "EuroHPC launches AI Gigafactories call",
+        "url": "https://www.eurohpc-ju.europa.eu/eurohpc-joint-undertaking-launches-ai-gigafactories-call-2026-07-30_en"
+      },
+      "tender_private_investment_expected": {
+        "value_bn": 20,
+        "currency": "EUR",
+        "value_type": "minimum_expected"
+      },
+      "selection": {
+        "call_deadline": "2026-11-12",
+        "expected_selection": "2027",
+        "operations_deadline": "within 18 months after selection",
+        "maximum_gigafactories": 7
       }
     },
     {
