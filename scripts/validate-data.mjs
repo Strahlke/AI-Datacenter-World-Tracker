@@ -276,6 +276,7 @@ requireValue(Array.isArray(retailObservationsPayload.snapshots) && retailObserva
 requireValue(barometerPayload.retail_model?.weekly_snapshots === retailObservationsPayload.snapshots.length, "barometer: weekly_snapshots stimmt nicht mit retail-observations ueberein");
 
 const retailBasketDefinitions = new Map((retailBasketsPayload.baskets || []).map((basket) => [basket.id, basket]));
+const latestRetailSnapshot = retailObservationsPayload.snapshots?.at(-1);
 let previousRetailTimestamp = null;
 for (const snapshot of retailObservationsPayload.snapshots || []) {
   const timestamp = Date.parse(snapshot.observed_at || "");
@@ -324,13 +325,14 @@ for (const snapshot of retailObservationsPayload.snapshots || []) {
     if (definition) {
       requireValue(definition.target_slots === basketObservation.item_count, `${prefix}: item_count stimmt nicht mit target_slots ueberein`);
       requireValue(definition.observed_skus === basketObservation.item_count, `${prefix}: observed_skus stimmt nicht`);
-      requireValue(definition.available_skus === basketObservation.available_count, `${prefix}: available_skus stimmt nicht`);
+      if (snapshot === latestRetailSnapshot) {
+        requireValue(definition.available_skus === basketObservation.available_count, `${prefix}: available_skus stimmt nicht`);
+      }
       requireValue(definition.wishlist_url === basketObservation.wishlist_url, `${prefix}: wishlist_url stimmt nicht mit Definition ueberein`);
     }
   }
 }
 
-const latestRetailSnapshot = retailObservationsPayload.snapshots?.at(-1);
 if (latestRetailSnapshot) {
   const latestBaskets = latestRetailSnapshot.baskets || [];
   for (const basket of latestBaskets) {

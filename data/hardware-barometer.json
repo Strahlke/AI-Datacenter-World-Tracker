@@ -1,18 +1,18 @@
 {
-  "snapshot_date": "2026-08-03",
+  "snapshot_date": "2026-08-10",
   "version": 2,
   "name_de": "Consumer Hardwarekosten-Druckindex",
   "name_en": "Consumer Hardware Cost Pressure Index",
   "short_name": "CHPI",
   "status": "provisional",
   "score_type": "provisional_backcast",
-  "score": 73.2,
+  "score": 78.3,
   "weighted_coverage": 0.895,
   "confidence": "medium",
   "retail_grade": false,
   "history_file": "hardware-history.json",
-  "summary_de": "Vorlaeufiger datenbasierter Wert: 73,2 von 100 – steigender Preisdruck. Vier selbst archivierte Geizhals-Wochen zeigen aktuell einen breiten Preisauftrieb: GPU +4,07 %, DDR5 +4,94 %, NVMe +1,34 % und CPU +1,16 % zur Vorwoche bei 39 von 40 angebotenen SKUs. Die nun direkt vorliegenden amtlichen Juni-Werte senken den monatlichen CHPI; der Wochenimpuls wird vor der 13-Wochen-Kalibrierung noch nicht eingerechnet.",
-  "summary_en": "Provisional data-backed reading: 73.2 out of 100 – rising price pressure. Four self-archived Geizhals weeks now show broad increases: GPU +4.07%, DDR5 +4.94%, NVMe +1.34% and CPU +1.16% week over week, with offers for 39 of 40 SKUs. Newly available official June observations lower the monthly CHPI; the weekly impulse is not yet included before the 13-week calibration.",
+  "summary_de": "Vorlaeufiger datenbasierter Wert: 78,3 von 100 – hoher Preisdruck. Der nun vollstaendige Q2-Cash-Capex-Proxy der vier Hyperscaler steigt um 27,21 % zum Vorquartal. Der fuenfte Geizhals-Snapshot zeigt GPU +0,35 %, DDR5 +3,13 %, NVMe +1,37 % und CPU +0,50 % zur Vorwoche bei 38 von 40 angebotenen SKUs; der Wochenimpuls wird vor der 13-Wochen-Kalibrierung noch nicht direkt gewichtet.",
+  "summary_en": "Provisional data-backed reading: 78.3 out of 100 – high price pressure. The now-complete Q2 cash-capex proxy for the four hyperscalers rises 27.21% quarter over quarter. The fifth Geizhals snapshot shows GPU +0.35%, DDR5 +3.13%, NVMe +1.37% and CPU +0.50% week over week, with offers for 38 of 40 SKUs; the weekly impulse is not yet directly weighted before the 13-week calibration.",
   "purpose_de": "Misst den Preisdruck, den private Kaeufer bei GPUs, CPUs, Arbeitsspeicher und SSDs in den kommenden Wochen und Monaten erwarten koennen.",
   "purpose_en": "Measures the price pressure private buyers may face for GPUs, CPUs, memory and SSDs over the coming weeks and months.",
   "scale": {
@@ -112,7 +112,7 @@
       "label_en": "AI infrastructure demand",
       "weight": 0.2,
       "coverage": 0.85,
-      "current_score": 73.4,
+      "current_score": 100,
       "status": "tracked",
       "definition_de": "Quartalsveraenderung der bei der SEC gemeldeten Cash-Ausgaben fuer PP&E von Amazon, Alphabet, Meta und Microsoft. Die Projektkarte bleibt Diagnoseebene; der Score wird nicht mehr aus 21 kuratierten Projekten abgeleitet. Konzern-Capex ist breiter als AI-Rechenzentren und nur ein Nachfrage-Proxy.",
       "definition_en": "Quarterly change in SEC-reported cash PP&E spending by Amazon, Alphabet, Meta and Microsoft. The project map remains diagnostic; the score is no longer derived from 21 curated projects. Company capex is broader than AI data centers and is only a demand proxy."
@@ -197,7 +197,7 @@
       "title": "AI Server Demand to Drive Memory Contract Price Increases in 2Q26",
       "url": "https://www.trendforce.com/presscenter/news/20260331-12995.html",
       "use_for": "Upstream DRAM-, NAND-, Server- und HBM-Preisdruck",
-      "last_checked": "2026-07-20"
+      "last_checked": "2026-08-10"
     },
     {
       "id": "tsmc-q1-2026",
@@ -206,7 +206,7 @@
       "title": "Q1 2026 earnings call transcript",
       "url": "https://investor.tsmc.com/schinese/encrypt/files/encrypt_file/reports/2026-04/3cef85204275f94fd111485cfdf4adb3c0263c45/TSMC%201Q26%20Transcript.pdf",
       "use_for": "Foundry- und CoWoS-Kapazitaet sowie AI-Nachfrage",
-      "last_checked": "2026-07-15"
+      "last_checked": "2026-08-10"
     },
     {
       "id": "micron-q3-2026",
@@ -215,7 +215,7 @@
       "title": "Third quarter fiscal 2026 results",
       "url": "https://investors.micron.com/news-releases/news-release-details/micron-technology-inc-reports-record-results-third-quarter",
       "use_for": "HBM-, DRAM-, NAND- und Data-Center-Speichersignale",
-      "last_checked": "2026-07-15"
+      "last_checked": "2026-08-10"
     },
     {
       "id": "sk-hynix-q1-2026",
@@ -224,7 +224,7 @@
       "title": "SK hynix Announces 1Q26 Financial Results",
       "url": "https://news.skhynix.com/q1-2026-business-results/",
       "use_for": "HBM-, Server-DRAM- und eSSD-Produktmix",
-      "last_checked": "2026-07-15"
+      "last_checked": "2026-08-10"
     },
     {
       "id": "bls-computer-cpi",
@@ -233,7 +233,7 @@
       "title": "How BLS measures price change for computers and peripherals",
       "url": "https://www.bls.gov/cpi/factsheets/personal-computers.htm",
       "use_for": "Qualitaetsbereinigter offizieller Kontrollindex fuer Computerpreise",
-      "last_checked": "2026-08-03"
+      "last_checked": "2026-08-10"
     },
     {
       "id": "eurostat-hicp-computers",
@@ -242,7 +242,7 @@
       "title": "HICP ECOICOP v2 monthly index for personal computers",
       "url": "https://ec.europa.eu/eurostat/web/hicp/information-data",
       "use_for": "Direkt beobachteter Personal-Computer-Preisindex fuer den Euroraum",
-      "last_checked": "2026-08-03"
+      "last_checked": "2026-08-10"
     },
     {
       "id": "bls-semiconductor-ppi",
@@ -251,7 +251,7 @@
       "title": "PPI industry series: Semiconductor and related device manufacturing",
       "url": "https://www.bls.gov/ppi/data-retrieval-guide/home.htm",
       "use_for": "Amtlicher breiter Upstream-Preisproxy fuer die Halbleiterfertigung",
-      "last_checked": "2026-08-03"
+      "last_checked": "2026-08-10"
     },
     {
       "id": "sec-xbrl-companyfacts",
@@ -260,7 +260,7 @@
       "title": "EDGAR Company Facts XBRL API",
       "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
       "use_for": "Quartalsweise Cash-PP&E-Ausgaben von Amazon, Alphabet, Meta und Microsoft",
-      "last_checked": "2026-08-03"
+      "last_checked": "2026-08-10"
     },
     {
       "id": "ecb-reference-rates",
@@ -269,7 +269,7 @@
       "title": "Monthly US dollar / euro reference rate",
       "url": "https://data.ecb.europa.eu/data/datasets/EXR/EXR.M.USD.EUR.SP00.A",
       "use_for": "Wechselkursbedingter Importkostendruck fuer in USD gehandelte Hardware",
-      "last_checked": "2026-08-03"
+      "last_checked": "2026-08-10"
     },
     {
       "id": "geizhals-public-price-history",
@@ -278,7 +278,7 @@
       "title": "Oeffentliche Preisentwicklung der CHPI-DE-Wunschlisten",
       "url": "https://geizhals.de/wishlists/5081030",
       "use_for": "365 Tage direkte Produkt- und Fixed-Cohort-Preisverlaeufe fuer 40 feste MPNs in Deutschland",
-      "last_checked": "2026-08-03"
+      "last_checked": "2026-08-10"
     },
     {
       "id": "trendforce-nand-2026-07",
@@ -287,7 +287,7 @@
       "title": "NAND Flash market to remain undersupplied throughout 2026",
       "url": "https://www.trendforce.com/presscenter/news/20260721-13148.html",
       "use_for": "Aktuelles NAND-Angebotsdefizit, Server-Bit-Nachfrage und erwartete Entspannung",
-      "last_checked": "2026-07-27"
+      "last_checked": "2026-08-10"
     },
     {
       "id": "intel-q2-2026",
@@ -296,7 +296,16 @@
       "title": "Intel reports second-quarter 2026 financial results",
       "url": "https://newsroom.intel.com/corporate/intel-reports-second-quarter-2026-financial-results",
       "use_for": "Quartalsweises Nachfrage-Signal fuer Data Center and AI, nicht als direkter Consumer-Preisbeleg",
-      "last_checked": "2026-07-27"
+      "last_checked": "2026-08-10"
+    },
+    {
+      "id": "meta-q2-2026",
+      "grade": "A",
+      "publisher": "Meta Platforms",
+      "title": "Meta reports second quarter 2026 results",
+      "url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx",
+      "use_for": "Q2-Cash-Ausgaben fuer PP&E zur Vervollstaendigung des Hyperscaler-Capex-Proxy",
+      "last_checked": "2026-08-10"
     }
   ],
   "retail_model": {
@@ -304,7 +313,7 @@
     "observations_file": "retail-observations.json",
     "history_file": "retail-history.json",
     "raw_history_file": "retail-history-daily.json",
-    "weekly_snapshots": 4,
+    "weekly_snapshots": 5,
     "historical_days": 365,
     "historical_product_series": 40,
     "historical_product_points": 14600,
@@ -313,6 +322,45 @@
     "retail_grade_gate_met": false
   },
   "weekly_signals": [
+    {
+      "id": "geizhals-2026-08-10",
+      "date": "2026-08-10",
+      "direction": "pressure_up",
+      "title_de": "Retail-Koerbe steigen erneut, Angebotsabdeckung sinkt",
+      "title_en": "Retail baskets rise again as offer coverage falls",
+      "reading_de": "GPU +0,35 %, DDR5 +3,13 %, NVMe +1,37 % und CPU +0,50 % zur Vorwoche. 38 von 40 SKUs mit Angebot.",
+      "reading_en": "GPU +0.35%, DDR5 +3.13%, NVMe +1.37% and CPU +0.50% week over week. 38 of 40 SKUs have an offer.",
+      "interpretation_de": "Breiter, aber gegenueber der Vorwoche verlangsamter Endkunden-Preisdruck; die rohe Summe der unveraenderten Koerbe stieg um 1,35 %. Noch nicht direkt im monatlichen CHPI gewichtet.",
+      "interpretation_en": "Broad but slower consumer price pressure than last week; the raw total of the unchanged baskets rose 1.35%. Not yet directly weighted into the monthly CHPI.",
+      "source_url": "https://geizhals.de/wishlists/5081030",
+      "grade": "B"
+    },
+    {
+      "id": "hyperscaler-capex-2026-q2",
+      "date": "2026-07-29",
+      "direction": "demand_up",
+      "title_de": "Hyperscaler-Cash-Capex steigt in Q2 um 27,21 %",
+      "title_en": "Hyperscaler cash capex rises 27.21% in Q2",
+      "reading_de": "Amazon, Alphabet, Meta und Microsoft meldeten zusammen 165,05 Mrd. USD Cash-Ausgaben fuer PP&E im Kalenderquartal Q2 2026, nach 129,75 Mrd. USD in Q1.",
+      "reading_en": "Amazon, Alphabet, Meta and Microsoft reported combined cash PP&E spending of USD 165.05bn in calendar Q2 2026, up from USD 129.75bn in Q1.",
+      "interpretation_de": "Der Capex-Teilindex erreicht die obere Modellschwelle. Konzern-Capex bleibt ein breiter Nachfrage-Proxy und ist nicht mit reinen AI-Rechenzentrumsausgaben gleichzusetzen.",
+      "interpretation_en": "The capex component reaches the model ceiling. Company capex remains a broad demand proxy and is not the same as pure AI data-center spending.",
+      "source_url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+      "grade": "A"
+    },
+    {
+      "id": "paducah-ai-campus-2026-07-29",
+      "date": "2026-07-29",
+      "direction": "demand_up",
+      "title_de": "DOE waehlt 1,8-GW-Campus in Paducah aus",
+      "title_en": "DOE selects 1.8 GW Paducah campus",
+      "reading_de": "Brookfield soll einen 1,8-GW-AI/HPC-Campus entwickeln; das >100-Mrd.-USD-Gesamtprojekt umfasst auch 2 GW Erzeugung und bis zu 2,6 GW Speicher.",
+      "reading_en": "Brookfield is to develop a 1.8 GW AI/HPC campus; the >USD 100bn total project also includes 2 GW of generation and up to 2.6 GW of storage.",
+      "interpretation_de": "Sehr grosses, offizielles Nachfrage- und Energiesignal; Genehmigung und Baubeginn stehen noch aus und es ist kein direkter Consumer-Preisbeleg.",
+      "interpretation_en": "Very large official demand and energy signal; approval and construction start are still pending and it is not direct consumer-price evidence.",
+      "source_url": "https://www.energy.gov/articles/energy-department-announces-partnership-expand-reliable-affordable-energy-access-and-power",
+      "grade": "A"
+    },
     {
       "id": "geizhals-2026-08-03",
       "date": "2026-08-03",

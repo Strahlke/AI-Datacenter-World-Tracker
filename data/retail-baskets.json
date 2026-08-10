@@ -1,21 +1,21 @@
 {
-  "snapshot_date": "2026-08-03",
+  "snapshot_date": "2026-08-10",
   "methodology_version": "1.1",
   "current_level": "L1",
   "current_level_label_de": "Historische Retail-Zeitreihe",
   "current_level_label_en": "Historical retail series",
   "retail_readiness": 0.5,
-  "status_de": "L1: 365-Tage-Fixed-Cohort-Backfill plus drei selbst archivierte Wochensnapshots. Kalibrierung der Revisionsstabilitaet beginnt ab Woche 13.",
-  "status_en": "L1: 365-day fixed-cohort backfill plus three self-archived weekly snapshots. Revision-stability calibration starts at week 13.",
+  "status_de": "L1: 365-Tage-Fixed-Cohort-Backfill plus fuenf selbst archivierte Wochensnapshots. Kalibrierung der Revisionsstabilitaet beginnt ab Woche 13.",
+  "status_en": "L1: 365-day fixed-cohort backfill plus five self-archived weekly snapshots. Revision-stability calibration starts at week 13.",
   "observation_summary": {
-    "weekly_observations": 4,
+    "weekly_observations": 5,
     "active_retailers": 0,
     "historical_days": 365,
     "historical_product_series": 40,
     "historical_product_points": 14600,
     "categories_with_minimum_coverage": 4,
     "total_categories": 4,
-    "availability_coverage": 0.975,
+    "availability_coverage": 0.95,
     "revision_rate": null
   },
   "maturity_levels": [
@@ -92,7 +92,7 @@
       ],
       "history_days": 365,
       "observed_skus": 12,
-      "available_skus": 11,
+      "available_skus": 10,
       "active_retailers": 0
     },
     {
@@ -235,6 +235,6 @@
     "source_url",
     "source_revision"
   ],
-  "next_action_de": "Noch 10 selbst archivierte Wochen bis zur L2-Kalibrierung. Bis dahin bleiben Korbrevisionen, private UI-Markierung und fehlende Haendler-/Lieferzeitnormalisierung sichtbare Luecken.",
-  "next_action_en": "Ten more self-archived weeks are required before L2 calibration. Until then, basket revisions, the private UI label and missing merchant/lead-time normalisation remain visible gaps."
+  "next_action_de": "Noch acht selbst archivierte Wochen bis zur L2-Kalibrierung. Bis dahin bleiben Korbrevisionen, private UI-Markierung und fehlende Haendler-/Lieferzeitnormalisierung sichtbare Luecken.",
+  "next_action_en": "Eight more self-archived weeks are required before L2 calibration. Until then, basket revisions, the private UI label and missing merchant/lead-time normalisation remain visible gaps."
 }
