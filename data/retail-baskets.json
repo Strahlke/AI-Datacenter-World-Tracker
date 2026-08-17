@@ -1,14 +1,14 @@
 {
-  "snapshot_date": "2026-08-10",
+  "snapshot_date": "2026-08-17",
   "methodology_version": "1.1",
   "current_level": "L1",
   "current_level_label_de": "Historische Retail-Zeitreihe",
   "current_level_label_en": "Historical retail series",
   "retail_readiness": 0.5,
-  "status_de": "L1: 365-Tage-Fixed-Cohort-Backfill plus fuenf selbst archivierte Wochensnapshots. Kalibrierung der Revisionsstabilitaet beginnt ab Woche 13.",
-  "status_en": "L1: 365-day fixed-cohort backfill plus five self-archived weekly snapshots. Revision-stability calibration starts at week 13.",
+  "status_de": "L1: 365-Tage-Fixed-Cohort-Backfill plus sechs selbst archivierte Wochensnapshots. Kalibrierung der Revisionsstabilitaet beginnt ab Woche 13.",
+  "status_en": "L1: 365-day fixed-cohort backfill plus six self-archived weekly snapshots. Revision-stability calibration starts at week 13.",
   "observation_summary": {
-    "weekly_observations": 5,
+    "weekly_observations": 6,
     "active_retailers": 0,
     "historical_days": 365,
     "historical_product_series": 40,
@@ -201,8 +201,8 @@
       "status": "connected",
       "grade": "B",
       "url": "https://geizhals.de/wishlists",
-      "caveat_de": "Geizhals ist ein Aggregator. Der historische Wunschlistenpreis wird fuer die heutige feste Produktzusammensetzung rueckgerechnet. Die vier Listen waren am 3. August 2026 weiterhin als privat markiert, obwohl die Direktlinks ohne Login lesbar waren; diese eingeschraenkte Reproduzierbarkeit bleibt eine Datenluecke.",
-      "caveat_en": "Geizhals is an aggregator. Historical wishlist prices are reconstructed for today's fixed product composition. On 3 August 2026 the four lists were still labelled private even though direct links were readable without login; this limited reproducibility remains a data gap."
+      "caveat_de": "Geizhals ist ein Aggregator. Der historische Wunschlistenpreis wird fuer die heutige feste Produktzusammensetzung rueckgerechnet. Am 17. August 2026 waren die vier Listen weiterhin als privat markiert und wurden ueber eine verbundene Browsersitzung erfasst; diese eingeschraenkte Reproduzierbarkeit bleibt eine Datenluecke.",
+      "caveat_en": "Geizhals is an aggregator. Historical wishlist prices are reconstructed for today's fixed product composition. On 17 August 2026 the four lists were still labelled private and were captured through a connected browser session; this limited reproducibility remains a data gap."
     },
     {
       "id": "reviewed-csv",
@@ -235,6 +235,6 @@
     "source_url",
     "source_revision"
   ],
-  "next_action_de": "Noch acht selbst archivierte Wochen bis zur L2-Kalibrierung. Bis dahin bleiben Korbrevisionen, private UI-Markierung und fehlende Haendler-/Lieferzeitnormalisierung sichtbare Luecken.",
-  "next_action_en": "Eight more self-archived weeks are required before L2 calibration. Until then, basket revisions, the private UI label and missing merchant/lead-time normalisation remain visible gaps."
+  "next_action_de": "Noch sieben selbst archivierte Wochen bis zur L2-Kalibrierung. Bis dahin bleiben Korbrevisionen, private UI-Markierung und fehlende Haendler-/Lieferzeitnormalisierung sichtbare Luecken.",
+  "next_action_en": "Seven more self-archived weeks are required before L2 calibration. Until then, basket revisions, the private UI label and missing merchant/lead-time normalisation remain visible gaps."
 }

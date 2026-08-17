@@ -1,18 +1,18 @@
 {
-  "snapshot_date": "2026-08-10",
+  "snapshot_date": "2026-08-17",
   "version": 2,
   "name_de": "Consumer Hardwarekosten-Druckindex",
   "name_en": "Consumer Hardware Cost Pressure Index",
   "short_name": "CHPI",
   "status": "provisional",
   "score_type": "provisional_backcast",
-  "score": 78.3,
+  "score": 78.5,
   "weighted_coverage": 0.895,
   "confidence": "medium",
   "retail_grade": false,
   "history_file": "hardware-history.json",
-  "summary_de": "Vorlaeufiger datenbasierter Wert: 78,3 von 100 – hoher Preisdruck. Der nun vollstaendige Q2-Cash-Capex-Proxy der vier Hyperscaler steigt um 27,21 % zum Vorquartal. Der fuenfte Geizhals-Snapshot zeigt GPU +0,35 %, DDR5 +3,13 %, NVMe +1,37 % und CPU +0,50 % zur Vorwoche bei 38 von 40 angebotenen SKUs; der Wochenimpuls wird vor der 13-Wochen-Kalibrierung noch nicht direkt gewichtet.",
-  "summary_en": "Provisional data-backed reading: 78.3 out of 100 – high price pressure. The now-complete Q2 cash-capex proxy for the four hyperscalers rises 27.21% quarter over quarter. The fifth Geizhals snapshot shows GPU +0.35%, DDR5 +3.13%, NVMe +1.37% and CPU +0.50% week over week, with offers for 38 of 40 SKUs; the weekly impulse is not yet directly weighted before the 13-week calibration.",
+  "summary_de": "Vorlaeufiger datenbasierter Wert: 78,5 von 100 – hoher Preisdruck. Der Juni-Wert wurde nach der vorlaeufigen BLS-PPI-Revision reproduzierbar aktualisiert; Juli bleibt bis zum Eurostat-PC-Wert ungescort. Der sechste Geizhals-Snapshot zeigt GPU +7,44 %, DDR5 +0,47 %, NVMe +0,46 % und CPU −2,19 % zur Vorwoche bei 38 von 40 angebotenen SKUs; der Wochenimpuls wird vor der 13-Wochen-Kalibrierung noch nicht direkt gewichtet.",
+  "summary_en": "Provisional data-backed reading: 78.5 out of 100 – high price pressure. The June reading was reproducibly updated after the preliminary BLS PPI revision; July remains unscored pending the Eurostat PC reading. The sixth Geizhals snapshot shows GPU +7.44%, DDR5 +0.47%, NVMe +0.46% and CPU −2.19% week over week, with offers for 38 of 40 SKUs; the weekly impulse is not yet directly weighted before the 13-week calibration.",
   "purpose_de": "Misst den Preisdruck, den private Kaeufer bei GPUs, CPUs, Arbeitsspeicher und SSDs in den kommenden Wochen und Monaten erwarten koennen.",
   "purpose_en": "Measures the price pressure private buyers may face for GPUs, CPUs, memory and SSDs over the coming weeks and months.",
   "scale": {
@@ -101,7 +101,7 @@
       "label_en": "Upstream memory & manufacturing",
       "weight": 0.25,
       "coverage": 0.9,
-      "current_score": 75.3,
+      "current_score": 76.1,
       "status": "tracked",
       "definition_de": "Gleichgewichteter Mix aus dem amtlichen BLS-Erzeugerpreisindex fuer Halbleiter und quartalsweisen DRAM-/NAND-Vertragspreis-Mittelpunkten von TrendForce. Forecasts und breitere Speicherklassen werden als Proxy markiert.",
       "definition_en": "Equal-weight mix of the official BLS producer-price index for semiconductors and quarterly DRAM/NAND contract-price midpoints from TrendForce. Forecasts and broader memory categories are marked as proxies."
@@ -197,7 +197,7 @@
       "title": "AI Server Demand to Drive Memory Contract Price Increases in 2Q26",
       "url": "https://www.trendforce.com/presscenter/news/20260331-12995.html",
       "use_for": "Upstream DRAM-, NAND-, Server- und HBM-Preisdruck",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "tsmc-q1-2026",
@@ -206,7 +206,7 @@
       "title": "Q1 2026 earnings call transcript",
       "url": "https://investor.tsmc.com/schinese/encrypt/files/encrypt_file/reports/2026-04/3cef85204275f94fd111485cfdf4adb3c0263c45/TSMC%201Q26%20Transcript.pdf",
       "use_for": "Foundry- und CoWoS-Kapazitaet sowie AI-Nachfrage",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "micron-q3-2026",
@@ -215,7 +215,7 @@
       "title": "Third quarter fiscal 2026 results",
       "url": "https://investors.micron.com/news-releases/news-release-details/micron-technology-inc-reports-record-results-third-quarter",
       "use_for": "HBM-, DRAM-, NAND- und Data-Center-Speichersignale",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "sk-hynix-q1-2026",
@@ -224,7 +224,7 @@
       "title": "SK hynix Announces 1Q26 Financial Results",
       "url": "https://news.skhynix.com/q1-2026-business-results/",
       "use_for": "HBM-, Server-DRAM- und eSSD-Produktmix",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "bls-computer-cpi",
@@ -233,7 +233,7 @@
       "title": "How BLS measures price change for computers and peripherals",
       "url": "https://www.bls.gov/cpi/factsheets/personal-computers.htm",
       "use_for": "Qualitaetsbereinigter offizieller Kontrollindex fuer Computerpreise",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "eurostat-hicp-computers",
@@ -242,7 +242,7 @@
       "title": "HICP ECOICOP v2 monthly index for personal computers",
       "url": "https://ec.europa.eu/eurostat/web/hicp/information-data",
       "use_for": "Direkt beobachteter Personal-Computer-Preisindex fuer den Euroraum",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "bls-semiconductor-ppi",
@@ -251,7 +251,7 @@
       "title": "PPI industry series: Semiconductor and related device manufacturing",
       "url": "https://www.bls.gov/ppi/data-retrieval-guide/home.htm",
       "use_for": "Amtlicher breiter Upstream-Preisproxy fuer die Halbleiterfertigung",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "sec-xbrl-companyfacts",
@@ -260,7 +260,7 @@
       "title": "EDGAR Company Facts XBRL API",
       "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
       "use_for": "Quartalsweise Cash-PP&E-Ausgaben von Amazon, Alphabet, Meta und Microsoft",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "ecb-reference-rates",
@@ -269,7 +269,7 @@
       "title": "Monthly US dollar / euro reference rate",
       "url": "https://data.ecb.europa.eu/data/datasets/EXR/EXR.M.USD.EUR.SP00.A",
       "use_for": "Wechselkursbedingter Importkostendruck fuer in USD gehandelte Hardware",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "geizhals-public-price-history",
@@ -278,7 +278,7 @@
       "title": "Oeffentliche Preisentwicklung der CHPI-DE-Wunschlisten",
       "url": "https://geizhals.de/wishlists/5081030",
       "use_for": "365 Tage direkte Produkt- und Fixed-Cohort-Preisverlaeufe fuer 40 feste MPNs in Deutschland",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "trendforce-nand-2026-07",
@@ -287,7 +287,7 @@
       "title": "NAND Flash market to remain undersupplied throughout 2026",
       "url": "https://www.trendforce.com/presscenter/news/20260721-13148.html",
       "use_for": "Aktuelles NAND-Angebotsdefizit, Server-Bit-Nachfrage und erwartete Entspannung",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "intel-q2-2026",
@@ -296,7 +296,7 @@
       "title": "Intel reports second-quarter 2026 financial results",
       "url": "https://newsroom.intel.com/corporate/intel-reports-second-quarter-2026-financial-results",
       "use_for": "Quartalsweises Nachfrage-Signal fuer Data Center and AI, nicht als direkter Consumer-Preisbeleg",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "meta-q2-2026",
@@ -305,7 +305,7 @@
       "title": "Meta reports second quarter 2026 results",
       "url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx",
       "use_for": "Q2-Cash-Ausgaben fuer PP&E zur Vervollstaendigung des Hyperscaler-Capex-Proxy",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     }
   ],
   "retail_model": {
@@ -313,7 +313,7 @@
     "observations_file": "retail-observations.json",
     "history_file": "retail-history.json",
     "raw_history_file": "retail-history-daily.json",
-    "weekly_snapshots": 5,
+    "weekly_snapshots": 6,
     "historical_days": 365,
     "historical_product_series": 40,
     "historical_product_points": 14600,
@@ -322,6 +322,32 @@
     "retail_grade_gate_met": false
   },
   "weekly_signals": [
+    {
+      "id": "geizhals-2026-08-17",
+      "date": "2026-08-17",
+      "direction": "pressure_up",
+      "title_de": "GPU-Korb springt, CPU gibt nach",
+      "title_en": "GPU basket jumps while CPU eases",
+      "reading_de": "GPU +7,44 %, DDR5 +0,47 %, NVMe +0,46 % und CPU −2,19 % zur Vorwoche. 38 von 40 SKUs mit Angebot.",
+      "reading_en": "GPU +7.44%, DDR5 +0.47%, NVMe +0.46% and CPU −2.19% week over week. 38 of 40 SKUs have an offer.",
+      "interpretation_de": "Der GPU-Sprung dominiert: Die rohe Summe der unveraenderten Koerbe stieg um 3,38 %. Noch nicht direkt im monatlichen CHPI gewichtet.",
+      "interpretation_en": "The GPU jump dominates: the raw total of the unchanged baskets rose 3.38%. Not yet directly weighted into the monthly CHPI.",
+      "source_url": "https://geizhals.de/wishlists/5081030",
+      "grade": "B"
+    },
+    {
+      "id": "bls-july-2026",
+      "date": "2026-08-17",
+      "direction": "mixed",
+      "title_de": "Juli: Computer-CPI steigt, Halbleiter-PPI faellt",
+      "title_en": "July: computer CPI rises, semiconductor PPI falls",
+      "reading_de": "Der US-Computer-CPI liegt 5,37 % ueber Januar; der vorlaeufige Halbleiter-PPI liegt 2,14 % darunter.",
+      "reading_en": "The U.S. computer CPI is 5.37% above January; the preliminary semiconductor PPI is 2.14% below January.",
+      "interpretation_de": "Gemischtes offizielles Signal. Juli wird erst mit dem Eurostat-PC-Wert in den CHPI aufgenommen.",
+      "interpretation_en": "Mixed official signal. July enters the CHPI only after the Eurostat PC reading is available.",
+      "source_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/CUUR0000SEEE01?startyear=2026&endyear=2026",
+      "grade": "A"
+    },
     {
       "id": "geizhals-2026-08-10",
       "date": "2026-08-10",

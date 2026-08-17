@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-08-10",
+  "snapshot_date": "2026-08-17",
   "version": 1,
   "scope": "Wesentliche Produzenten und Engpassstufen zwischen AI-Rechenzentrumsnachfrage und Consumer-Hardware. Die Liste ist kuratiert, nicht vollstaendig und enthaelt bewusst keine ungesicherten Marktanteile.",
   "method": {
@@ -86,7 +86,7 @@
       ],
       "primary_source_url": "https://investor.nvidia.com/",
       "evidence_grade": "A",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "amd",
@@ -103,7 +103,7 @@
       ],
       "primary_source_url": "https://ir.amd.com/",
       "evidence_grade": "A",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "broadcom-custom-silicon",
@@ -120,7 +120,7 @@
       ],
       "primary_source_url": "https://investors.broadcom.com/",
       "evidence_grade": "A",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "intel-accelerators",
@@ -137,7 +137,7 @@
       ],
       "primary_source_url": "https://www.intc.com/",
       "evidence_grade": "A",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "tsmc",
@@ -154,7 +154,7 @@
       ],
       "primary_source_url": "https://investor.tsmc.com/english",
       "evidence_grade": "A",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "samsung-foundry",
@@ -171,7 +171,7 @@
       ],
       "primary_source_url": "https://semiconductor.samsung.com/foundry/",
       "evidence_grade": "A",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "intel-foundry",
@@ -188,7 +188,7 @@
       ],
       "primary_source_url": "https://www.intel.com/content/www/us/en/foundry/overview.html",
       "evidence_grade": "A",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "sk-hynix",
@@ -205,7 +205,7 @@
       ],
       "primary_source_url": "https://news.skhynix.com/q1-2026-business-results/",
       "evidence_grade": "A",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "samsung-memory",
@@ -222,7 +222,7 @@
       ],
       "primary_source_url": "https://www.samsung.com/global/ir/",
       "evidence_grade": "A",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "micron",
@@ -239,7 +239,7 @@
       ],
       "primary_source_url": "https://investors.micron.com/",
       "evidence_grade": "A",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "tsmc-packaging",
@@ -256,7 +256,7 @@
       ],
       "primary_source_url": "https://3dfabric.tsmc.com/english/dedicatedFoundry/technology/cowos.htm",
       "evidence_grade": "A",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "ase",
@@ -271,9 +271,9 @@
         "Auslastung",
         "AI-Auftraege"
       ],
-      "primary_source_url": "https://www.aseglobal.com/investors/",
+      "primary_source_url": "https://ase.aseglobal.com/about-ase/financials/",
       "evidence_grade": "A",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "amkor",
@@ -290,7 +290,7 @@
       ],
       "primary_source_url": "https://ir.amkor.com/",
       "evidence_grade": "A",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "broadcom-networking",
@@ -307,7 +307,7 @@
       ],
       "primary_source_url": "https://investors.broadcom.com/",
       "evidence_grade": "A",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "marvell",
@@ -324,7 +324,7 @@
       ],
       "primary_source_url": "https://investor.marvell.com/",
       "evidence_grade": "A",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "arista",
@@ -341,7 +341,7 @@
       ],
       "primary_source_url": "https://investors.arista.com/",
       "evidence_grade": "A",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "quanta",
@@ -358,7 +358,7 @@
       ],
       "primary_source_url": "https://www.quantatw.com/Quanta/english/investment/financials.aspx",
       "evidence_grade": "A",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "wiwynn",
@@ -375,7 +375,7 @@
       ],
       "primary_source_url": "https://www.wiwynn.com/investors/",
       "evidence_grade": "A",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "inventec",
@@ -392,7 +392,7 @@
       ],
       "primary_source_url": "https://www.inventec.com/en/investor.htm",
       "evidence_grade": "A",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "foxconn",
@@ -409,7 +409,7 @@
       ],
       "primary_source_url": "https://www.honhai.com/en-us/investor-relations",
       "evidence_grade": "A",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "vertiv",
@@ -426,7 +426,7 @@
       ],
       "primary_source_url": "https://investors.vertiv.com/",
       "evidence_grade": "A",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "schneider-electric",
@@ -443,7 +443,7 @@
       ],
       "primary_source_url": "https://www.se.com/ww/en/about-us/investor-relations/",
       "evidence_grade": "A",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "eaton",
@@ -460,7 +460,7 @@
       ],
       "primary_source_url": "https://www.eaton.com/us/en-us/company/investor-relations.html",
       "evidence_grade": "A",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     },
     {
       "id": "on-energy",
@@ -477,7 +477,7 @@
       ],
       "primary_source_url": "https://www.crusoe.ai/resources/newsroom/crusoe-and-on-energy-to-deploy-5-gw-of-ai-ups-tm-at-multiple-hyperscale-campuses",
       "evidence_grade": "A",
-      "last_checked": "2026-08-10"
+      "last_checked": "2026-08-17"
     }
   ]
 }
