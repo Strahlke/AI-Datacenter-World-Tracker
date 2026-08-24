@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-08-17",
+  "snapshot_date": "2026-08-24",
   "version": 2,
   "name_de": "Consumer Hardwarekosten-Druckindex",
   "name_en": "Consumer Hardware Cost Pressure Index",
@@ -313,7 +313,7 @@
     "observations_file": "retail-observations.json",
     "history_file": "retail-history.json",
     "raw_history_file": "retail-history-daily.json",
-    "weekly_snapshots": 6,
+    "weekly_snapshots": 7,
     "historical_days": 365,
     "historical_product_series": 40,
     "historical_product_points": 14600,
@@ -322,6 +322,19 @@
     "retail_grade_gate_met": false
   },
   "weekly_signals": [
+    {
+      "id": "geizhals-2026-08-24",
+      "date": "2026-08-24",
+      "direction": "mixed",
+      "title_de": "Retail-Koerbe seitwaerts mit DDR5-Auftrieb",
+      "title_en": "Retail baskets broadly flat with DDR5 pressure",
+      "reading_de": "GPU +0,10 %, DDR5 +0,85 %, NVMe −0,26 % und CPU +0,66 % zur Vorwoche. 38 von 40 SKUs mit Angebot.",
+      "reading_en": "GPU +0.10%, DDR5 +0.85%, NVMe −0.26% and CPU +0.66% week over week. 38 of 40 SKUs have an offer.",
+      "interpretation_de": "Gemischter, insgesamt schwacher Endkundenimpuls: Die rohe Summe der unveraenderten Koerbe stieg um 0,34 %. Noch nicht direkt im monatlichen CHPI gewichtet.",
+      "interpretation_en": "Mixed and overall weak consumer impulse: the raw total of the unchanged baskets rose 0.34%. Not yet directly weighted into the monthly CHPI.",
+      "source_url": "https://geizhals.de/wishlists/5081030",
+      "grade": "B"
+    },
     {
       "id": "geizhals-2026-08-17",
       "date": "2026-08-17",
