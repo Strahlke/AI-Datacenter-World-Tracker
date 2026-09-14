@@ -1,8 +1,8 @@
 {
-  "snapshot_date": "2026-08-24",
+  "snapshot_date": "2026-09-14",
   "version": 1,
-  "period_start": "2025-07",
-  "period_end": "2026-06",
+  "period_start": "2025-08",
+  "period_end": "2026-07",
   "history_months": 12,
   "publication_mode": "provisional_backcast",
   "backcast_notice_de": "Die historischen Werte sind ein rueckgerechneter Verlauf mit dem heute verfuegbaren und gegebenenfalls revidierten Datenstand. Sie sind keine archivierten Echtzeit-Prognosen.",
@@ -21,7 +21,7 @@
       "ai_infrastructure_demand": "Quarter-on-quarter cash PP&E capex change for Amazon, Alphabet, Meta and Microsoft from SEC XBRL filings.",
       "macro_transmission": "EUR cost of one USD from the ECB reference rate."
     },
-    "missing_data_policy": "Raw missing values remain null. BLS computer CPI October 2025 is linearly interpolated only inside the derived six-month calculation and is visibly documented. June 2026 is the latest complete scored month. July BLS computer CPI and semiconductor PPI are direct observations, but July Eurostat personal-computer HICP is not yet available, so July remains unscored.",
+    "missing_data_policy": "Raw missing values remain null. BLS computer CPI October 2025 is linearly interpolated only inside the derived six-month calculation and is visibly documented. July 2026 is the latest complete scored month. August BLS computer CPI, preliminary semiconductor PPI and ECB EUR/USD are direct observations, but August Eurostat personal-computer HICP is not released, so August remains unscored.",
     "future_model_rule": "After at least 36 monthly observations, compare these fixed thresholds with a rolling percentile model before changing the published method. Any change must be versioned."
   },
   "monthly_series": [
@@ -35,7 +35,7 @@
       "series_code": "CUUR0000SEEE01",
       "source_id": "bls-computer-cpi",
       "source_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/CUUR0000SEEE01?startyear=2025&endyear=2026",
-      "latest_period": "2026-07",
+      "latest_period": "2026-08",
       "observations": [
         {
           "period": "2025-01",
@@ -131,6 +131,11 @@
           "period": "2026-07",
           "value": 36.641,
           "status": "direct_observation"
+        },
+        {
+          "period": "2026-08",
+          "value": 38.02,
+          "status": "direct_observation"
         }
       ]
     },
@@ -144,7 +149,7 @@
       "series_code": "PRC_HICP_MINR/M.I25.CP08131.EA20",
       "source_id": "eurostat-hicp-computers",
       "source_url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/3.0/data/dataflow/ESTAT/PRC_HICP_MINR/1.0/M.I25.CP08131.EA20?c%5BTIME_PERIOD%5D=ge%3A2025-01&format=tsv&compress=false",
-      "latest_period": "2026-06",
+      "latest_period": "2026-07",
       "observations": [
         {
           "period": "2025-01",
@@ -235,6 +240,11 @@
           "period": "2026-06",
           "value": 103.83,
           "status": "direct_observation"
+        },
+        {
+          "period": "2026-07",
+          "value": 105.96,
+          "status": "direct_observation"
         }
       ]
     },
@@ -248,7 +258,7 @@
       "series_code": "PCU334413334413",
       "source_id": "bls-semiconductor-ppi",
       "source_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/PCU334413334413?startyear=2025&endyear=2026",
-      "latest_period": "2026-07",
+      "latest_period": "2026-08",
       "observations": [
         {
           "period": "2025-01",
@@ -337,12 +347,17 @@
         },
         {
           "period": "2026-06",
-          "value": 29.747,
+          "value": 29.855,
           "status": "preliminary"
         },
         {
           "period": "2026-07",
-          "value": 28.987,
+          "value": 29.058,
+          "status": "preliminary"
+        },
+        {
+          "period": "2026-08",
+          "value": 28.472,
           "status": "preliminary"
         }
       ]
@@ -357,7 +372,7 @@
       "series_code": "EXR.M.USD.EUR.SP00.A",
       "source_id": "ecb-reference-rates",
       "source_url": "https://data-api.ecb.europa.eu/service/data/EXR/M.USD.EUR.SP00.A?startPeriod=2025-01&endPeriod=2026-07&format=csvdata",
-      "latest_period": "2026-07",
+      "latest_period": "2026-08",
       "observations": [
         {
           "period": "2025-01",
@@ -452,6 +467,11 @@
         {
           "period": "2026-07",
           "value": 1.1417478260869562,
+          "status": "direct_observation"
+        },
+        {
+          "period": "2026-08",
+          "value": 1.1593095238095241,
           "status": "direct_observation"
         }
       ]
@@ -591,18 +611,6 @@
   ],
   "monthly_scores": [
     {
-      "period": "2025-07",
-      "score": 46.2,
-      "weighted_coverage": 0.895,
-      "confidence": "medium",
-      "components": {
-        "retail_price": 45.9,
-        "upstream_prices": 55.4,
-        "ai_infrastructure_demand": 75.6,
-        "macro_transmission": 0
-      }
-    },
-    {
       "period": "2025-08",
       "score": 44.7,
       "weighted_coverage": 0.895,
@@ -733,6 +741,18 @@
         "ai_infrastructure_demand": 100,
         "macro_transmission": 66.6
       }
+    },
+    {
+      "period": "2026-07",
+      "score": 80,
+      "weighted_coverage": 0.895,
+      "confidence": "medium",
+      "components": {
+        "retail_price": 77.5,
+        "upstream_prices": 70.3,
+        "ai_infrastructure_demand": 100,
+        "macro_transmission": 78.1
+      }
     }
   ],
   "current_evidence": [
@@ -740,10 +760,10 @@
       "id": "us_consumer_computers",
       "label_de": "US-Computerpreise",
       "label_en": "US computer prices",
-      "value": 4.97,
+      "value": 5.37,
       "unit_de": "% / 6 Monate",
       "unit_en": "% / 6 months",
-      "period": "2026-06",
+      "period": "2026-07",
       "evidence_type": "direct",
       "source_id": "bls-computer-cpi"
     },
@@ -751,10 +771,10 @@
       "id": "euro_area_personal_computers",
       "label_de": "Euroraum-PC-Preise",
       "label_en": "Euro-area PC prices",
-      "value": 4.88,
+      "value": 5.61,
       "unit_de": "% / 6 Monate",
       "unit_en": "% / 6 months",
-      "period": "2026-06",
+      "period": "2026-07",
       "evidence_type": "direct",
       "source_id": "eurostat-hicp-computers"
     },
@@ -762,10 +782,10 @@
       "id": "semiconductor_producer_prices",
       "label_de": "Halbleiter-Erzeugerpreise",
       "label_en": "Semiconductor producer prices",
-      "value": 0.43,
+      "value": -1.9,
       "unit_de": "% / 6 Monate",
       "unit_en": "% / 6 months",
-      "period": "2026-06",
+      "period": "2026-07",
       "evidence_type": "direct_proxy",
       "source_id": "bls-semiconductor-ppi"
     },
@@ -786,10 +806,10 @@
       "id": "eur_usd_import_cost",
       "label_de": "USD-Kosten in Euro",
       "label_en": "USD cost in euros",
-      "value": 1.66,
+      "value": 2.81,
       "unit_de": "% / 6 Monate",
       "unit_en": "% / 6 months",
-      "period": "2026-06",
+      "period": "2026-07",
       "evidence_type": "direct",
       "source_id": "ecb-reference-rates"
     },

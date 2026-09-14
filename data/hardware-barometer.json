@@ -1,18 +1,18 @@
 {
-  "snapshot_date": "2026-08-24",
+  "snapshot_date": "2026-09-14",
   "version": 2,
   "name_de": "Consumer Hardwarekosten-Druckindex",
   "name_en": "Consumer Hardware Cost Pressure Index",
   "short_name": "CHPI",
   "status": "provisional",
   "score_type": "provisional_backcast",
-  "score": 78.5,
+  "score": 80,
   "weighted_coverage": 0.895,
   "confidence": "medium",
   "retail_grade": false,
   "history_file": "hardware-history.json",
-  "summary_de": "Vorlaeufiger datenbasierter Wert: 78,5 von 100 – hoher Preisdruck. Der Juni-Wert wurde nach der vorlaeufigen BLS-PPI-Revision reproduzierbar aktualisiert; Juli bleibt bis zum Eurostat-PC-Wert ungescort. Der sechste Geizhals-Snapshot zeigt GPU +7,44 %, DDR5 +0,47 %, NVMe +0,46 % und CPU −2,19 % zur Vorwoche bei 38 von 40 angebotenen SKUs; der Wochenimpuls wird vor der 13-Wochen-Kalibrierung noch nicht direkt gewichtet.",
-  "summary_en": "Provisional data-backed reading: 78.5 out of 100 – high price pressure. The June reading was reproducibly updated after the preliminary BLS PPI revision; July remains unscored pending the Eurostat PC reading. The sixth Geizhals snapshot shows GPU +7.44%, DDR5 +0.47%, NVMe +0.46% and CPU −2.19% week over week, with offers for 38 of 40 SKUs; the weekly impulse is not yet directly weighted before the 13-week calibration.",
+  "summary_de": "Vorlaeufiger datenbasierter Wert: 80,0 von 100 – akuter Preisdruck. Juli bleibt nach der BLS-PPI-Revision bei 80,0; fuer August fehlen noch Eurostat-PC-Preise. Der Geizhals-Wochenabruf war durch eine temporaere Zugriffssperre nicht regelkonform moeglich, daher wurde kein Preis-Snapshot erfunden oder fortgeschrieben.",
+  "summary_en": "Provisional data-backed reading: 80.0 out of 100 – acute price pressure. July remains at 80.0 after the BLS PPI revision; August still lacks Eurostat PC prices. The Geizhals weekly collection was blocked by a temporary access restriction, so no price snapshot was invented or carried forward.",
   "purpose_de": "Misst den Preisdruck, den private Kaeufer bei GPUs, CPUs, Arbeitsspeicher und SSDs in den kommenden Wochen und Monaten erwarten koennen.",
   "purpose_en": "Measures the price pressure private buyers may face for GPUs, CPUs, memory and SSDs over the coming weeks and months.",
   "scale": {
@@ -63,8 +63,8 @@
   },
   "calculation": {
     "frequency": "monthly_with_weekly_refresh",
-    "history_start": "2025-07",
-    "history_end": "2026-06",
+    "history_start": "2025-08",
+    "history_end": "2026-07",
     "normalization_de": "Bis mindestens 36 Monatswerte vorliegen, verwendet der Backcast feste und nachvollziehbare Schwellen: Verbraucher- und Halbleiterpreise +/-10 Prozent in sechs Monaten, Speicherpreise +/-25 Prozent QoQ, Hyperscaler-Capex +/-20 Prozent QoQ und EUR-Kosten eines USD +/-5 Prozent in sechs Monaten werden linear auf 0 bis 100 abgebildet und dort begrenzt.",
     "normalization_en": "Until at least 36 monthly observations exist, the backcast uses fixed transparent thresholds: consumer and semiconductor prices +/-10 percent over six months, memory prices +/-25 percent QoQ, hyperscaler capex +/-20 percent QoQ and the euro cost of one USD +/-5 percent over six months are mapped linearly to 0-100 and capped.",
     "aggregation_de": "Summe aus Gewicht mal Quellenabdeckung mal Teilindex, geteilt durch die wirksam abgedeckten Gewichte. Die 89,5 Prozent Abdeckung und der fehlende Verfuegbarkeitsbaustein bleiben sichtbar; der Wert wird nicht als Retail-Grade ausgegeben.",
@@ -79,7 +79,7 @@
       "label_en": "Observed consumer prices",
       "weight": 0.35,
       "coverage": 1,
-      "current_score": 74.6,
+      "current_score": 77.5,
       "status": "tracked",
       "definition_de": "Der aktuelle Score verwendet weiterhin den gleichgewichteten Sechsmonats-Preistrend von BLS und Eurostat. Der neue 365-Tage-Geizhals-Backfill fuer 40 feste MPNs ist als direkte Diagnose sichtbar und wird nach 13 selbst archivierten Wochen auf Revisionsstabilitaet geprueft, bevor die Gewichtung geaendert wird.",
       "definition_en": "The current score continues to use the equal-weight six-month BLS and Eurostat price trend. The new 365-day Geizhals backfill for 40 fixed MPNs is visible as a direct diagnostic and will be tested for revision stability after 13 self-archived weeks before weights change."
@@ -101,7 +101,7 @@
       "label_en": "Upstream memory & manufacturing",
       "weight": 0.25,
       "coverage": 0.9,
-      "current_score": 76.1,
+      "current_score": 70.3,
       "status": "tracked",
       "definition_de": "Gleichgewichteter Mix aus dem amtlichen BLS-Erzeugerpreisindex fuer Halbleiter und quartalsweisen DRAM-/NAND-Vertragspreis-Mittelpunkten von TrendForce. Forecasts und breitere Speicherklassen werden als Proxy markiert.",
       "definition_en": "Equal-weight mix of the official BLS producer-price index for semiconductors and quarterly DRAM/NAND contract-price midpoints from TrendForce. Forecasts and broader memory categories are marked as proxies."
@@ -123,7 +123,7 @@
       "label_en": "FX, trade & product cycle",
       "weight": 0.15,
       "coverage": 1,
-      "current_score": 66.6,
+      "current_score": 78.1,
       "status": "tracked",
       "definition_de": "Sechsmonatsveraenderung der Eurokosten eines US-Dollars auf Basis des monatlichen ECB-Referenzkurses. Zoelle, Steuern und Produktzyklen bleiben sichtbare Kontrollluecken und Guardrails.",
       "definition_en": "Six-month change in the euro cost of one U.S. dollar based on the monthly ECB reference rate. Tariffs, taxes and product cycles remain visible control gaps and guardrails."
@@ -313,7 +313,7 @@
     "observations_file": "retail-observations.json",
     "history_file": "retail-history.json",
     "raw_history_file": "retail-history-daily.json",
-    "weekly_snapshots": 7,
+    "weekly_snapshots": 8,
     "historical_days": 365,
     "historical_product_series": 40,
     "historical_product_points": 14600,
@@ -476,6 +476,19 @@
       "interpretation_de": "Unterstuetzt den Infrastruktur-Nachfrageindikator, ist aber kein direkter Beleg fuer Consumer-Preise.",
       "interpretation_en": "Supports the infrastructure-demand indicator but is not direct evidence of consumer prices.",
       "source_url": "https://newsroom.intel.com/corporate/intel-reports-second-quarter-2026-financial-results",
+      "grade": "A"
+    },
+    {
+      "id": "nvidia-australia-dsx-2026-09-09",
+      "date": "2026-09-09",
+      "direction": "demand_up",
+      "title_de": "Australien: bis zu 2 GW AI-Factories",
+      "title_en": "Australia: up to 2GW of AI factories",
+      "reading_de": "NVIDIA und acht Infrastrukturpartner planen bis zu 2 GW landesweiten DSX-Ausbau bis 2027; Sharon AI nennt bis zu 68.000 GPUs.",
+      "reading_en": "NVIDIA and eight infrastructure partners plan up to 2GW of nationwide DSX buildout by 2027; Sharon AI cites up to 68,000 GPUs.",
+      "interpretation_de": "Starkes Infrastruktur-Nachfragesignal, aber wegen ueberlappender Betreiberportfolios kein addierbarer globaler Kapazitaetsnenner und kein alleiniger Consumer-Preisbeleg.",
+      "interpretation_en": "Strong infrastructure-demand signal, but overlapping operator portfolios make it unsuitable as an additive global capacity denominator or standalone consumer-price evidence.",
+      "source_url": "https://nvidianews.nvidia.com/news/nvidia-expands-ai-infrastructure-capacity-in-partnership-with-australias-data-center-ecosystem",
       "grade": "A"
     }
   ]

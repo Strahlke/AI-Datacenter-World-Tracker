@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-08-24",
+  "snapshot_date": "2026-09-14",
   "version": 1,
   "scope": "Recherchequellen fuer grosse, oeffentlich dokumentierte KI-Rechenzentren und AI-Factory-Programme weltweit.",
   "method": {
@@ -2036,6 +2036,37 @@
       "use_for": "Baufortschritt, GPU-Ausbau, Leistung und ausdruecklichen Betriebs- oder Workload-Nachweis pruefen.",
       "caveat": "Ein geplanter Starttermin und eine Fortschrittsbesichtigung sind kein Betriebsnachweis.",
       "last_verified": "2026-08-17"
+    },
+    {
+      "id": "nvidia-newsroom-ai-infrastructure",
+      "name": "NVIDIA Newsroom AI Infrastructure",
+      "publisher": "NVIDIA",
+      "url": "https://nvidianews.nvidia.com/",
+      "queue": "hard_reference",
+      "category": "operator_supplier_primary_disclosure",
+      "geography": "Global",
+      "priority": "core",
+      "recommended_cadence": "weekly",
+      "run_schedule": "every_week",
+      "access": "web",
+      "max_grade": "A",
+      "signals": [
+        "AI factory",
+        "DSX",
+        "capacity",
+        "GPU deployment",
+        "operator partnership"
+      ],
+      "search_hints": [
+        "AI infrastructure",
+        "AI factory",
+        "data center",
+        "megawatt",
+        "gigawatt"
+      ],
+      "use_for": "Neue AI-Factory-Programme, Betreiberpartnerschaften, dokumentierte Leistung und Beschleunigerzahl.",
+      "caveat": "Anbieter-Dachprogramme koennen bestehende Standorte und Partnerportfolios ueberlappen; nicht addieren.",
+      "last_verified": "2026-09-14"
     }
   ]
 }
