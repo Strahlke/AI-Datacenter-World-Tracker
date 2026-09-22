@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-09-14",
+  "snapshot_date": "2026-09-22",
   "methodology_version": "1.1",
   "current_level": "L1",
   "current_level_label_de": "Historische Retail-Zeitreihe",
@@ -8,7 +8,7 @@
   "status_de": "L1: 365-Tage-Fixed-Cohort-Backfill plus acht selbst archivierte Wochensnapshots. Kalibrierung der Revisionsstabilitaet beginnt ab Woche 13.",
   "status_en": "L1: 365-day fixed-cohort backfill plus eight self-archived weekly snapshots. Revision-stability calibration starts at week 13.",
   "observation_summary": {
-    "weekly_observations": 8,
+    "weekly_observations": 9,
     "active_retailers": 0,
     "historical_days": 365,
     "historical_product_series": 40,

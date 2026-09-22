@@ -1,18 +1,18 @@
 {
-  "snapshot_date": "2026-09-14",
+  "snapshot_date": "2026-09-22",
   "version": 2,
   "name_de": "Consumer Hardwarekosten-Druckindex",
   "name_en": "Consumer Hardware Cost Pressure Index",
   "short_name": "CHPI",
-  "status": "provisional",
+  "status": "acute_pressure",
   "score_type": "provisional_backcast",
-  "score": 80,
+  "score": 82,
   "weighted_coverage": 0.895,
   "confidence": "medium",
   "retail_grade": false,
   "history_file": "hardware-history.json",
-  "summary_de": "Vorlaeufiger datenbasierter Wert: 80,0 von 100 – akuter Preisdruck. Juli bleibt nach der BLS-PPI-Revision bei 80,0; fuer August fehlen noch Eurostat-PC-Preise. Der Geizhals-Wochenabruf war durch eine temporaere Zugriffssperre nicht regelkonform moeglich, daher wurde kein Preis-Snapshot erfunden oder fortgeschrieben.",
-  "summary_en": "Provisional data-backed reading: 80.0 out of 100 – acute price pressure. July remains at 80.0 after the BLS PPI revision; August still lacks Eurostat PC prices. The Geizhals weekly collection was blocked by a temporary access restriction, so no price snapshot was invented or carried forward.",
+  "summary_de": "CHPI 82,0: akuter Preisdruck bei mittlerer Konfidenz. Der August ist nun mit amtlichen BLS-, Eurostat- und ECB-Daten vollstaendig; der aktuelle Geizhals-Snapshot umfasst 39 von 40 bepreisten Produkten. Retail bleibt L1, bis mindestens 13 selbst archivierte Wochen eine stabile Revisionseigenschaft zeigen.",
+  "summary_en": "CHPI 82.0: acute price pressure at medium confidence. August is now complete with official BLS, Eurostat and ECB data; the current Geizhals snapshot covers 39 of 40 priced products. Retail remains L1 until at least 13 self-archived weeks demonstrate stable revision behaviour.",
   "purpose_de": "Misst den Preisdruck, den private Kaeufer bei GPUs, CPUs, Arbeitsspeicher und SSDs in den kommenden Wochen und Monaten erwarten koennen.",
   "purpose_en": "Measures the price pressure private buyers may face for GPUs, CPUs, memory and SSDs over the coming weeks and months.",
   "scale": {
@@ -63,8 +63,8 @@
   },
   "calculation": {
     "frequency": "monthly_with_weekly_refresh",
-    "history_start": "2025-08",
-    "history_end": "2026-07",
+    "history_start": "2025-09",
+    "history_end": "2026-08",
     "normalization_de": "Bis mindestens 36 Monatswerte vorliegen, verwendet der Backcast feste und nachvollziehbare Schwellen: Verbraucher- und Halbleiterpreise +/-10 Prozent in sechs Monaten, Speicherpreise +/-25 Prozent QoQ, Hyperscaler-Capex +/-20 Prozent QoQ und EUR-Kosten eines USD +/-5 Prozent in sechs Monaten werden linear auf 0 bis 100 abgebildet und dort begrenzt.",
     "normalization_en": "Until at least 36 monthly observations exist, the backcast uses fixed transparent thresholds: consumer and semiconductor prices +/-10 percent over six months, memory prices +/-25 percent QoQ, hyperscaler capex +/-20 percent QoQ and the euro cost of one USD +/-5 percent over six months are mapped linearly to 0-100 and capped.",
     "aggregation_de": "Summe aus Gewicht mal Quellenabdeckung mal Teilindex, geteilt durch die wirksam abgedeckten Gewichte. Die 89,5 Prozent Abdeckung und der fehlende Verfuegbarkeitsbaustein bleiben sichtbar; der Wert wird nicht als Retail-Grade ausgegeben.",
@@ -79,7 +79,7 @@
       "label_en": "Observed consumer prices",
       "weight": 0.35,
       "coverage": 1,
-      "current_score": 77.5,
+      "current_score": 91.7,
       "status": "tracked",
       "definition_de": "Der aktuelle Score verwendet weiterhin den gleichgewichteten Sechsmonats-Preistrend von BLS und Eurostat. Der neue 365-Tage-Geizhals-Backfill fuer 40 feste MPNs ist als direkte Diagnose sichtbar und wird nach 13 selbst archivierten Wochen auf Revisionsstabilitaet geprueft, bevor die Gewichtung geaendert wird.",
       "definition_en": "The current score continues to use the equal-weight six-month BLS and Eurostat price trend. The new 365-day Geizhals backfill for 40 fixed MPNs is visible as a direct diagnostic and will be tested for revision stability after 13 self-archived weeks before weights change."
@@ -101,7 +101,7 @@
       "label_en": "Upstream memory & manufacturing",
       "weight": 0.25,
       "coverage": 0.9,
-      "current_score": 70.3,
+      "current_score": 61.2,
       "status": "tracked",
       "definition_de": "Gleichgewichteter Mix aus dem amtlichen BLS-Erzeugerpreisindex fuer Halbleiter und quartalsweisen DRAM-/NAND-Vertragspreis-Mittelpunkten von TrendForce. Forecasts und breitere Speicherklassen werden als Proxy markiert.",
       "definition_en": "Equal-weight mix of the official BLS producer-price index for semiconductors and quarterly DRAM/NAND contract-price midpoints from TrendForce. Forecasts and broader memory categories are marked as proxies."
@@ -123,7 +123,7 @@
       "label_en": "FX, trade & product cycle",
       "weight": 0.15,
       "coverage": 1,
-      "current_score": 78.1,
+      "current_score": 69.9,
       "status": "tracked",
       "definition_de": "Sechsmonatsveraenderung der Eurokosten eines US-Dollars auf Basis des monatlichen ECB-Referenzkurses. Zoelle, Steuern und Produktzyklen bleiben sichtbare Kontrollluecken und Guardrails.",
       "definition_en": "Six-month change in the euro cost of one U.S. dollar based on the monthly ECB reference rate. Tariffs, taxes and product cycles remain visible control gaps and guardrails."
@@ -233,7 +233,7 @@
       "title": "How BLS measures price change for computers and peripherals",
       "url": "https://www.bls.gov/cpi/factsheets/personal-computers.htm",
       "use_for": "Qualitaetsbereinigter offizieller Kontrollindex fuer Computerpreise",
-      "last_checked": "2026-08-17"
+      "last_checked": "2026-09-22"
     },
     {
       "id": "eurostat-hicp-computers",
@@ -242,7 +242,7 @@
       "title": "HICP ECOICOP v2 monthly index for personal computers",
       "url": "https://ec.europa.eu/eurostat/web/hicp/information-data",
       "use_for": "Direkt beobachteter Personal-Computer-Preisindex fuer den Euroraum",
-      "last_checked": "2026-08-17"
+      "last_checked": "2026-09-22"
     },
     {
       "id": "bls-semiconductor-ppi",
@@ -251,7 +251,7 @@
       "title": "PPI industry series: Semiconductor and related device manufacturing",
       "url": "https://www.bls.gov/ppi/data-retrieval-guide/home.htm",
       "use_for": "Amtlicher breiter Upstream-Preisproxy fuer die Halbleiterfertigung",
-      "last_checked": "2026-08-17"
+      "last_checked": "2026-09-22"
     },
     {
       "id": "sec-xbrl-companyfacts",
@@ -269,7 +269,7 @@
       "title": "Monthly US dollar / euro reference rate",
       "url": "https://data.ecb.europa.eu/data/datasets/EXR/EXR.M.USD.EUR.SP00.A",
       "use_for": "Wechselkursbedingter Importkostendruck fuer in USD gehandelte Hardware",
-      "last_checked": "2026-08-17"
+      "last_checked": "2026-09-22"
     },
     {
       "id": "geizhals-public-price-history",
@@ -313,7 +313,7 @@
     "observations_file": "retail-observations.json",
     "history_file": "retail-history.json",
     "raw_history_file": "retail-history-daily.json",
-    "weekly_snapshots": 8,
+    "weekly_snapshots": 9,
     "historical_days": 365,
     "historical_product_series": 40,
     "historical_product_points": 14600,
@@ -489,6 +489,19 @@
       "interpretation_de": "Starkes Infrastruktur-Nachfragesignal, aber wegen ueberlappender Betreiberportfolios kein addierbarer globaler Kapazitaetsnenner und kein alleiniger Consumer-Preisbeleg.",
       "interpretation_en": "Strong infrastructure-demand signal, but overlapping operator portfolios make it unsuitable as an additive global capacity denominator or standalone consumer-price evidence.",
       "source_url": "https://nvidianews.nvidia.com/news/nvidia-expands-ai-infrastructure-capacity-in-partnership-with-australias-data-center-ecosystem",
+      "grade": "A"
+    },
+    {
+      "id": "aema-flexible-ai-data-centers-2026-09-16",
+      "date": "2026-09-16",
+      "direction": "mixed",
+      "title_de": "Flexible AI-Rechenzentren als Netzhebel",
+      "title_en": "Flexible AI data centers as a grid lever",
+      "reading_de": "Emerald AI, Google und NVIDIA gruendeten die AI Energy Management Alliance, um den Strombezug von Rechenzentren dynamisch an Netzbedingungen anzupassen.",
+      "reading_en": "Emerald AI, Google and NVIDIA launched the AI Energy Management Alliance to make data-center power demand responsive to grid conditions.",
+      "interpretation_de": "Ein relevantes Netz- und Kapazitaetssignal, aber weder ein neues Standortprojekt noch addierbare Leistung oder ein direkter Consumer-Preisbeleg.",
+      "interpretation_en": "A relevant grid and capacity signal, but neither a new site project nor additive capacity or direct consumer-price evidence.",
+      "source_url": "https://blogs.nvidia.com/blog/ai-energy-management-alliance/",
       "grade": "A"
     }
   ]

@@ -1,8 +1,8 @@
 {
-  "snapshot_date": "2026-09-14",
+  "snapshot_date": "2026-09-22",
   "version": 1,
-  "period_start": "2025-08",
-  "period_end": "2026-07",
+  "period_start": "2025-09",
+  "period_end": "2026-08",
   "history_months": 12,
   "publication_mode": "provisional_backcast",
   "backcast_notice_de": "Die historischen Werte sind ein rueckgerechneter Verlauf mit dem heute verfuegbaren und gegebenenfalls revidierten Datenstand. Sie sind keine archivierten Echtzeit-Prognosen.",
@@ -611,18 +611,6 @@
   ],
   "monthly_scores": [
     {
-      "period": "2025-08",
-      "score": 44.7,
-      "weighted_coverage": 0.895,
-      "confidence": "medium",
-      "components": {
-        "retail_price": 44.3,
-        "upstream_prices": 51.9,
-        "ai_infrastructure_demand": 75.6,
-        "macro_transmission": 0
-      }
-    },
-    {
       "period": "2025-09",
       "score": 44.3,
       "weighted_coverage": 0.895,
@@ -753,6 +741,18 @@
         "ai_infrastructure_demand": 100,
         "macro_transmission": 78.1
       }
+    },
+    {
+      "period": "2026-08",
+      "score": 82,
+      "weighted_coverage": 0.895,
+      "confidence": "medium",
+      "components": {
+        "retail_price": 91.7,
+        "upstream_prices": 61.2,
+        "ai_infrastructure_demand": 100,
+        "macro_transmission": 69.9
+      }
     }
   ],
   "current_evidence": [
@@ -760,10 +760,10 @@
       "id": "us_consumer_computers",
       "label_de": "US-Computerpreise",
       "label_en": "US computer prices",
-      "value": 5.37,
+      "value": 9.31,
       "unit_de": "% / 6 Monate",
       "unit_en": "% / 6 months",
-      "period": "2026-07",
+      "period": "2026-08",
       "evidence_type": "direct",
       "source_id": "bls-computer-cpi"
     },
@@ -771,10 +771,10 @@
       "id": "euro_area_personal_computers",
       "label_de": "Euroraum-PC-Preise",
       "label_en": "Euro-area PC prices",
-      "value": 5.61,
+      "value": 7.37,
       "unit_de": "% / 6 Monate",
       "unit_en": "% / 6 months",
-      "period": "2026-07",
+      "period": "2026-08",
       "evidence_type": "direct",
       "source_id": "eurostat-hicp-computers"
     },
@@ -782,10 +782,10 @@
       "id": "semiconductor_producer_prices",
       "label_de": "Halbleiter-Erzeugerpreise",
       "label_en": "Semiconductor producer prices",
-      "value": -1.9,
+      "value": -5.53,
       "unit_de": "% / 6 Monate",
       "unit_en": "% / 6 months",
-      "period": "2026-07",
+      "period": "2026-08",
       "evidence_type": "direct_proxy",
       "source_id": "bls-semiconductor-ppi"
     },
@@ -806,10 +806,10 @@
       "id": "eur_usd_import_cost",
       "label_de": "USD-Kosten in Euro",
       "label_en": "USD cost in euros",
-      "value": 2.81,
+      "value": 1.99,
       "unit_de": "% / 6 Monate",
       "unit_en": "% / 6 months",
-      "period": "2026-07",
+      "period": "2026-08",
       "evidence_type": "direct",
       "source_id": "ecb-reference-rates"
     },
@@ -853,21 +853,21 @@
       "grade": "A",
       "publisher": "U.S. Bureau of Labor Statistics",
       "url": "https://www.bls.gov/cpi/factsheets/personal-computers.htm",
-      "last_checked": "2026-08-17"
+      "last_checked": "2026-09-22"
     },
     {
       "id": "eurostat-hicp-computers",
       "grade": "A",
       "publisher": "Eurostat",
       "url": "https://ec.europa.eu/eurostat/web/hicp/information-data",
-      "last_checked": "2026-08-17"
+      "last_checked": "2026-09-22"
     },
     {
       "id": "bls-semiconductor-ppi",
       "grade": "A",
       "publisher": "U.S. Bureau of Labor Statistics",
       "url": "https://www.bls.gov/ppi/data-retrieval-guide/home.htm",
-      "last_checked": "2026-08-17"
+      "last_checked": "2026-09-22"
     },
     {
       "id": "sec-xbrl-companyfacts",
@@ -881,7 +881,7 @@
       "grade": "A",
       "publisher": "European Central Bank",
       "url": "https://data.ecb.europa.eu/data/datasets/EXR/EXR.M.USD.EUR.SP00.A",
-      "last_checked": "2026-08-17"
+      "last_checked": "2026-09-22"
     },
     {
       "id": "trendforce-memory-pricing",
