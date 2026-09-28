@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-09-22",
+  "snapshot_date": "2026-09-28",
   "scope_de": "Oeffentlich angekuendigte Dachprogramme und Investitionsrahmen. Nicht additiv zu einzelnen Standorten; Originalwaehrungen bleiben erhalten.",
   "scope_en": "Public umbrella programmes and investment envelopes. Not additive to individual sites; original currencies are retained.",
   "programs": [
@@ -151,6 +151,32 @@
         "publisher": "SK Telecom",
         "title": "SK Telecom approves establishment of SK Hyper",
         "url": "https://news.sktelecom.com/en/3192"
+      }
+    },
+    {
+      "id": "microsoft-india-2026",
+      "name": "Microsoft India AI and cloud infrastructure commitment",
+      "geography": "Indien",
+      "iso3": "IND",
+      "status": "active",
+      "period": "2026 onward",
+      "commitment": {
+        "value_bn": 20.5,
+        "currency": "USD",
+        "value_type": "country_infrastructure_commitment"
+      },
+      "dedicated_capacity_gw": null,
+      "includes_project_ids": [
+        "microsoft-india-south-central"
+      ],
+      "countable_with_sites": false,
+      "double_count_group": "microsoft-india-2026",
+      "note_de": "Landesweites Commitment fuer Cloud- und AI-Infrastruktur; keine offengelegte Standortzuordnung. Nicht mit India South Central oder anderen Standorten addieren.",
+      "note_en": "Country-wide cloud and AI infrastructure commitment with no disclosed site allocation. Do not add it to India South Central or other sites.",
+      "source": {
+        "publisher": "Microsoft",
+        "title": "AI ambition into action: Microsoft brings AI-ready capabilities across its India cloud infrastructure",
+        "url": "https://news.microsoft.com/source/asia/2026/09/21/ai-ambition-into-action-microsoft-brings-ai-ready-capabilities-across-its-india-cloud-infrastructure-establishes-india-south-central-region-as-a-strategic-hub-for-asia-and-global-south/"
       }
     }
   ]

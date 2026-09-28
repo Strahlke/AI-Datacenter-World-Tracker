@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-09-22",
+  "snapshot_date": "2026-09-28",
   "version": 2,
   "name_de": "Consumer Hardwarekosten-Druckindex",
   "name_en": "Consumer Hardware Cost Pressure Index",
@@ -313,7 +313,7 @@
     "observations_file": "retail-observations.json",
     "history_file": "retail-history.json",
     "raw_history_file": "retail-history-daily.json",
-    "weekly_snapshots": 9,
+    "weekly_snapshots": 10,
     "historical_days": 365,
     "historical_product_series": 40,
     "historical_product_points": 14600,
@@ -503,6 +503,19 @@
       "interpretation_en": "A relevant grid and capacity signal, but neither a new site project nor additive capacity or direct consumer-price evidence.",
       "source_url": "https://blogs.nvidia.com/blog/ai-energy-management-alliance/",
       "grade": "A"
+    },
+    {
+      "id": "geizhals-retail-2026-09-28",
+      "date": "2026-09-28",
+      "direction": "pressure_up",
+      "title_de": "Retail-Warenkoerbe steigen deutlich",
+      "title_en": "Retail baskets rise materially",
+      "reading_de": "GPU +5,99 %, DDR5 +1,70 %, NVMe +5,65 % und CPU +0,62 % gegen den Snapshot vom 22. September. 39 von 40 SKUs haben ein Angebot; die rohe Summe der unveraenderten Kohaerte stieg 4,21 %.",
+      "reading_en": "GPU +5.99%, DDR5 +1.70%, NVMe +5.65% and CPU +0.62% versus the September 22 snapshot. 39 of 40 SKUs have an offer; the raw total of the unchanged cohort rose 4.21%.",
+      "interpretation_de": "Breites direktes Consumer-Preisdrucksignal; bleibt bis zur L2-Reife ausserhalb der monatlichen CHPI-Gewichtung.",
+      "interpretation_en": "Broad direct consumer-price-pressure signal; remains outside monthly CHPI weighting until L2 maturity.",
+      "source_url": "https://geizhals.de/wishlists/5081030",
+      "grade": "B"
     }
   ]
 }

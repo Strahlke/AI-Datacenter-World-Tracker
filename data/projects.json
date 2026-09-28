@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-09-22",
+  "snapshot_date": "2026-09-28",
   "scope": "Globaler, quellenbelegter Bestand grosser AI-Rechenzentren, Campusprogramme und klar gekennzeichneter AI-Compute-Deployments. Keine Vollerhebung; Programme und einzelne Standorte werden nicht addiert.",
   "method": {
     "status_method_de": "Status nur nach oeffentlich belegtem physischem Meilenstein. 'On track' erfordert ein publiziertes Zieldatum und einen aktuellen, vergleichbaren Fortschrittsnachweis.",
@@ -4952,6 +4952,59 @@
         "score": 89,
         "band": "mega",
         "metric_coverage": 0.45,
+        "method_version": "1.0"
+      }
+    },
+    {
+      "id": "microsoft-india-south-central",
+      "name": "Microsoft India South Central",
+      "operator": "Microsoft",
+      "partners": "—",
+      "country": "Indien",
+      "iso3": "IND",
+      "region": "Asien",
+      "location": "Hyderabad, Telangana",
+      "lat": 17.385,
+      "lon": 78.4867,
+      "location_precision": "Cloud-Region mit drei Availability Zones; Marker ist Hyderabad, keine einzelne Parzelle",
+      "current_status": "operational",
+      "realization": "realized",
+      "schedule": "delivered",
+      "confidence": "high",
+      "planned_capacity": "AI-faehige Azure-Region mit drei Zonen; MW nicht offengelegt",
+      "investment": "Teil des breiteren Microsoft-Commitments von 20,5 Mrd. USD fuer Indien; keine standortspezifische Summe",
+      "announced": "vor 2026-09",
+      "target_live": "2026",
+      "actual_live": "2026-09-21",
+      "latest_update": "Microsoft bezeichnet India South Central in Hyderabad als live und fuer fortgeschrittene AI-Workloads gebaut; erste Unternehmenskunden nutzen die Region bereits.",
+      "last_checked": "2026-09-28",
+      "history": [
+        {
+          "date": "2026-09-21",
+          "status": "operational",
+          "text": "Microsoft meldet die dreizonige Region als live; Adani Group, Bajaj Finserv, HDFC Bank und PB Pay haben sich bereits angemeldet."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026-09-21",
+          "grade": "A",
+          "publisher": "Microsoft",
+          "title": "AI ambition into action: Microsoft brings AI-ready capabilities across its India cloud infrastructure",
+          "url": "https://news.microsoft.com/source/asia/2026/09/21/ai-ambition-into-action-microsoft-brings-ai-ready-capabilities-across-its-india-cloud-infrastructure-establishes-india-south-central-region-as-a-strategic-hub-for-asia-and-global-south/"
+        }
+      ],
+      "record_type": "multi_site_cluster",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
         "method_version": "1.0"
       }
     }
