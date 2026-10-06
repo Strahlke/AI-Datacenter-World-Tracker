@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-09-28",
+  "snapshot_date": "2026-10-06",
   "version": 1,
   "period_start": "2025-09",
   "period_end": "2026-08",
@@ -149,7 +149,7 @@
       "series_code": "PRC_HICP_MINR/M.I25.CP08131.EA20",
       "source_id": "eurostat-hicp-computers",
       "source_url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/3.0/data/dataflow/ESTAT/PRC_HICP_MINR/1.0/M.I25.CP08131.EA20?c%5BTIME_PERIOD%5D=ge%3A2025-01&format=tsv&compress=false",
-      "latest_period": "2026-07",
+      "latest_period": "2026-08",
       "observations": [
         {
           "period": "2025-01",
@@ -244,6 +244,11 @@
         {
           "period": "2026-07",
           "value": 105.96,
+          "status": "direct_observation"
+        },
+        {
+          "period": "2026-08",
+          "value": 109.41,
           "status": "direct_observation"
         }
       ]
@@ -342,8 +347,8 @@
         },
         {
           "period": "2026-05",
-          "value": 30.187,
-          "status": "preliminary"
+          "value": 30.215,
+          "status": "direct_observation"
         },
         {
           "period": "2026-06",
@@ -371,8 +376,8 @@
       "geography": "Euro area",
       "series_code": "EXR.M.USD.EUR.SP00.A",
       "source_id": "ecb-reference-rates",
-      "source_url": "https://data-api.ecb.europa.eu/service/data/EXR/M.USD.EUR.SP00.A?startPeriod=2025-01&endPeriod=2026-07&format=csvdata",
-      "latest_period": "2026-08",
+      "source_url": "https://data-api.ecb.europa.eu/service/data/EXR/M.USD.EUR.SP00.A?startPeriod=2025-01&endPeriod=2026-09&format=csvdata",
+      "latest_period": "2026-09",
       "observations": [
         {
           "period": "2025-01",
@@ -473,6 +478,11 @@
           "period": "2026-08",
           "value": 1.1593095238095241,
           "status": "direct_observation"
+        },
+        {
+          "period": "2026-09",
+          "value": 1.1513227272727276,
+          "status": "direct_observation"
         }
       ]
     }
@@ -564,7 +574,7 @@
       "unit": "qoq_percent_change",
       "scope": "TrendForce midpoints. Consumer-specific PC DRAM and client SSD values are preferred; broader conventional DRAM and NAND values are used where no comparable consumer series is public.",
       "source_id": "trendforce-memory-pricing",
-      "source_url": "https://www.trendforce.com/presscenter/news/20260331-12995.html",
+      "source_url": "https://www.trendforce.com/presscenter/news/20260930-13258.html",
       "observations": [
         {
           "period": "2025-Q2",
@@ -605,6 +615,14 @@
           "status": "forecast_midpoint",
           "scope": "Conventional DRAM and total NAND",
           "source_url": "https://www.trendforce.com/presscenter/news/20260331-12995.html"
+        },
+        {
+          "period": "2026-Q4",
+          "dram_change_pct": 12.5,
+          "nand_change_pct": 17.5,
+          "status": "forecast_midpoint",
+          "scope": "Conventional DRAM and total NAND",
+          "source_url": "https://www.trendforce.com/presscenter/news/20260930-13258.html"
         }
       ]
     }
@@ -853,42 +871,42 @@
       "grade": "A",
       "publisher": "U.S. Bureau of Labor Statistics",
       "url": "https://www.bls.gov/cpi/factsheets/personal-computers.htm",
-      "last_checked": "2026-09-22"
+      "last_checked": "2026-10-06"
     },
     {
       "id": "eurostat-hicp-computers",
       "grade": "A",
       "publisher": "Eurostat",
       "url": "https://ec.europa.eu/eurostat/web/hicp/information-data",
-      "last_checked": "2026-09-22"
+      "last_checked": "2026-10-06"
     },
     {
       "id": "bls-semiconductor-ppi",
       "grade": "A",
       "publisher": "U.S. Bureau of Labor Statistics",
       "url": "https://www.bls.gov/ppi/data-retrieval-guide/home.htm",
-      "last_checked": "2026-09-22"
+      "last_checked": "2026-10-06"
     },
     {
       "id": "sec-xbrl-companyfacts",
       "grade": "A",
       "publisher": "U.S. Securities and Exchange Commission",
       "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
-      "last_checked": "2026-08-17"
+      "last_checked": "2026-10-06"
     },
     {
       "id": "ecb-reference-rates",
       "grade": "A",
       "publisher": "European Central Bank",
       "url": "https://data.ecb.europa.eu/data/datasets/EXR/EXR.M.USD.EUR.SP00.A",
-      "last_checked": "2026-09-22"
+      "last_checked": "2026-10-06"
     },
     {
       "id": "trendforce-memory-pricing",
       "grade": "B",
       "publisher": "TrendForce",
       "url": "https://www.trendforce.com/presscenter/news/20260331-12995.html",
-      "last_checked": "2026-08-17"
+      "last_checked": "2026-10-06"
     },
     {
       "id": "meta-q2-2026",

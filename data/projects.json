@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-09-28",
+  "snapshot_date": "2026-10-06",
   "scope": "Globaler, quellenbelegter Bestand grosser AI-Rechenzentren, Campusprogramme und klar gekennzeichneter AI-Compute-Deployments. Keine Vollerhebung; Programme und einzelne Standorte werden nicht addiert.",
   "method": {
     "status_method_de": "Status nur nach oeffentlich belegtem physischem Meilenstein. 'On track' erfordert ein publiziertes Zieldatum und einen aktuellen, vergleichbaren Fortschrittsnachweis.",
@@ -5005,6 +5005,59 @@
         "score": null,
         "band": "unknown",
         "metric_coverage": 0,
+        "method_version": "1.0"
+      }
+    },
+    {
+      "id": "nscale-ward-county",
+      "name": "Nscale Ward County AI Data Center",
+      "operator": "Nscale",
+      "partners": "Ionic Digital",
+      "country": "USA",
+      "iso3": "USA",
+      "region": "Nordamerika",
+      "location": "Ward County, Texas",
+      "lat": 31.51,
+      "lon": -103.1,
+      "location_precision": "County-Ebene; Marker ist der ungefaehre Mittelpunkt von Ward County, nicht die exakte Parzelle",
+      "current_status": "operational",
+      "realization": "realized",
+      "schedule": "delivered",
+      "confidence": "high",
+      "planned_capacity": "Mehrere Tausend GPUs live; MW und standortbezogene GPU-Zahl nicht offengelegt",
+      "investment": "Keine standortspezifische Investitionssumme offengelegt",
+      "announced": "vor 2026-01",
+      "target_live": null,
+      "actual_live": "2026-10-01",
+      "latest_update": "Nscale bezeichnet den vor neun Monaten noch leeren Standort als live und mit mehreren Tausend GPUs in produktiven Workloads. Die globale Flottenangabe von mehr als 50.000 GPUs wird nicht diesem Standort zugerechnet.",
+      "last_checked": "2026-10-06",
+      "history": [
+        {
+          "date": "2026-10-01",
+          "status": "operational",
+          "text": "Nscale meldet Ward County als live; der Standort liefert produktive AI-Workloads auf mehreren Tausend GPUs."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026-10-01",
+          "grade": "A",
+          "publisher": "Nscale",
+          "title": "Execution At Scale: Doubling Our Deployments",
+          "url": "https://www.nscale.com/press-releases/execution-at-scale"
+      }
+      ],
+      "record_type": "facility",
+      "impact": {
+      "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+      "component_scores": {},
+      "score": null,
+      "band": "unknown",
+      "metric_coverage": 0,
         "method_version": "1.0"
       }
     }

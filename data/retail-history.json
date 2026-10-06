@@ -1,11 +1,11 @@
 {
-  "snapshot_date": "2026-09-28",
-  "generated_at": "2026-09-28T06:04:51.701Z",
+  "snapshot_date": "2026-10-06",
+  "generated_at": "2026-10-06T07:05:56.152Z",
   "version": 1,
   "market": "DE",
   "currency": "EUR",
-  "period_start": "2025-09-28",
-  "period_end": "2026-09-27",
+  "period_start": "2025-10-06",
+  "period_end": "2026-10-05",
   "source": {
     "id": "geizhals-public-price-history",
     "publisher": "Geizhals",
@@ -30,7 +30,7 @@
     "raw_basket_daily_points": 1460,
     "raw_product_daily_points": 14600,
     "reconstructed_history": true,
-    "archived_weekly_snapshots": 9
+    "archived_weekly_snapshots": 11
   },
   "raw_file": "retail-history-daily.json",
   "baskets": [
@@ -40,29 +40,18 @@
       "wishlist_url": "https://geizhals.de/wishlists/5081030",
       "target_product_count": 12,
       "meta": {
-        "last_ts": 1790553599,
-        "current_best": 14658.72,
-        "last_formatted": "27.09.2026",
-        "first_ts": 1693958400
+        "first_ts": 1693958400,
+        "current_best": 17686.25,
+        "last_formatted": "05.10.2026",
+        "last_ts": 1791244799
       },
       "raw_basket_monthly": [
         {
-          "month": "2025-09",
-          "observed_days": 3,
-          "priced_days": 3,
-          "last_price_eur": 8396.25,
-          "average_price_eur": 8371.91,
-          "min_price_eur": 8353.67,
-          "max_price_eur": 8396.25,
-          "min_priced_item_count": 12,
-          "max_priced_item_count": 12
-        },
-        {
           "month": "2025-10",
-          "observed_days": 31,
-          "priced_days": 31,
+          "observed_days": 26,
+          "priced_days": 26,
           "last_price_eur": 7901.19,
-          "average_price_eur": 8117.32,
+          "average_price_eur": 8104.83,
           "min_price_eur": 7588.78,
           "max_price_eur": 8560.24,
           "min_priced_item_count": 11,
@@ -180,152 +169,163 @@
         },
         {
           "month": "2026-09",
-          "observed_days": 27,
-          "priced_days": 27,
-          "last_price_eur": 14658.72,
-          "average_price_eur": 13845.55,
+          "observed_days": 30,
+          "priced_days": 30,
+          "last_price_eur": 14632.17,
+          "average_price_eur": 13913.09,
           "min_price_eur": 13095.46,
           "max_price_eur": 16052.41,
           "min_priced_item_count": 11,
           "max_priced_item_count": 12
+        },
+        {
+          "month": "2026-10",
+          "observed_days": 5,
+          "priced_days": 5,
+          "last_price_eur": 17551.4,
+          "average_price_eur": 17000.52,
+          "min_price_eur": 14680.96,
+          "max_price_eur": 17693.15,
+          "min_priced_item_count": 11,
+          "max_priced_item_count": 11
         }
       ],
       "comparable_index": {
-        "eligible_product_count": 12,
-        "excluded_product_count": 0,
-        "baseline_start": "2025-09-28",
-        "baseline_end": "2025-10-28",
+        "eligible_product_count": 11,
+        "excluded_product_count": 1,
+        "baseline_start": "2025-10-06",
+        "baseline_end": "2025-11-05",
         "baseline_value": 100,
         "monthly": [
           {
-            "month": "2025-09",
-            "observed_days": 3,
-            "valid_index_days": 3,
-            "last_index": 100.74,
-            "average_index": 100.43,
-            "min_index": 100.13,
-            "max_index": 100.74,
-            "average_direct_coverage": 1
-          },
-          {
             "month": "2025-10",
-            "observed_days": 31,
-            "valid_index_days": 31,
-            "last_index": 99.56,
-            "average_index": 99.61,
-            "min_index": 97.17,
-            "max_index": 101.03,
-            "average_direct_coverage": 0.9597
+            "observed_days": 26,
+            "valid_index_days": 26,
+            "last_index": 99.55,
+            "average_index": 99.38,
+            "min_index": 96.9,
+            "max_index": 101.02,
+            "average_direct_coverage": 1
           },
           {
             "month": "2025-11",
             "observed_days": 30,
             "valid_index_days": 30,
-            "last_index": 104.4,
-            "average_index": 102.28,
-            "min_index": 98.81,
-            "max_index": 106.05,
-            "average_direct_coverage": 0.95
+            "last_index": 100.04,
+            "average_index": 99.96,
+            "min_index": 97.32,
+            "max_index": 101.76,
+            "average_direct_coverage": 0.9879
           },
           {
             "month": "2025-12",
             "observed_days": 31,
             "valid_index_days": 31,
-            "last_index": 108.19,
-            "average_index": 105.21,
-            "min_index": 98.24,
-            "max_index": 108.19,
-            "average_direct_coverage": 0.9167
+            "last_index": 103.62,
+            "average_index": 100.53,
+            "min_index": 93.19,
+            "max_index": 103.62,
+            "average_direct_coverage": 0.9091
           },
           {
             "month": "2026-01",
             "observed_days": 31,
             "valid_index_days": 31,
-            "last_index": 124.72,
-            "average_index": 116.36,
-            "min_index": 105.09,
-            "max_index": 125.91,
-            "average_direct_coverage": 0.9328
+            "last_index": 121.45,
+            "average_index": 112.49,
+            "min_index": 102.22,
+            "max_index": 122.43,
+            "average_direct_coverage": 0.9296
           },
           {
             "month": "2026-02",
             "observed_days": 28,
             "valid_index_days": 28,
-            "last_index": 117.6,
-            "average_index": 119.08,
-            "min_index": 115.08,
-            "max_index": 124.58,
-            "average_direct_coverage": 0.9167
+            "last_index": 117.58,
+            "average_index": 118.35,
+            "min_index": 115.06,
+            "max_index": 121.31,
+            "average_direct_coverage": 1
           },
           {
             "month": "2026-03",
             "observed_days": 31,
             "valid_index_days": 31,
-            "last_index": 111.72,
-            "average_index": 116.53,
-            "min_index": 111.72,
-            "max_index": 118.68,
-            "average_direct_coverage": 0.9167
+            "last_index": 111.69,
+            "average_index": 116.51,
+            "min_index": 111.69,
+            "max_index": 118.66,
+            "average_direct_coverage": 1
           },
           {
             "month": "2026-04",
             "observed_days": 30,
             "valid_index_days": 30,
-            "last_index": 116.32,
-            "average_index": 118.28,
-            "min_index": 116.32,
-            "max_index": 120.45,
+            "last_index": 112.8,
+            "average_index": 114.73,
+            "min_index": 112.8,
+            "max_index": 116.93,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-05",
             "observed_days": 31,
             "valid_index_days": 31,
-            "last_index": 119.71,
-            "average_index": 119.09,
-            "min_index": 118.13,
-            "max_index": 119.71,
+            "last_index": 115.24,
+            "average_index": 115.49,
+            "min_index": 114.52,
+            "max_index": 116.08,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-06",
             "observed_days": 30,
             "valid_index_days": 30,
-            "last_index": 114.77,
-            "average_index": 117.63,
-            "min_index": 113.82,
-            "max_index": 120.6,
-            "average_direct_coverage": 0.9639
+            "last_index": 114.74,
+            "average_index": 114.29,
+            "min_index": 112.29,
+            "max_index": 116.17,
+            "average_direct_coverage": 1
           },
           {
             "month": "2026-07",
             "observed_days": 31,
             "valid_index_days": 31,
-            "last_index": 125.89,
-            "average_index": 119.63,
-            "min_index": 114.69,
-            "max_index": 125.89,
-            "average_direct_coverage": 0.914
+            "last_index": 125.86,
+            "average_index": 119.61,
+            "min_index": 114.66,
+            "max_index": 125.86,
+            "average_direct_coverage": 0.9971
           },
           {
             "month": "2026-08",
             "observed_days": 31,
             "valid_index_days": 31,
-            "last_index": 143.81,
-            "average_index": 135.37,
-            "min_index": 119.91,
-            "max_index": 143.81,
-            "average_direct_coverage": 0.8548
+            "last_index": 140.5,
+            "average_index": 134.92,
+            "min_index": 119.89,
+            "max_index": 142.1,
+            "average_direct_coverage": 0.9208
           },
           {
             "month": "2026-09",
-            "observed_days": 27,
-            "valid_index_days": 27,
-            "last_index": 149.15,
-            "average_index": 147.34,
-            "min_index": 143.15,
-            "max_index": 150.56,
-            "average_direct_coverage": 0.9259
+            "observed_days": 30,
+            "valid_index_days": 30,
+            "last_index": 146.24,
+            "average_index": 143.38,
+            "min_index": 139.32,
+            "max_index": 147.99,
+            "average_direct_coverage": 0.9182
+          },
+          {
+            "month": "2026-10",
+            "observed_days": 5,
+            "valid_index_days": 5,
+            "last_index": 155.66,
+            "average_index": 155.56,
+            "min_index": 150.33,
+            "max_index": 158.44,
+            "average_direct_coverage": 0.9091
           }
         ]
       },
@@ -335,31 +335,20 @@
           "name": "Sapphire Pulse Radeon RX 7800 XT 16GB",
           "mpn": "11330-02-20G",
           "meta": {
-            "current_best": 999.99,
+            "min": 454.49,
             "first_ts": 1693958400,
             "max": 1114.59,
-            "last_ts": 1790553599,
-            "last_formatted": "27.09.2026",
-            "min": 454.49
+            "last_formatted": "05.10.2026",
+            "current_best": 999.99,
+            "last_ts": 1791244799
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 598.2,
-              "average_price_eur": 598.2,
-              "min_price_eur": 598.2,
-              "max_price_eur": 598.2,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 16,
+              "observed_days": 26,
+              "priced_days": 11,
               "last_price_eur": 599,
-              "average_price_eur": 560.87,
+              "average_price_eur": 561.14,
               "min_price_eur": 549,
               "max_price_eur": 599,
               "min_priced_item_count": 0,
@@ -477,12 +466,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
+              "observed_days": 30,
+              "priced_days": 30,
               "last_price_eur": 999.99,
-              "average_price_eur": 1084.88,
+              "average_price_eur": 1076.39,
               "min_price_eur": 999.99,
               "max_price_eur": 1114.59,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 999.99,
+              "average_price_eur": 999.99,
+              "min_price_eur": 999.99,
+              "max_price_eur": 999.99,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -493,31 +493,20 @@
           "name": "ASUS Dual GeForce RTX 4060 OC 8GB",
           "mpn": "90YV0JC4-M0NA00",
           "meta": {
-            "min": 300.56,
             "last_formatted": "23.09.2026",
+            "current_best": null,
             "max": 673.47,
             "last_ts": 1790207999,
-            "current_best": null,
+            "min": 300.56,
             "first_ts": 1724198400
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 338.99,
-              "average_price_eur": 338.99,
-              "min_price_eur": 338.99,
-              "max_price_eur": 338.99,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 339.9,
-              "average_price_eur": 335.65,
+              "average_price_eur": 335.01,
               "min_price_eur": 300.56,
               "max_price_eur": 339.9,
               "min_priced_item_count": 1,
@@ -635,7 +624,7 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
+              "observed_days": 30,
               "priced_days": 3,
               "last_price_eur": 366.7,
               "average_price_eur": 366.7,
@@ -643,6 +632,17 @@
               "max_price_eur": 366.7,
               "min_priced_item_count": 0,
               "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 0,
+              "last_price_eur": null,
+              "average_price_eur": null,
+              "min_price_eur": null,
+              "max_price_eur": null,
+              "min_priced_item_count": 0,
+              "max_priced_item_count": 0
             }
           ]
         },
@@ -651,31 +651,20 @@
           "name": "ASRock Arc B580 Challenger 12GB OC",
           "mpn": "90-GA5LZZ-00UANF",
           "meta": {
-            "last_formatted": "27.09.2026",
-            "min": 227.72,
-            "current_best": 324.9,
+            "last_ts": 1791244799,
+            "max": 344.9,
+            "last_formatted": "05.10.2026",
+            "current_best": 333,
             "first_ts": 1733270400,
-            "last_ts": 1790553599,
-            "max": 344.9
+            "min": 227.72
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 256.49,
-              "average_price_eur": 256.49,
-              "min_price_eur": 256.49,
-              "max_price_eur": 256.49,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 256.37,
-              "average_price_eur": 253.52,
+              "average_price_eur": 252.95,
               "min_price_eur": 227.72,
               "max_price_eur": 256.49,
               "min_priced_item_count": 1,
@@ -793,12 +782,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
+              "observed_days": 30,
+              "priced_days": 30,
               "last_price_eur": 324.9,
-              "average_price_eur": 314.05,
+              "average_price_eur": 315.13,
               "min_price_eur": 303.82,
               "max_price_eur": 324.9,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 333,
+              "average_price_eur": 331.38,
+              "min_price_eur": 324.9,
+              "max_price_eur": 333,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -809,31 +809,20 @@
           "name": "ASUS TUF Gaming GeForce RTX 5090 32GB",
           "mpn": "90YV0LY1-M0NA00",
           "meta": {
-            "last_ts": 1790553599,
             "first_ts": 1740096000,
-            "max": 8011.1,
-            "last_formatted": "27.09.2026",
-            "current_best": 6549,
-            "min": 2019.26
+            "min": 2019.26,
+            "last_formatted": "05.10.2026",
+            "max": 9495,
+            "current_best": 9495,
+            "last_ts": 1791244799
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 2484,
-              "average_price_eur": 2484,
-              "min_price_eur": 2484,
-              "max_price_eur": 2484,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 2649,
-              "average_price_eur": 2560.09,
+              "average_price_eur": 2600.18,
               "min_price_eur": 2178.69,
               "max_price_eur": 2699,
               "min_priced_item_count": 1,
@@ -951,12 +940,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
-              "last_price_eur": 6549,
-              "average_price_eur": 5846,
+              "observed_days": 30,
+              "priced_days": 30,
+              "last_price_eur": 6548.97,
+              "average_price_eur": 5916.3,
               "min_price_eur": 5519,
               "max_price_eur": 8011.1,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 9495,
+              "average_price_eur": 8867.95,
+              "min_price_eur": 6548.98,
+              "max_price_eur": 9495,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -967,31 +967,20 @@
           "name": "ASUS Prime GeForce RTX 5080 OC 16GB",
           "mpn": "90YV0LX0-M0NA00",
           "meta": {
-            "last_formatted": "27.09.2026",
-            "min": 976.65,
-            "current_best": 1494.76,
             "first_ts": 1738195200,
+            "min": 976.65,
+            "last_ts": 1791244799,
             "max": 2199.99,
-            "last_ts": 1790553599
+            "last_formatted": "05.10.2026",
+            "current_best": 1464.78
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 1049,
-              "average_price_eur": 1044.33,
-              "min_price_eur": 1039,
-              "max_price_eur": 1049,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 1049,
-              "average_price_eur": 1068.46,
+              "average_price_eur": 1072.41,
               "min_price_eur": 1039,
               "max_price_eur": 1178.89,
               "min_priced_item_count": 1,
@@ -1109,12 +1098,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
+              "observed_days": 30,
+              "priced_days": 30,
               "last_price_eur": 1494.76,
-              "average_price_eur": 1445.25,
+              "average_price_eur": 1450.2,
               "min_price_eur": 1316.02,
               "max_price_eur": 1495.72,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 1464.78,
+              "average_price_eur": 1548.75,
+              "min_price_eur": 1464.78,
+              "max_price_eur": 1571.3,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -1125,31 +1125,20 @@
           "name": "ASUS Prime GeForce RTX 5070 Ti OC 16GB",
           "mpn": "90YV0MF0-M0NA00",
           "meta": {
-            "last_formatted": "27.09.2026",
+            "last_formatted": "05.10.2026",
+            "current_best": 1259,
             "min": 749.99,
+            "last_ts": 1791244799,
             "first_ts": 1740009600,
-            "current_best": 1249,
-            "max": 1370,
-            "last_ts": 1790553599
+            "max": 1370
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 799,
-              "average_price_eur": 787,
-              "min_price_eur": 776,
-              "max_price_eur": 799,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 794.19,
-              "average_price_eur": 796.28,
+              "average_price_eur": 796.68,
               "min_price_eur": 787.99,
               "max_price_eur": 799,
               "min_priced_item_count": 1,
@@ -1267,12 +1256,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
+              "observed_days": 30,
+              "priced_days": 30,
               "last_price_eur": 1249,
-              "average_price_eur": 1200.38,
+              "average_price_eur": 1199.61,
               "min_price_eur": 995.99,
               "max_price_eur": 1249,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 1259,
+              "average_price_eur": 1259,
+              "min_price_eur": 1259,
+              "max_price_eur": 1259,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -1284,30 +1284,19 @@
           "mpn": "90YV0M10-M0NA00",
           "meta": {
             "min": 494.1,
-            "last_formatted": "27.09.2026",
+            "last_ts": 1791244799,
+            "current_best": 849,
+            "last_formatted": "05.10.2026",
             "max": 999,
-            "last_ts": 1790553599,
-            "first_ts": 1741219200,
-            "current_best": 849
+            "first_ts": 1741219200
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 554.9,
-              "average_price_eur": 553.44,
-              "min_price_eur": 552.71,
-              "max_price_eur": 554.9,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 538.9,
-              "average_price_eur": 551.45,
+              "average_price_eur": 550.99,
               "min_price_eur": 538.9,
               "max_price_eur": 559.9,
               "min_priced_item_count": 1,
@@ -1425,10 +1414,21 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
+              "observed_days": 30,
+              "priced_days": 30,
+              "last_price_eur": 799.99,
+              "average_price_eur": 800.24,
+              "min_price_eur": 704.52,
+              "max_price_eur": 849,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
               "last_price_eur": 849,
-              "average_price_eur": 801.99,
+              "average_price_eur": 809.79,
               "min_price_eur": 799.99,
               "max_price_eur": 849,
               "min_priced_item_count": 1,
@@ -1441,33 +1441,22 @@
           "name": "Sapphire Pulse Radeon RX 9070 XT 16GB",
           "mpn": "11348-03-20G",
           "meta": {
-            "last_ts": 1790553599,
             "first_ts": 1741219200,
-            "max": 928,
             "min": 547.5,
-            "current_best": 832.23,
-            "last_formatted": "27.09.2026"
+            "last_formatted": "05.10.2026",
+            "current_best": 849,
+            "max": 928,
+            "last_ts": 1791244799
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 643.41,
-              "average_price_eur": 639.79,
-              "min_price_eur": 637.98,
-              "max_price_eur": 643.41,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 628.99,
-              "average_price_eur": 624.84,
+              "average_price_eur": 621.88,
               "min_price_eur": 610,
-              "max_price_eur": 644,
+              "max_price_eur": 640.9,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             },
@@ -1583,12 +1572,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
+              "observed_days": 30,
+              "priced_days": 30,
               "last_price_eur": 832.23,
-              "average_price_eur": 796.9,
+              "average_price_eur": 800.43,
               "min_price_eur": 760.8,
               "max_price_eur": 832.23,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 833.48,
+              "average_price_eur": 833.48,
+              "min_price_eur": 833.48,
+              "max_price_eur": 833.48,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -1599,33 +1599,22 @@
           "name": "Sapphire Pulse Radeon RX 9070 16GB",
           "mpn": "11349-03-20G",
           "meta": {
-            "first_ts": 1741219200,
-            "last_ts": 1790553599,
+            "last_ts": 1791244799,
+            "current_best": 729,
+            "last_formatted": "05.10.2026",
             "max": 817.41,
-            "current_best": 710.9,
-            "min": 483.66,
-            "last_formatted": "27.09.2026"
+            "first_ts": 1741219200,
+            "min": 483.66
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 588.99,
-              "average_price_eur": 588.99,
-              "min_price_eur": 588.99,
-              "max_price_eur": 588.99,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 572.88,
-              "average_price_eur": 558.5,
+              "average_price_eur": 558.02,
               "min_price_eur": 519,
-              "max_price_eur": 578.99,
+              "max_price_eur": 577.97,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             },
@@ -1741,12 +1730,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
-              "last_price_eur": 710.9,
-              "average_price_eur": 697.74,
+              "observed_days": 30,
+              "priced_days": 30,
+              "last_price_eur": 724.9,
+              "average_price_eur": 699.52,
               "min_price_eur": 682.9,
-              "max_price_eur": 710.9,
+              "max_price_eur": 724.9,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 729,
+              "average_price_eur": 727.16,
+              "min_price_eur": 723.9,
+              "max_price_eur": 729,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -1757,31 +1757,20 @@
           "name": "ASUS Dual GeForce RTX 5060 Ti OC 16GB",
           "mpn": "90YV0MH0-M0NA00",
           "meta": {
-            "max": 694.99,
-            "last_ts": 1790553599,
             "first_ts": 1744761600,
-            "current_best": 689.99,
             "min": 385.3,
-            "last_formatted": "27.09.2026"
+            "last_ts": 1791244799,
+            "max": 694.99,
+            "last_formatted": "05.10.2026",
+            "current_best": 714.99
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 428.9,
-              "average_price_eur": 428.9,
-              "min_price_eur": 428.9,
-              "max_price_eur": 428.9,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 429,
-              "average_price_eur": 430.31,
+              "average_price_eur": 430.58,
               "min_price_eur": 428,
               "max_price_eur": 438.9,
               "min_priced_item_count": 1,
@@ -1899,12 +1888,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
-              "last_price_eur": 689.99,
-              "average_price_eur": 673.19,
+              "observed_days": 30,
+              "priced_days": 30,
+              "last_price_eur": 679.9,
+              "average_price_eur": 674.19,
               "min_price_eur": 643.29,
               "max_price_eur": 694.99,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 643.29,
+              "average_price_eur": 654.6,
+              "min_price_eur": 589.99,
+              "max_price_eur": 679.9,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -1915,29 +1915,18 @@
           "name": "ASUS Dual GeForce RTX 5060 OC 8GB",
           "mpn": "90YV0N12-M0NA00",
           "meta": {
-            "max": 440.82,
-            "last_ts": 1790553599,
-            "current_best": 429.95,
             "first_ts": 1747612800,
+            "max": 454.59,
+            "current_best": 454.59,
+            "last_formatted": "05.10.2026",
             "min": 252.9,
-            "last_formatted": "27.09.2026"
+            "last_ts": 1791244799
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 294.9,
-              "average_price_eur": 292.27,
-              "min_price_eur": 286.9,
-              "max_price_eur": 295,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 289.8,
               "average_price_eur": 294.93,
               "min_price_eur": 289.8,
@@ -2057,12 +2046,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
-              "last_price_eur": 429.95,
-              "average_price_eur": 428.81,
+              "observed_days": 30,
+              "priced_days": 30,
+              "last_price_eur": 434.9,
+              "average_price_eur": 426.98,
               "min_price_eur": 328.99,
               "max_price_eur": 440.82,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 406.96,
+              "average_price_eur": 428.63,
+              "min_price_eur": 399,
+              "max_price_eur": 454.59,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -2074,32 +2074,21 @@
           "mpn": "11350-03-20G",
           "meta": {
             "first_ts": 1749081600,
-            "last_ts": 1790553599,
-            "max": 529,
-            "current_best": 529,
-            "min": 324.9,
-            "last_formatted": "27.09.2026"
+            "max": 542.63,
+            "last_formatted": "05.10.2026",
+            "current_best": 537.9,
+            "last_ts": 1791244799,
+            "min": 324.9
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 359.47,
-              "average_price_eur": 359.52,
-              "min_price_eur": 359.47,
-              "max_price_eur": 359.57,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 353.16,
               "average_price_eur": 353.8,
-              "min_price_eur": 329.93,
-              "max_price_eur": 360.02,
+              "min_price_eur": 353.16,
+              "max_price_eur": 354.54,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             },
@@ -2215,12 +2204,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
-              "last_price_eur": 529,
-              "average_price_eur": 515.63,
+              "observed_days": 30,
+              "priced_days": 30,
+              "last_price_eur": 542.63,
+              "average_price_eur": 517.42,
               "min_price_eur": 495.9,
-              "max_price_eur": 529,
+              "max_price_eur": 542.63,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 537.9,
+              "average_price_eur": 539.79,
+              "min_price_eur": 537.9,
+              "max_price_eur": 542.63,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -2234,30 +2234,19 @@
       "wishlist_url": "https://geizhals.de/wishlists/5081039",
       "target_product_count": 10,
       "meta": {
-        "last_formatted": "27.09.2026",
-        "last_ts": 1790553599,
         "first_ts": 1666656000,
-        "current_best": 8235.56
+        "last_ts": 1791244799,
+        "last_formatted": "05.10.2026",
+        "current_best": 8560.35
       },
       "raw_basket_monthly": [
         {
-          "month": "2025-09",
-          "observed_days": 3,
-          "priced_days": 3,
-          "last_price_eur": 1691.27,
-          "average_price_eur": 1680.14,
-          "min_price_eur": 1663.57,
-          "max_price_eur": 1691.27,
-          "min_priced_item_count": 10,
-          "max_priced_item_count": 10
-        },
-        {
           "month": "2025-10",
-          "observed_days": 31,
-          "priced_days": 31,
+          "observed_days": 26,
+          "priced_days": 26,
           "last_price_eur": 2421.03,
-          "average_price_eur": 1947.64,
-          "min_price_eur": 1703.36,
+          "average_price_eur": 1992.95,
+          "min_price_eur": 1722.06,
           "max_price_eur": 2421.03,
           "min_priced_item_count": 10,
           "max_priced_item_count": 10
@@ -2374,12 +2363,23 @@
         },
         {
           "month": "2026-09",
-          "observed_days": 27,
-          "priced_days": 27,
-          "last_price_eur": 8217.47,
-          "average_price_eur": 8032.96,
+          "observed_days": 30,
+          "priced_days": 30,
+          "last_price_eur": 8282.21,
+          "average_price_eur": 8051.56,
           "min_price_eur": 7714.01,
           "max_price_eur": 8293.37,
+          "min_priced_item_count": 10,
+          "max_priced_item_count": 10
+        },
+        {
+          "month": "2026-10",
+          "observed_days": 5,
+          "priced_days": 5,
+          "last_price_eur": 8517.66,
+          "average_price_eur": 8458.14,
+          "min_price_eur": 8390.4,
+          "max_price_eur": 8523.4,
           "min_priced_item_count": 10,
           "max_priced_item_count": 10
         }
@@ -2387,138 +2387,138 @@
       "comparable_index": {
         "eligible_product_count": 10,
         "excluded_product_count": 0,
-        "baseline_start": "2025-09-28",
-        "baseline_end": "2025-10-28",
+        "baseline_start": "2025-10-06",
+        "baseline_end": "2025-11-05",
         "baseline_value": 100,
         "monthly": [
           {
-            "month": "2025-09",
-            "observed_days": 3,
-            "valid_index_days": 3,
-            "last_index": 94.76,
-            "average_index": 93.96,
-            "min_index": 93.03,
-            "max_index": 94.76,
-            "average_direct_coverage": 1
-          },
-          {
             "month": "2025-10",
-            "observed_days": 31,
-            "valid_index_days": 31,
-            "last_index": 134.51,
-            "average_index": 107.87,
-            "min_index": 94.9,
-            "max_index": 134.51,
+            "observed_days": 26,
+            "valid_index_days": 26,
+            "last_index": 119.42,
+            "average_index": 97.91,
+            "min_index": 84.84,
+            "max_index": 119.42,
             "average_direct_coverage": 1
           },
           {
             "month": "2025-11",
             "observed_days": 30,
             "valid_index_days": 30,
-            "last_index": 256.22,
-            "average_index": 179.01,
-            "min_index": 137.5,
-            "max_index": 256.22,
+            "last_index": 227.49,
+            "average_index": 158.94,
+            "min_index": 122.08,
+            "max_index": 227.49,
             "average_direct_coverage": 1
           },
           {
             "month": "2025-12",
             "observed_days": 31,
             "valid_index_days": 31,
-            "last_index": 341.33,
-            "average_index": 307.05,
-            "min_index": 245.53,
-            "max_index": 341.33,
+            "last_index": 303.05,
+            "average_index": 272.62,
+            "min_index": 218,
+            "max_index": 303.05,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-01",
             "observed_days": 31,
             "valid_index_days": 31,
-            "last_index": 376.45,
-            "average_index": 366.23,
-            "min_index": 323.91,
-            "max_index": 392.9,
+            "last_index": 334.24,
+            "average_index": 325.16,
+            "min_index": 287.59,
+            "max_index": 348.84,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-02",
             "observed_days": 28,
             "valid_index_days": 28,
-            "last_index": 362.41,
-            "average_index": 371.28,
-            "min_index": 356.29,
-            "max_index": 383.32,
+            "last_index": 321.77,
+            "average_index": 329.65,
+            "min_index": 316.34,
+            "max_index": 340.34,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-03",
             "observed_days": 31,
             "valid_index_days": 31,
-            "last_index": 343.6,
-            "average_index": 351.13,
-            "min_index": 341.19,
-            "max_index": 361.19,
+            "last_index": 305.07,
+            "average_index": 311.75,
+            "min_index": 302.93,
+            "max_index": 320.69,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-04",
             "observed_days": 30,
             "valid_index_days": 30,
-            "last_index": 346.86,
-            "average_index": 343.53,
-            "min_index": 315.29,
-            "max_index": 349.72,
+            "last_index": 307.97,
+            "average_index": 305.01,
+            "min_index": 279.93,
+            "max_index": 310.51,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-05",
             "observed_days": 31,
             "valid_index_days": 31,
-            "last_index": 347.24,
-            "average_index": 348.37,
-            "min_index": 339.81,
-            "max_index": 355.62,
+            "last_index": 308.31,
+            "average_index": 309.31,
+            "min_index": 301.7,
+            "max_index": 315.75,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-06",
             "observed_days": 30,
             "valid_index_days": 30,
-            "last_index": 365.64,
-            "average_index": 355.92,
-            "min_index": 346.12,
-            "max_index": 365.64,
+            "last_index": 324.64,
+            "average_index": 316.01,
+            "min_index": 307.31,
+            "max_index": 324.64,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-07",
             "observed_days": 31,
             "valid_index_days": 31,
-            "last_index": 410.67,
-            "average_index": 385.66,
-            "min_index": 367.64,
-            "max_index": 410.67,
+            "last_index": 364.62,
+            "average_index": 342.41,
+            "min_index": 326.42,
+            "max_index": 364.62,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-08",
             "observed_days": 31,
             "valid_index_days": 31,
-            "last_index": 431.31,
-            "average_index": 426.17,
-            "min_index": 396.88,
-            "max_index": 434.49,
+            "last_index": 382.95,
+            "average_index": 378.39,
+            "min_index": 352.38,
+            "max_index": 385.77,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-09",
-            "observed_days": 27,
-            "valid_index_days": 27,
-            "last_index": 456.09,
-            "average_index": 443.54,
-            "min_index": 419.52,
-            "max_index": 461.85,
+            "observed_days": 30,
+            "valid_index_days": 30,
+            "last_index": 410.15,
+            "average_index": 394.89,
+            "min_index": 372.48,
+            "max_index": 410.15,
+            "average_direct_coverage": 1
+          },
+          {
+            "month": "2026-10",
+            "observed_days": 5,
+            "valid_index_days": 5,
+            "last_index": 421.84,
+            "average_index": 418.15,
+            "min_index": 414.13,
+            "max_index": 422.23,
             "average_direct_coverage": 1
           }
         ]
@@ -2529,32 +2529,21 @@
           "name": "G.Skill Trident Z5 NEO RGB 64GB DDR5-6000 CL30",
           "mpn": "F5-6000J3040G32GX2-TZ5NR",
           "meta": {
-            "last_ts": 1790553599,
-            "max": 1268.23,
-            "current_best": 1171.2,
-            "first_ts": 1666656000,
             "min": 194.9,
-            "last_formatted": "27.09.2026"
+            "first_ts": 1666656000,
+            "last_ts": 1791244799,
+            "current_best": 1211.53,
+            "last_formatted": "05.10.2026",
+            "max": 1268.23
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 245.99,
-              "average_price_eur": 248.59,
-              "min_price_eur": 245.99,
-              "max_price_eur": 249.9,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 379.9,
-              "average_price_eur": 297.24,
-              "min_price_eur": 249.9,
+              "average_price_eur": 305.3,
+              "min_price_eur": 258.99,
               "max_price_eur": 379.9,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
@@ -2671,12 +2660,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
+              "observed_days": 30,
+              "priced_days": 30,
               "last_price_eur": 1171.2,
-              "average_price_eur": 1128.1,
+              "average_price_eur": 1132.41,
               "min_price_eur": 1027.36,
               "max_price_eur": 1216.05,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 1211.53,
+              "average_price_eur": 1195.89,
+              "min_price_eur": 1171.2,
+              "max_price_eur": 1212.76,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -2687,32 +2687,21 @@
           "name": "G.Skill Flare X5 32GB DDR5-6000 CL30",
           "mpn": "F5-6000J3038F16GX2-FX5",
           "meta": {
-            "last_formatted": "27.09.2026",
-            "min": 89.9,
             "first_ts": 1679875200,
-            "current_best": 629,
-            "last_ts": 1790553599,
-            "max": 629
+            "min": 89.9,
+            "last_formatted": "05.10.2026",
+            "max": 665.2,
+            "current_best": 664.28,
+            "last_ts": 1791244799
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 117.99,
-              "average_price_eur": 117.99,
-              "min_price_eur": 117.99,
-              "max_price_eur": 117.99,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 179,
-              "average_price_eur": 138.46,
-              "min_price_eur": 115.99,
+              "average_price_eur": 142.45,
+              "min_price_eur": 118.9,
               "max_price_eur": 179,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
@@ -2829,12 +2818,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
-              "last_price_eur": 629,
-              "average_price_eur": 540.76,
+              "observed_days": 30,
+              "priced_days": 30,
+              "last_price_eur": 629.55,
+              "average_price_eur": 549.64,
               "min_price_eur": 516.49,
-              "max_price_eur": 629,
+              "max_price_eur": 629.55,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 664.28,
+              "average_price_eur": 650.76,
+              "min_price_eur": 629.55,
+              "max_price_eur": 665.2,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -2845,32 +2845,21 @@
           "name": "Corsair Vengeance 64GB DDR5-6000 CL30",
           "mpn": "CMK64GX5M2B6000Z30",
           "meta": {
-            "last_formatted": "27.09.2026",
             "min": 194.9,
-            "current_best": 1039.8,
             "first_ts": 1684713600,
-            "last_ts": 1790553599,
-            "max": 1199
+            "current_best": 1158.81,
+            "last_formatted": "05.10.2026",
+            "max": 1199,
+            "last_ts": 1791244799
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 244.9,
-              "average_price_eur": 244.9,
-              "min_price_eur": 244.9,
-              "max_price_eur": 244.9,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 339.09,
-              "average_price_eur": 271.42,
-              "min_price_eur": 244.9,
+              "average_price_eur": 275.89,
+              "min_price_eur": 249,
               "max_price_eur": 339.09,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
@@ -2987,12 +2976,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
+              "observed_days": 30,
+              "priced_days": 30,
               "last_price_eur": 1039.8,
-              "average_price_eur": 1161.08,
+              "average_price_eur": 1148.95,
               "min_price_eur": 1039.8,
               "max_price_eur": 1199,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 1151.78,
+              "average_price_eur": 1151.78,
+              "min_price_eur": 1151.78,
+              "max_price_eur": 1151.78,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -3003,31 +3003,20 @@
           "name": "Corsair Vengeance 32GB DDR5-6000 CL30",
           "mpn": "CMK32GX5M2B6000Z30",
           "meta": {
-            "last_formatted": "27.09.2026",
-            "min": 89.9,
-            "current_best": 537.99,
-            "first_ts": 1691366400,
+            "last_ts": 1791244799,
+            "current_best": 579,
+            "last_formatted": "05.10.2026",
             "max": 586.97,
-            "last_ts": 1790553599
+            "min": 89.9,
+            "first_ts": 1691366400
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 128.89,
-              "average_price_eur": 128.89,
-              "min_price_eur": 128.89,
-              "max_price_eur": 128.89,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 179.9,
-              "average_price_eur": 142.81,
+              "average_price_eur": 146.95,
               "min_price_eur": 117.9,
               "max_price_eur": 179.9,
               "min_priced_item_count": 1,
@@ -3145,12 +3134,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
-              "last_price_eur": 519.9,
-              "average_price_eur": 512.66,
+              "observed_days": 30,
+              "priced_days": 30,
+              "last_price_eur": 537.99,
+              "average_price_eur": 511.96,
               "min_price_eur": 365.32,
               "max_price_eur": 548.99,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 568.99,
+              "average_price_eur": 550.39,
+              "min_price_eur": 537.99,
+              "max_price_eur": 568.99,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -3161,31 +3161,20 @@
           "name": "G.Skill Flare X5 64GB DDR5-6000 CL30",
           "mpn": "F5-6000J3040G32GX2-FX5",
           "meta": {
-            "max": 1138.07,
-            "last_ts": 1790553599,
             "first_ts": 1692230400,
-            "last_formatted": "27.09.2026",
-            "min": 184.9,
-            "current_best": 1134.84
+            "max": 1138.07,
+            "current_best": 1129.04,
+            "last_formatted": "05.10.2026",
+            "last_ts": 1791244799,
+            "min": 184.9
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 226.9,
-              "average_price_eur": 224.57,
-              "min_price_eur": 219.9,
-              "max_price_eur": 226.9,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 356.31,
-              "average_price_eur": 271.84,
+              "average_price_eur": 280.49,
               "min_price_eur": 226.9,
               "max_price_eur": 356.31,
               "min_priced_item_count": 1,
@@ -3303,12 +3292,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
+              "observed_days": 30,
+              "priced_days": 30,
               "last_price_eur": 1134.84,
-              "average_price_eur": 1104.07,
+              "average_price_eur": 1107.14,
               "min_price_eur": 984.52,
               "max_price_eur": 1138.07,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 1129.04,
+              "average_price_eur": 1129.94,
+              "min_price_eur": 1128.39,
+              "max_price_eur": 1134.84,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -3319,31 +3319,20 @@
           "name": "Crucial Pro Overclocking 32GB DDR5-6000 CL36",
           "mpn": "CP2K16G60C36U5B",
           "meta": {
-            "min": 70.07,
-            "current_best": 444,
-            "last_formatted": "27.09.2026",
-            "last_ts": 1790553599,
+            "max": 450,
             "first_ts": 1708992000,
-            "max": 444.49
+            "min": 70.07,
+            "last_ts": 1791244799,
+            "current_best": 474.99,
+            "last_formatted": "05.10.2026"
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 96.9,
-              "average_price_eur": 96.9,
-              "min_price_eur": 96.9,
-              "max_price_eur": 96.9,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 135.9,
-              "average_price_eur": 98.4,
+              "average_price_eur": 99.04,
               "min_price_eur": 85.49,
               "max_price_eur": 135.9,
               "min_priced_item_count": 1,
@@ -3461,12 +3450,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
+              "observed_days": 30,
+              "priced_days": 30,
               "last_price_eur": 444,
-              "average_price_eur": 431.41,
+              "average_price_eur": 431.49,
               "min_price_eur": 385.11,
               "max_price_eur": 444.49,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 449.99,
+              "average_price_eur": 448.8,
+              "min_price_eur": 444,
+              "max_price_eur": 450,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -3478,30 +3478,19 @@
           "mpn": "KF560C30BBEK2-32",
           "meta": {
             "min": 94.9,
-            "last_formatted": "27.09.2026",
-            "last_ts": 1790553599,
-            "max": 586.24,
-            "current_best": 562.59,
+            "last_ts": 1791244799,
+            "current_best": 599.99,
+            "last_formatted": "05.10.2026",
+            "max": 604.03,
             "first_ts": 1712102400
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 119.9,
-              "average_price_eur": 118.1,
-              "min_price_eur": 117.2,
-              "max_price_eur": 119.9,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 160.94,
-              "average_price_eur": 134.23,
+              "average_price_eur": 136.98,
               "min_price_eur": 119.9,
               "max_price_eur": 160.94,
               "min_priced_item_count": 1,
@@ -3619,12 +3608,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
-              "last_price_eur": 562.59,
-              "average_price_eur": 561.28,
+              "observed_days": 30,
+              "priced_days": 30,
+              "last_price_eur": 579.99,
+              "average_price_eur": 563.15,
               "min_price_eur": 515.69,
               "max_price_eur": 586.24,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 599.99,
+              "average_price_eur": 588.8,
+              "min_price_eur": 579.99,
+              "max_price_eur": 604.03,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -3635,31 +3635,20 @@
           "name": "Kingston FURY Beast 64GB DDR5-6000 CL30",
           "mpn": "KF560C30BBEK2-64",
           "meta": {
-            "max": 1179,
-            "last_ts": 1790553599,
             "first_ts": 1712102400,
-            "last_formatted": "27.09.2026",
+            "max": 1179,
+            "last_formatted": "05.10.2026",
             "current_best": 1179,
+            "last_ts": 1791244799,
             "min": 179.9
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 224,
-              "average_price_eur": 224,
-              "min_price_eur": 224,
-              "max_price_eur": 224,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 305.09,
-              "average_price_eur": 259.24,
+              "average_price_eur": 266.01,
               "min_price_eur": 224,
               "max_price_eur": 306.7,
               "min_priced_item_count": 1,
@@ -3777,11 +3766,22 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
+              "observed_days": 30,
+              "priced_days": 30,
               "last_price_eur": 1179,
-              "average_price_eur": 1152.59,
+              "average_price_eur": 1155.23,
               "min_price_eur": 1059,
+              "max_price_eur": 1179,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 1179,
+              "average_price_eur": 1179,
+              "min_price_eur": 1179,
               "max_price_eur": 1179,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
@@ -3793,32 +3793,21 @@
           "name": "Patriot Viper VENOM 32GB DDR5-6000 CL30",
           "mpn": "PVV532G600C30K",
           "meta": {
-            "current_best": 449,
+            "min": 79.48,
             "first_ts": 1717545600,
-            "last_ts": 1790553599,
+            "current_best": 474.63,
+            "last_formatted": "05.10.2026",
             "max": 477.7,
-            "last_formatted": "27.09.2026",
-            "min": 79.48
+            "last_ts": 1791244799
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 93.9,
-              "average_price_eur": 90.63,
-              "min_price_eur": 88.99,
-              "max_price_eur": 93.9,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 127.41,
-              "average_price_eur": 107.93,
-              "min_price_eur": 93.9,
+              "average_price_eur": 110.5,
+              "min_price_eur": 94.99,
               "max_price_eur": 142.9,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
@@ -3935,12 +3924,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
-              "last_price_eur": 449,
-              "average_price_eur": 447.15,
+              "observed_days": 30,
+              "priced_days": 30,
+              "last_price_eur": 477.7,
+              "average_price_eur": 448.29,
               "min_price_eur": 429,
               "max_price_eur": 477.7,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 473.98,
+              "average_price_eur": 474.46,
+              "min_price_eur": 473.98,
+              "max_price_eur": 475.02,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -3951,32 +3951,21 @@
           "name": "Patriot Viper VENOM 64GB DDR5-6000 CL30",
           "mpn": "PVV564G600C30K",
           "meta": {
-            "last_formatted": "27.09.2026",
-            "min": 168.9,
-            "current_best": 1088.14,
+            "max": 1095.37,
             "first_ts": 1717545600,
-            "last_ts": 1790553599,
-            "max": 1095.37
+            "last_ts": 1791244799,
+            "min": 168.9,
+            "current_best": 1089.08,
+            "last_formatted": "05.10.2026"
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 191.9,
-              "average_price_eur": 185.57,
-              "min_price_eur": 174.9,
-              "max_price_eur": 191.9,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 257.49,
-              "average_price_eur": 226.07,
-              "min_price_eur": 198.99,
+              "average_price_eur": 229.33,
+              "min_price_eur": 210.83,
               "max_price_eur": 258.9,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
@@ -4093,12 +4082,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
+              "observed_days": 30,
+              "priced_days": 30,
               "last_price_eur": 1088.14,
-              "average_price_eur": 993.87,
+              "average_price_eur": 1003.29,
               "min_price_eur": 949,
               "max_price_eur": 1095.37,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 1089.08,
+              "average_price_eur": 1088.33,
+              "min_price_eur": 1088.14,
+              "max_price_eur": 1089.08,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -4112,29 +4112,18 @@
       "wishlist_url": "https://geizhals.de/wishlists/5081157",
       "target_product_count": 10,
       "meta": {
-        "last_ts": 1790553599,
         "first_ts": 1635120000,
-        "last_formatted": "27.09.2026",
-        "current_best": 3494.28
+        "current_best": 3565.13,
+        "last_formatted": "05.10.2026",
+        "last_ts": 1791244799
       },
       "raw_basket_monthly": [
         {
-          "month": "2025-09",
-          "observed_days": 3,
-          "priced_days": 3,
-          "last_price_eur": 1683.6,
-          "average_price_eur": 1685.57,
-          "min_price_eur": 1683.6,
-          "max_price_eur": 1689.1,
-          "min_priced_item_count": 10,
-          "max_priced_item_count": 10
-        },
-        {
           "month": "2025-10",
-          "observed_days": 31,
-          "priced_days": 31,
+          "observed_days": 26,
+          "priced_days": 26,
           "last_price_eur": 1742.95,
-          "average_price_eur": 1685.43,
+          "average_price_eur": 1683.24,
           "min_price_eur": 1624.39,
           "max_price_eur": 1742.95,
           "min_priced_item_count": 10,
@@ -4252,12 +4241,23 @@
         },
         {
           "month": "2026-09",
-          "observed_days": 27,
-          "priced_days": 27,
-          "last_price_eur": 3458.07,
-          "average_price_eur": 3360.82,
+          "observed_days": 30,
+          "priced_days": 30,
+          "last_price_eur": 3492.6,
+          "average_price_eur": 3372.5,
           "min_price_eur": 3214.47,
-          "max_price_eur": 3472.9,
+          "max_price_eur": 3492.6,
+          "min_priced_item_count": 10,
+          "max_priced_item_count": 10
+        },
+        {
+          "month": "2026-10",
+          "observed_days": 5,
+          "priced_days": 5,
+          "last_price_eur": 3545.1,
+          "average_price_eur": 3525.06,
+          "min_price_eur": 3488.78,
+          "max_price_eur": 3545.1,
           "min_priced_item_count": 10,
           "max_priced_item_count": 10
         }
@@ -4265,138 +4265,138 @@
       "comparable_index": {
         "eligible_product_count": 10,
         "excluded_product_count": 0,
-        "baseline_start": "2025-09-28",
-        "baseline_end": "2025-10-28",
+        "baseline_start": "2025-10-06",
+        "baseline_end": "2025-11-05",
         "baseline_value": 100,
         "monthly": [
           {
-            "month": "2025-09",
-            "observed_days": 3,
-            "valid_index_days": 3,
-            "last_index": 99.65,
-            "average_index": 99.78,
-            "min_index": 99.65,
-            "max_index": 100.02,
-            "average_direct_coverage": 1
-          },
-          {
             "month": "2025-10",
-            "observed_days": 31,
-            "valid_index_days": 31,
-            "last_index": 103.5,
-            "average_index": 100.2,
-            "min_index": 96.89,
-            "max_index": 103.5,
+            "observed_days": 26,
+            "valid_index_days": 26,
+            "last_index": 101.56,
+            "average_index": 98.24,
+            "min_index": 95.07,
+            "max_index": 101.56,
             "average_direct_coverage": 1
           },
           {
             "month": "2025-11",
             "observed_days": 30,
             "valid_index_days": 30,
-            "last_index": 113.25,
-            "average_index": 105.06,
-            "min_index": 101.52,
-            "max_index": 113.25,
+            "last_index": 111.13,
+            "average_index": 103.09,
+            "min_index": 99.61,
+            "max_index": 111.13,
             "average_direct_coverage": 1
           },
           {
             "month": "2025-12",
             "observed_days": 31,
             "valid_index_days": 31,
-            "last_index": 142.42,
-            "average_index": 130.12,
-            "min_index": 113.95,
-            "max_index": 144.74,
+            "last_index": 139.75,
+            "average_index": 127.67,
+            "min_index": 111.81,
+            "max_index": 142.02,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-01",
             "observed_days": 31,
             "valid_index_days": 31,
-            "last_index": 153.13,
-            "average_index": 147.38,
-            "min_index": 128.76,
-            "max_index": 153.37,
+            "last_index": 150.26,
+            "average_index": 144.61,
+            "min_index": 126.34,
+            "max_index": 150.49,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-02",
             "observed_days": 28,
             "valid_index_days": 28,
-            "last_index": 160.94,
-            "average_index": 157.62,
-            "min_index": 149.42,
-            "max_index": 161.35,
+            "last_index": 157.92,
+            "average_index": 154.66,
+            "min_index": 146.61,
+            "max_index": 158.32,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-03",
             "observed_days": 31,
             "valid_index_days": 31,
-            "last_index": 170.71,
-            "average_index": 166.13,
-            "min_index": 156.06,
-            "max_index": 171.31,
+            "last_index": 167.5,
+            "average_index": 163.01,
+            "min_index": 153.13,
+            "max_index": 168.1,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-04",
             "observed_days": 30,
             "valid_index_days": 30,
-            "last_index": 174.71,
-            "average_index": 172.35,
-            "min_index": 166.86,
-            "max_index": 175.99,
+            "last_index": 171.42,
+            "average_index": 169.11,
+            "min_index": 163.73,
+            "max_index": 172.69,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-05",
             "observed_days": 31,
             "valid_index_days": 31,
-            "last_index": 183.63,
-            "average_index": 179.64,
-            "min_index": 172.85,
-            "max_index": 187.52,
+            "last_index": 180.18,
+            "average_index": 176.26,
+            "min_index": 169.61,
+            "max_index": 184,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-06",
             "observed_days": 30,
             "valid_index_days": 30,
-            "last_index": 183.19,
-            "average_index": 180.19,
-            "min_index": 176.61,
-            "max_index": 184.36,
+            "last_index": 179.75,
+            "average_index": 176.81,
+            "min_index": 173.29,
+            "max_index": 180.9,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-07",
             "observed_days": 31,
             "valid_index_days": 31,
-            "last_index": 191.16,
-            "average_index": 190.69,
-            "min_index": 181.74,
-            "max_index": 196.03,
+            "last_index": 187.57,
+            "average_index": 187.11,
+            "min_index": 178.33,
+            "max_index": 192.35,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-08",
             "observed_days": 31,
             "valid_index_days": 31,
-            "last_index": 197.02,
-            "average_index": 196.95,
-            "min_index": 192.47,
-            "max_index": 199.79,
+            "last_index": 193.32,
+            "average_index": 193.25,
+            "min_index": 188.85,
+            "max_index": 196.04,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-09",
-            "observed_days": 27,
-            "valid_index_days": 27,
-            "last_index": 210.03,
-            "average_index": 204.02,
-            "min_index": 195.26,
-            "max_index": 211.09,
+            "observed_days": 30,
+            "valid_index_days": 30,
+            "last_index": 208.13,
+            "average_index": 200.89,
+            "min_index": 191.59,
+            "max_index": 208.13,
+            "average_direct_coverage": 1
+          },
+          {
+            "month": "2026-10",
+            "observed_days": 5,
+            "valid_index_days": 5,
+            "last_index": 211.1,
+            "average_index": 210.11,
+            "min_index": 207.98,
+            "max_index": 211.2,
             "average_direct_coverage": 1
           }
         ]
@@ -4407,32 +4407,21 @@
           "name": "Kingston KC3000 2048GB",
           "mpn": "SKC3000D/2048G",
           "meta": {
-            "max": 410,
-            "last_ts": 1790553599,
             "first_ts": 1635120000,
-            "last_formatted": "27.09.2026",
-            "current_best": 299,
-            "min": 99
+            "max": 410,
+            "last_formatted": "05.10.2026",
+            "current_best": 317.87,
+            "min": 99,
+            "last_ts": 1791244799
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 129,
-              "average_price_eur": 129,
-              "min_price_eur": 129,
-              "max_price_eur": 129,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 140.64,
-              "average_price_eur": 135.95,
-              "min_price_eur": 129,
+              "average_price_eur": 136.26,
+              "min_price_eur": 134.99,
               "max_price_eur": 140.81,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
@@ -4549,12 +4538,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
+              "observed_days": 30,
+              "priced_days": 30,
               "last_price_eur": 299,
-              "average_price_eur": 301.7,
+              "average_price_eur": 301.43,
               "min_price_eur": 288.83,
               "max_price_eur": 314.76,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 308.77,
+              "average_price_eur": 306.89,
+              "min_price_eur": 299,
+              "max_price_eur": 309.14,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -4565,31 +4565,20 @@
           "name": "Western Digital WD_BLACK SN850X 2TB",
           "mpn": "WDS200T2X0E-00BCA0",
           "meta": {
-            "last_formatted": "27.09.2026",
-            "current_best": 317.77,
-            "min": 99.99,
             "max": 415,
             "first_ts": 1659916800,
-            "last_ts": 1790553599
+            "min": 99.99,
+            "last_ts": 1791244799,
+            "last_formatted": "05.10.2026",
+            "current_best": 347.78
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 148.89,
-              "average_price_eur": 148.89,
-              "min_price_eur": 148.89,
-              "max_price_eur": 148.89,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 149.95,
-              "average_price_eur": 146.23,
+              "average_price_eur": 146.06,
               "min_price_eur": 140.5,
               "max_price_eur": 149.95,
               "min_priced_item_count": 1,
@@ -4707,11 +4696,22 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
-              "last_price_eur": 317.77,
-              "average_price_eur": 297.97,
+              "observed_days": 30,
+              "priced_days": 30,
+              "last_price_eur": 334.99,
+              "average_price_eur": 300.53,
               "min_price_eur": 269.99,
+              "max_price_eur": 339,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 338.66,
+              "average_price_eur": 338.79,
+              "min_price_eur": 338.61,
               "max_price_eur": 339,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
@@ -4723,31 +4723,20 @@
           "name": "Samsung SSD 990 PRO 2TB",
           "mpn": "MZ-V9P2T0BW",
           "meta": {
-            "max": 399.9,
-            "last_ts": 1790553599,
-            "first_ts": 1663632000,
-            "current_best": 319.99,
             "min": 97.95,
-            "last_formatted": "27.09.2026"
+            "first_ts": 1663632000,
+            "last_ts": 1791244799,
+            "current_best": 324.91,
+            "last_formatted": "05.10.2026",
+            "max": 399.9
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 144.99,
-              "average_price_eur": 146.66,
-              "min_price_eur": 144.99,
-              "max_price_eur": 149.99,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 154.99,
-              "average_price_eur": 149.69,
+              "average_price_eur": 149.44,
               "min_price_eur": 97.95,
               "max_price_eur": 159.75,
               "min_priced_item_count": 1,
@@ -4865,12 +4854,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
-              "last_price_eur": 319,
-              "average_price_eur": 310.27,
+              "observed_days": 30,
+              "priced_days": 30,
+              "last_price_eur": 321.9,
+              "average_price_eur": 311.41,
               "min_price_eur": 269.9,
               "max_price_eur": 325.47,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 324.91,
+              "average_price_eur": 326.76,
+              "min_price_eur": 310,
+              "max_price_eur": 338.99,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -4881,31 +4881,20 @@
           "name": "Lexar NM790 2TB",
           "mpn": "LNM790X002T-RNNNG",
           "meta": {
+            "max": 289,
             "first_ts": 1685404800,
-            "current_best": 279.99,
-            "max": 279.99,
-            "last_ts": 1790553599,
-            "last_formatted": "27.09.2026",
-            "min": 86.53
+            "min": 86.53,
+            "last_ts": 1791244799,
+            "last_formatted": "05.10.2026",
+            "current_best": 279.99
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 114,
-              "average_price_eur": 114,
-              "min_price_eur": 114,
-              "max_price_eur": 114,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 124.99,
-              "average_price_eur": 119.69,
+              "average_price_eur": 120.54,
               "min_price_eur": 114.63,
               "max_price_eur": 126.9,
               "min_priced_item_count": 1,
@@ -5023,12 +5012,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
+              "observed_days": 30,
+              "priced_days": 30,
               "last_price_eur": 279.99,
-              "average_price_eur": 272.28,
+              "average_price_eur": 273.05,
               "min_price_eur": 249.6,
               "max_price_eur": 279.99,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 279.99,
+              "average_price_eur": 283.59,
+              "min_price_eur": 279.99,
+              "max_price_eur": 289,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -5039,31 +5039,20 @@
           "name": "Crucial T500 2TB",
           "mpn": "CT2000T500SSD8",
           "meta": {
+            "last_ts": 1791244799,
             "max": 389.39,
-            "last_ts": 1790553599,
+            "last_formatted": "05.10.2026",
+            "current_best": 401.07,
             "first_ts": 1698883200,
-            "current_best": 412.75,
-            "min": 125.99,
-            "last_formatted": "27.09.2026"
+            "min": 125.99
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 144.72,
-              "average_price_eur": 144.72,
-              "min_price_eur": 144.72,
-              "max_price_eur": 144.72,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 147.49,
-              "average_price_eur": 147.07,
+              "average_price_eur": 147.03,
               "min_price_eur": 146.24,
               "max_price_eur": 147.49,
               "min_priced_item_count": 1,
@@ -5181,11 +5170,22 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
+              "observed_days": 30,
+              "priced_days": 30,
               "last_price_eur": 389.39,
-              "average_price_eur": 368.62,
+              "average_price_eur": 370.69,
               "min_price_eur": 346.9,
+              "max_price_eur": 389.39,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 389.39,
+              "average_price_eur": 389.39,
+              "min_price_eur": 389.39,
               "max_price_eur": 389.39,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
@@ -5197,31 +5197,20 @@
           "name": "Corsair MP700 PRO 2TB",
           "mpn": "CSSD-F2000GBMP700PNH",
           "meta": {
-            "last_formatted": "27.09.2026",
-            "current_best": 376.98,
+            "last_ts": 1791244799,
+            "last_formatted": "05.10.2026",
+            "current_best": 370.03,
+            "max": 472.68,
             "min": 209.9,
-            "first_ts": 1699488000,
-            "last_ts": 1790553599,
-            "max": 472.68
+            "first_ts": 1699488000
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 227.6,
-              "average_price_eur": 227.6,
-              "min_price_eur": 227.6,
-              "max_price_eur": 227.6,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 257,
-              "average_price_eur": 234.39,
+              "average_price_eur": 235.69,
               "min_price_eur": 209.9,
               "max_price_eur": 257,
               "min_priced_item_count": 1,
@@ -5339,12 +5328,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
-              "last_price_eur": 375.12,
-              "average_price_eur": 371.73,
+              "observed_days": 30,
+              "priced_days": 30,
+              "last_price_eur": 374.94,
+              "average_price_eur": 372.06,
               "min_price_eur": 359.99,
               "max_price_eur": 382.51,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 369.58,
+              "average_price_eur": 369.72,
+              "min_price_eur": 369.02,
+              "max_price_eur": 370,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -5355,33 +5355,22 @@
           "name": "Crucial T705 2TB",
           "mpn": "CT2000T705SSD3",
           "meta": {
-            "current_best": 413.32,
+            "first_ts": 1708387200,
             "min": 166.28,
-            "last_formatted": "27.09.2026",
+            "last_ts": 1791244799,
+            "last_formatted": "05.10.2026",
             "max": 529.99,
-            "last_ts": 1790553599,
-            "first_ts": 1708387200
+            "current_best": 419
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 198.39,
-              "average_price_eur": 198.7,
-              "min_price_eur": 198.39,
-              "max_price_eur": 198.89,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 196.99,
-              "average_price_eur": 189.56,
+              "average_price_eur": 187.57,
               "min_price_eur": 166.28,
-              "max_price_eur": 199.94,
+              "max_price_eur": 199,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             },
@@ -5497,12 +5486,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
-              "last_price_eur": 413.32,
-              "average_price_eur": 391.11,
+              "observed_days": 30,
+              "priced_days": 30,
+              "last_price_eur": 419,
+              "average_price_eur": 393.76,
               "min_price_eur": 309.5,
-              "max_price_eur": 413.32,
+              "max_price_eur": 419,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 419,
+              "average_price_eur": 419,
+              "min_price_eur": 419,
+              "max_price_eur": 419,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -5513,31 +5513,20 @@
           "name": "Samsung SSD 990 EVO Plus 2TB",
           "mpn": "MZ-V9S2T0BW",
           "meta": {
-            "first_ts": 1727395200,
-            "last_ts": 1790553599,
             "max": 295.49,
-            "last_formatted": "27.09.2026",
+            "first_ts": 1727395200,
+            "min": 104.1,
+            "last_ts": 1791244799,
             "current_best": 295.49,
-            "min": 104.1
+            "last_formatted": "05.10.2026"
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 120.33,
-              "average_price_eur": 120.33,
-              "min_price_eur": 120.33,
-              "max_price_eur": 120.33,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 124,
-              "average_price_eur": 121.82,
+              "average_price_eur": 122.21,
               "min_price_eur": 114.95,
               "max_price_eur": 124,
               "min_priced_item_count": 1,
@@ -5655,11 +5644,22 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
+              "observed_days": 30,
+              "priced_days": 30,
               "last_price_eur": 295.49,
-              "average_price_eur": 282.7,
+              "average_price_eur": 283.79,
               "min_price_eur": 269.9,
+              "max_price_eur": 295.49,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 295.49,
+              "average_price_eur": 295.31,
+              "min_price_eur": 295.07,
               "max_price_eur": 295.49,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
@@ -5671,31 +5671,20 @@
           "name": "Samsung SSD 9100 PRO 2TB",
           "mpn": "MZ-VAP2T0BW",
           "meta": {
-            "last_ts": 1790553599,
-            "max": 385,
+            "max": 398.99,
+            "last_formatted": "05.10.2026",
             "current_best": 379.99,
-            "first_ts": 1741219200,
+            "last_ts": 1791244799,
             "min": 198.98,
-            "last_formatted": "27.09.2026"
+            "first_ts": 1741219200
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 215.69,
-              "average_price_eur": 215.69,
-              "min_price_eur": 215.69,
-              "max_price_eur": 215.69,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 229.9,
-              "average_price_eur": 220.52,
+              "average_price_eur": 221.45,
               "min_price_eur": 202.99,
               "max_price_eur": 229.9,
               "min_priced_item_count": 1,
@@ -5813,12 +5802,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
-              "last_price_eur": 369.99,
-              "average_price_eur": 367.58,
+              "observed_days": 30,
+              "priced_days": 30,
+              "last_price_eur": 378.9,
+              "average_price_eur": 368.71,
               "min_price_eur": 329.99,
-              "max_price_eur": 369.99,
+              "max_price_eur": 378.9,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 398.99,
+              "average_price_eur": 390.95,
+              "min_price_eur": 378.9,
+              "max_price_eur": 398.99,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -5829,33 +5829,22 @@
           "name": "Western Digital WD_BLACK SN8100 2TB",
           "mpn": "WDS200T1X0M-00CMT0",
           "meta": {
-            "max": 399,
-            "last_ts": 1790553599,
-            "first_ts": 1747180800,
-            "current_best": 399,
             "min": 189.99,
-            "last_formatted": "27.09.2026"
+            "first_ts": 1747180800,
+            "last_formatted": "05.10.2026",
+            "max": 420.32,
+            "current_best": 429,
+            "last_ts": 1791244799
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 239.99,
-              "average_price_eur": 239.99,
-              "min_price_eur": 239.99,
-              "max_price_eur": 239.99,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 217,
-              "average_price_eur": 220.51,
+              "average_price_eur": 216.99,
               "min_price_eur": 202.49,
-              "max_price_eur": 239.84,
+              "max_price_eur": 234.98,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             },
@@ -5971,12 +5960,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
+              "observed_days": 30,
+              "priced_days": 30,
               "last_price_eur": 399,
-              "average_price_eur": 396.85,
+              "average_price_eur": 397.07,
               "min_price_eur": 370,
               "max_price_eur": 399,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 420.32,
+              "average_price_eur": 404.66,
+              "min_price_eur": 399,
+              "max_price_eur": 420.32,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -5990,29 +5990,18 @@
       "wishlist_url": "https://geizhals.de/wishlists/5081163",
       "target_product_count": 8,
       "meta": {
-        "current_best": 2545.59,
-        "last_ts": 1790553599,
-        "last_formatted": "27.09.2026",
-        "first_ts": 1672704000
+        "first_ts": 1672704000,
+        "current_best": 2502.67,
+        "last_formatted": "05.10.2026",
+        "last_ts": 1791244799
       },
       "raw_basket_monthly": [
         {
-          "month": "2025-09",
-          "observed_days": 3,
-          "priced_days": 3,
-          "last_price_eur": 2692.59,
-          "average_price_eur": 2672.6,
-          "min_price_eur": 2641.68,
-          "max_price_eur": 2692.59,
-          "min_priced_item_count": 8,
-          "max_priced_item_count": 8
-        },
-        {
           "month": "2025-10",
-          "observed_days": 31,
-          "priced_days": 31,
+          "observed_days": 26,
+          "priced_days": 26,
           "last_price_eur": 2698.49,
-          "average_price_eur": 2676.57,
+          "average_price_eur": 2676.16,
           "min_price_eur": 2599.58,
           "max_price_eur": 2705.83,
           "min_priced_item_count": 8,
@@ -6130,12 +6119,23 @@
         },
         {
           "month": "2026-09",
-          "observed_days": 27,
-          "priced_days": 27,
-          "last_price_eur": 2544.15,
-          "average_price_eur": 2520.37,
+          "observed_days": 30,
+          "priced_days": 30,
+          "last_price_eur": 2549.78,
+          "average_price_eur": 2522.71,
           "min_price_eur": 2477.91,
-          "max_price_eur": 2545.6,
+          "max_price_eur": 2549.78,
+          "min_priced_item_count": 8,
+          "max_priced_item_count": 8
+        },
+        {
+          "month": "2026-10",
+          "observed_days": 5,
+          "priced_days": 5,
+          "last_price_eur": 2502.67,
+          "average_price_eur": 2536.05,
+          "min_price_eur": 2502.67,
+          "max_price_eur": 2571.75,
           "min_priced_item_count": 8,
           "max_priced_item_count": 8
         }
@@ -6143,138 +6143,138 @@
       "comparable_index": {
         "eligible_product_count": 8,
         "excluded_product_count": 0,
-        "baseline_start": "2025-09-28",
-        "baseline_end": "2025-10-28",
+        "baseline_start": "2025-10-06",
+        "baseline_end": "2025-11-05",
         "baseline_value": 100,
         "monthly": [
           {
-            "month": "2025-09",
-            "observed_days": 3,
-            "valid_index_days": 3,
-            "last_index": 100.68,
-            "average_index": 99.89,
-            "min_index": 99,
-            "max_index": 100.68,
-            "average_direct_coverage": 1
-          },
-          {
             "month": "2025-10",
-            "observed_days": 31,
-            "valid_index_days": 31,
-            "last_index": 101.65,
-            "average_index": 100.46,
-            "min_index": 96.51,
-            "max_index": 102.3,
+            "observed_days": 26,
+            "valid_index_days": 26,
+            "last_index": 100.14,
+            "average_index": 99.05,
+            "min_index": 95.08,
+            "max_index": 100.78,
             "average_direct_coverage": 1
           },
           {
             "month": "2025-11",
             "observed_days": 30,
             "valid_index_days": 30,
-            "last_index": 96.66,
-            "average_index": 98.56,
-            "min_index": 93.07,
-            "max_index": 101.9,
+            "last_index": 95.23,
+            "average_index": 97.1,
+            "min_index": 91.69,
+            "max_index": 100.39,
             "average_direct_coverage": 1
           },
           {
             "month": "2025-12",
             "observed_days": 31,
             "valid_index_days": 31,
-            "last_index": 98.36,
-            "average_index": 97.48,
-            "min_index": 86.11,
-            "max_index": 99.36,
+            "last_index": 96.9,
+            "average_index": 96.03,
+            "min_index": 84.83,
+            "max_index": 97.88,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-01",
             "observed_days": 31,
             "valid_index_days": 31,
-            "last_index": 101.22,
-            "average_index": 100.22,
-            "min_index": 95.78,
-            "max_index": 101.77,
+            "last_index": 99.72,
+            "average_index": 98.74,
+            "min_index": 94.36,
+            "max_index": 100.26,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-02",
             "observed_days": 28,
             "valid_index_days": 28,
-            "last_index": 99.22,
-            "average_index": 99.33,
-            "min_index": 97.34,
-            "max_index": 101.22,
+            "last_index": 97.74,
+            "average_index": 97.86,
+            "min_index": 95.89,
+            "max_index": 99.72,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-03",
             "observed_days": 31,
             "valid_index_days": 31,
-            "last_index": 99.36,
-            "average_index": 98.14,
-            "min_index": 96.65,
-            "max_index": 99.36,
+            "last_index": 97.88,
+            "average_index": 96.69,
+            "min_index": 95.22,
+            "max_index": 97.88,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-04",
             "observed_days": 30,
             "valid_index_days": 30,
-            "last_index": 98.52,
-            "average_index": 99.39,
-            "min_index": 97.29,
-            "max_index": 100.86,
+            "last_index": 97.06,
+            "average_index": 97.91,
+            "min_index": 95.85,
+            "max_index": 99.36,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-05",
             "observed_days": 31,
             "valid_index_days": 31,
-            "last_index": 96.83,
-            "average_index": 97.2,
-            "min_index": 95.77,
-            "max_index": 98.15,
+            "last_index": 95.4,
+            "average_index": 95.76,
+            "min_index": 94.35,
+            "max_index": 96.69,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-06",
             "observed_days": 30,
             "valid_index_days": 30,
-            "last_index": 94.54,
-            "average_index": 94.2,
-            "min_index": 89.41,
-            "max_index": 96.39,
+            "last_index": 93.14,
+            "average_index": 92.8,
+            "min_index": 88.08,
+            "max_index": 94.96,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-07",
             "observed_days": 31,
             "valid_index_days": 31,
-            "last_index": 95.13,
-            "average_index": 94.98,
-            "min_index": 93.44,
-            "max_index": 97.09,
+            "last_index": 93.72,
+            "average_index": 93.57,
+            "min_index": 92.06,
+            "max_index": 95.65,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-08",
             "observed_days": 31,
             "valid_index_days": 31,
-            "last_index": 96.18,
-            "average_index": 96.04,
-            "min_index": 94.19,
-            "max_index": 97.39,
+            "last_index": 94.75,
+            "average_index": 94.62,
+            "min_index": 92.8,
+            "max_index": 95.95,
             "average_direct_coverage": 1
           },
           {
             "month": "2026-09",
-            "observed_days": 27,
-            "valid_index_days": 27,
-            "last_index": 97.73,
-            "average_index": 97.13,
-            "min_index": 95.71,
-            "max_index": 97.84,
+            "observed_days": 30,
+            "valid_index_days": 30,
+            "last_index": 96.75,
+            "average_index": 95.76,
+            "min_index": 94.29,
+            "max_index": 96.75,
+            "average_direct_coverage": 1
+          },
+          {
+            "month": "2026-10",
+            "observed_days": 5,
+            "valid_index_days": 5,
+            "last_index": 95.17,
+            "average_index": 96.25,
+            "min_index": 95.17,
+            "max_index": 97.25,
             "average_direct_coverage": 1
           }
         ]
@@ -6285,31 +6285,20 @@
           "name": "AMD Ryzen 5 7600 boxed",
           "mpn": "100-100001015BOX",
           "meta": {
-            "min": 131.88,
-            "current_best": 154.5,
-            "last_formatted": "27.09.2026",
             "first_ts": 1672704000,
-            "last_ts": 1790553599,
+            "min": 131.88,
+            "last_ts": 1791244799,
+            "last_formatted": "05.10.2026",
+            "current_best": 162.19,
             "max": 275.9
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 167.89,
-              "average_price_eur": 167.89,
-              "min_price_eur": 167.89,
-              "max_price_eur": 167.89,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 166.9,
-              "average_price_eur": 167.84,
+              "average_price_eur": 167.83,
               "min_price_eur": 166.9,
               "max_price_eur": 168,
               "min_priced_item_count": 1,
@@ -6427,12 +6416,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
-              "last_price_eur": 154.5,
-              "average_price_eur": 153.39,
+              "observed_days": 30,
+              "priced_days": 30,
+              "last_price_eur": 162.19,
+              "average_price_eur": 153.76,
               "min_price_eur": 151.5,
-              "max_price_eur": 154.5,
+              "max_price_eur": 162.19,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 162.19,
+              "average_price_eur": 162.2,
+              "min_price_eur": 162.19,
+              "max_price_eur": 162.2,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -6443,31 +6443,20 @@
           "name": "Intel Core i5-14600K boxed",
           "mpn": "BX8071514600K",
           "meta": {
-            "last_ts": 1790553599,
-            "first_ts": 1697414400,
             "max": 349.9,
+            "last_formatted": "05.10.2026",
+            "current_best": 242.18,
+            "last_ts": 1791244799,
             "min": 139.99,
-            "current_best": 245.52,
-            "last_formatted": "27.09.2026"
+            "first_ts": 1697414400
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 175,
-              "average_price_eur": 168.3,
-              "min_price_eur": 164.95,
-              "max_price_eur": 175,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 209.9,
-              "average_price_eur": 184.24,
+              "average_price_eur": 187.19,
               "min_price_eur": 153.9,
               "max_price_eur": 209.9,
               "min_priced_item_count": 1,
@@ -6585,12 +6574,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
-              "last_price_eur": 245.52,
-              "average_price_eur": 249.89,
+              "observed_days": 30,
+              "priced_days": 30,
+              "last_price_eur": 241.34,
+              "average_price_eur": 249.03,
               "min_price_eur": 229.99,
               "max_price_eur": 252.29,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 242.18,
+              "average_price_eur": 242.18,
+              "min_price_eur": 242.18,
+              "max_price_eur": 242.18,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -6601,31 +6601,20 @@
           "name": "AMD Ryzen 5 9600X boxed",
           "mpn": "100-100001405WOF",
           "meta": {
-            "last_ts": 1790553599,
+            "last_ts": 1791244799,
+            "current_best": 164.99,
+            "last_formatted": "05.10.2026",
             "max": 338.49,
-            "first_ts": 1721606400,
-            "current_best": 172.38,
             "min": 142.45,
-            "last_formatted": "27.09.2026"
+            "first_ts": 1721606400
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 179.9,
-              "average_price_eur": 182.26,
-              "min_price_eur": 179.9,
-              "max_price_eur": 186.98,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 188.99,
-              "average_price_eur": 184.73,
+              "average_price_eur": 185.7,
               "min_price_eur": 178.99,
               "max_price_eur": 189.99,
               "min_priced_item_count": 1,
@@ -6743,12 +6732,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
-              "last_price_eur": 172.38,
-              "average_price_eur": 172.32,
+              "observed_days": 30,
+              "priced_days": 30,
+              "last_price_eur": 173.06,
+              "average_price_eur": 172.37,
               "min_price_eur": 171.79,
               "max_price_eur": 173.06,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 164.99,
+              "average_price_eur": 170.64,
+              "min_price_eur": 164.99,
+              "max_price_eur": 175.09,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -6759,33 +6759,22 @@
           "name": "Intel Core Ultra 9 285K boxed",
           "mpn": "BX80768285K",
           "meta": {
-            "first_ts": 1728518400,
-            "current_best": 529.43,
-            "last_ts": 1790553599,
+            "last_ts": 1791244799,
+            "last_formatted": "05.10.2026",
             "max": 688,
-            "last_formatted": "27.09.2026",
+            "current_best": 529.43,
+            "first_ts": 1728518400,
             "min": 435.01
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 555.51,
-              "average_price_eur": 555.51,
-              "min_price_eur": 555.51,
-              "max_price_eur": 555.51,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 538,
-              "average_price_eur": 537.46,
+              "average_price_eur": 534.03,
               "min_price_eur": 525.51,
-              "max_price_eur": 555.51,
+              "max_price_eur": 552.73,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             },
@@ -6901,11 +6890,22 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
+              "observed_days": 30,
+              "priced_days": 30,
               "last_price_eur": 529.43,
-              "average_price_eur": 512.38,
+              "average_price_eur": 514.09,
               "min_price_eur": 487.99,
+              "max_price_eur": 529.43,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 529.43,
+              "average_price_eur": 529.43,
+              "min_price_eur": 529.43,
               "max_price_eur": 529.43,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
@@ -6917,33 +6917,22 @@
           "name": "Intel Core Ultra 7 265K boxed",
           "mpn": "BX80768265K",
           "meta": {
-            "max": 439.9,
-            "last_ts": 1790553599,
-            "first_ts": 1728518400,
-            "last_formatted": "27.09.2026",
             "min": 238.32,
+            "first_ts": 1728518400,
+            "last_ts": 1791244799,
+            "last_formatted": "05.10.2026",
+            "max": 439.9,
             "current_best": 309
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 289,
-              "average_price_eur": 288.06,
-              "min_price_eur": 286.19,
-              "max_price_eur": 289,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 284.9,
-              "average_price_eur": 284.71,
+              "average_price_eur": 283.88,
               "min_price_eur": 247.99,
-              "max_price_eur": 289,
+              "max_price_eur": 288.95,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             },
@@ -7059,11 +7048,22 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
+              "observed_days": 30,
+              "priced_days": 30,
               "last_price_eur": 309,
-              "average_price_eur": 307.75,
+              "average_price_eur": 307.88,
               "min_price_eur": 299.95,
+              "max_price_eur": 309,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 309,
+              "average_price_eur": 309,
+              "min_price_eur": 309,
               "max_price_eur": 309,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
@@ -7075,33 +7075,22 @@
           "name": "Intel Core Ultra 5 245K boxed",
           "mpn": "BX80768245K",
           "meta": {
-            "min": 153.81,
-            "current_best": 185.9,
-            "last_formatted": "27.09.2026",
+            "max": 334.9,
+            "last_formatted": "05.10.2026",
+            "current_best": 184.9,
+            "last_ts": 1791244799,
             "first_ts": 1728518400,
-            "last_ts": 1790553599,
-            "max": 334.9
+            "min": 153.81
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 217.9,
-              "average_price_eur": 218.62,
-              "min_price_eur": 217.9,
-              "max_price_eur": 219.07,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 193.9,
-              "average_price_eur": 208.82,
+              "average_price_eur": 207.24,
               "min_price_eur": 186.9,
-              "max_price_eur": 217.88,
+              "max_price_eur": 216.83,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             },
@@ -7217,12 +7206,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
+              "observed_days": 30,
+              "priced_days": 30,
               "last_price_eur": 185.9,
-              "average_price_eur": 184.65,
+              "average_price_eur": 184.78,
               "min_price_eur": 180.2,
               "max_price_eur": 187.89,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 184.9,
+              "average_price_eur": 185.1,
+              "min_price_eur": 184.9,
+              "max_price_eur": 185.9,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -7233,31 +7233,20 @@
           "name": "AMD Ryzen 7 9800X3D boxed",
           "mpn": "100-100001084WOF",
           "meta": {
-            "last_formatted": "27.09.2026",
+            "last_ts": 1791244799,
+            "last_formatted": "05.10.2026",
+            "current_best": 369.99,
+            "max": 749,
             "min": 349.9,
-            "first_ts": 1730505600,
-            "current_best": 384.44,
-            "last_ts": 1790553599,
-            "max": 749
+            "first_ts": 1730505600
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 446.2,
-              "average_price_eur": 430.77,
-              "min_price_eur": 399.9,
-              "max_price_eur": 446.2,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 448,
-              "average_price_eur": 443.7,
+              "average_price_eur": 443.14,
               "min_price_eur": 366,
               "max_price_eur": 448.39,
               "min_priced_item_count": 1,
@@ -7375,12 +7364,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
-              "last_price_eur": 383,
-              "average_price_eur": 381.68,
+              "observed_days": 30,
+              "priced_days": 30,
+              "last_price_eur": 384.44,
+              "average_price_eur": 381.9,
               "min_price_eur": 359.99,
               "max_price_eur": 386.39,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 369.99,
+              "average_price_eur": 377.47,
+              "min_price_eur": 369.99,
+              "max_price_eur": 384.44,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
@@ -7391,32 +7391,21 @@
           "name": "AMD Ryzen 9 9950X3D boxed",
           "mpn": "100-100000719WOF",
           "meta": {
-            "last_formatted": "27.09.2026",
-            "current_best": 564.42,
-            "min": 540,
             "max": 799,
             "first_ts": 1741737600,
-            "last_ts": 1790553599
+            "last_ts": 1791244799,
+            "min": 539.99,
+            "last_formatted": "05.10.2026",
+            "current_best": 539.99
           },
           "monthly": [
             {
-              "month": "2025-09",
-              "observed_days": 3,
-              "priced_days": 3,
-              "last_price_eur": 661.19,
-              "average_price_eur": 661.19,
-              "min_price_eur": 661.19,
-              "max_price_eur": 661.19,
-              "min_priced_item_count": 1,
-              "max_priced_item_count": 1
-            },
-            {
               "month": "2025-10",
-              "observed_days": 31,
-              "priced_days": 31,
+              "observed_days": 26,
+              "priced_days": 26,
               "last_price_eur": 667.9,
-              "average_price_eur": 665.06,
-              "min_price_eur": 625.99,
+              "average_price_eur": 667.15,
+              "min_price_eur": 661.19,
               "max_price_eur": 668.9,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
@@ -7533,12 +7522,23 @@
             },
             {
               "month": "2026-09",
-              "observed_days": 27,
-              "priced_days": 27,
+              "observed_days": 30,
+              "priced_days": 30,
               "last_price_eur": 564.42,
-              "average_price_eur": 558.31,
+              "average_price_eur": 558.92,
               "min_price_eur": 540,
               "max_price_eur": 569,
+              "min_priced_item_count": 1,
+              "max_priced_item_count": 1
+            },
+            {
+              "month": "2026-10",
+              "observed_days": 5,
+              "priced_days": 5,
+              "last_price_eur": 539.99,
+              "average_price_eur": 560.03,
+              "min_price_eur": 539.99,
+              "max_price_eur": 589,
               "min_priced_item_count": 1,
               "max_priced_item_count": 1
             }
