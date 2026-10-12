@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-10-06",
+  "snapshot_date": "2026-10-12",
   "version": 1,
   "scope": "Recherchequellen fuer grosse, oeffentlich dokumentierte KI-Rechenzentren und AI-Factory-Programme weltweit.",
   "method": {
@@ -2096,6 +2096,35 @@
       "use_for": "Betriebsstatus, Kunden-/Workload-Nachweis und regionale Ausbauaussagen fuer Microsofts indische Cloud-Infrastruktur.",
       "caveat": "Das landesweite 20,5-Mrd.-USD-Commitment darf nicht als standortspezifische Investition ausgegeben werden.",
       "last_verified": "2026-09-28"
+    },
+    {
+      "id": "ntt-data-newsroom",
+      "name": "NTT DATA Newsroom",
+      "publisher": "NTT DATA",
+      "url": "https://www.nttdata.com/global/en/news",
+      "queue": "hard_reference",
+      "category": "operator_primary_disclosure",
+      "geography": "Global",
+      "priority": "core",
+      "recommended_cadence": "weekly",
+      "run_schedule": "every_week",
+      "access": "web",
+      "max_grade": "A",
+      "signals": [
+        "AI Factory",
+        "data center opening",
+        "customer workloads",
+        "production environment"
+      ],
+      "search_hints": [
+        "AI Factory",
+        "data center",
+        "opened",
+        "production"
+      ],
+      "use_for": "NTT-DATA-AI-Factories und Betriebsnachweise anhand offizieller Meldungen pruefen.",
+      "caveat": "Demo-, Validierungs- und Produktionsumgebungen getrennt von grossen Trainingscampus bewerten; Leistung nur bei expliziter Offenlegung erfassen.",
+      "last_verified": "2026-10-12"
     }
   ]
 }

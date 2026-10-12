@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-10-06",
+  "snapshot_date": "2026-10-12",
   "version": 2,
   "name_de": "Consumer Hardwarekosten-Druckindex",
   "name_en": "Consumer Hardware Cost Pressure Index",
@@ -11,8 +11,8 @@
   "confidence": "medium",
   "retail_grade": false,
   "history_file": "hardware-history.json",
-  "summary_de": "CHPI 82,0: akuter Preisdruck bei mittlerer Konfidenz. Der August ist mit amtlichen BLS-, Eurostat- und ECB-Daten vollstaendig; der aktuelle Geizhals-Snapshot umfasst 39 von 40 bepreisten Produkten. Retail bleibt nach 11 selbst archivierten Wochen L1 und erreicht die L2-Mindestdauer noch nicht.",
-  "summary_en": "CHPI 82.0: acute price pressure at medium confidence. August is complete with official BLS, Eurostat and ECB data; the current Geizhals snapshot covers 39 of 40 priced products. Retail remains L1 after 11 self-archived weeks and has not yet reached the L2 minimum duration.",
+  "summary_de": "CHPI 82,0: akuter Preisdruck bei mittlerer Konfidenz. Der aktuelle Geizhals-Snapshot umfasst 39 von 40 bepreisten Produkten. Retail bleibt nach 12 selbst archivierten Wochen L1; zur L2-Mindestdauer fehlt noch eine Woche und die Revisionsstabilitaet muss kalibriert werden.",
+  "summary_en": "CHPI 82.0: acute price pressure at medium confidence. The current Geizhals snapshot covers 39 of 40 priced products. Retail remains L1 after 12 self-archived weeks; one more week is needed for the L2 minimum duration and revision stability must still be calibrated.",
   "purpose_de": "Misst den Preisdruck, den private Kaeufer bei GPUs, CPUs, Arbeitsspeicher und SSDs in den kommenden Wochen und Monaten erwarten koennen.",
   "purpose_en": "Measures the price pressure private buyers may face for GPUs, CPUs, memory and SSDs over the coming weeks and months.",
   "scale": {
@@ -313,7 +313,7 @@
     "observations_file": "retail-observations.json",
     "history_file": "retail-history.json",
     "raw_history_file": "retail-history-daily.json",
-    "weekly_snapshots": 11,
+    "weekly_snapshots": 12,
     "historical_days": 365,
     "historical_product_series": 40,
     "historical_product_points": 14600,
@@ -540,6 +540,19 @@
       "reading_en": "GPU +20.65%, DDR5 +3.94%, NVMe +1.96% and CPU −1.69% versus the September 28 snapshot. 39 of 40 SKUs have an offer; the raw total rose 11.67%.",
       "interpretation_de": "Das Signal ist breit, der GPU-Sprung wird jedoch stark von nur einem RTX-5090-Angebot beeinflusst. Der geometrische Produktindex ist daher aussagekraeftiger als die rohe Summe; Retail bleibt bis L2 ausserhalb der CHPI-Gewichtung.",
       "interpretation_en": "The signal is broad, but the GPU jump is heavily influenced by a single RTX 5090 offer. The geometric product index is therefore more informative than the raw total; retail remains outside CHPI weighting until L2.",
+      "source_url": "https://geizhals.de/wishlists/5081030",
+      "grade": "B"
+    },
+    {
+      "id": "geizhals-retail-2026-10-12",
+      "date": "2026-10-12",
+      "direction": "pressure_up",
+      "title_de": "Retail-Warenkoerbe steigen erneut breit",
+      "title_en": "Retail baskets rise broadly again",
+      "reading_de": "GPU +1,94 %, DDR5 +2,09 %, NVMe +1,63 % und CPU +3,69 % gegen den Snapshot vom 6. Oktober. 39 von 40 SKUs haben ein Angebot; die rohe Summe stieg 2,08 %.",
+      "reading_en": "GPU +1.94%, DDR5 +2.09%, NVMe +1.63% and CPU +3.69% versus the October 6 snapshot. 39 of 40 SKUs have an offer; the raw total rose 2.08%.",
+      "interpretation_de": "Breites direktes Consumer-Preisdrucksignal. Der RTX-5090-Ein-Angebot-Effekt bleibt bestehen; Retail bleibt bis zur L2-Reife ausserhalb der monatlichen CHPI-Gewichtung.",
+      "interpretation_en": "Broad direct consumer-price-pressure signal. The single-offer RTX 5090 effect persists; retail remains outside monthly CHPI weighting until L2 maturity.",
       "source_url": "https://geizhals.de/wishlists/5081030",
       "grade": "B"
     }
