@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-10-12",
+  "snapshot_date": "2026-10-19",
   "version": 2,
   "name_de": "Consumer Hardwarekosten-Druckindex",
   "name_en": "Consumer Hardware Cost Pressure Index",
@@ -81,8 +81,8 @@
       "coverage": 1,
       "current_score": 91.7,
       "status": "tracked",
-      "definition_de": "Der aktuelle Score verwendet weiterhin den gleichgewichteten Sechsmonats-Preistrend von BLS und Eurostat. Der neue 365-Tage-Geizhals-Backfill fuer 40 feste MPNs ist als direkte Diagnose sichtbar und wird nach 13 selbst archivierten Wochen auf Revisionsstabilitaet geprueft, bevor die Gewichtung geaendert wird.",
-      "definition_en": "The current score continues to use the equal-weight six-month BLS and Eurostat price trend. The new 365-day Geizhals backfill for 40 fixed MPNs is visible as a direct diagnostic and will be tested for revision stability after 13 self-archived weeks before weights change."
+      "definition_de": "Der aktuelle Score verwendet weiterhin den gleichgewichteten Sechsmonats-Preistrend von BLS und Eurostat. Der 365-Tage-Geizhals-Backfill fuer 40 feste MPNs ist nun gegen 13 selbst archivierte Wochen kalibriert; 6,2 % der 387 vergleichbaren Preise weichen um mehr als 5 % ab. Direkte Retail-Gewichtung folgt erst nach Erreichen von L3.",
+      "definition_en": "The current score continues to use the equal-weight six-month BLS and Eurostat price trend. The 365-day Geizhals backfill for 40 fixed MPNs is now calibrated against 13 self-archived weeks; 6.2% of 387 comparable prices differ by more than 5%. Direct retail weighting starts only after L3 is reached."
     },
     {
       "id": "retail_availability",
@@ -313,13 +313,14 @@
     "observations_file": "retail-observations.json",
     "history_file": "retail-history.json",
     "raw_history_file": "retail-history-daily.json",
-    "weekly_snapshots": 12,
+    "weekly_snapshots": 13,
     "historical_days": 365,
     "historical_product_series": 40,
     "historical_product_points": 14600,
-    "current_level": "L1",
-    "retail_readiness": 0.5,
-    "retail_grade_gate_met": false
+    "current_level": "L2",
+    "retail_readiness": 0.65,
+    "retail_grade_gate_met": false,
+    "revision_rate": 0.062
   },
   "weekly_signals": [
     {

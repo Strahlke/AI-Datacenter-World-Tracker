@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-10-12",
+  "snapshot_date": "2026-10-19",
   "scope": "Globaler, quellenbelegter Bestand grosser AI-Rechenzentren, Campusprogramme und klar gekennzeichneter AI-Compute-Deployments. Keine Vollerhebung; Programme und einzelne Standorte werden nicht addiert.",
   "method": {
     "status_method_de": "Status nur nach oeffentlich belegtem physischem Meilenstein. 'On track' erfordert ein publiziertes Zieldatum und einen aktuellen, vergleichbaren Fortschrittsnachweis.",
@@ -1960,27 +1960,27 @@
       "lon": -98.53,
       "location_precision": "Stadtzentrum; keine Parzellenkoordinate",
       "record_type": "facility",
-      "current_status": "under_construction",
-      "realization": "in_progress",
-      "schedule": "late_unverified",
+      "current_status": "partly_live",
+      "realization": "partly_realized",
+      "schedule": "on_track",
       "confidence": "high",
-      "planned_capacity": "250 MW vermietete kritische IT-Last; Campusoption bis 1 GW",
+      "planned_capacity": "400 MW vertraglich gebuchte kritische IT-Last bei Vollausbau; 250 MW davon betriebsbereit",
       "investment": "7 Mrd. USD erwarteter Mietumsatz, kein Projekt-CapEx",
       "announced": "2024",
-      "target_live": "100 MW Q4 2025; weitere 150 MW Mitte 2026",
-      "actual_live": "—",
-      "latest_update": "Der 250-MW-Lease ist belegt; die oeffentlichen Go-live-Ziele sind verstrichen bzw. erreicht, aber im Tracker noch nicht primaer verifiziert.",
-      "last_checked": "2026-09-14",
+      "target_live": "250 MW am 2026-10-02 erreicht; weitere 150 MW im Kalenderjahr 2027",
+      "actual_live": "250 MW kritische IT-Last seit 2026-10-02 betriebsbereit",
+      "latest_update": "Applied Digital meldet Building 2 vollstaendig Ready for Service. Damit sind 250 MW am Polaris-Forge-1-Campus operativ; der weitere 150-MW-Ausbau bleibt im Bau.",
+      "last_checked": "2026-10-19",
       "impact": {
-        "power_mw": 250,
+        "power_mw": 400,
         "investment_usd_bn": null,
         "investment_value_type": null,
         "investment_countable": false,
         "accelerator_count": null,
         "component_scores": {
-          "power": 64.9
+          "power": 70.4
         },
-        "score": 65,
+        "score": 70,
         "band": "strategic",
         "metric_coverage": 0.45,
         "method_version": "1.0"
@@ -1990,6 +1990,11 @@
           "date": "2024",
           "status": "under_construction",
           "text": "Der 250-MW-Lease ist belegt; die oeffentlichen Go-live-Ziele sind verstrichen bzw. erreicht, aber im Tracker noch nicht primaer verifiziert."
+        },
+        {
+          "date": "2026-10-02",
+          "status": "partly_live",
+          "text": "Weitere 75 MW gingen Ready for Service; 250 MW sind nun operativ, 400 MW sind bei Vollausbau vertraglich gebucht."
         }
       ],
       "sources": [
@@ -1999,6 +2004,13 @@
           "publisher": "Applied Digital",
           "title": "250MW AI data center lease with CoreWeave",
           "url": "https://ir.applieddigital.com/news-events/press-releases/detail/123/applied-digital-announces-250mw-ai-data-center-lease-with"
+        },
+        {
+          "date": "2026-10-02",
+          "grade": "A",
+          "publisher": "Applied Digital",
+          "title": "Applied Digital Brings an Additional 75 MW of AI Infrastructure Online at Polaris Forge 1",
+          "url": "https://ir.applieddigital.com/news-events/press-releases/detail/161/applied-digital-brings-an-additional-75-mw-of-ai"
         }
       ]
     },
@@ -5101,6 +5113,127 @@
         }
       ],
       "record_type": "ai_factory_compute_deployment",
+      "impact": {
+        "power_mw": null,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": null,
+        "component_scores": {},
+        "score": null,
+        "band": "unknown",
+        "metric_coverage": 0,
+        "method_version": "1.0"
+      }
+    },
+    {
+      "id": "nscale-loughton",
+      "name": "Nscale Loughton AI Campus",
+      "operator": "Nscale",
+      "partners": "Microsoft; NVIDIA",
+      "country": "Vereinigtes Koenigreich",
+      "iso3": "GBR",
+      "region": "Europa",
+      "location": "Loughton, Essex",
+      "lat": 51.646,
+      "lon": 0.055,
+      "location_precision": "Stadtzentrum; keine Parzellenkoordinate",
+      "record_type": "facility",
+      "current_status": "cancelled",
+      "realization": "not_realized",
+      "schedule": "cancelled",
+      "confidence": "medium",
+      "planned_capacity": "50 MW AI-Kapazitaet, skalierbar auf 90 MW; urspruenglich 23.040 NVIDIA GB300 GPUs",
+      "investment": "Teil des 22-Mrd.-GBP-Microsoft-UK-Programms; kein belastbarer standortspezifischer Betrag",
+      "announced": "2025-09-16",
+      "target_live": "urspruenglich Q1 2027",
+      "actual_live": null,
+      "latest_update": "Microsoft hat den geplanten Mietvertrag fuer den Loughton-Campus laut Financial Times beendet, weil die Strombereitstellung voraussichtlich erst nach 2030 moeglich waere. Nscale weist den Campus weiterhin aus; die Absage betrifft den Microsoft-Deal, nicht zwingend jede alternative Nutzung des Standorts.",
+      "last_checked": "2026-10-19",
+      "history": [
+        {
+          "date": "2025-09-16",
+          "status": "announced",
+          "text": "Nscale und Microsoft kuendigten 50 MW und 23.040 GB300-GPUs fuer Q1 2027 an."
+        },
+        {
+          "date": "2026-10-18",
+          "status": "cancelled",
+          "text": "Microsoft zog sich laut Financial Times wegen einer voraussichtlich erst nach 2030 verfuegbaren Stromanbindung aus dem Mietvertrag zurueck; alternative Nutzung durch Nscale bleibt offen."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2025-09-16",
+          "grade": "A",
+          "publisher": "Nscale",
+          "title": "Nscale announces UK AI infrastructure commitment in partnership with Microsoft, NVIDIA and OpenAI",
+          "url": "https://www.nscale.com/press-releases/nscale-uk-ai-infrastructure-announcement"
+        },
+        {
+          "date": "2026-10-18",
+          "grade": "B",
+          "publisher": "Financial Times",
+          "title": "Microsoft pulls plug on Nscale data centre deal",
+          "url": "https://www.ft.com/content/35cc5cc6-f9b6-49cc-8fc2-bd61e09c8c40"
+        }
+      ],
+      "impact": {
+        "power_mw": 50,
+        "investment_usd_bn": null,
+        "investment_value_type": null,
+        "investment_countable": false,
+        "accelerator_count": 23040,
+        "component_scores": {
+          "power": 46.2,
+          "accelerators": 72.7
+        },
+        "score": 54,
+        "band": "regional",
+        "metric_coverage": 0.65,
+        "method_version": "1.0"
+      }
+    },
+    {
+      "id": "scaleway-copenhagen-gpu-zone",
+      "name": "Scaleway Copenhagen GPU Zone",
+      "operator": "Scaleway",
+      "partners": "NVIDIA",
+      "country": "Daenemark",
+      "iso3": "DNK",
+      "region": "Europa",
+      "location": "Kopenhagen",
+      "lat": 55.6761,
+      "lon": 12.5683,
+      "location_precision": "Stadtzentrum; Rechenzentrum und Parzelle nicht offengelegt",
+      "record_type": "ai_factory_compute_deployment",
+      "current_status": "planned",
+      "realization": "planned",
+      "schedule": "not_assessable",
+      "confidence": "high",
+      "planned_capacity": "NVIDIA HGX B300 GPU Zone; MW, Rack- und GPU-Zahl nicht offengelegt",
+      "investment": "Nicht offengelegt",
+      "announced": "2026-10-13",
+      "target_live": null,
+      "actual_live": null,
+      "latest_update": "Scaleway plant in Kopenhagen eine neue GPU Zone mit NVIDIA HGX B300 fuer Training und Inference. Groesse und Inbetriebnahmetermin wurden nicht offengelegt.",
+      "last_checked": "2026-10-19",
+      "history": [
+        {
+          "date": "2026-10-13",
+          "status": "announced",
+          "text": "Scaleway kuendigt eine NVIDIA-HGX-B300-GPU-Zone in Kopenhagen an."
+        }
+      ],
+      "sources": [
+        {
+          "date": "2026-10-13",
+          "grade": "A",
+          "publisher": "Scaleway",
+          "title": "Scaleway announces new GPU Zone in Copenhagen powered by NVIDIA B300",
+          "url": "https://www.scaleway.com/en/news/scaleway-announces-new-gpu-zone-in-copenhagen-powered-by-nvidia-b300/"
+        }
+      ],
       "impact": {
         "power_mw": null,
         "investment_usd_bn": null,

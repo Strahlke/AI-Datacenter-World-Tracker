@@ -1,14 +1,14 @@
 {
-  "snapshot_date": "2026-10-12",
+  "snapshot_date": "2026-10-19",
   "methodology_version": "1.1",
-  "current_level": "L1",
+  "current_level": "L2",
   "current_level_label_de": "Historische Retail-Zeitreihe",
   "current_level_label_en": "Historical retail series",
-  "retail_readiness": 0.5,
+  "retail_readiness": 0.65,
   "status_de": "L1: 365-Tage-Fixed-Cohort-Backfill plus acht selbst archivierte Wochensnapshots. Kalibrierung der Revisionsstabilitaet beginnt ab Woche 13.",
   "status_en": "L1: 365-day fixed-cohort backfill plus eight self-archived weekly snapshots. Revision-stability calibration starts at week 13.",
   "observation_summary": {
-    "weekly_observations": 12,
+    "weekly_observations": 13,
     "active_retailers": 0,
     "historical_days": 365,
     "historical_product_series": 40,
@@ -16,7 +16,9 @@
     "categories_with_minimum_coverage": 4,
     "total_categories": 4,
     "availability_coverage": 0.975,
-    "revision_rate": null
+    "revision_rate": 0.062,
+    "revision_comparisons": 387,
+    "revision_threshold": "absolute price difference >5% versus reconstructed same-day fixed-cohort backfill"
   },
   "maturity_levels": [
     {
@@ -41,7 +43,7 @@
       "label_en": "Calibrated",
       "gate_de": "Mindestens 13 selbst archivierte Wochen-Snapshots und Abgleich gegen den rueckgerechneten Backfill, um Revisionen zu messen.",
       "gate_en": "At least 13 self-archived weekly snapshots reconciled against the reconstructed backfill to measure revisions.",
-      "met": false
+      "met": true
     },
     {
       "id": "L3",
@@ -235,6 +237,6 @@
     "source_url",
     "source_revision"
   ],
-  "next_action_de": "Noch sechs selbst archivierte Wochen bis zur L2-Kalibrierung. Bis dahin bleiben Korbrevisionen, private UI-Markierung und fehlende Haendler-/Lieferzeitnormalisierung sichtbare Luecken.",
-  "next_action_en": "Six more self-archived weeks are needed for L2 calibration. Until then, basket revisions, the private UI label and missing retailer/delivery-time normalization remain visible gaps."
+  "next_action_de": "L2 ist mit 13 selbst archivierten Wochen erreicht. Naechstes Ziel: 26 Wochen, mindestens sechs stabile MPNs je Kategorie, mindestens 90 % Quellenkontinuitaet und dokumentierter Angebotsstatus fuer L3.",
+  "next_action_en": "L2 is reached with 13 self-archived weeks. Next target: 26 weeks, at least six stable MPNs per category, at least 90% source continuity, and documented offer status for L3."
 }

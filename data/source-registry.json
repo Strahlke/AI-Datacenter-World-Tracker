@@ -1,5 +1,5 @@
 {
-  "snapshot_date": "2026-10-12",
+  "snapshot_date": "2026-10-19",
   "version": 1,
   "scope": "Recherchequellen fuer grosse, oeffentlich dokumentierte KI-Rechenzentren und AI-Factory-Programme weltweit.",
   "method": {
@@ -1475,7 +1475,7 @@
       "run_schedule": "every_week",
       "access": "web",
       "max_grade": "A",
-      "last_verified": "2026-10-06"
+      "last_verified": "2026-10-19"
     },
     {
       "id": "elea-data-centers",
@@ -2125,6 +2125,62 @@
       "use_for": "NTT-DATA-AI-Factories und Betriebsnachweise anhand offizieller Meldungen pruefen.",
       "caveat": "Demo-, Validierungs- und Produktionsumgebungen getrennt von grossen Trainingscampus bewerten; Leistung nur bei expliziter Offenlegung erfassen.",
       "last_verified": "2026-10-12"
+    },
+    {
+      "id": "applied-digital-ir",
+      "name": "Applied Digital Investor Relations",
+      "publisher": "Applied Digital",
+      "url": "https://ir.applieddigital.com/news-events/press-releases",
+      "geography": "USA und internationale Projekte",
+      "signals": [
+        "Ready for Service",
+        "operational capacity",
+        "leases",
+        "construction milestones"
+      ],
+      "search_hints": [
+        "AI infrastructure",
+        "Ready for Service",
+        "MW",
+        "Polaris Forge"
+      ],
+      "use_for": "Applied-Digital-Campi, Betriebsmeilensteine und vertraglich gebuchte Kapazitaet pruefen.",
+      "caveat": "Unternehmensangaben; Mietumsatz und Projekt-CapEx getrennt halten.",
+      "queue": "hard_reference",
+      "category": "operator_primary_disclosure",
+      "priority": "core",
+      "recommended_cadence": "weekly",
+      "run_schedule": "every_week",
+      "access": "web",
+      "max_grade": "A",
+      "last_verified": "2026-10-19"
+    },
+    {
+      "id": "scaleway-newsroom",
+      "name": "Scaleway Newsroom",
+      "publisher": "Scaleway",
+      "url": "https://www.scaleway.com/en/news/",
+      "geography": "Europa",
+      "signals": [
+        "GPU zones",
+        "AI supercomputers",
+        "deployments"
+      ],
+      "search_hints": [
+        "GPU Zone",
+        "supercomputer",
+        "AI infrastructure"
+      ],
+      "use_for": "Scaleway-AI-Compute-Deployments und Betriebsstart pruefen.",
+      "caveat": "Produktankuendigungen ohne MW, GPU-Zahl oder Inbetriebnahmedatum bleiben als solche markiert.",
+      "queue": "hard_reference",
+      "category": "operator_primary_disclosure",
+      "priority": "core",
+      "recommended_cadence": "weekly",
+      "run_schedule": "every_week",
+      "access": "web",
+      "max_grade": "A",
+      "last_verified": "2026-10-19"
     }
   ]
 }
